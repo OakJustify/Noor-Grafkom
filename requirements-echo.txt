@@ -1,0 +1,5 @@
+pygame>=2.5,<3
+pycairo>=1.29,<2
+pymunk>=7.2,<8
+numpy>=2.0,<3
+pytest>=8,<10

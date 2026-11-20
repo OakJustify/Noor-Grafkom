@@ -1,0 +1,362 @@
+[
+  {
+    "file": "variants/rocket-01.png",
+    "parts": {
+      "nose": "blunt_mid",
+      "collar": "rounded_mid",
+      "body": "panel-short_light",
+      "strap": "double_mid",
+      "strap2": false,
+      "fin": "swept_mid",
+      "nozzle": "cone_dark",
+      "flame": "twin_light",
+      "strap_at": 0.5077548947618141,
+      "strap2_at": 0.6175568996194816
+    }
+  },
+  {
+    "file": "variants/rocket-02.png",
+    "parts": {
+      "nose": "stepped_mid",
+      "collar": "pentagon_dark",
+      "body": "plank-short_dark",
+      "strap": "chevron_light",
+      "strap2": true,
+      "fin": "swept_light",
+      "nozzle": "straight_dark",
+      "flame": null,
+      "strap_at": 0.4824892895138323,
+      "strap2_at": 0.6367039004332808
+    }
+  },
+  {
+    "file": "variants/rocket-03.png",
+    "parts": {
+      "nose": "round_dark",
+      "collar": "double_light",
+      "body": "panel-short_light",
+      "strap": "double_light",
+      "strap2": false,
+      "fin": "swept_mid",
+      "nozzle": "straight_dark",
+      "flame": "twin_light",
+      "strap_at": 0.4638281739997071,
+      "strap2_at": 0.5916179948145421
+    }
+  },
+  {
+    "file": "variants/rocket-04.png",
+    "parts": {
+      "nose": "pentagon_mid",
+      "collar": "trapezoid_dark",
+      "body": "ribbed_dark",
+      "strap": "studded_mid",
+      "strap2": false,
+      "fin": "split_light",
+      "nozzle": "ribbed_mid",
+      "flame": "twin_light",
+      "strap_at": 0.373818253593286,
+      "strap2_at": 0.5733109801913941
+    }
+  },
+  {
+    "file": "variants/rocket-05.png",
+    "parts": {
+      "nose": "sharp_light",
+      "collar": "notched_dark",
+      "body": "plank-short_dark",
+      "strap": "riveted_light",
+      "strap2": false,
+      "fin": "stepped_mid",
+      "nozzle": "ribbed_dark",
+      "flame": "twin_light",
+      "strap_at": 0.40741769466199335,
+      "strap2_at": 0.5631610618050186
+    }
+  },
+  {
+    "file": "variants/rocket-06.png",
+    "parts": {
+      "nose": "blunt_light",
+      "collar": "rounded_mid",
+      "body": "ribbed_dark",
+      "strap": "studded_light",
+      "strap2": false,
+      "fin": "rounded_light",
+      "nozzle": "bell_mid",
+      "flame": null,
+      "strap_at": 0.34929266399057607,
+      "strap2_at": 0.5988807162800728
+    }
+  },
+  {
+    "file": "variants/rocket-07.png",
+    "parts": {
+      "nose": "stepped_dark",
+      "collar": "rounded_mid",
+      "body": "ribbed_dark",
+      "strap": "studded_light",
+      "strap2": false,
+      "fin": "rounded_light",
+      "nozzle": "cone_mid",
+      "flame": "single_light",
+      "strap_at": 0.4558750989601382,
+      "strap2_at": 0.6385527217120398
+    }
+  },
+  {
+    "file": "variants/rocket-08.png",
+    "parts": {
+      "nose": "round_dark",
+      "collar": "rounded_dark",
+      "body": "plank-long_mid",
+      "strap": "studded_mid",
+      "strap2": false,
+      "fin": "swept_mid",
+      "nozzle": "cone_dark",
+      "flame": "single_light",
+      "strap_at": 0.5121586634715827,
+      "strap2_at": 0.5551949084089133
+    }
+  },
+  {
+    "file": "variants/rocket-09.png",
+    "parts": {
+      "nose": "pentagon_mid",
+      "collar": "rounded_light",
+      "body": "plank-long_mid",
+      "strap": "riveted_mid",
+      "strap2": true,
+      "fin": "stepped_light",
+      "nozzle": "stepped_mid",
+      "flame": "twin_light",
+      "strap_at": 0.5405711969865206,
+      "strap2_at": 0.5579077314215133
+    }
+  },
+  {
+    "file": "variants/rocket-10.png",
+    "parts": {
+      "nose": "stepped_mid",
+      "collar": "hex_light",
+      "body": "segmented_light",
+      "strap": "riveted_mid",
+      "strap2": false,
+      "fin": "swept_light",
+      "nozzle": "cone_dark",
+      "flame": "twin_light",
+      "strap_at": 0.3770596525103692,
+      "strap2_at": 0.6063948472694948
+    }
+  },
+  {
+    "file": "variants/rocket-11.png",
+    "parts": {
+      "nose": "pentagon_mid",
+      "collar": "double_light",
+      "body": "panel-short_light",
+      "strap": "plain_light",
+      "strap2": false,
+      "fin": "stepped_light",
+      "nozzle": "bell_mid",
+      "flame": "triple_light",
+      "strap_at": 0.43739893969919263,
+      "strap2_at": 0.6355793256876832
+    }
+  },
+  {
+    "file": "variants/rocket-12.png",
+    "parts": {
+      "nose": "blunt_dark",
+      "collar": "notched_dark",
+      "body": "plank-long_mid",
+      "strap": "plain_mid",
+      "strap2": false,
+      "fin": "rounded_mid",
+      "nozzle": "bell_mid",
+      "flame": null,
+      "strap_at": 0.4886431853443428,
+      "strap2_at": 0.5707791700930535
+    }
+  },
+  {
+    "file": "variants/rocket-13.png",
+    "parts": {
+      "nose": "pentagon_dark",
+      "collar": "trapezoid_mid",
+      "body": "ribbed_dark",
+      "strap": "double_mid",
+      "strap2": true,
+      "fin": "rounded_mid",
+      "nozzle": "straight_dark",
+      "flame": null,
+      "strap_at": 0.47896115163554476,
+      "strap2_at": 0.533054191293883
+    }
+  },
+  {
+    "file": "variants/rocket-14.png",
+    "parts": {
+      "nose": "round_light",
+      "collar": "rounded_mid",
+      "body": "segmented_light",
+      "strap": "chevron_light",
+      "strap2": true,
+      "fin": "split_mid",
+      "nozzle": "straight_dark",
+      "flame": "twin_light",
+      "strap_at": 0.3947849022360017,
+      "strap2_at": 0.5665403097777156
+    }
+  },
+  {
+    "file": "variants/rocket-15.png",
+    "parts": {
+      "nose": "blunt_light",
+      "collar": "notched_mid",
+      "body": "ribbed_dark",
+      "strap": "plain_light",
+      "strap2": true,
+      "fin": "split_mid",
+      "nozzle": "cone_mid",
+      "flame": "single_light",
+      "strap_at": 0.5062427079409192,
+      "strap2_at": 0.6185989681706291
+    }
+  },
+  {
+    "file": "variants/rocket-16.png",
+    "parts": {
+      "nose": "round_dark",
+      "collar": "pentagon_light",
+      "body": "panel-long_mid",
+      "strap": "chevron_light",
+      "strap2": false,
+      "fin": "rounded_mid",
+      "nozzle": "stepped_dark",
+      "flame": "twin_light",
+      "strap_at": 0.5302287474954852,
+      "strap2_at": 0.5485759371647184
+    }
+  },
+  {
+    "file": "variants/rocket-17.png",
+    "parts": {
+      "nose": "sharp_mid",
+      "collar": "double_mid",
+      "body": "panel-short_light",
+      "strap": "plain_mid",
+      "strap2": false,
+      "fin": "leaf_light",
+      "nozzle": "bell_dark",
+      "flame": "triple_light",
+      "strap_at": 0.4024562249823893,
+      "strap2_at": 0.5775145410027598
+    }
+  },
+  {
+    "file": "variants/rocket-18.png",
+    "parts": {
+      "nose": "stepped_mid",
+      "collar": "double_dark",
+      "body": "plank-long_mid",
+      "strap": "studded_mid",
+      "strap2": true,
+      "fin": "split_light",
+      "nozzle": "stepped_dark",
+      "flame": "single_light",
+      "strap_at": 0.5130925931169694,
+      "strap2_at": 0.5754942991937186
+    }
+  },
+  {
+    "file": "variants/rocket-19.png",
+    "parts": {
+      "nose": "round_mid",
+      "collar": "rounded_mid",
+      "body": "panel-long_mid",
+      "strap": "double_light",
+      "strap2": false,
+      "fin": "stepped_mid",
+      "nozzle": "ribbed_dark",
+      "flame": "triple_light",
+      "strap_at": 0.3409016695207668,
+      "strap2_at": 0.6268802415845866
+    }
+  },
+  {
+    "file": "variants/rocket-20.png",
+    "parts": {
+      "nose": "sharp_light",
+      "collar": "trapezoid_dark",
+      "body": "panel-short_light",
+      "strap": "chevron_mid",
+      "strap2": true,
+      "fin": "swept_light",
+      "nozzle": "bell_mid",
+      "flame": "forked_light",
+      "strap_at": 0.47036171017623984,
+      "strap2_at": 0.6160653700948896
+    }
+  },
+  {
+    "file": "variants/rocket-21.png",
+    "parts": {
+      "nose": "blunt_dark",
+      "collar": "rounded_mid",
+      "body": "panel-long_mid",
+      "strap": "plain_light",
+      "strap2": false,
+      "fin": "swept_light",
+      "nozzle": "cone_dark",
+      "flame": "triple_light",
+      "strap_at": 0.43575064189966095,
+      "strap2_at": 0.5493958419014242
+    }
+  },
+  {
+    "file": "variants/rocket-22.png",
+    "parts": {
+      "nose": "spear_light",
+      "collar": "trapezoid_mid",
+      "body": "plank-long_mid",
+      "strap": "double_light",
+      "strap2": false,
+      "fin": "leaf_light",
+      "nozzle": "stepped_mid",
+      "flame": "single_light",
+      "strap_at": 0.5135229409761923,
+      "strap2_at": 0.5607078636353464
+    }
+  },
+  {
+    "file": "variants/rocket-23.png",
+    "parts": {
+      "nose": "stepped_dark",
+      "collar": "notched_mid",
+      "body": "plank-short_dark",
+      "strap": "double_mid",
+      "strap2": true,
+      "fin": "split_mid",
+      "nozzle": "straight_mid",
+      "flame": null,
+      "strap_at": 0.5026615319301077,
+      "strap2_at": 0.6392553639598895
+    }
+  },
+  {
+    "file": "variants/rocket-24.png",
+    "parts": {
+      "nose": "blunt_dark",
+      "collar": "notched_dark",
+      "body": "ribbed_dark",
+      "strap": "plain_mid",
+      "strap2": false,
+      "fin": "leaf_light",
+      "nozzle": "stepped_dark",
+      "flame": null,
+      "strap_at": 0.449878997904538,
+      "strap2_at": 0.5804775701204665
+    }
+  }
+]

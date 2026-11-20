@@ -1,0 +1,199 @@
+{
+  "style": "monochrome_forest",
+  "captures": [
+    {
+      "seed": 7,
+      "frame": 150,
+      "distance": 464.23,
+      "difficulty": 1.46,
+      "camera": [
+        270.8,
+        212.09
+      ],
+      "presentation": {
+        "style": "monochrome_forest",
+        "seed": 7,
+        "zoom": 1.6,
+        "chunk_builds": 12,
+        "cached_chunks": 12,
+        "cached_terrain": 1,
+        "cached_props": 0,
+        "cached_saws": 0,
+        "layers": [
+          "distant",
+          "mist",
+          "trunks"
+        ]
+      }
+    },
+    {
+      "seed": 7,
+      "frame": 400,
+      "distance": 1253.77,
+      "difficulty": 2.06,
+      "camera": [
+        1060.34,
+        199.28
+      ],
+      "presentation": {
+        "style": "monochrome_forest",
+        "seed": 7,
+        "zoom": 1.6,
+        "chunk_builds": 13,
+        "cached_chunks": 12,
+        "cached_terrain": 4,
+        "cached_props": 10,
+        "cached_saws": 0,
+        "layers": [
+          "distant",
+          "mist",
+          "trunks"
+        ]
+      }
+    },
+    {
+      "seed": 7,
+      "frame": 900,
+      "distance": 2830.89,
+      "difficulty": 2.89,
+      "camera": [
+        2637.44,
+        211.23
+      ],
+      "presentation": {
+        "style": "monochrome_forest",
+        "seed": 7,
+        "zoom": 1.6,
+        "chunk_builds": 16,
+        "cached_chunks": 12,
+        "cached_terrain": 6,
+        "cached_props": 19,
+        "cached_saws": 0,
+        "layers": [
+          "distant",
+          "mist",
+          "trunks"
+        ]
+      }
+    },
+    {
+      "seed": 11,
+      "frame": 150,
+      "distance": 464.23,
+      "difficulty": 1.46,
+      "camera": [
+        270.8,
+        212.09
+      ],
+      "presentation": {
+        "style": "monochrome_forest",
+        "seed": 11,
+        "zoom": 1.6,
+        "chunk_builds": 12,
+        "cached_chunks": 12,
+        "cached_terrain": 1,
+        "cached_props": 0,
+        "cached_saws": 0,
+        "layers": [
+          "distant",
+          "mist",
+          "trunks"
+        ]
+      }
+    },
+    {
+      "seed": 11,
+      "frame": 400,
+      "distance": 1253.6,
+      "difficulty": 2.06,
+      "camera": [
+        1060.16,
+        208.97
+      ],
+      "presentation": {
+        "style": "monochrome_forest",
+        "seed": 11,
+        "zoom": 1.6,
+        "chunk_builds": 13,
+        "cached_chunks": 12,
+        "cached_terrain": 4,
+        "cached_props": 8,
+        "cached_saws": 0,
+        "layers": [
+          "distant",
+          "mist",
+          "trunks"
+        ]
+      }
+    },
+    {
+      "seed": 23,
+      "frame": 150,
+      "distance": 464.23,
+      "difficulty": 1.46,
+      "camera": [
+        270.8,
+        212.09
+      ],
+      "presentation": {
+        "style": "monochrome_forest",
+        "seed": 23,
+        "zoom": 1.6,
+        "chunk_builds": 12,
+        "cached_chunks": 12,
+        "cached_terrain": 1,
+        "cached_props": 0,
+        "cached_saws": 0,
+        "layers": [
+          "distant",
+          "mist",
+          "trunks"
+        ]
+      }
+    },
+    {
+      "seed": 23,
+      "frame": 400,
+      "distance": 1253.66,
+      "difficulty": 2.06,
+      "camera": [
+        1060.24,
+        210.31
+      ],
+      "presentation": {
+        "style": "monochrome_forest",
+        "seed": 23,
+        "zoom": 1.6,
+        "chunk_builds": 13,
+        "cached_chunks": 12,
+        "cached_terrain": 4,
+        "cached_props": 9,
+        "cached_saws": 0,
+        "layers": [
+          "distant",
+          "mist",
+          "trunks"
+        ]
+      }
+    }
+  ],
+  "seed_wall_seconds": {
+    "7": 19.528,
+    "11": 8.736,
+    "23": 8.825
+  },
+  "challenge": {
+    "kind": "light_gate",
+    "platform": 2,
+    "x": 1249.85,
+    "y": 455.47
+  },
+  "hazard": {
+    "id": 1,
+    "frame": 514,
+    "x": 3561.18,
+    "y": 399.76,
+    "distance": 1612.04
+  },
+  "total_wall_seconds": 44.875
+}

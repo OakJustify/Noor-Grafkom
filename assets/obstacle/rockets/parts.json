@@ -1,0 +1,648 @@
+{
+  "axis": 88.0,
+  "canvas": [
+    512,
+    176
+  ],
+  "greyscale": true,
+  "parts": {
+    "nose": [
+      {
+        "name": "sharp_dark",
+        "shape": "sharp",
+        "tone": "dark",
+        "file": "parts/nose/sharp_dark.png",
+        "length": 104,
+        "half_height": 26
+      },
+      {
+        "name": "sharp_mid",
+        "shape": "sharp",
+        "tone": "mid",
+        "file": "parts/nose/sharp_mid.png",
+        "length": 104,
+        "half_height": 26
+      },
+      {
+        "name": "sharp_light",
+        "shape": "sharp",
+        "tone": "light",
+        "file": "parts/nose/sharp_light.png",
+        "length": 104,
+        "half_height": 26
+      },
+      {
+        "name": "blunt_dark",
+        "shape": "blunt",
+        "tone": "dark",
+        "file": "parts/nose/blunt_dark.png",
+        "length": 88,
+        "half_height": 26
+      },
+      {
+        "name": "blunt_mid",
+        "shape": "blunt",
+        "tone": "mid",
+        "file": "parts/nose/blunt_mid.png",
+        "length": 88,
+        "half_height": 26
+      },
+      {
+        "name": "blunt_light",
+        "shape": "blunt",
+        "tone": "light",
+        "file": "parts/nose/blunt_light.png",
+        "length": 88,
+        "half_height": 26
+      },
+      {
+        "name": "round_dark",
+        "shape": "round",
+        "tone": "dark",
+        "file": "parts/nose/round_dark.png",
+        "length": 92,
+        "half_height": 26
+      },
+      {
+        "name": "round_mid",
+        "shape": "round",
+        "tone": "mid",
+        "file": "parts/nose/round_mid.png",
+        "length": 92,
+        "half_height": 26
+      },
+      {
+        "name": "round_light",
+        "shape": "round",
+        "tone": "light",
+        "file": "parts/nose/round_light.png",
+        "length": 92,
+        "half_height": 26
+      },
+      {
+        "name": "stepped_dark",
+        "shape": "stepped",
+        "tone": "dark",
+        "file": "parts/nose/stepped_dark.png",
+        "length": 116,
+        "half_height": 26
+      },
+      {
+        "name": "stepped_mid",
+        "shape": "stepped",
+        "tone": "mid",
+        "file": "parts/nose/stepped_mid.png",
+        "length": 116,
+        "half_height": 26
+      },
+      {
+        "name": "stepped_light",
+        "shape": "stepped",
+        "tone": "light",
+        "file": "parts/nose/stepped_light.png",
+        "length": 116,
+        "half_height": 26
+      },
+      {
+        "name": "pentagon_dark",
+        "shape": "pentagon",
+        "tone": "dark",
+        "file": "parts/nose/pentagon_dark.png",
+        "length": 96,
+        "half_height": 26
+      },
+      {
+        "name": "pentagon_mid",
+        "shape": "pentagon",
+        "tone": "mid",
+        "file": "parts/nose/pentagon_mid.png",
+        "length": 96,
+        "half_height": 26
+      },
+      {
+        "name": "pentagon_light",
+        "shape": "pentagon",
+        "tone": "light",
+        "file": "parts/nose/pentagon_light.png",
+        "length": 96,
+        "half_height": 26
+      },
+      {
+        "name": "spear_dark",
+        "shape": "spear",
+        "tone": "dark",
+        "file": "parts/nose/spear_dark.png",
+        "length": 122,
+        "half_height": 26
+      },
+      {
+        "name": "spear_mid",
+        "shape": "spear",
+        "tone": "mid",
+        "file": "parts/nose/spear_mid.png",
+        "length": 122,
+        "half_height": 26
+      },
+      {
+        "name": "spear_light",
+        "shape": "spear",
+        "tone": "light",
+        "file": "parts/nose/spear_light.png",
+        "length": 122,
+        "half_height": 26
+      }
+    ],
+    "collar": [
+      {
+        "name": "trapezoid_dark",
+        "shape": "trapezoid",
+        "tone": "dark",
+        "file": "parts/collar/trapezoid_dark.png",
+        "length": 28,
+        "half_height": 32
+      },
+      {
+        "name": "trapezoid_mid",
+        "shape": "trapezoid",
+        "tone": "mid",
+        "file": "parts/collar/trapezoid_mid.png",
+        "length": 28,
+        "half_height": 32
+      },
+      {
+        "name": "trapezoid_light",
+        "shape": "trapezoid",
+        "tone": "light",
+        "file": "parts/collar/trapezoid_light.png",
+        "length": 28,
+        "half_height": 32
+      },
+      {
+        "name": "rounded_dark",
+        "shape": "rounded",
+        "tone": "dark",
+        "file": "parts/collar/rounded_dark.png",
+        "length": 24,
+        "half_height": 32
+      },
+      {
+        "name": "rounded_mid",
+        "shape": "rounded",
+        "tone": "mid",
+        "file": "parts/collar/rounded_mid.png",
+        "length": 24,
+        "half_height": 32
+      },
+      {
+        "name": "rounded_light",
+        "shape": "rounded",
+        "tone": "light",
+        "file": "parts/collar/rounded_light.png",
+        "length": 24,
+        "half_height": 32
+      },
+      {
+        "name": "pentagon_dark",
+        "shape": "pentagon",
+        "tone": "dark",
+        "file": "parts/collar/pentagon_dark.png",
+        "length": 26,
+        "half_height": 32
+      },
+      {
+        "name": "pentagon_mid",
+        "shape": "pentagon",
+        "tone": "mid",
+        "file": "parts/collar/pentagon_mid.png",
+        "length": 26,
+        "half_height": 32
+      },
+      {
+        "name": "pentagon_light",
+        "shape": "pentagon",
+        "tone": "light",
+        "file": "parts/collar/pentagon_light.png",
+        "length": 26,
+        "half_height": 32
+      },
+      {
+        "name": "double_dark",
+        "shape": "double",
+        "tone": "dark",
+        "file": "parts/collar/double_dark.png",
+        "length": 34,
+        "half_height": 32
+      },
+      {
+        "name": "double_mid",
+        "shape": "double",
+        "tone": "mid",
+        "file": "parts/collar/double_mid.png",
+        "length": 34,
+        "half_height": 32
+      },
+      {
+        "name": "double_light",
+        "shape": "double",
+        "tone": "light",
+        "file": "parts/collar/double_light.png",
+        "length": 34,
+        "half_height": 32
+      },
+      {
+        "name": "hex_dark",
+        "shape": "hex",
+        "tone": "dark",
+        "file": "parts/collar/hex_dark.png",
+        "length": 26,
+        "half_height": 32
+      },
+      {
+        "name": "hex_mid",
+        "shape": "hex",
+        "tone": "mid",
+        "file": "parts/collar/hex_mid.png",
+        "length": 26,
+        "half_height": 32
+      },
+      {
+        "name": "hex_light",
+        "shape": "hex",
+        "tone": "light",
+        "file": "parts/collar/hex_light.png",
+        "length": 26,
+        "half_height": 32
+      },
+      {
+        "name": "notched_dark",
+        "shape": "notched",
+        "tone": "dark",
+        "file": "parts/collar/notched_dark.png",
+        "length": 24,
+        "half_height": 32
+      },
+      {
+        "name": "notched_mid",
+        "shape": "notched",
+        "tone": "mid",
+        "file": "parts/collar/notched_mid.png",
+        "length": 24,
+        "half_height": 32
+      },
+      {
+        "name": "notched_light",
+        "shape": "notched",
+        "tone": "light",
+        "file": "parts/collar/notched_light.png",
+        "length": 24,
+        "half_height": 32
+      }
+    ],
+    "body": [
+      {
+        "name": "plank-short_dark",
+        "shape": "plank-short",
+        "tone": "dark",
+        "file": "parts/body/plank-short_dark.png",
+        "length": 128,
+        "half_height": 24
+      },
+      {
+        "name": "plank-long_mid",
+        "shape": "plank-long",
+        "tone": "mid",
+        "file": "parts/body/plank-long_mid.png",
+        "length": 176,
+        "half_height": 24
+      },
+      {
+        "name": "panel-short_light",
+        "shape": "panel-short",
+        "tone": "light",
+        "file": "parts/body/panel-short_light.png",
+        "length": 136,
+        "half_height": 24
+      },
+      {
+        "name": "panel-long_mid",
+        "shape": "panel-long",
+        "tone": "mid",
+        "file": "parts/body/panel-long_mid.png",
+        "length": 168,
+        "half_height": 24
+      },
+      {
+        "name": "segmented_light",
+        "shape": "segmented",
+        "tone": "light",
+        "file": "parts/body/segmented_light.png",
+        "length": 150,
+        "half_height": 24
+      },
+      {
+        "name": "ribbed_dark",
+        "shape": "ribbed",
+        "tone": "dark",
+        "file": "parts/body/ribbed_dark.png",
+        "length": 142,
+        "half_height": 24
+      }
+    ],
+    "strap": [
+      {
+        "name": "riveted_mid",
+        "shape": "riveted",
+        "tone": "mid",
+        "file": "parts/strap/riveted_mid.png",
+        "length": 22,
+        "half_height": 30
+      },
+      {
+        "name": "riveted_light",
+        "shape": "riveted",
+        "tone": "light",
+        "file": "parts/strap/riveted_light.png",
+        "length": 22,
+        "half_height": 30
+      },
+      {
+        "name": "double_mid",
+        "shape": "double",
+        "tone": "mid",
+        "file": "parts/strap/double_mid.png",
+        "length": 32,
+        "half_height": 30
+      },
+      {
+        "name": "double_light",
+        "shape": "double",
+        "tone": "light",
+        "file": "parts/strap/double_light.png",
+        "length": 32,
+        "half_height": 30
+      },
+      {
+        "name": "plain_mid",
+        "shape": "plain",
+        "tone": "mid",
+        "file": "parts/strap/plain_mid.png",
+        "length": 12,
+        "half_height": 30
+      },
+      {
+        "name": "plain_light",
+        "shape": "plain",
+        "tone": "light",
+        "file": "parts/strap/plain_light.png",
+        "length": 12,
+        "half_height": 30
+      },
+      {
+        "name": "studded_mid",
+        "shape": "studded",
+        "tone": "mid",
+        "file": "parts/strap/studded_mid.png",
+        "length": 26,
+        "half_height": 30
+      },
+      {
+        "name": "studded_light",
+        "shape": "studded",
+        "tone": "light",
+        "file": "parts/strap/studded_light.png",
+        "length": 26,
+        "half_height": 30
+      },
+      {
+        "name": "chevron_mid",
+        "shape": "chevron",
+        "tone": "mid",
+        "file": "parts/strap/chevron_mid.png",
+        "length": 20,
+        "half_height": 30
+      },
+      {
+        "name": "chevron_light",
+        "shape": "chevron",
+        "tone": "light",
+        "file": "parts/strap/chevron_light.png",
+        "length": 20,
+        "half_height": 30
+      }
+    ],
+    "fin": [
+      {
+        "name": "swept_mid",
+        "shape": "swept",
+        "tone": "mid",
+        "file": "parts/fin/swept_mid.png",
+        "length": 76,
+        "half_height": 72
+      },
+      {
+        "name": "swept_light",
+        "shape": "swept",
+        "tone": "light",
+        "file": "parts/fin/swept_light.png",
+        "length": 76,
+        "half_height": 72
+      },
+      {
+        "name": "straight_mid",
+        "shape": "straight",
+        "tone": "mid",
+        "file": "parts/fin/straight_mid.png",
+        "length": 68,
+        "half_height": 66
+      },
+      {
+        "name": "straight_light",
+        "shape": "straight",
+        "tone": "light",
+        "file": "parts/fin/straight_light.png",
+        "length": 68,
+        "half_height": 66
+      },
+      {
+        "name": "split_mid",
+        "shape": "split",
+        "tone": "mid",
+        "file": "parts/fin/split_mid.png",
+        "length": 74,
+        "half_height": 70
+      },
+      {
+        "name": "split_light",
+        "shape": "split",
+        "tone": "light",
+        "file": "parts/fin/split_light.png",
+        "length": 74,
+        "half_height": 70
+      },
+      {
+        "name": "rounded_mid",
+        "shape": "rounded",
+        "tone": "mid",
+        "file": "parts/fin/rounded_mid.png",
+        "length": 78,
+        "half_height": 76
+      },
+      {
+        "name": "rounded_light",
+        "shape": "rounded",
+        "tone": "light",
+        "file": "parts/fin/rounded_light.png",
+        "length": 78,
+        "half_height": 76
+      },
+      {
+        "name": "leaf_mid",
+        "shape": "leaf",
+        "tone": "mid",
+        "file": "parts/fin/leaf_mid.png",
+        "length": 64,
+        "half_height": 64
+      },
+      {
+        "name": "leaf_light",
+        "shape": "leaf",
+        "tone": "light",
+        "file": "parts/fin/leaf_light.png",
+        "length": 64,
+        "half_height": 64
+      },
+      {
+        "name": "stepped_mid",
+        "shape": "stepped",
+        "tone": "mid",
+        "file": "parts/fin/stepped_mid.png",
+        "length": 72,
+        "half_height": 74
+      },
+      {
+        "name": "stepped_light",
+        "shape": "stepped",
+        "tone": "light",
+        "file": "parts/fin/stepped_light.png",
+        "length": 72,
+        "half_height": 74
+      }
+    ],
+    "nozzle": [
+      {
+        "name": "bell_mid",
+        "shape": "bell",
+        "tone": "mid",
+        "file": "parts/nozzle/bell_mid.png",
+        "length": 40,
+        "half_height": 36
+      },
+      {
+        "name": "bell_dark",
+        "shape": "bell",
+        "tone": "dark",
+        "file": "parts/nozzle/bell_dark.png",
+        "length": 40,
+        "half_height": 36
+      },
+      {
+        "name": "ribbed_mid",
+        "shape": "ribbed",
+        "tone": "mid",
+        "file": "parts/nozzle/ribbed_mid.png",
+        "length": 36,
+        "half_height": 34
+      },
+      {
+        "name": "ribbed_dark",
+        "shape": "ribbed",
+        "tone": "dark",
+        "file": "parts/nozzle/ribbed_dark.png",
+        "length": 36,
+        "half_height": 34
+      },
+      {
+        "name": "straight_mid",
+        "shape": "straight",
+        "tone": "mid",
+        "file": "parts/nozzle/straight_mid.png",
+        "length": 28,
+        "half_height": 28
+      },
+      {
+        "name": "straight_dark",
+        "shape": "straight",
+        "tone": "dark",
+        "file": "parts/nozzle/straight_dark.png",
+        "length": 28,
+        "half_height": 28
+      },
+      {
+        "name": "cone_mid",
+        "shape": "cone",
+        "tone": "mid",
+        "file": "parts/nozzle/cone_mid.png",
+        "length": 32,
+        "half_height": 30
+      },
+      {
+        "name": "cone_dark",
+        "shape": "cone",
+        "tone": "dark",
+        "file": "parts/nozzle/cone_dark.png",
+        "length": 32,
+        "half_height": 30
+      },
+      {
+        "name": "stepped_mid",
+        "shape": "stepped",
+        "tone": "mid",
+        "file": "parts/nozzle/stepped_mid.png",
+        "length": 38,
+        "half_height": 34
+      },
+      {
+        "name": "stepped_dark",
+        "shape": "stepped",
+        "tone": "dark",
+        "file": "parts/nozzle/stepped_dark.png",
+        "length": 38,
+        "half_height": 34
+      }
+    ],
+    "flame": [
+      {
+        "name": "single_light",
+        "shape": "single",
+        "tone": "light",
+        "file": "parts/flame/single_light.png",
+        "length": 68,
+        "half_height": 26
+      },
+      {
+        "name": "triple_light",
+        "shape": "triple",
+        "tone": "light",
+        "file": "parts/flame/triple_light.png",
+        "length": 76,
+        "half_height": 30
+      },
+      {
+        "name": "forked_light",
+        "shape": "forked",
+        "tone": "light",
+        "file": "parts/flame/forked_light.png",
+        "length": 62,
+        "half_height": 28
+      },
+      {
+        "name": "twin_light",
+        "shape": "twin",
+        "tone": "light",
+        "file": "parts/flame/twin_light.png",
+        "length": 70,
+        "half_height": 26
+      }
+    ]
+  }
+}

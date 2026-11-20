@@ -1,0 +1,211 @@
+{
+  "schema_version": 1,
+  "title": "Concrete LIMBO obstacle references for ECHO",
+  "researched_on": "2026-11-15",
+  "scope": "External published walkthrough text and selected actual walkthrough screenshots. No local LIMBO execution, shipped-level equivalence, or video playback is claimed.",
+  "method": {
+    "retrieval": "Fetched complete relevant HTML pages, not search snippets. IGN pages required a Mozilla/5.0 User-Agent through Python urllib after the ordinary fetch tool returned 403. Selected PortForward WebP screenshots were downloaded and visually inspected in a contact sheet.",
+    "source_numbering": "IGN uses 24 guide chapters; PortForward uses 38 pages. Chapter numbers below are publisher-specific and are not asserted to match checkpoint IDs or the supplied artifact's level names.",
+    "evidence_classes": {
+      "walkthrough_report": "An explicit instruction or outcome in the fetched guide, not independently observed native execution.",
+      "screenshot_observation": "A visible state in an actually inspected still image; does not alone establish motion, timing, input, or causality.",
+      "adaptation": "Suggested observable ECHO behavior based on a reference; geometry, timing constants, controls, and implementation are original design choices."
+    },
+    "video": {
+      "watched": false,
+      "timestamps": [],
+      "limitation": "Retrieved IGN pages contained empty wiki-video auto-embed containers and no usable gameplay media URL in their inspected Next.js data. No video frames or timestamps are claimed. Screenshot numbers are still-image identifiers, not timestamps."
+    }
+  },
+  "sources": [
+    {"id":"ign01","publisher":"IGN","title":"Limbo Guide: Chapter 01","url":"https://www.ign.com/wikis/limbo/Chapter_01","section":"Chapter 01: opening descent, boat, traps and boulder","retrieved":"full_html","sha256":"6bf7ae5e5535dd9ffe66a55dfd714450a93ed3f464a796a71d31866aaa2bd4c5"},
+    {"id":"ign02","publisher":"IGN","title":"Limbo Guide: Chapter 02","url":"https://www.ign.com/wikis/limbo/Chapter_02","section":"Chapter 02: tree vines and floating tree piece","retrieved":"full_html","sha256":"7b425a86514525e39a38bdf0c916a5f55b02ca90f37d481494bae360cc310951"},
+    {"id":"ign03","publisher":"IGN","title":"Limbo Guide: Chapter 03","url":"https://www.ign.com/wikis/limbo/Chapter_03","section":"Chapter 03: movable trap and spider leg","retrieved":"full_html","sha256":"e3c13283bd7c7b05e780b3eb0d2acab289848d99252aa7d3467cec4d08e17467"},
+    {"id":"ign09","publisher":"IGN","title":"Limbo Guide: Chapter 09","url":"https://www.ign.com/wikis/limbo/Chapter_09","section":"Chapter 09: rain, rope-connected pipe and positioned log","retrieved":"full_html","sha256":"20391510e412070f085a080b52e0f0b10e804b59d2b68e2f2dd8d958a9401080"},
+    {"id":"ign10","publisher":"IGN","title":"Limbo Guide: Chapter 10","url":"https://www.ign.com/wikis/limbo/Chapter_10","section":"Chapter 10: rising boxes, trapped ball and water-balancing levers","retrieved":"full_html","sha256":"cbfff4e5cf2d637c3e176024b289cef8c47ca590f53e472662a93eeb1b59988d"},
+    {"id":"ign13","publisher":"IGN","title":"Limbo Guide: Chapter 13","url":"https://www.ign.com/wikis/limbo/Chapter_13","section":"Chapter 13: button-released box/saw and oscillating platform","retrieved":"full_html","sha256":"01f6021fbfdedeb035ea1061447c1af0764d61f3b7ec34d70f812eba919a58a8"},
+    {"id":"ign16","publisher":"IGN","title":"Limbo Guide: Chapter 16","url":"https://www.ign.com/wikis/limbo/Chapter_16","section":"Chapter 16: wheel-operated pressure door, box jam and box-operated lifting ledge","retrieved":"full_html","sha256":"8d91c32ad403f79bdb9948f0514c8e9e497cc1444ae29449fd0e3a19cc2ad61f"},
+    {"id":"ign17","publisher":"IGN","title":"Limbo Guide: Chapter 17","url":"https://www.ign.com/wikis/limbo/Chapter_17","section":"Chapter 17: magnetic box restraint, closing door and rotating room","retrieved":"full_html","sha256":"e2645c18ca28d7d12169591d22e5d148e76e208ab70e855d3c1efc8bfca79002"},
+    {"id":"ign21","publisher":"IGN","title":"Limbo Guide: Chapter 21","url":"https://www.ign.com/wikis/limbo/Chapter_21","section":"Chapter 21: box-only field, momentum through gap, later whole-player gravity switch and moving ledge","retrieved":"full_html","sha256":"48a5226c4f1d5a237e5ba90217cde2c1501ece45f63c4f8ca5814255f6bee1a7"},
+    {"id":"ign22","publisher":"IGN","title":"Limbo Guide: Chapter 22","url":"https://www.ign.com/wikis/limbo/Chapter_22","section":"Chapter 22: magnetic ceiling capture of first block, return second block, tram rope","retrieved":"full_html","sha256":"ff44271b6f823721f775562fb50ea4fbbf14676077d288f26b6c61ceeb523b42"},
+    {"id":"ign23","publisher":"IGN","title":"Limbo Guide: Chapter 23","url":"https://www.ign.com/wikis/limbo/Chapter_23","section":"Chapter 23: timed gravity activation and repeated ceiling-box relocation","retrieved":"full_html","sha256":"a9bf75fea5e566453e838ae2763ebd558428ce9b72a14ab48ca11f6cda0cd4f2"},
+    {"id":"ign24","publisher":"IGN","title":"Limbo Guide: Chapter 24","url":"https://www.ign.com/wikis/limbo/Chapter_24","section":"Chapter 24: periodic gravity beeps, magnet release, block/gun/saw crossing","retrieved":"full_html","sha256":"dccf44ecfb1abf10094ec574352bd803ac2f7bfc4db26ac8bd362cc33ca7eb3a"},
+    {"id":"pf02","publisher":"PortForward","title":"Limbo Walkthrough Chapter 2","url":"https://portforward.com/games/walkthroughs/Limbo/Chapter-2.htm","section":"Chapter 2, screenshots 9–16","retrieved":"full_html","sha256":"5ee3dcdb70e55f92c9105efd0ecb78baf43a52b6c5f74eb56c7f5b16c037df0e"},
+    {"id":"pf03","publisher":"PortForward","title":"Limbo Walkthrough Chapter 3","url":"https://portforward.com/games/walkthroughs/Limbo/Chapter-3.htm","section":"Chapter 3, screenshots 24–35","retrieved":"full_html","sha256":"5c06020c3f088ed6334214a9a159bcbbca783620dbfb2c320d0229f882934422"},
+    {"id":"pf04","publisher":"PortForward","title":"Limbo Walkthrough Chapter 4","url":"https://portforward.com/games/walkthroughs/Limbo/Chapter-4.htm","section":"Chapter 4, screenshots 36–60","retrieved":"full_html","sha256":"a6a3612d3eddf6fb8e2bfca2a1ee7cc344bdfee0540f4e6516754b9398c7b1ce"},
+    {"id":"pf06","publisher":"PortForward","title":"Limbo Walkthrough Chapter 6","url":"https://portforward.com/games/walkthroughs/Limbo/Chapter-6.htm","section":"Chapter 6, screenshots 76–78","retrieved":"full_html","sha256":"b44764fa0d73a086a22531eac31a001fb9231f5b8d2f4d88347322ad6928162c"},
+    {"id":"pf10","publisher":"PortForward","title":"Limbo Walkthrough Chapter 10","url":"https://portforward.com/games/walkthroughs/Limbo/Chapter-10.htm","section":"Chapter 10, screenshots 113–116","retrieved":"full_html","sha256":"4695960485386cb3fa2e0af4d41b545596209c0d01d6982556fccb3ba579e430"},
+    {"id":"pf15","publisher":"PortForward","title":"Limbo Walkthrough Chapter 15","url":"https://portforward.com/games/walkthroughs/Limbo/Chapter-15.htm","section":"Chapter 15, screenshots 180–187","retrieved":"full_html","sha256":"8b6b042886da156433c3e6b0a625f636c71cc356022733b059229cba9af992f3"},
+    {"id":"pf17","publisher":"PortForward","title":"Limbo Walkthrough Chapter 17","url":"https://portforward.com/games/walkthroughs/Limbo/Chapter-17.htm","section":"Chapter 17, screenshots 209–214","retrieved":"full_html","sha256":"a92fbdb4ea4d9f897b159f55562bbbcc3bd0747308f971a139868bf44c7d7b53"},
+    {"id":"pf18","publisher":"PortForward","title":"Limbo Walkthrough Chapter 18","url":"https://portforward.com/games/walkthroughs/Limbo/Chapter-18.htm","section":"Chapter 18, screenshots 217–244","retrieved":"full_html","sha256":"2cddd60ac733b6046768a1393a774157b91bfc1e76afd9e49f8d2bff22380851"},
+    {"id":"pf22","publisher":"PortForward","title":"Limbo Walkthrough Chapter 22","url":"https://portforward.com/games/walkthroughs/Limbo/Chapter-22.htm","section":"Chapter 22, screenshots 337–339","retrieved":"full_html","sha256":"c2b4c59302fae7a51bafffe772ffaaf90b62c3a0b1df9e49287a1e311bc5c952"},
+    {"id":"pf26","publisher":"PortForward","title":"Limbo Walkthrough Chapter 26","url":"https://portforward.com/games/walkthroughs/Limbo/Chapter-26.htm","section":"Chapter 26, screenshots 395–425","retrieved":"full_html","sha256":"8b245700c6618a68c417654656d9e06707962eef1c01bd5409ecdd25232c601a"},
+    {"id":"pf33","publisher":"PortForward","title":"Limbo Walkthrough Chapter 33","url":"https://portforward.com/games/walkthroughs/Limbo/Chapter-33.htm","section":"Chapter 33, screenshots 596–604 and 620–626","retrieved":"full_html","sha256":"ecf545bf9f6e5d1921425c34375b74a108dbcac32034d8d311721d846b1ce058"},
+    {"id":"pf34","publisher":"PortForward","title":"Limbo Walkthrough Chapter 34","url":"https://portforward.com/games/walkthroughs/Limbo/Chapter-34.htm","section":"Chapter 34, screenshots 629–635","retrieved":"full_html","sha256":"90363ebcd2c5f660d25208531477cb67325afa4545060806f542baa3a7a93da7"},
+    {"id":"pf37","publisher":"PortForward","title":"Limbo Walkthrough Chapter 37","url":"https://portforward.com/games/walkthroughs/Limbo/Chapter-37.htm","section":"Chapter 37, screenshots 656–682","retrieved":"full_html","sha256":"12e263e7eb81d7587b5c5dd05d1378f7227246f96b20d06311bfbf1d3d26870d"},
+    {"id":"playdead","publisher":"Playdead","title":"LIMBO official game page","url":"https://www.playdead.com/games/limbo/","section":"Trailer and Screenshots","retrieved":"full_page","limitation":"Official identity/store links and screenshot gallery, not detailed obstacle instructions; not used to establish puzzle state transitions."}
+  ],
+  "findings": [
+    {
+      "id":"rope_climb_swing_release",
+      "status":"answered_by_walkthroughs_and_stills",
+      "claim":"Ropes/vines support vertical traversal as well as swinging and jumping/releasing. Concrete puzzles require climbing down, climbing up, swinging from low on a vine, transferring between ropes, and avoiding an obstacle on release.",
+      "supports":[
+        {"source":"pf02","locator":"screenshot 10","quote":"Climb down the rope."},
+        {"source":"pf10","locator":"screenshot 115","quote":"Climb up the rope."},
+        {"source":"pf15","locator":"screenshots 185–186","quotes":["Climb the rope until it stops moving.","Then swing and jump to the next rope."]},
+        {"source":"ign02","locator":"Achievement paragraph","quote":"Swing from the bottom of the vine in order to jump to a branch on your right"}
+      ],
+      "observations":"Inspected screenshots 10 and 115 show the boy attached partway along a long hanging rope, and 185–186 show a vertical-rope state and a displaced rope/transfer state. Still images do not measure the swing trajectory.",
+      "unknowns":["Exact keyboard bindings in the supplied build","Grab attachment radius, rope-length limits, climbing speed, and physical solver","Whether climbing adjusts a material attachment coordinate or uses another internal model"],
+      "acceptance_tests":["Grab an accessible point on a long rope; upward and downward input visibly change player height while attached, rather than only pumping angle.","Climb down before swinging; swing and release towards a reachable ledge or second rope. Release removes attachment and allows a visible landing or failure, without teleportation.","A rope that supports a moving mechanism is not treated as a fixed decorative pendulum; pulling/climbing, releasing, and re-grabbing can alter access, if that specific variant is chosen."],
+      "adaptation":"Make ECHO ropepit require at least one climb-height choice and a swing/release landing. The geometry and tuning remain ECHO's, not a claim of checkpoint reconstruction."
+    },
+    {
+      "id":"water_buoyancy_sluice",
+      "status":"answered_by_walkthroughs_and_stills",
+      "claim":"LIMBO includes positioned floating wood, rising boxes, an opened overhead gap, a ball helping a box rise, and water-balancing lever/block puzzles. Buoyancy is part of an environmental sequence rather than a generic rowing ability.",
+      "supports":[
+        {"source":"ign09","locator":"pipe and log paragraph","quote":"Wait for the hole to fill up with water, then quickly jump right across the floating log that you positioned earlier."},
+        {"source":"ign10","locator":"first paragraph","quote":"Drop down and pull the nearby Lever left to flood the room, then climb the ladder quickly and jump left to your floating Box as it rises through the gap."},
+        {"source":"ign10","locator":"second and fourth paragraphs","quotes":["Ride the Box until the water starts to reach the top of it","The ball will rise under the Box and help you all float up to the next ledge."]},
+        {"source":"pf18","locator":"screenshot 236","quote":"The key is to let just enough water in so you can jump from the box in the middle to the next box."},
+        {"source":"pf18","locator":"screenshot 236","quote":"Remember the large box that water is flowing under will drop when you release the switch."}
+      ],
+      "observations":"Inspected screenshot 221 shows an overhead movable cover with a small box below; 222 shows the boy standing on the box at a raised water surface. Screenshots 236 and 239 show adjacent block platforms and a jump over the water. Motion and lever causality come from the text, not the stills alone.",
+      "unknowns":["Water density, draft, rise rate and damping","Exact limits and latch semantics of every water control","Whether the second box loses flotation because of waterlogging; the guide only establishes water reaching its top, not a universal material model"],
+      "acceptance_tests":["At low water, position the buoyant box under an overhead opening; an incorrectly positioned box is visibly obstructed by the cover or misses the route.","Operate a local water control; show water rising and the box rising with it. Standing on the box carries the player vertically towards a ledge without directional keys propelling the platform.","For a balancing-water variant, low/incorrect water leaves a jump unreachable; a sufficient level and correctly released block create a traversable sequence.","If including the ball-assisted box variant, flotation support must depend on moving the ball under the box, not on standing on it granting an arbitrary upward motor."],
+      "adaptation":"Replace ECHO's invented on-raft propulsion with a local sluice/box-lift or positioned floating-log crossing. Do not claim all wooden objects permanently float or all LIMBO water rooms share one switch rule."
+    },
+    {
+      "id":"boat_drift_not_rowing",
+      "status":"passive_drift_supported_rowing_not_established",
+      "claim":"The opening boat is reported to drift across water after boarding; after arrival it is pulled against a wall and used as a step. This supports passive boat travel, not automatic rowing from movement keys on an arbitrary raft.",
+      "supports":[
+        {"source":"pf02","locator":"screenshots 14–16","quote":"The chain will break when you land, and the boat will start to float across the lake."},
+        {"source":"ign01","locator":"opening boat paragraph","quote":"Jump off of the boat once you reach the other side of the water, then pull the boat right to the wall."},
+        {"source":"pf04","locator":"screenshots 57–60","quote":"Push them quite a ways in to the water, and then climb on the crate."}
+      ],
+      "unknowns":["What supplies the opening boat's drift internally","Whether any other unreviewed room contains a differently controlled water vehicle"],
+      "acceptance_tests":["If adapting the opening boat, boarding starts passive travel and arrival allows dragging it as a step; left/right input on deck is not claimed to be a rowing control.","If adapting floating wood, put it into useful position by pushing from land before boarding; demonstrate the actual configured position and water level enable the jump."],
+      "adaptation":"Keep passive travel only for an explicitly designed boat variant. 'No rowing found in these reviewed passages' is a bounded conclusion, not proof of game-wide absence."
+    },
+    {
+      "id":"manual_box_gravity_momentum",
+      "status":"answered_by_two_walkthroughs",
+      "claim":"A gravity-control puzzle affects boxes but not the player; timing the field lets a sliding box preserve horizontal momentum and pass a narrow gap. Later switches can invert the player too. These are distinct modes.",
+      "supports":[
+        {"source":"pf33","locator":"screenshot 596","quote":"Flicking the switch here reverses gravity for boxes, but not for you."},
+        {"source":"ign21","locator":"box-gap paragraph after elevator/gun","quote":"This way the Box keeps its momentum from sliding down the hill and lands at your feet."},
+        {"source":"pf33","locator":"screenshot 600","quote":"Once the box has speed, you want to levitate the box though the gap."},
+        {"source":"ign21","locator":"later two-box/moving-ledge puzzle","quote":"Hit the Gravity Switch up here to end up on the ceiling"}
+      ],
+      "unknowns":["Exact field bounds and per-object membership","Measured acceleration, momentum loss and successful switch interval"],
+      "acceptance_tests":["In a box-only field, switching lifts/drops the box while the player stays on the floor.","The box acquires lateral velocity on a ramp; switching the vertical field does not silently zero it or teleport the box through the gap.","Poorly timed switching visibly hits the ceiling/floor obstruction; an appropriate interval lets the box cross and become a climbable step."],
+      "adaptation":"A manual gravity relay is not inherently unfaithful: LIMBO actually has manual controls. Label which variant is adapted and require an observable timing/momentum or object-placement dependency rather than generic flips alone."
+    },
+    {
+      "id":"magnet_gravity_capture",
+      "status":"answered_by_two_walkthroughs_and_stills",
+      "claim":"The magnet and gravity switch are independent: magnetize the ceiling, raise the blocks, then restore gravity after the first block contacts the ceiling but before the second does. The first remains up while the second returns down, creating a route.",
+      "supports":[
+        {"source":"ign22","locator":"first paragraph","quotes":["Turn the Magnet Switch on to magnetize the ceiling","Quickly turn off the Gravity Switch before the second block reaches the ceiling to send it back to the ground."]},
+        {"source":"pf34","locator":"screenshot 631","quote":"You want to turn it off as soon as the big block above you connects to the magnetic plate."},
+        {"source":"pf34","locator":"screenshot 632","quote":"The one above you needs to stay up and the one to the right needs to stay down."}
+      ],
+      "observations":"Inspected screenshots 630–632 show changing block heights and the eventual split-height state. They corroborate the resulting route; exact contact and switch timing come from the walkthrough instructions.",
+      "unknowns":["Magnetic force/contact implementation","Whether magnet eligibility is material-based or object-specific","Exact timing window"],
+      "acceptance_tests":["Magnet-on plus reversed field raises blocks; after ceiling contact and restoring downward gravity, the captured first block stays up while the uncaptured second block falls.","Switching too early fails to capture the first block; too late captures the second as well and prevents the intended split-height route.","Turning off the magnet releases the retained eligible block. Changing the magnet is not implemented as the same action as changing world gravity."],
+      "adaptation":"Use separate magnetic restraint and gravity controls, and geometrically different arrival times. ECHO dimensions, labels, and timing are original."
+    },
+    {
+      "id":"temporary_and_periodic_gravity",
+      "status":"answered_by_two_walkthroughs_and_stills",
+      "claim":"Late LIMBO has temporary gravity activation for incremental box relocation, then periodic reversal with audible speeding-up beeps. Crossing a block and exposing a magnet switch to gun fire depend on phase, not a manual press for every reversal.",
+      "supports":[
+        {"source":"ign23","locator":"timed switch and ceiling-box paragraphs","quote":"Activate the timed Gravity Switch about three more times as you push the Box farther right each time and wait on the left ledge before the field deactivates."},
+        {"source":"ign24","locator":"opening paragraph","quote":"Listen to the speeding up sound of beeps for the timed gravity switching here"},
+        {"source":"pf37","locator":"screenshot 669","quote":"Wait until gravity is about to reverse, then jump out to the magnetic switch and turn it off."},
+        {"source":"pf37","locator":"screenshots 671–673","quotes":["Wait for gravity to reverse next to the big block.","When it does climb on top of the big block and run to the right.","Gravity will reverse again. Just wait for it to reverse again."]}
+      ],
+      "observations":"Inspected screenshots 669–670 show the player near the separate magnet control and the large block; 672 shows the player adjacent to/on the block. The periodic schedule and danger window are explicit textual reports, not measurements from stills.",
+      "unknowns":["Actual cycle duration, active duration and phase-reset policy in the supplied build","Whether beep counts vary with version or player setup","Precise gun acquisition/fire delays"],
+      "acceptance_tests":["A temporary-switch variant automatically restores its field after activation, while the box preserves the position gained during the active interval; the player must get back to a safe surface.","A periodic variant flips gravity repeatedly with no additional action after entry/activation, affecting both player and unrestrained block.","Provide an observable phase cue; demonstrate a timed release/jump succeeds and an early or late attempt reaches the configured hazard or misses the safe block.","The magnet can hold the block through a phase; releasing it changes block motion without restarting the gravity clock unless explicitly documented as an ECHO-only design choice."],
+      "adaptation":"Choose temporary activation or a periodic cycle intentionally; do not flatten them into one manually toggled persistent boolean. Guide beep counts are approximate route advice, not measured seconds."
+    },
+    {
+      "id":"pressure_door_box_jam",
+      "status":"answered_by_two_walkthroughs_and_stills",
+      "claim":"A pressure switch opens a door; a transported wheel activates it, and the player moves a box into the opening to jam the door. Another pressure switch uses a placed box to raise a ledge. A simple crate/plate gate is an abstraction, not this full puzzle.",
+      "supports":[
+        {"source":"ign16","locator":"first paragraph","quote":"Go right until you hit a Pressure Switch that opens a door"},
+        {"source":"ign16","locator":"wheel and door paragraph","quote":"Pull it right to the Pressure Switch and jump right through the open door, then quickly pull the Box left to jam the door."},
+        {"source":"pf26","locator":"screenshot 404","quote":"When the wheel triggers the gate, push the box through."},
+        {"source":"pf26","locator":"screenshot 425","quote":"Put the second box on the button, and then climb on to the raising platform."}
+      ],
+      "observations":"Inspected screenshot 400 shows the boy moving the wheel on the lower track; 404 shows a box at the upper doorway while the wheel is below; 425 shows a separate box/button and raised-ledge setup. Door motion and jam causality are guide reports.",
+      "unknowns":["Pressure thresholds and overlap/contact algorithm","Exact open duration and gate closing rate","Full wheel transport path and gate crushing rules if simplifying the puzzle"],
+      "acceptance_tests":["Depressing the configured switch visibly raises/opens the actual blocking door; a wheel or box is the activating body only where that variant is configured.","Moving a box into the doorway physically limits door closure and leaves a traversable opening; the gate must not pass through the box.","Removing the activating weight and then removing the jam permits the door to close again in the chosen non-latching adaptation.","For the separate box-pressure lift variant, placing the second box on the switch raises a ledge that the first box then helps the player reach."],
+      "adaptation":"ECHO cratepressuregate can honestly be described as a reduced pressure-switch adaptation. Add either a closing-door jam dependency or a two-box lifting-ledge dependency for a closer concrete causal sequence; do not assert geometry/checkpoint equivalence."
+    },
+    {
+      "id":"traps_boulder_and_falling_log",
+      "status":"answered_by_walkthroughs_and_selected_stills",
+      "claim":"Movable jaw traps can be repositioned, jumped over, and used to cut a hanging carcass or snap on a spider leg. A separate early hazard is a boulder rolling down a shifting log; another sequence involves a rolling boulder and falling log. Calling all of this a rolling log would conflate obstacles.",
+      "supports":[
+        {"source":"pf03","locator":"screenshots 31 and 34","quotes":["Drop on to the ground, and then pull the trap under the rope.","The trap will trigger and take the meat off of the end of the rope. Which will raise you up."]},
+        {"source":"ign03","locator":"second paragraph","quote":"If done correctly the leg will cause the Trap to snap closed on top of it."},
+        {"source":"ign01","locator":"final paragraph","quote":"quickly jump back left over the ledge as it shifts and a boulder tumbles down towards you"},
+        {"source":"pf06","locator":"screenshot 76","quote":"Push the boulder forward, and then jump out of the way of the falling log."}
+      ],
+      "observations":"Inspected screenshots 31 and 34 show the rope/trap arrangement and changed hanging state, consistent with the written carcass-cut sequence. No rolling/falling motion was measured.",
+      "unknowns":["Trap arming/reset rules and contact thresholds","Boulder trigger boundary and log hinge/break implementation"],
+      "acceptance_tests":["Drag an armed trap to a useful location without touching its jaws; landing in the jaws produces the configured lethal result.","If adapting the carcass variant, loading the rope lowers its counterweighted end into the trap; severing that load changes the rope's height and makes the ledge reachable.","If adapting a rolling hazard, name and render it as a boulder; visibly show rolling approach and a retreat/jump escape. A falling-log variant must instead show the log falling to form the crossing."],
+      "adaptation":"Do not present an arbitrary rolling cylinder as extracted LIMBO behavior. Choose one witnessed-in-guide causal sequence and identify any simplified trigger as an ECHO design choice."
+    },
+    {
+      "id":"seesaw_oscillation",
+      "status":"answered_by_two_walkthroughs_and_still",
+      "claim":"An oscillating/teeter-totter platform exists. The walkthrough requires alternating runs/jumps between its edges to build motion, then leaving at a useful phase. This is more specific than a static weighted beam.",
+      "supports":[
+        {"source":"pf22","locator":"screenshot 338","quote":"This platform is a giant teeter totter. Run back and forth on it until it's really teetering."},
+        {"source":"ign13","locator":"final paragraph","quote":"Repeat this about 6-7 times to get the platform moving more"}
+      ],
+      "observations":"Inspected screenshot 338 shows the boy on a tilted platform suspended by a vertical support. The back-and-forth acceleration and exit timing are guide reports, not motion measured from this still.",
+      "unknowns":["Joint type, oscillation frequency, damping and exact needed repetitions","Whether the visible support is a rigid pivot or another mechanism"],
+      "acceptance_tests":["Alternating travel between ends increases visible oscillation compared with standing still.","The exit ledge is reachable at an advantageous phase but not by treating the beam as fixed stairs.","Keep collision/standing support coherent while the beam tilts; the exact ECHO physics constants are not asserted to match LIMBO."],
+      "adaptation":"Keep ECHO's original seesaw room if desired, but require a phase-dependent traversal rather than claiming its implementation duplicates the reference."
+    }
+  ],
+  "inspected_screenshots": [
+    {"source":"pf02","number":10,"url":"https://portforward.com/games/walkthroughs/Limbo/limbo-10-small.webp","sha256":"c4ca6416b1d42f8c2076d8c9e463f98a371bcc37d22b89b51661b7ae89fd5c90","visible":"Boy attached partway down long rope next to tower."},
+    {"source":"pf10","number":115,"url":"https://portforward.com/games/walkthroughs/Limbo/limbo-115-small.webp","sha256":"f4c352fb824a459bce39ff2d93f8f3b2ebd1c3e34cacae9c6ee8edca4069ce42","visible":"Boy on hanging rope among elevated platforms."},
+    {"source":"pf15","number":185,"url":"https://portforward.com/games/walkthroughs/Limbo/limbo-185-small.webp","sha256":"8774e3ee05d741b8fed3a7b0eaa45831c164287ff63b11c4677a3bd96e44ab28","visible":"Boy attached to vertical rope near lower stone mechanism."},
+    {"source":"pf15","number":186,"url":"https://portforward.com/games/walkthroughs/Limbo/limbo-186-small.webp","sha256":"05a444a14aa7a1fb21b2ba3ee11109b5c9a862318495e8c610611e3d4bf8dfe1","visible":"Displaced rope and boy between ropes near mechanism."},
+    {"source":"pf18","number":221,"url":"https://portforward.com/games/walkthroughs/Limbo/limbo-221-small.webp","sha256":"506bd9de0bb391b627cd2577bec2c9c297985a8509baf8cae77ba15cd18df4e0","visible":"Overhead cover with small box below and nearby ladder."},
+    {"source":"pf18","number":222,"url":"https://portforward.com/games/walkthroughs/Limbo/limbo-222-small.webp","sha256":"a18dc1582d43f34f2a8a52ec4e5a0cceb2efa1980f0d7945ab8ed59cf2a0f7fb","visible":"Boy standing on small box at raised water surface."},
+    {"source":"pf18","number":236,"url":"https://portforward.com/games/walkthroughs/Limbo/limbo-236-small.webp","sha256":"463d0b5ab7acd1d721751c2b2f87d4ba014faefc2533c1169fb83918cf70e99b","visible":"Adjacent box/block platforms in water-balancing room."},
+    {"source":"pf18","number":239,"url":"https://portforward.com/games/walkthroughs/Limbo/limbo-239-small.webp","sha256":"210fd0ea55a89ddf3465cf188159827db237d3e6b1be7a724c2e55f1d5d3c6d1","visible":"Boy airborne over the water towards a small box."},
+    {"source":"pf34","number":630,"url":"https://portforward.com/games/walkthroughs/Limbo/limbo-630-small.webp","sha256":"1c4d2d7c061d94533bf78cb7841f8f78b92b13ee1891a361a9232797e8097ecc","visible":"Both large blocks above lower route at intermediate heights."},
+    {"source":"pf34","number":631,"url":"https://portforward.com/games/walkthroughs/Limbo/limbo-631-small.webp","sha256":"ccd5687a506fcd24c36e6290681516bedee203c0fe73d3e3cde633eeaf763d73","visible":"First large block close to upper boundary; player by control."},
+    {"source":"pf34","number":632,"url":"https://portforward.com/games/walkthroughs/Limbo/limbo-632-small.webp","sha256":"f9efbcbaf600ece9ea9ac065b9901daba534b35ec9bff32398e5b7a641dca9fa","visible":"First block high while right block is low; platforms between."},
+    {"source":"pf37","number":669,"url":"https://portforward.com/games/walkthroughs/Limbo/limbo-669-small.webp","sha256":"9dd06ef2535f49a1b1398ac8eb06ab2ac6315ce52cce71701c8542575d9e7890","visible":"Player at left ledge with separate control to the right."},
+    {"source":"pf37","number":670,"url":"https://portforward.com/games/walkthroughs/Limbo/limbo-670-small.webp","sha256":"a445d39da4e9b36440f378491ddfd1fdd03ce7cfc34e6f5f373638e5cd575d2b","visible":"Player near control and suspended large block."},
+    {"source":"pf37","number":672,"url":"https://portforward.com/games/walkthroughs/Limbo/limbo-672-small.webp","sha256":"0374b1e55253dedfad3d7b96ce7305d6403a1ab89feb104e5f1c58783c52988f","visible":"Player adjacent to/on large block in later crossing state."},
+    {"source":"pf26","number":400,"url":"https://portforward.com/games/walkthroughs/Limbo/limbo-400-small.webp","sha256":"72a268f6edc80274ce0aa322bcffbc7c57c99353d0fafdce7bef2bdcb419498d","visible":"Boy moving wheel along lower track under upper door area."},
+    {"source":"pf26","number":404,"url":"https://portforward.com/games/walkthroughs/Limbo/limbo-404-small.webp","sha256":"c2d50d3d1a0d26693320c978da3d79e65e0cd4fed989f096c418a2b6f07d8b49","visible":"Boy with box at upper opening and wheel below."},
+    {"source":"pf26","number":425,"url":"https://portforward.com/games/walkthroughs/Limbo/limbo-425-small.webp","sha256":"5f2ef1ccfd01b862b2e4e471cde9b7ce72e51b1fe6f3247796eac5ccc1fde8c3","visible":"Box/button setup to left of boy and raised ledge."},
+    {"source":"pf22","number":338,"url":"https://portforward.com/games/walkthroughs/Limbo/limbo-338-small.webp","sha256":"d1271cc678bf8522eba4024c0068a9693b9468e635d8c05cb12283fa9044b0b8","visible":"Boy on tilted platform with vertical suspension/support."},
+    {"source":"pf03","number":31,"url":"https://portforward.com/games/walkthroughs/Limbo/limbo-31-small.webp","sha256":"d2bc850d0a9af8a9c16148d81d503ce624e6fd169693d448f37504ba88a10d41","visible":"Boy beneath hanging carcass rope, near movable trap."},
+    {"source":"pf03","number":34,"url":"https://portforward.com/games/walkthroughs/Limbo/limbo-34-small.webp","sha256":"1b129411af1e56993bb5fccac56befed2dd722425c66a8502754f67985be2554","visible":"Boy attached to rope in changed hanging arrangement."}
+  ],
+  "coverage_limits": [
+    "Walkthrough instructions and static screenshots are secondary evidence, not observed execution of /home/podistrict/Games/LIMBO-SteamRIP.com/LIMBO.",
+    "No Wine/native runtime, video playback, measured timestamps, frame rate, force constants, input bindings, collision thresholds or complete-game behavior audit is established here.",
+    "IGN is an established editorial/wiki guide; PortForward is a screenshot walkthrough archive. Both are independent of the supplied local artifact, and exact version/checkpoint correspondence remains unknown.",
+    "The official Playdead page did not give detailed obstacle state-machine explanations.",
+    "TrueAchievements and StrategyWiki requests were blocked by 403; those sources were not used to assert mechanics.",
+    "Approximate IGN beep counts and repetition counts are authored walkthrough advice, not measured engine timer values.",
+    "All proposed acceptance tests are tests for an ECHO adaptation, not tests already run against LIMBO or ECHO."
+  ]
+}

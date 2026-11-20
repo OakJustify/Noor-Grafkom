@@ -1,0 +1,71 @@
+{
+  "frames": 180,
+  "wall_seconds": 5.011,
+  "state": "playing",
+  "physics": {
+    "chapter": 6,
+    "time": 4.758,
+    "player": [
+      647.59,
+      435.15
+    ],
+    "velocity": [
+      187.7,
+      0.0
+    ],
+    "grounded": true,
+    "gravity": 1,
+    "gravity_remaining": 0.0,
+    "water_surface": null,
+    "water_active": false,
+    "water_transferred_area": 0.0,
+    "cover_open": false,
+    "cover_fraction": 0.0,
+    "rope_distance": null,
+    "gate_open": false,
+    "gate_fraction": 0.0,
+    "grab_kind": "",
+    "dead": false,
+    "complete": false,
+    "crates": [
+      {
+        "position": [
+          720.0,
+          306.85
+        ],
+        "angle": 0.0
+      },
+      {
+        "position": [
+          940.0,
+          181.85
+        ],
+        "angle": 0.0
+      }
+    ],
+    "beam_angle": null,
+    "magnet": {
+      "enabled": false,
+      "box_gravity": -1,
+      "captured": []
+    }
+  },
+  "screenshot": "docs/echo/verification/native-window.png",
+  "source_sha256": {
+    "echo_game/__init__.py": "a8e2e781e0cdd891795d49ebbcf7cd3f3d9460c61385db44aa3a3bc00af08f79",
+    "echo_game/__main__.py": "c3231b220cee8c6cbab3b59033a15dc7a7593e5577681026b822cc2c50ded2c2",
+    "echo_game/art.py": "d6a87d6cb0d3ca2d52ece1420d087ee842f0a7a2c32ad00527a8c1c5d46d5ca0",
+    "echo_game/audio.py": "5322f34085e92a8a47adcee8b370ca59caa5614453f70425cd2e78178408c6e1",
+    "echo_game/game.py": "065136675635bbe1e5ef6ce143061075215a3561234756a72bec17607c20d816",
+    "echo_game/generate_assets.py": "6dfb38e9caa5102746786677c14f514079754057c182006792742f521aec34d8",
+    "echo_game/levels.py": "ec4bad276188dcc595a6d6993c49db1852c73da1e995c9142a01b9c92b6f7894",
+    "echo_game/magnet.py": "23e87c2a78cfb89939f437a03ea9bfafe1134dc4a64149dd59383b64cf63d390",
+    "echo_game/package_data.py": "105375688a4b0b84b1250352e2f7b13cb95260380b2d50d63fbeea7c9f900174",
+    "echo_game/physics.py": "916cbdc6737097837ba77cf13d7cc52359d97c063adff9ccaa6195b72ed5599c",
+    "echo_game/pilot.py": "6c9bd866ed93ed7bafec0def153593cf2d97d1dfd37e0da79a27fb2a26cfe5cb",
+    "echo_game/progress.py": "6b3abd1f59d576d75702b0599f14517cb67e93fb1b4acbae4f7cac434db0a42f",
+    "echo_game/reference.py": "addd20fb3fd316db10257546b679281426d9c8e12534e6eca0a3f6d73fd5f45a",
+    "echo_game/seesaw.py": "d9601efd89a04b4bc370f17a1278091c07f265f9a414b5b8b5faaad42c2f485d",
+    "echo_game/verify.py": "83fba8a7db8866f90ebc57098db8373cb8b50a4f0c3c7da0dd4fd6ab42cd4a11"
+  }
+}

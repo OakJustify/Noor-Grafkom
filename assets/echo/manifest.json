@@ -1,0 +1,594 @@
+{
+  "assets": [
+    {
+      "bytes": 1804,
+      "path": "ART_PHILOSOPHY.md",
+      "sha256": "a1664d98439d9bcd491008004c2bbad272abc9166dcaa2b1595b7353b61cdf64",
+      "type": "text/markdown"
+    },
+    {
+      "bytes": 155265,
+      "generator": "Cairo vector paths / original procedural geometry",
+      "height": 540,
+      "path": "art/chapter_0_far.png",
+      "sha256": "817f15fab789cf0430351c040a888669e50f70e4575ab5ba4279791c65f6cedf",
+      "type": "image/png",
+      "width": 1920
+    },
+    {
+      "bytes": 174963,
+      "generator": "Cairo vector paths / original procedural geometry",
+      "height": 540,
+      "path": "art/chapter_0_mid.png",
+      "sha256": "62f80a7ce519e75f2e2e05ed18cb4208922d86af6918684e0395bb0283de8419",
+      "type": "image/png",
+      "width": 1920
+    },
+    {
+      "bytes": 23989,
+      "generator": "Cairo vector paths / original procedural geometry",
+      "height": 540,
+      "path": "art/chapter_0_works.png",
+      "sha256": "2aea8c090392ad48a9bae67be006339bcf284878d300a8f36c151bbf7d897483",
+      "type": "image/png",
+      "width": 1920
+    },
+    {
+      "bytes": 162977,
+      "generator": "Cairo vector paths / original procedural geometry",
+      "height": 540,
+      "path": "art/chapter_1_far.png",
+      "sha256": "c9a98d084729afaa8e41ca37cff21538019801b2d6fb7c2879bd1c3e2993032e",
+      "type": "image/png",
+      "width": 1920
+    },
+    {
+      "bytes": 154085,
+      "generator": "Cairo vector paths / original procedural geometry",
+      "height": 540,
+      "path": "art/chapter_1_mid.png",
+      "sha256": "3e3b3e45759914d102f156c97d258b61e1844655c7fb86a34f3c19b90b03637d",
+      "type": "image/png",
+      "width": 1920
+    },
+    {
+      "bytes": 20655,
+      "generator": "Cairo vector paths / original procedural geometry",
+      "height": 540,
+      "path": "art/chapter_1_works.png",
+      "sha256": "64ad28f4348f9854b283019188632a9509fc62ad8b4a45e6309fb1e0f0ee5542",
+      "type": "image/png",
+      "width": 1920
+    },
+    {
+      "bytes": 193841,
+      "generator": "Cairo vector paths / original procedural geometry",
+      "height": 540,
+      "path": "art/chapter_2_far.png",
+      "sha256": "ae12b404900774094a2712a3a62a7831690b68c0f1e4c888afe25e4c76c671bd",
+      "type": "image/png",
+      "width": 1920
+    },
+    {
+      "bytes": 65530,
+      "generator": "Cairo vector paths / original procedural geometry",
+      "height": 540,
+      "path": "art/chapter_2_mid.png",
+      "sha256": "a5c0d7bccbe187e03a97d0478dc202a09a084aef37c1bcda5fd82e08c32661fb",
+      "type": "image/png",
+      "width": 1920
+    },
+    {
+      "bytes": 31854,
+      "generator": "Cairo vector paths / original procedural geometry",
+      "height": 540,
+      "path": "art/chapter_2_works.png",
+      "sha256": "be5f08f26474d66e685b42f93b1b4c61204d6cfa3a5776adf4f3bebb413dee27",
+      "type": "image/png",
+      "width": 1920
+    },
+    {
+      "bytes": 260553,
+      "generator": "Cairo vector paths / original procedural geometry",
+      "height": 540,
+      "path": "art/chapter_3_far.png",
+      "sha256": "ffb6dea382c1dfbab47994de3dfd9110cc5435b135eb5e7278c67b3b419a43a8",
+      "type": "image/png",
+      "width": 1920
+    },
+    {
+      "bytes": 149559,
+      "generator": "Cairo vector paths / original procedural geometry",
+      "height": 540,
+      "path": "art/chapter_3_mid.png",
+      "sha256": "3659516855d8890b4b5602e1d1236345b7b15b06c2d71f1cc867b855f53ed981",
+      "type": "image/png",
+      "width": 1920
+    },
+    {
+      "bytes": 31804,
+      "generator": "Cairo vector paths / original procedural geometry",
+      "height": 540,
+      "path": "art/chapter_3_works.png",
+      "sha256": "fad3b1d04a8f21c75c11679d38a4552b8730f322e7bbfa7e263ac1eb32c6baba",
+      "type": "image/png",
+      "width": 1920
+    },
+    {
+      "bytes": 224490,
+      "generator": "Cairo vector paths / original procedural geometry",
+      "height": 540,
+      "path": "art/chapter_4_far.png",
+      "sha256": "a0d7cd10f192189f60594e9da45489503ae07ffff607e675dc6ae735bc0e2887",
+      "type": "image/png",
+      "width": 1920
+    },
+    {
+      "bytes": 154933,
+      "generator": "Cairo vector paths / original procedural geometry",
+      "height": 540,
+      "path": "art/chapter_4_mid.png",
+      "sha256": "f26e0292c7535bb0dfc612a65012bfaa69fe8d40bc43ee0c37121e1b08b421ad",
+      "type": "image/png",
+      "width": 1920
+    },
+    {
+      "bytes": 45861,
+      "generator": "Cairo vector paths / original procedural geometry",
+      "height": 540,
+      "path": "art/chapter_4_works.png",
+      "sha256": "36cd18bd00182b6a918f603a1f7c3b1ad858eacb2bff504ecb3fc3b7b7693d71",
+      "type": "image/png",
+      "width": 1920
+    },
+    {
+      "bytes": 228466,
+      "generator": "Cairo vector paths / original procedural geometry",
+      "height": 540,
+      "path": "art/chapter_5_far.png",
+      "sha256": "b7dd4718762d24689a51b95448b11e0c0c233686718f7531b2eb7e9bb60ad855",
+      "type": "image/png",
+      "width": 1920
+    },
+    {
+      "bytes": 152254,
+      "generator": "Cairo vector paths / original procedural geometry",
+      "height": 540,
+      "path": "art/chapter_5_mid.png",
+      "sha256": "de061ffafd31665cc0022f62c2a906cb1908bf4ae6b18a81a6b4c945186ebef9",
+      "type": "image/png",
+      "width": 1920
+    },
+    {
+      "bytes": 23215,
+      "generator": "Cairo vector paths / original procedural geometry",
+      "height": 540,
+      "path": "art/chapter_5_works.png",
+      "sha256": "ceab06e1067ff6c952b6cf7b87e19f5166b5b47a22b048b400f00d8b37a86668",
+      "type": "image/png",
+      "width": 1920
+    },
+    {
+      "bytes": 31480,
+      "generator": "Cairo vector paths / original procedural geometry",
+      "height": 112,
+      "path": "art/courier_sheet.png",
+      "sha256": "5df2663abb6b9daff93cdc03091f4288d423e61d3a59fcd7154b30af4930785c",
+      "type": "image/png",
+      "width": 1152
+    },
+    {
+      "bytes": 10727,
+      "generator": "Cairo vector paths / original procedural geometry",
+      "height": 256,
+      "path": "art/crate.png",
+      "sha256": "209bff49874a8f175953dd88d0f1f721c22ed39c4f566502423c1c4583dd3131",
+      "type": "image/png",
+      "width": 256
+    },
+    {
+      "bytes": 8406,
+      "generator": "Cairo vector paths / original procedural geometry",
+      "height": 256,
+      "path": "art/crate_heavy.png",
+      "sha256": "f729aa1ea2450c5a05ce83dfab8d8d6d4214449463304c6455a80f70f37c29ea",
+      "type": "image/png",
+      "width": 256
+    },
+    {
+      "bytes": 55322,
+      "generator": "Cairo vector paths / original procedural geometry",
+      "height": 540,
+      "path": "art/fog.png",
+      "sha256": "d10ad584004e73c49ccae42a8013ecc3cc6f1e485091c9ee6742ab81c216255a",
+      "type": "image/png",
+      "width": 1920
+    },
+    {
+      "bytes": 170065,
+      "generator": "Cairo vector paths / original procedural geometry",
+      "height": 540,
+      "path": "art/foliage.png",
+      "sha256": "e04483deae072758d17fc7dd95d00bb88745b6384a149811abac66be7cdbec89",
+      "type": "image/png",
+      "width": 1920
+    },
+    {
+      "bytes": 12564,
+      "generator": "Cairo vector paths / original procedural geometry",
+      "height": 192,
+      "path": "art/glow.png",
+      "sha256": "799d30980000fa3a226402f614ad71b4cf2f0f1676b24da6b7f64fc28745d9f2",
+      "type": "image/png",
+      "width": 192
+    },
+    {
+      "bytes": 16872,
+      "generator": "Cairo vector paths / original procedural geometry",
+      "height": 128,
+      "path": "art/grain.png",
+      "sha256": "8d13fb5dda43172b4f234083ca173692a9c541b55884d55e2ce75fff4979e100",
+      "type": "image/png",
+      "width": 128
+    },
+    {
+      "bytes": 1809,
+      "generator": "Cairo vector paths / original procedural geometry",
+      "height": 64,
+      "path": "art/magnet.png",
+      "sha256": "5040eeaaec997787d9ed1fc8e8094f22041f5813fe429cad9283b73e3b5cf107",
+      "type": "image/png",
+      "width": 256
+    },
+    {
+      "bytes": 3605,
+      "generator": "Cairo vector paths / original procedural geometry",
+      "height": 64,
+      "path": "art/moth_guide.png",
+      "sha256": "071163c2719c5072749b17cc528465b4f4622df70499f441d9d56ae37b889240",
+      "type": "image/png",
+      "width": 256
+    },
+    {
+      "bytes": 28951,
+      "generator": "Cairo vector paths / original procedural geometry",
+      "height": 256,
+      "path": "art/saw.png",
+      "sha256": "0fab16bd600f3da6875b991a48378cd33a2992027adfe1a5f40cf8cbfc44e680",
+      "type": "image/png",
+      "width": 256
+    },
+    {
+      "bytes": 77090,
+      "generator": "Cairo vector paths / original procedural geometry",
+      "height": 540,
+      "path": "art/sky.png",
+      "sha256": "3e8faf27b6dede67f90b0675a6e4b98760db1c494350fc36228afa9424821a8d",
+      "type": "image/png",
+      "width": 1920
+    },
+    {
+      "bytes": 56507,
+      "generator": "Cairo vector paths / original procedural geometry",
+      "height": 540,
+      "path": "art/vignette.png",
+      "sha256": "a4731f2d28b3298a044b416a84c3348b05e37544cc5a21e3de3e18265b3b2e09",
+      "type": "image/png",
+      "width": 960
+    },
+    {
+      "bytes": 2822444,
+      "channels": 2,
+      "duration_seconds": 32.0,
+      "frames": 705600,
+      "generator": "numpy spectral noise and original oscillator/bell composition",
+      "path": "audio/ambience.wav",
+      "peak_dbfs": -18.553,
+      "rms_dbfs": -32.886,
+      "sample_rate": 22050,
+      "sample_width": 2,
+      "seamless_loop": true,
+      "sha256": "3fe00e7f049931981be16adaf7ac7234a3d3ef8fd55a05b2600c1a079147a91c",
+      "type": "audio/wav"
+    },
+    {
+      "bytes": 211724,
+      "channels": 2,
+      "duration_seconds": 2.4,
+      "frames": 52920,
+      "generator": "numpy spectral noise and original oscillator/bell composition",
+      "path": "audio/checkpoint.wav",
+      "peak_dbfs": -16.113,
+      "rms_dbfs": -28.751,
+      "sample_rate": 22050,
+      "sample_width": 2,
+      "seamless_loop": false,
+      "sha256": "f386e8d50ce43963b20ee8b9ffee77c21f7d377bb6208977228cb3c6f26d85ff",
+      "type": "audio/wav"
+    },
+    {
+      "bytes": 158804,
+      "channels": 2,
+      "duration_seconds": 1.8,
+      "frames": 39690,
+      "generator": "numpy spectral noise and original oscillator/bell composition",
+      "path": "audio/death.wav",
+      "peak_dbfs": -15.401,
+      "rms_dbfs": -34.03,
+      "sample_rate": 22050,
+      "sample_width": 2,
+      "seamless_loop": false,
+      "sha256": "efdb0850bd5b153ccfa6b732bddca1259d64ac469af0f224682fa212820e4639",
+      "type": "audio/wav"
+    },
+    {
+      "bytes": 17684,
+      "channels": 2,
+      "duration_seconds": 0.2,
+      "frames": 4410,
+      "generator": "numpy spectral noise and original oscillator/bell composition",
+      "path": "audio/footstep.wav",
+      "peak_dbfs": -23.405,
+      "rms_dbfs": -40.197,
+      "sample_rate": 22050,
+      "sample_width": 2,
+      "seamless_loop": false,
+      "sha256": "8107cf567eb33e214b443960eea24185a2a818a5ac7096bcbb36a486448537b6",
+      "type": "audio/wav"
+    },
+    {
+      "bytes": 132344,
+      "channels": 2,
+      "duration_seconds": 1.5,
+      "frames": 33075,
+      "generator": "numpy spectral noise and original oscillator/bell composition",
+      "path": "audio/gate.wav",
+      "peak_dbfs": -17.801,
+      "rms_dbfs": -32.076,
+      "sample_rate": 22050,
+      "sample_width": 2,
+      "seamless_loop": false,
+      "sha256": "a32f642536893b7399feaaf4aae4d1277f68a30bf4353e19cb6db27c6438d376",
+      "type": "audio/wav"
+    },
+    {
+      "bytes": 26504,
+      "channels": 2,
+      "duration_seconds": 0.3,
+      "frames": 6615,
+      "generator": "numpy spectral noise and original oscillator/bell composition",
+      "path": "audio/grab.wav",
+      "peak_dbfs": -21.659,
+      "rms_dbfs": -39.568,
+      "sample_rate": 22050,
+      "sample_width": 2,
+      "seamless_loop": false,
+      "sha256": "e0dd230c056ecbf8c8d01c1ac1a9db07e0da885dcc76cad240a75c14eba9253b",
+      "type": "audio/wav"
+    },
+    {
+      "bytes": 101472,
+      "channels": 2,
+      "duration_seconds": 1.1499773242630384,
+      "frames": 25357,
+      "generator": "numpy spectral noise and original oscillator/bell composition",
+      "path": "audio/gravity.wav",
+      "peak_dbfs": -20.482,
+      "rms_dbfs": -32.627,
+      "sample_rate": 22050,
+      "sample_width": 2,
+      "seamless_loop": false,
+      "sha256": "9136ae65793b2396317d732992be28ac3d8c4f89bf006481939e1174dd9c9b3a",
+      "type": "audio/wav"
+    },
+    {
+      "bytes": 33560,
+      "channels": 2,
+      "duration_seconds": 0.38,
+      "frames": 8379,
+      "generator": "numpy spectral noise and original oscillator/bell composition",
+      "path": "audio/jump.wav",
+      "peak_dbfs": -18.787,
+      "rms_dbfs": -33.351,
+      "sample_rate": 22050,
+      "sample_width": 2,
+      "seamless_loop": false,
+      "sha256": "39aaf14259d402f94064dc6a1466ca1beca05935e01016dd2d2816e6cdaf9ff9",
+      "type": "audio/wav"
+    },
+    {
+      "bytes": 30032,
+      "channels": 2,
+      "duration_seconds": 0.34,
+      "frames": 7497,
+      "generator": "numpy spectral noise and original oscillator/bell composition",
+      "path": "audio/land.wav",
+      "peak_dbfs": -16.352,
+      "rms_dbfs": -34.5,
+      "sample_rate": 22050,
+      "sample_width": 2,
+      "seamless_loop": false,
+      "sha256": "cee248f67ddfb510b10d0d353ae103566e1912bcca640581e4f4804da4a6890f",
+      "type": "audio/wav"
+    },
+    {
+      "bytes": 28268,
+      "channels": 2,
+      "duration_seconds": 0.32,
+      "frames": 7056,
+      "generator": "numpy spectral noise and original oscillator/bell composition",
+      "path": "audio/magnet.wav",
+      "peak_dbfs": -23.66,
+      "rms_dbfs": -31.761,
+      "sample_rate": 22050,
+      "sample_width": 2,
+      "seamless_loop": false,
+      "sha256": "7d9baaa2437c5a9e149a5c4d9d25bed2404b69cec7efda6e16954efe467da9e7",
+      "type": "audio/wav"
+    },
+    {
+      "bytes": 48556,
+      "channels": 2,
+      "duration_seconds": 0.5500226757369614,
+      "frames": 12128,
+      "generator": "numpy spectral noise and original oscillator/bell composition",
+      "path": "audio/magnet_capture.wav",
+      "peak_dbfs": -16.856,
+      "rms_dbfs": -33.453,
+      "sample_rate": 22050,
+      "sample_width": 2,
+      "seamless_loop": false,
+      "sha256": "252e34e0624c0d57bd15526bba90a5770bb72cf670f37c72f491ef27f2f96367",
+      "type": "audio/wav"
+    },
+    {
+      "bytes": 35324,
+      "channels": 2,
+      "duration_seconds": 0.4,
+      "frames": 8820,
+      "generator": "numpy spectral noise and original oscillator/bell composition",
+      "path": "audio/magnet_release.wav",
+      "peak_dbfs": -18.388,
+      "rms_dbfs": -34.233,
+      "sample_rate": 22050,
+      "sample_width": 2,
+      "seamless_loop": false,
+      "sha256": "6b133d1b63f00a977d047c0b5656eb9b9eacc0aeb748f02e23e03ce656236334",
+      "type": "audio/wav"
+    },
+    {
+      "bytes": 2822444,
+      "channels": 2,
+      "duration_seconds": 32.0,
+      "frames": 705600,
+      "generator": "numpy spectral noise and original oscillator/bell composition",
+      "path": "audio/music.wav",
+      "peak_dbfs": -18.523,
+      "rms_dbfs": -36.317,
+      "sample_rate": 22050,
+      "sample_width": 2,
+      "seamless_loop": true,
+      "sha256": "41f43be10c9627178dab3b664883a68d441a873929001dddd0d767ad2fa03274",
+      "type": "audio/wav"
+    },
+    {
+      "bytes": 8864,
+      "channels": 2,
+      "duration_seconds": 0.1,
+      "frames": 2205,
+      "generator": "numpy spectral noise and original oscillator/bell composition",
+      "path": "audio/tick.wav",
+      "peak_dbfs": -25.996,
+      "rms_dbfs": -38.786,
+      "sample_rate": 22050,
+      "sample_width": 2,
+      "seamless_loop": false,
+      "sha256": "b19ee15bb8a191ecabb1b6ff8afd8da99d380e9675a75d7009ebfe26c485c29b",
+      "type": "audio/wav"
+    },
+    {
+      "bytes": 441044,
+      "channels": 2,
+      "duration_seconds": 5.0,
+      "frames": 110250,
+      "generator": "numpy spectral noise and original oscillator/bell composition",
+      "path": "audio/win.wav",
+      "peak_dbfs": -17.422,
+      "rms_dbfs": -30.131,
+      "sample_rate": 22050,
+      "sample_width": 2,
+      "seamless_loop": false,
+      "sha256": "0f4946cf9fc4a98f97b9c7819abe71081c908149c5a322cf9d2b2b6e270a4d36",
+      "type": "audio/wav"
+    }
+  ],
+  "authorship": {
+    "created_for": "ECHO: The Hollow Signal",
+    "external_assets": [],
+    "kind": "Original procedural artwork and original synthesized audio",
+    "method": "Project-authored Cairo vector geometry and numpy/stdlib-wave synthesis",
+    "music": "Original sparse nine-event bell phrase, bowed sine modes and periodic drones",
+    "notes": "No samples, photographed textures, stock sprites, external music or target-game assets.",
+    "target_game_assets_copied": false
+  },
+  "generation_seed": 15482903,
+  "generator_sources": {
+    "echo_game/art.py": "d6a87d6cb0d3ca2d52ece1420d087ee842f0a7a2c32ad00527a8c1c5d46d5ca0",
+    "echo_game/audio.py": "5322f34085e92a8a47adcee8b370ca59caa5614453f70425cd2e78178408c6e1",
+    "echo_game/generate_assets.py": "6dfb38e9caa5102746786677c14f514079754057c182006792742f521aec34d8"
+  },
+  "generator_versions": {
+    "art": 2,
+    "audio": 3
+  },
+  "landscapes": {
+    "chapters": 6,
+    "parallax": {
+      "far": 0.075,
+      "foliage": 0.61,
+      "mid": 0.32,
+      "works": 0.18
+    },
+    "tile_size": [
+      1920,
+      540
+    ]
+  },
+  "palette": {
+    "ivory": "#eeefda",
+    "signal": "#b3d5d1",
+    "silhouette": "#061015"
+  },
+  "project": "ECHO: The Hollow Signal",
+  "schema_version": 1,
+  "sprite_sheets": {
+    "art/courier_sheet.png": {
+      "anchor": [
+        24,
+        28
+      ],
+      "body_size": [
+        22,
+        44
+      ],
+      "cell_size": [
+        96,
+        112
+      ],
+      "frames": 12,
+      "poses": {
+        "fall": [
+          11
+        ],
+        "idle": [
+          0,
+          1
+        ],
+        "jump": [
+          10
+        ],
+        "walk": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "rendered_cell_size": [
+        48,
+        56
+      ]
+    },
+    "art/moth_guide.png": {
+      "cell_size": [
+        64,
+        64
+      ],
+      "frames": 4
+    }
+  }
+}

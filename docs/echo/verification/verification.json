@@ -1,0 +1,6761 @@
+{
+  "success": true,
+  "method": "Actual Game.update at 60 Hz; fixed 120 Hz physics; Pilot emits only movement/jump/grab/action/climb inputs.",
+  "no_teleports_in_campaign": true,
+  "campaign_reached_ending": true,
+  "mechanics_witness": {
+    "climb_height_choice": {
+      "frame": 751,
+      "climbed_px": 35.42
+    },
+    "opening_exposed_and_valve_filling": {
+      "frame": 1194,
+      "water_surface": 496.6666666666663
+    },
+    "box_carries_player_up_with_water": {
+      "frame": 1438,
+      "rise_px": 50.28
+    },
+    "oscillation_then_crest_departure": {
+      "frame": 2819,
+      "reversals": 4,
+      "angle_range_rad": 0.7031,
+      "departure_angle_rad": -0.3278
+    },
+    "gravity_expires_without_second_relay": {
+      "frame": 3460,
+      "seconds_remaining": 0
+    },
+    "magnetic_split_height_route": {
+      "frame": 4013,
+      "held_blocks": [
+        1
+      ],
+      "support_block": 2,
+      "player_gravity": 1,
+      "box_gravity": 1,
+      "block_heights_y": [
+        306.85,
+        418.15
+      ],
+      "contacts": [
+        {
+          "block": 0,
+          "time": 2.158333,
+          "position": [
+            720.0,
+            304.1770833333333
+          ]
+        }
+      ]
+    }
+  },
+  "reference_equivalence_claimed": false,
+  "solved_rooms": [
+    {
+      "chapter_index": 0,
+      "simulation_seconds": 7.258,
+      "final": {
+        "chapter": 1,
+        "time": 7.258,
+        "player": [
+          1482.21,
+          435.15
+        ],
+        "velocity": [
+          187.7,
+          0.0
+        ],
+        "grounded": true,
+        "gravity": 1,
+        "gravity_remaining": 0.0,
+        "water_surface": null,
+        "water_active": false,
+        "water_transferred_area": 0.0,
+        "cover_open": false,
+        "cover_fraction": 0.0,
+        "rope_distance": null,
+        "gate_open": true,
+        "gate_fraction": 1.0,
+        "grab_kind": "",
+        "dead": false,
+        "complete": true,
+        "crates": [
+          {
+            "position": [
+              1110.27,
+              431.05
+            ],
+            "angle": 0.0013
+          }
+        ],
+        "beam_angle": null,
+        "magnet": null
+      }
+    },
+    {
+      "chapter_index": 1,
+      "simulation_seconds": 6.883,
+      "final": {
+        "chapter": 2,
+        "time": 6.883,
+        "player": [
+          1552.26,
+          215.15
+        ],
+        "velocity": [
+          187.7,
+          0.0
+        ],
+        "grounded": true,
+        "gravity": 1,
+        "gravity_remaining": 0.0,
+        "water_surface": null,
+        "water_active": false,
+        "water_transferred_area": 0.0,
+        "cover_open": false,
+        "cover_fraction": 0.0,
+        "rope_distance": null,
+        "gate_open": false,
+        "gate_fraction": 0.0,
+        "grab_kind": "",
+        "dead": false,
+        "complete": true,
+        "crates": [],
+        "beam_angle": null,
+        "magnet": null
+      }
+    },
+    {
+      "chapter_index": 2,
+      "simulation_seconds": 13.025,
+      "final": {
+        "chapter": 3,
+        "time": 13.025,
+        "player": [
+          1302.75,
+          275.06
+        ],
+        "velocity": [
+          187.7,
+          0.0
+        ],
+        "grounded": true,
+        "gravity": 1,
+        "gravity_remaining": 0.0,
+        "water_surface": 330,
+        "water_active": false,
+        "water_transferred_area": 47600.0,
+        "cover_open": true,
+        "cover_fraction": 1.0,
+        "rope_distance": null,
+        "gate_open": false,
+        "gate_fraction": 0.0,
+        "grab_kind": "",
+        "dead": false,
+        "complete": true,
+        "crates": [
+          {
+            "position": [
+              742.06,
+              323.04
+            ],
+            "angle": 0.0
+          }
+        ],
+        "beam_angle": null,
+        "magnet": null
+      }
+    },
+    {
+      "chapter_index": 3,
+      "simulation_seconds": 17.175,
+      "final": {
+        "chapter": 4,
+        "time": 17.175,
+        "player": [
+          1552.39,
+          275.15
+        ],
+        "velocity": [
+          187.7,
+          0.0
+        ],
+        "grounded": true,
+        "gravity": 1,
+        "gravity_remaining": 0.0,
+        "water_surface": null,
+        "water_active": false,
+        "water_transferred_area": 0.0,
+        "cover_open": false,
+        "cover_fraction": 0.0,
+        "rope_distance": null,
+        "gate_open": false,
+        "gate_fraction": 0.0,
+        "grab_kind": "",
+        "dead": false,
+        "complete": true,
+        "crates": [],
+        "beam_angle": 0.3073,
+        "magnet": null
+      }
+    },
+    {
+      "chapter_index": 4,
+      "simulation_seconds": 8.792,
+      "final": {
+        "chapter": 5,
+        "time": 8.792,
+        "player": [
+          1502.02,
+          435.15
+        ],
+        "velocity": [
+          183.99,
+          0.0
+        ],
+        "grounded": true,
+        "gravity": 1,
+        "gravity_remaining": 0,
+        "water_surface": null,
+        "water_active": false,
+        "water_transferred_area": 0.0,
+        "cover_open": false,
+        "cover_fraction": 0.0,
+        "rope_distance": null,
+        "gate_open": false,
+        "gate_fraction": 0.0,
+        "grab_kind": "",
+        "dead": false,
+        "complete": true,
+        "crates": [
+          {
+            "position": [
+              1543.89,
+              431.15
+            ],
+            "angle": -0.0
+          }
+        ],
+        "beam_angle": null,
+        "magnet": null
+      }
+    },
+    {
+      "chapter_index": 5,
+      "simulation_seconds": 7.292,
+      "final": {
+        "chapter": 6,
+        "time": 7.292,
+        "player": [
+          1432.68,
+          295.15
+        ],
+        "velocity": [
+          187.7,
+          0.0
+        ],
+        "grounded": true,
+        "gravity": 1,
+        "gravity_remaining": 0.0,
+        "water_surface": null,
+        "water_active": false,
+        "water_transferred_area": 0.0,
+        "cover_open": false,
+        "cover_fraction": 0.0,
+        "rope_distance": null,
+        "gate_open": false,
+        "gate_fraction": 0.0,
+        "grab_kind": "",
+        "dead": false,
+        "complete": true,
+        "crates": [
+          {
+            "position": [
+              720.0,
+              306.85
+            ],
+            "angle": 0.0
+          },
+          {
+            "position": [
+              940.0,
+              418.15
+            ],
+            "angle": 0.0
+          }
+        ],
+        "beam_angle": null,
+        "magnet": {
+          "enabled": true,
+          "box_gravity": 1,
+          "captured": [
+            0
+          ]
+        }
+      }
+    }
+  ],
+  "campaign_frames": 4282,
+  "wall_seconds": 10.12,
+  "libraries": {
+    "pygame": "2.6.1",
+    "cairo": "1.18.6",
+    "pymunk": "7.3.1",
+    "numpy": "2.5.5"
+  },
+  "captures": [
+    {
+      "name": "00-title",
+      "path": "/home/podistrict/Projects/03-projects/game-noor-grafkom3/docs/echo/verification/00-title.png",
+      "sha256": "11876aaf19fe7120d57c04a1ad30e8d586690ec8d485ec0703536f9d3bd4e9fe",
+      "pixel_std": 26.92,
+      "physics": {
+        "chapter": 1,
+        "time": 0.0,
+        "player": [
+          140.0,
+          430.0
+        ],
+        "velocity": [
+          0.0,
+          0.0
+        ],
+        "grounded": false,
+        "gravity": 1,
+        "gravity_remaining": 0.0,
+        "water_surface": null,
+        "water_active": false,
+        "water_transferred_area": 0.0,
+        "cover_open": false,
+        "cover_fraction": 0.0,
+        "rope_distance": null,
+        "gate_open": false,
+        "gate_fraction": 0.0,
+        "grab_kind": "",
+        "dead": false,
+        "complete": false,
+        "crates": [
+          {
+            "position": [
+              470.0,
+              431.0
+            ],
+            "angle": 0.0
+          }
+        ],
+        "beam_angle": null,
+        "magnet": null
+      }
+    },
+    {
+      "name": "00-controls",
+      "path": "/home/podistrict/Projects/03-projects/game-noor-grafkom3/docs/echo/verification/00-controls.png",
+      "sha256": "8e1050afba0737802f394e59b5b3e455ac9ae654de6f3d0cbfca109306be0da8",
+      "pixel_std": 26.57,
+      "physics": {
+        "chapter": 1,
+        "time": 0.0,
+        "player": [
+          140.0,
+          430.0
+        ],
+        "velocity": [
+          0.0,
+          0.0
+        ],
+        "grounded": false,
+        "gravity": 1,
+        "gravity_remaining": 0.0,
+        "water_surface": null,
+        "water_active": false,
+        "water_transferred_area": 0.0,
+        "cover_open": false,
+        "cover_fraction": 0.0,
+        "rope_distance": null,
+        "gate_open": false,
+        "gate_fraction": 0.0,
+        "grab_kind": "",
+        "dead": false,
+        "complete": false,
+        "crates": [
+          {
+            "position": [
+              470.0,
+              431.0
+            ],
+            "angle": 0.0
+          }
+        ],
+        "beam_angle": null,
+        "magnet": null
+      }
+    },
+    {
+      "name": "01-pressure-gate",
+      "path": "/home/podistrict/Projects/03-projects/game-noor-grafkom3/docs/echo/verification/01-pressure-gate.png",
+      "sha256": "2da74d4f2d9c2a56d981f9b81e7265530e12381080510811689cfce2cef5c17f",
+      "pixel_std": 31.02,
+      "physics": {
+        "chapter": 1,
+        "time": 4.817,
+        "player": [
+          1021.41,
+          354.84
+        ],
+        "velocity": [
+          190.0,
+          136.67
+        ],
+        "grounded": false,
+        "gravity": 1,
+        "gravity_remaining": 0.0,
+        "water_surface": null,
+        "water_active": false,
+        "water_transferred_area": 0.0,
+        "cover_open": false,
+        "cover_fraction": 0.0,
+        "rope_distance": null,
+        "gate_open": true,
+        "gate_fraction": 1.0,
+        "grab_kind": "",
+        "dead": false,
+        "complete": false,
+        "crates": [
+          {
+            "position": [
+              1050.42,
+              431.05
+            ],
+            "angle": 0.0013
+          }
+        ],
+        "beam_angle": null,
+        "magnet": null
+      }
+    },
+    {
+      "name": "02-rope-momentum",
+      "path": "/home/podistrict/Projects/03-projects/game-noor-grafkom3/docs/echo/verification/02-rope-momentum.png",
+      "sha256": "70284c503c60ef99bf13b9468fc0dba98583fbc07402a44d4d81ed9f4b773a34",
+      "pixel_std": 31.08,
+      "physics": {
+        "chapter": 2,
+        "time": 3.633,
+        "player": [
+          866.31,
+          352.39
+        ],
+        "velocity": [
+          387.12,
+          -101.32
+        ],
+        "grounded": false,
+        "gravity": 1,
+        "gravity_remaining": 0.0,
+        "water_surface": null,
+        "water_active": false,
+        "water_transferred_area": 0.0,
+        "cover_open": false,
+        "cover_fraction": 0.0,
+        "rope_distance": 286.026,
+        "gate_open": false,
+        "gate_fraction": 0.0,
+        "grab_kind": "rope",
+        "dead": false,
+        "complete": false,
+        "crates": [],
+        "beam_angle": null,
+        "magnet": null
+      }
+    },
+    {
+      "name": "03-open-cover-before-rise",
+      "path": "/home/podistrict/Projects/03-projects/game-noor-grafkom3/docs/echo/verification/03-open-cover-before-rise.png",
+      "sha256": "303b3590eb13e7af194bfefb6d1be4000b63d2cb9fd34fa093a801129232fbcd",
+      "pixel_std": 30.43,
+      "physics": {
+        "chapter": 3,
+        "time": 2.133,
+        "player": [
+          524.69,
+          374.8
+        ],
+        "velocity": [
+          190.0,
+          -270.0
+        ],
+        "grounded": false,
+        "gravity": 1,
+        "gravity_remaining": 0.0,
+        "water_surface": 496.667,
+        "water_active": true,
+        "water_transferred_area": 933.333,
+        "cover_open": true,
+        "cover_fraction": 1.0,
+        "rope_distance": null,
+        "gate_open": false,
+        "gate_fraction": 0.0,
+        "grab_kind": "",
+        "dead": false,
+        "complete": false,
+        "crates": [
+          {
+            "position": [
+              584.25,
+              458.62
+            ],
+            "angle": 0.3046
+          }
+        ],
+        "beam_angle": null,
+        "magnet": null
+      }
+    },
+    {
+      "name": "03-rising-water",
+      "path": "/home/podistrict/Projects/03-projects/game-noor-grafkom3/docs/echo/verification/03-rising-water.png",
+      "sha256": "2bd63294f020d8f5182bb387578ee4c900806bc754af21ba9020de48425611b3",
+      "pixel_std": 29.27,
+      "physics": {
+        "chapter": 3,
+        "time": 7.467,
+        "player": [
+          742.06,
+          335.07
+        ],
+        "velocity": [
+          -0.0,
+          -19.78
+        ],
+        "grounded": true,
+        "gravity": 1,
+        "gravity_remaining": 0.0,
+        "water_surface": 390.0,
+        "water_active": true,
+        "water_transferred_area": 30800.0,
+        "cover_open": true,
+        "cover_fraction": 1.0,
+        "rope_distance": null,
+        "gate_open": false,
+        "gate_fraction": 0.0,
+        "grab_kind": "",
+        "dead": false,
+        "complete": false,
+        "crates": [
+          {
+            "position": [
+              742.07,
+              398.05
+            ],
+            "angle": -0.0001
+          }
+        ],
+        "beam_angle": null,
+        "magnet": null
+      }
+    },
+    {
+      "name": "04-oscillating-platform",
+      "path": "/home/podistrict/Projects/03-projects/game-noor-grafkom3/docs/echo/verification/04-oscillating-platform.png",
+      "sha256": "5e57ab43205555ad64cd4522ee152029311b0650de3d99a649f878b709f67900",
+      "pixel_std": 28.1,
+      "physics": {
+        "chapter": 4,
+        "time": 14.367,
+        "player": [
+          1019.07,
+          332.83
+        ],
+        "velocity": [
+          190.0,
+          -427.5
+        ],
+        "grounded": false,
+        "gravity": 1,
+        "gravity_remaining": 0.0,
+        "water_surface": null,
+        "water_active": false,
+        "water_transferred_area": 0.0,
+        "cover_open": false,
+        "cover_fraction": 0.0,
+        "rope_distance": null,
+        "gate_open": false,
+        "gate_fraction": 0.0,
+        "grab_kind": "",
+        "dead": false,
+        "complete": false,
+        "crates": [],
+        "beam_angle": -0.3278,
+        "magnet": null
+      }
+    },
+    {
+      "name": "05-inverted-gravity",
+      "path": "/home/podistrict/Projects/03-projects/game-noor-grafkom3/docs/echo/verification/05-inverted-gravity.png",
+      "sha256": "d690ffe46daf7fb31e66d9f3f49a983afb9d31b718ba9dc37eecd68129e63f6a",
+      "pixel_std": 31.52,
+      "physics": {
+        "chapter": 5,
+        "time": 4.6,
+        "player": [
+          867.3,
+          169.85
+        ],
+        "velocity": [
+          183.99,
+          0.0
+        ],
+        "grounded": true,
+        "gravity": -1,
+        "gravity_remaining": 1.442,
+        "water_surface": null,
+        "water_active": false,
+        "water_transferred_area": 0.0,
+        "cover_open": false,
+        "cover_fraction": 0.0,
+        "rope_distance": null,
+        "gate_open": false,
+        "gate_fraction": 0.0,
+        "grab_kind": "",
+        "dead": false,
+        "complete": false,
+        "crates": [
+          {
+            "position": [
+              909.17,
+              173.85
+            ],
+            "angle": 0.0
+          }
+        ],
+        "beam_angle": null,
+        "magnet": null
+      }
+    },
+    {
+      "name": "05-gravity-return",
+      "path": "/home/podistrict/Projects/03-projects/game-noor-grafkom3/docs/echo/verification/05-gravity-return.png",
+      "sha256": "de4cf10ca63d6bd9ebb0720938b715bcf960c1a267a60e16329b0a29cb7645f2",
+      "pixel_std": 30.34,
+      "physics": {
+        "chapter": 5,
+        "time": 6.05,
+        "player": [
+          1033.98,
+          169.92
+        ],
+        "velocity": [
+          0.0,
+          17.5
+        ],
+        "grounded": false,
+        "gravity": 1,
+        "gravity_remaining": 0,
+        "water_surface": null,
+        "water_active": false,
+        "water_transferred_area": 0.0,
+        "cover_open": false,
+        "cover_fraction": 0.0,
+        "rope_distance": null,
+        "gate_open": false,
+        "gate_fraction": 0.0,
+        "grab_kind": "",
+        "dead": false,
+        "complete": false,
+        "crates": [
+          {
+            "position": [
+              1152.9,
+              173.92
+            ],
+            "angle": 0.0
+          }
+        ],
+        "beam_angle": null,
+        "magnet": null
+      }
+    },
+    {
+      "name": "06-first-magnetic-contact",
+      "path": "/home/podistrict/Projects/03-projects/game-noor-grafkom3/docs/echo/verification/06-first-magnetic-contact.png",
+      "sha256": "1cef810f67f045d107522cb5a277d0725e776e931672c8b532d33fca1bba51e7",
+      "pixel_std": 31.04,
+      "physics": {
+        "chapter": 6,
+        "time": 2.167,
+        "player": [
+          466.47,
+          435.15
+        ],
+        "velocity": [
+          0.0,
+          0.0
+        ],
+        "grounded": true,
+        "gravity": 1,
+        "gravity_remaining": 0.0,
+        "water_surface": null,
+        "water_active": false,
+        "water_transferred_area": 0.0,
+        "cover_open": false,
+        "cover_fraction": 0.0,
+        "rope_distance": null,
+        "gate_open": false,
+        "gate_fraction": 0.0,
+        "grab_kind": "",
+        "dead": false,
+        "complete": false,
+        "crates": [
+          {
+            "position": [
+              720.0,
+              304.31
+            ],
+            "angle": 0.0
+          },
+          {
+            "position": [
+              940.0,
+              335.75
+            ],
+            "angle": 0.0
+          }
+        ],
+        "beam_angle": null,
+        "magnet": {
+          "enabled": true,
+          "box_gravity": -1,
+          "captured": [
+            0
+          ]
+        }
+      }
+    },
+    {
+      "name": "06-split-height-route",
+      "path": "/home/podistrict/Projects/03-projects/game-noor-grafkom3/docs/echo/verification/06-split-height-route.png",
+      "sha256": "861743a95112bee5724e7164c2e94ef3553eef9239999f2b7e604bb1f937b30c",
+      "pixel_std": 30.61,
+      "physics": {
+        "chapter": 6,
+        "time": 4.65,
+        "player": [
+          931.72,
+          349.09
+        ],
+        "velocity": [
+          190.0,
+          150.0
+        ],
+        "grounded": true,
+        "gravity": 1,
+        "gravity_remaining": 0.0,
+        "water_surface": null,
+        "water_active": false,
+        "water_transferred_area": 0.0,
+        "cover_open": false,
+        "cover_fraction": 0.0,
+        "rope_distance": null,
+        "gate_open": false,
+        "gate_fraction": 0.0,
+        "grab_kind": "",
+        "dead": false,
+        "complete": false,
+        "crates": [
+          {
+            "position": [
+              720.0,
+              306.85
+            ],
+            "angle": 0.0
+          },
+          {
+            "position": [
+              940.0,
+              418.15
+            ],
+            "angle": 0.0
+          }
+        ],
+        "beam_angle": null,
+        "magnet": {
+          "enabled": true,
+          "box_gravity": 1,
+          "captured": [
+            0
+          ]
+        }
+      }
+    },
+    {
+      "name": "07-ending",
+      "path": "/home/podistrict/Projects/03-projects/game-noor-grafkom3/docs/echo/verification/07-ending.png",
+      "sha256": "edca61efc973fb1f7ba4816bfaadef96ec07faa774c679779c7c8485ccab4ad0",
+      "pixel_std": 23.1,
+      "physics": {
+        "chapter": 6,
+        "time": 7.292,
+        "player": [
+          1432.68,
+          295.15
+        ],
+        "velocity": [
+          187.7,
+          0.0
+        ],
+        "grounded": true,
+        "gravity": 1,
+        "gravity_remaining": 0.0,
+        "water_surface": null,
+        "water_active": false,
+        "water_transferred_area": 0.0,
+        "cover_open": false,
+        "cover_fraction": 0.0,
+        "rope_distance": null,
+        "gate_open": false,
+        "gate_fraction": 0.0,
+        "grab_kind": "",
+        "dead": false,
+        "complete": true,
+        "crates": [
+          {
+            "position": [
+              720.0,
+              306.85
+            ],
+            "angle": 0.0
+          },
+          {
+            "position": [
+              940.0,
+              418.15
+            ],
+            "angle": 0.0
+          }
+        ],
+        "beam_angle": null,
+        "magnet": {
+          "enabled": true,
+          "box_gravity": 1,
+          "captured": [
+            0
+          ]
+        }
+      }
+    },
+    {
+      "name": "08-pause",
+      "path": "/home/podistrict/Projects/03-projects/game-noor-grafkom3/docs/echo/verification/08-pause.png",
+      "sha256": "bd93b3d894ece3a13b1326e6dbfdca5e044ebb711c18a77f77bffc17f4c3cc7a",
+      "pixel_std": 17.23,
+      "physics": {
+        "chapter": 1,
+        "time": 0.0,
+        "player": [
+          140.0,
+          430.0
+        ],
+        "velocity": [
+          0.0,
+          0.0
+        ],
+        "grounded": false,
+        "gravity": 1,
+        "gravity_remaining": 0.0,
+        "water_surface": null,
+        "water_active": false,
+        "water_transferred_area": 0.0,
+        "cover_open": false,
+        "cover_fraction": 0.0,
+        "rope_distance": null,
+        "gate_open": false,
+        "gate_fraction": 0.0,
+        "grab_kind": "",
+        "dead": false,
+        "complete": false,
+        "crates": [
+          {
+            "position": [
+              470.0,
+              431.0
+            ],
+            "angle": 0.0
+          }
+        ],
+        "beam_angle": null,
+        "magnet": null
+      }
+    },
+    {
+      "name": "09-fall-and-retry",
+      "path": "/home/podistrict/Projects/03-projects/game-noor-grafkom3/docs/echo/verification/09-fall-and-retry.png",
+      "sha256": "42ce1ba400144d78a417c6a780572bb18988ccc38ed7886770ca832a74faa25b",
+      "pixel_std": 21.11,
+      "physics": {
+        "chapter": 2,
+        "time": 3.033,
+        "player": [
+          715.56,
+          593.83
+        ],
+        "velocity": [
+          190.0,
+          581.64
+        ],
+        "grounded": false,
+        "gravity": 1,
+        "gravity_remaining": 0.0,
+        "water_surface": null,
+        "water_active": false,
+        "water_transferred_area": 0.0,
+        "cover_open": false,
+        "cover_fraction": 0.0,
+        "rope_distance": null,
+        "gate_open": false,
+        "gate_fraction": 0.0,
+        "grab_kind": "",
+        "dead": true,
+        "complete": false,
+        "crates": [],
+        "beam_angle": null,
+        "magnet": null
+      }
+    }
+  ],
+  "assets": [
+    {
+      "path": "assets/echo/ART_PHILOSOPHY.md",
+      "bytes": 1804,
+      "sha256": "a1664d98439d9bcd491008004c2bbad272abc9166dcaa2b1595b7353b61cdf64"
+    },
+    {
+      "path": "assets/echo/art/chapter_0_far.png",
+      "bytes": 155265,
+      "sha256": "817f15fab789cf0430351c040a888669e50f70e4575ab5ba4279791c65f6cedf"
+    },
+    {
+      "path": "assets/echo/art/chapter_0_mid.png",
+      "bytes": 174963,
+      "sha256": "62f80a7ce519e75f2e2e05ed18cb4208922d86af6918684e0395bb0283de8419"
+    },
+    {
+      "path": "assets/echo/art/chapter_0_works.png",
+      "bytes": 23989,
+      "sha256": "2aea8c090392ad48a9bae67be006339bcf284878d300a8f36c151bbf7d897483"
+    },
+    {
+      "path": "assets/echo/art/chapter_1_far.png",
+      "bytes": 162977,
+      "sha256": "c9a98d084729afaa8e41ca37cff21538019801b2d6fb7c2879bd1c3e2993032e"
+    },
+    {
+      "path": "assets/echo/art/chapter_1_mid.png",
+      "bytes": 154085,
+      "sha256": "3e3b3e45759914d102f156c97d258b61e1844655c7fb86a34f3c19b90b03637d"
+    },
+    {
+      "path": "assets/echo/art/chapter_1_works.png",
+      "bytes": 20655,
+      "sha256": "64ad28f4348f9854b283019188632a9509fc62ad8b4a45e6309fb1e0f0ee5542"
+    },
+    {
+      "path": "assets/echo/art/chapter_2_far.png",
+      "bytes": 193841,
+      "sha256": "ae12b404900774094a2712a3a62a7831690b68c0f1e4c888afe25e4c76c671bd"
+    },
+    {
+      "path": "assets/echo/art/chapter_2_mid.png",
+      "bytes": 65530,
+      "sha256": "a5c0d7bccbe187e03a97d0478dc202a09a084aef37c1bcda5fd82e08c32661fb"
+    },
+    {
+      "path": "assets/echo/art/chapter_2_works.png",
+      "bytes": 31854,
+      "sha256": "be5f08f26474d66e685b42f93b1b4c61204d6cfa3a5776adf4f3bebb413dee27"
+    },
+    {
+      "path": "assets/echo/art/chapter_3_far.png",
+      "bytes": 260553,
+      "sha256": "ffb6dea382c1dfbab47994de3dfd9110cc5435b135eb5e7278c67b3b419a43a8"
+    },
+    {
+      "path": "assets/echo/art/chapter_3_mid.png",
+      "bytes": 149559,
+      "sha256": "3659516855d8890b4b5602e1d1236345b7b15b06c2d71f1cc867b855f53ed981"
+    },
+    {
+      "path": "assets/echo/art/chapter_3_works.png",
+      "bytes": 31804,
+      "sha256": "fad3b1d04a8f21c75c11679d38a4552b8730f322e7bbfa7e263ac1eb32c6baba"
+    },
+    {
+      "path": "assets/echo/art/chapter_4_far.png",
+      "bytes": 224490,
+      "sha256": "a0d7cd10f192189f60594e9da45489503ae07ffff607e675dc6ae735bc0e2887"
+    },
+    {
+      "path": "assets/echo/art/chapter_4_mid.png",
+      "bytes": 154933,
+      "sha256": "f26e0292c7535bb0dfc612a65012bfaa69fe8d40bc43ee0c37121e1b08b421ad"
+    },
+    {
+      "path": "assets/echo/art/chapter_4_works.png",
+      "bytes": 45861,
+      "sha256": "36cd18bd00182b6a918f603a1f7c3b1ad858eacb2bff504ecb3fc3b7b7693d71"
+    },
+    {
+      "path": "assets/echo/art/chapter_5_far.png",
+      "bytes": 228466,
+      "sha256": "b7dd4718762d24689a51b95448b11e0c0c233686718f7531b2eb7e9bb60ad855"
+    },
+    {
+      "path": "assets/echo/art/chapter_5_mid.png",
+      "bytes": 152254,
+      "sha256": "de061ffafd31665cc0022f62c2a906cb1908bf4ae6b18a81a6b4c945186ebef9"
+    },
+    {
+      "path": "assets/echo/art/chapter_5_works.png",
+      "bytes": 23215,
+      "sha256": "ceab06e1067ff6c952b6cf7b87e19f5166b5b47a22b048b400f00d8b37a86668"
+    },
+    {
+      "path": "assets/echo/art/courier_sheet.png",
+      "bytes": 31480,
+      "sha256": "5df2663abb6b9daff93cdc03091f4288d423e61d3a59fcd7154b30af4930785c"
+    },
+    {
+      "path": "assets/echo/art/crate.png",
+      "bytes": 10727,
+      "sha256": "209bff49874a8f175953dd88d0f1f721c22ed39c4f566502423c1c4583dd3131"
+    },
+    {
+      "path": "assets/echo/art/crate_heavy.png",
+      "bytes": 8406,
+      "sha256": "f729aa1ea2450c5a05ce83dfab8d8d6d4214449463304c6455a80f70f37c29ea"
+    },
+    {
+      "path": "assets/echo/art/fog.png",
+      "bytes": 55322,
+      "sha256": "d10ad584004e73c49ccae42a8013ecc3cc6f1e485091c9ee6742ab81c216255a"
+    },
+    {
+      "path": "assets/echo/art/foliage.png",
+      "bytes": 170065,
+      "sha256": "e04483deae072758d17fc7dd95d00bb88745b6384a149811abac66be7cdbec89"
+    },
+    {
+      "path": "assets/echo/art/glow.png",
+      "bytes": 12564,
+      "sha256": "799d30980000fa3a226402f614ad71b4cf2f0f1676b24da6b7f64fc28745d9f2"
+    },
+    {
+      "path": "assets/echo/art/grain.png",
+      "bytes": 16872,
+      "sha256": "8d13fb5dda43172b4f234083ca173692a9c541b55884d55e2ce75fff4979e100"
+    },
+    {
+      "path": "assets/echo/art/magnet.png",
+      "bytes": 1809,
+      "sha256": "5040eeaaec997787d9ed1fc8e8094f22041f5813fe429cad9283b73e3b5cf107"
+    },
+    {
+      "path": "assets/echo/art/moth_guide.png",
+      "bytes": 3605,
+      "sha256": "071163c2719c5072749b17cc528465b4f4622df70499f441d9d56ae37b889240"
+    },
+    {
+      "path": "assets/echo/art/saw.png",
+      "bytes": 28951,
+      "sha256": "0fab16bd600f3da6875b991a48378cd33a2992027adfe1a5f40cf8cbfc44e680"
+    },
+    {
+      "path": "assets/echo/art/sky.png",
+      "bytes": 77090,
+      "sha256": "3e8faf27b6dede67f90b0675a6e4b98760db1c494350fc36228afa9424821a8d"
+    },
+    {
+      "path": "assets/echo/art/vignette.png",
+      "bytes": 56507,
+      "sha256": "a4731f2d28b3298a044b416a84c3348b05e37544cc5a21e3de3e18265b3b2e09"
+    },
+    {
+      "path": "assets/echo/audio/ambience.wav",
+      "bytes": 2822444,
+      "sha256": "3fe00e7f049931981be16adaf7ac7234a3d3ef8fd55a05b2600c1a079147a91c",
+      "channels": 2,
+      "sample_rate": 22050,
+      "seconds": 32.0,
+      "peak": 3871
+    },
+    {
+      "path": "assets/echo/audio/checkpoint.wav",
+      "bytes": 211724,
+      "sha256": "f386e8d50ce43963b20ee8b9ffee77c21f7d377bb6208977228cb3c6f26d85ff",
+      "channels": 2,
+      "sample_rate": 22050,
+      "seconds": 2.4,
+      "peak": 5126
+    },
+    {
+      "path": "assets/echo/audio/death.wav",
+      "bytes": 158804,
+      "sha256": "efdb0850bd5b153ccfa6b732bddca1259d64ac469af0f224682fa212820e4639",
+      "channels": 2,
+      "sample_rate": 22050,
+      "seconds": 1.8,
+      "peak": 5564
+    },
+    {
+      "path": "assets/echo/audio/footstep.wav",
+      "bytes": 17684,
+      "sha256": "8107cf567eb33e214b443960eea24185a2a818a5ac7096bcbb36a486448537b6",
+      "channels": 2,
+      "sample_rate": 22050,
+      "seconds": 0.2,
+      "peak": 2214
+    },
+    {
+      "path": "assets/echo/audio/gate.wav",
+      "bytes": 132344,
+      "sha256": "a32f642536893b7399feaaf4aae4d1277f68a30bf4353e19cb6db27c6438d376",
+      "channels": 2,
+      "sample_rate": 22050,
+      "seconds": 1.5,
+      "peak": 4221
+    },
+    {
+      "path": "assets/echo/audio/grab.wav",
+      "bytes": 26504,
+      "sha256": "e0dd230c056ecbf8c8d01c1ac1a9db07e0da885dcc76cad240a75c14eba9253b",
+      "channels": 2,
+      "sample_rate": 22050,
+      "seconds": 0.3,
+      "peak": 2707
+    },
+    {
+      "path": "assets/echo/audio/gravity.wav",
+      "bytes": 101472,
+      "sha256": "9136ae65793b2396317d732992be28ac3d8c4f89bf006481939e1174dd9c9b3a",
+      "channels": 2,
+      "sample_rate": 22050,
+      "seconds": 1.15,
+      "peak": 3100
+    },
+    {
+      "path": "assets/echo/audio/jump.wav",
+      "bytes": 33560,
+      "sha256": "39aaf14259d402f94064dc6a1466ca1beca05935e01016dd2d2816e6cdaf9ff9",
+      "channels": 2,
+      "sample_rate": 22050,
+      "seconds": 0.38,
+      "peak": 3768
+    },
+    {
+      "path": "assets/echo/audio/land.wav",
+      "bytes": 30032,
+      "sha256": "cee248f67ddfb510b10d0d353ae103566e1912bcca640581e4f4804da4a6890f",
+      "channels": 2,
+      "sample_rate": 22050,
+      "seconds": 0.34,
+      "peak": 4987
+    },
+    {
+      "path": "assets/echo/audio/magnet.wav",
+      "bytes": 28268,
+      "sha256": "7d9baaa2437c5a9e149a5c4d9d25bed2404b69cec7efda6e16954efe467da9e7",
+      "channels": 2,
+      "sample_rate": 22050,
+      "seconds": 0.32,
+      "peak": 2150
+    },
+    {
+      "path": "assets/echo/audio/magnet_capture.wav",
+      "bytes": 48556,
+      "sha256": "252e34e0624c0d57bd15526bba90a5770bb72cf670f37c72f491ef27f2f96367",
+      "channels": 2,
+      "sample_rate": 22050,
+      "seconds": 0.55,
+      "peak": 4706
+    },
+    {
+      "path": "assets/echo/audio/magnet_release.wav",
+      "bytes": 35324,
+      "sha256": "6b133d1b63f00a977d047c0b5656eb9b9eacc0aeb748f02e23e03ce656236334",
+      "channels": 2,
+      "sample_rate": 22050,
+      "seconds": 0.4,
+      "peak": 3945
+    },
+    {
+      "path": "assets/echo/audio/music.wav",
+      "bytes": 2822444,
+      "sha256": "41f43be10c9627178dab3b664883a68d441a873929001dddd0d767ad2fa03274",
+      "channels": 2,
+      "sample_rate": 22050,
+      "seconds": 32.0,
+      "peak": 3884
+    },
+    {
+      "path": "assets/echo/audio/tick.wav",
+      "bytes": 8864,
+      "sha256": "b19ee15bb8a191ecabb1b6ff8afd8da99d380e9675a75d7009ebfe26c485c29b",
+      "channels": 2,
+      "sample_rate": 22050,
+      "seconds": 0.1,
+      "peak": 1643
+    },
+    {
+      "path": "assets/echo/audio/win.wav",
+      "bytes": 441044,
+      "sha256": "0f4946cf9fc4a98f97b9c7819abe71081c908149c5a322cf9d2b2b6e270a4d36",
+      "channels": 2,
+      "sample_rate": 22050,
+      "seconds": 5.0,
+      "peak": 4409
+    },
+    {
+      "path": "assets/echo/manifest.json",
+      "bytes": 18222,
+      "sha256": "d6051a2ed6f541b84bf2dfd6f17233cbd62e10601a4bb7637e9f93d1da925b1c"
+    }
+  ],
+  "trace": [
+    {
+      "frame": 0,
+      "pilot_phase": "gate",
+      "state": "playing",
+      "chapter": 1,
+      "time": 0.017,
+      "player": [
+        140.13,
+        430.07
+      ],
+      "velocity": [
+        10.33,
+        17.5
+      ],
+      "grounded": false,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            470.0,
+            431.0
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 30,
+      "pilot_phase": "gate",
+      "state": "playing",
+      "chapter": 1,
+      "time": 0.517,
+      "player": [
+        227.4,
+        435.19
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            470.0,
+            431.09
+          ],
+          "angle": 0.0002
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 60,
+      "pilot_phase": "gate",
+      "state": "playing",
+      "chapter": 1,
+      "time": 1.017,
+      "player": [
+        322.4,
+        435.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            470.0,
+            431.09
+          ],
+          "angle": 0.0002
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 90,
+      "pilot_phase": "gate",
+      "state": "playing",
+      "chapter": 1,
+      "time": 1.517,
+      "player": [
+        417.4,
+        435.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            470.0,
+            431.09
+          ],
+          "angle": 0.0002
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 120,
+      "pilot_phase": "gate",
+      "state": "playing",
+      "chapter": 1,
+      "time": 2.017,
+      "player": [
+        500.63,
+        435.15
+      ],
+      "velocity": [
+        183.99,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            542.0,
+            431.08
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 150,
+      "pilot_phase": "gate",
+      "state": "playing",
+      "chapter": 1,
+      "time": 2.517,
+      "player": [
+        593.01,
+        435.15
+      ],
+      "velocity": [
+        183.99,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            634.87,
+            431.08
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 180,
+      "pilot_phase": "gate",
+      "state": "playing",
+      "chapter": 1,
+      "time": 3.017,
+      "player": [
+        685.75,
+        435.15
+      ],
+      "velocity": [
+        183.99,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            727.62,
+            431.08
+          ],
+          "angle": -0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 210,
+      "pilot_phase": "gate",
+      "state": "playing",
+      "chapter": 1,
+      "time": 3.517,
+      "player": [
+        778.49,
+        435.15
+      ],
+      "velocity": [
+        183.99,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            820.37,
+            431.08
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 240,
+      "pilot_phase": "gate",
+      "state": "playing",
+      "chapter": 1,
+      "time": 4.017,
+      "player": [
+        871.24,
+        435.15
+      ],
+      "velocity": [
+        183.99,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": true,
+      "gate_fraction": 0.012,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            913.11,
+            431.08
+          ],
+          "angle": -0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 270,
+      "pilot_phase": "gate",
+      "state": "playing",
+      "chapter": 1,
+      "time": 4.517,
+      "player": [
+        964.41,
+        362.4
+      ],
+      "velocity": [
+        190.0,
+        -178.33
+      ],
+      "grounded": false,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": true,
+      "gate_fraction": 0.712,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            1005.57,
+            431.05
+          ],
+          "angle": 0.0013
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 300,
+      "pilot_phase": "gate",
+      "state": "playing",
+      "chapter": 1,
+      "time": 5.017,
+      "player": [
+        1058.34,
+        343.61
+      ],
+      "velocity": [
+        190.0,
+        -357.5
+      ],
+      "grounded": false,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": true,
+      "gate_fraction": 1.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            1073.52,
+            431.05
+          ],
+          "angle": 0.0013
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 330,
+      "pilot_phase": "gate",
+      "state": "playing",
+      "chapter": 1,
+      "time": 5.517,
+      "player": [
+        1153.34,
+        293.92
+      ],
+      "velocity": [
+        190.0,
+        167.5
+      ],
+      "grounded": false,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": true,
+      "gate_fraction": 1.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            1107.48,
+            431.05
+          ],
+          "angle": 0.0013
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 360,
+      "pilot_phase": "gate",
+      "state": "playing",
+      "chapter": 1,
+      "time": 6.017,
+      "player": [
+        1246.29,
+        436.76
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": true,
+      "gate_fraction": 1.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            1110.27,
+            431.05
+          ],
+          "angle": 0.0013
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 390,
+      "pilot_phase": "gate",
+      "state": "playing",
+      "chapter": 1,
+      "time": 6.517,
+      "player": [
+        1341.29,
+        435.22
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": true,
+      "gate_fraction": 1.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            1110.27,
+            431.05
+          ],
+          "angle": 0.0013
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 420,
+      "pilot_phase": "gate",
+      "state": "playing",
+      "chapter": 1,
+      "time": 7.017,
+      "player": [
+        1436.29,
+        435.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": true,
+      "gate_fraction": 1.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            1110.27,
+            431.05
+          ],
+          "angle": 0.0013
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 450,
+      "pilot_phase": "gate",
+      "state": "playing",
+      "chapter": 1,
+      "time": 7.258,
+      "player": [
+        1482.21,
+        435.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": true,
+      "gate_fraction": 1.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": true,
+      "crates": [
+        {
+          "position": [
+            1110.27,
+            431.05
+          ],
+          "angle": 0.0013
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 480,
+      "pilot_phase": "gate",
+      "state": "playing",
+      "chapter": 1,
+      "time": 7.258,
+      "player": [
+        1482.21,
+        435.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": true,
+      "gate_fraction": 1.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": true,
+      "crates": [
+        {
+          "position": [
+            1110.27,
+            431.05
+          ],
+          "angle": 0.0013
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 510,
+      "pilot_phase": "gate",
+      "state": "playing",
+      "chapter": 1,
+      "time": 7.258,
+      "player": [
+        1482.21,
+        435.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": true,
+      "gate_fraction": 1.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": true,
+      "crates": [
+        {
+          "position": [
+            1110.27,
+            431.05
+          ],
+          "angle": 0.0013
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 540,
+      "pilot_phase": "gate",
+      "state": "playing",
+      "chapter": 1,
+      "time": 7.258,
+      "player": [
+        1482.21,
+        435.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": true,
+      "gate_fraction": 1.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": true,
+      "crates": [
+        {
+          "position": [
+            1110.27,
+            431.05
+          ],
+          "angle": 0.0013
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 570,
+      "pilot_phase": "approach",
+      "state": "playing",
+      "chapter": 2,
+      "time": 0.433,
+      "player": [
+        221.56,
+        435.22
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 600,
+      "pilot_phase": "approach",
+      "state": "playing",
+      "chapter": 2,
+      "time": 0.933,
+      "player": [
+        316.56,
+        435.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 630,
+      "pilot_phase": "approach",
+      "state": "playing",
+      "chapter": 2,
+      "time": 1.433,
+      "player": [
+        411.56,
+        435.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 660,
+      "pilot_phase": "approach",
+      "state": "playing",
+      "chapter": 2,
+      "time": 1.933,
+      "player": [
+        506.56,
+        435.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 690,
+      "pilot_phase": "wait",
+      "state": "playing",
+      "chapter": 2,
+      "time": 2.433,
+      "player": [
+        576.08,
+        435.15
+      ],
+      "velocity": [
+        0.0,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 720,
+      "pilot_phase": "catch",
+      "state": "playing",
+      "chapter": 2,
+      "time": 2.933,
+      "player": [
+        639.02,
+        339.0
+      ],
+      "velocity": [
+        190.0,
+        10.0
+      ],
+      "grounded": false,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 750,
+      "pilot_phase": "swing",
+      "state": "playing",
+      "chapter": 2,
+      "time": 3.433,
+      "player": [
+        785.76,
+        365.47
+      ],
+      "velocity": [
+        411.23,
+        -41.02
+      ],
+      "grounded": false,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": 297.36,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "rope",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 780,
+      "pilot_phase": "swing",
+      "state": "playing",
+      "chapter": 2,
+      "time": 3.933,
+      "player": [
+        980.56,
+        297.61
+      ],
+      "velocity": [
+        339.33,
+        -238.25
+      ],
+      "grounded": false,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": 286.026,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "rope",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 810,
+      "pilot_phase": "land",
+      "state": "playing",
+      "chapter": 2,
+      "time": 4.433,
+      "player": [
+        1086.97,
+        189.04
+      ],
+      "velocity": [
+        190.0,
+        -20.29
+      ],
+      "grounded": false,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 840,
+      "pilot_phase": "land",
+      "state": "playing",
+      "chapter": 2,
+      "time": 4.933,
+      "player": [
+        1181.76,
+        215.26
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 870,
+      "pilot_phase": "land",
+      "state": "playing",
+      "chapter": 2,
+      "time": 5.433,
+      "player": [
+        1276.76,
+        215.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 900,
+      "pilot_phase": "land",
+      "state": "playing",
+      "chapter": 2,
+      "time": 5.933,
+      "player": [
+        1371.76,
+        215.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 930,
+      "pilot_phase": "land",
+      "state": "playing",
+      "chapter": 2,
+      "time": 6.433,
+      "player": [
+        1466.76,
+        215.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 960,
+      "pilot_phase": "land",
+      "state": "playing",
+      "chapter": 2,
+      "time": 6.883,
+      "player": [
+        1552.26,
+        215.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": true,
+      "crates": [],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 990,
+      "pilot_phase": "land",
+      "state": "playing",
+      "chapter": 2,
+      "time": 6.883,
+      "player": [
+        1552.26,
+        215.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": true,
+      "crates": [],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 1020,
+      "pilot_phase": "land",
+      "state": "playing",
+      "chapter": 2,
+      "time": 6.883,
+      "player": [
+        1552.26,
+        215.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": true,
+      "crates": [],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 1050,
+      "pilot_phase": "land",
+      "state": "playing",
+      "chapter": 2,
+      "time": 6.883,
+      "player": [
+        1552.26,
+        215.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": true,
+      "crates": [],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 1080,
+      "pilot_phase": "push",
+      "state": "playing",
+      "chapter": 3,
+      "time": 0.233,
+      "player": [
+        173.56,
+        435.39
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": 500,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            420.0,
+            422.09
+          ],
+          "angle": -0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 1110,
+      "pilot_phase": "push",
+      "state": "playing",
+      "chapter": 3,
+      "time": 0.733,
+      "player": [
+        268.56,
+        435.16
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": 500,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            420.0,
+            422.09
+          ],
+          "angle": -0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 1140,
+      "pilot_phase": "push",
+      "state": "playing",
+      "chapter": 3,
+      "time": 1.233,
+      "player": [
+        363.56,
+        435.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": 500,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": true,
+      "cover_fraction": 0.117,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            420.0,
+            422.09
+          ],
+          "angle": -0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 1170,
+      "pilot_phase": "push",
+      "state": "playing",
+      "chapter": 3,
+      "time": 1.733,
+      "player": [
+        449.74,
+        435.15
+      ],
+      "velocity": [
+        184.61,
+        -0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": 500,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": true,
+      "cover_fraction": 0.617,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            500.44,
+            422.09
+          ],
+          "angle": -0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 1200,
+      "pilot_phase": "board",
+      "state": "playing",
+      "chapter": 3,
+      "time": 2.233,
+      "player": [
+        543.69,
+        352.61
+      ],
+      "velocity": [
+        190.0,
+        -165.0
+      ],
+      "grounded": false,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": 494.667,
+      "water_active": true,
+      "water_transferred_area": 1493.333,
+      "cover_open": true,
+      "cover_fraction": 1.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            605.08,
+            485.76
+          ],
+          "angle": 0.3988
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 1230,
+      "pilot_phase": "board",
+      "state": "playing",
+      "chapter": 3,
+      "time": 2.733,
+      "player": [
+        638.69,
+        399.18
+      ],
+      "velocity": [
+        190.0,
+        360.0
+      ],
+      "grounded": false,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": 484.667,
+      "water_active": true,
+      "water_transferred_area": 4293.333,
+      "cover_open": true,
+      "cover_fraction": 1.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            653.62,
+            478.3
+          ],
+          "angle": -0.0783
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 1260,
+      "pilot_phase": "float",
+      "state": "playing",
+      "chapter": 3,
+      "time": 3.233,
+      "player": [
+        662.96,
+        426.89
+      ],
+      "velocity": [
+        37.25,
+        -12.96
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": 474.667,
+      "water_active": true,
+      "water_transferred_area": 7093.333,
+      "cover_open": true,
+      "cover_fraction": 1.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            674.34,
+            489.79
+          ],
+          "angle": -0.0126
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 1290,
+      "pilot_phase": "float",
+      "state": "playing",
+      "chapter": 3,
+      "time": 3.733,
+      "player": [
+        681.19,
+        408.69
+      ],
+      "velocity": [
+        33.03,
+        -36.94
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": 464.667,
+      "water_active": true,
+      "water_transferred_area": 9893.333,
+      "cover_open": true,
+      "cover_fraction": 1.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            690.29,
+            471.68
+          ],
+          "angle": -0.0001
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 1320,
+      "pilot_phase": "float",
+      "state": "playing",
+      "chapter": 3,
+      "time": 4.233,
+      "player": [
+        697.8,
+        398.4
+      ],
+      "velocity": [
+        30.41,
+        -10.02
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": 454.667,
+      "water_active": true,
+      "water_transferred_area": 12693.333,
+      "cover_open": true,
+      "cover_fraction": 1.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            706.17,
+            461.39
+          ],
+          "angle": -0.0001
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 1350,
+      "pilot_phase": "float",
+      "state": "playing",
+      "chapter": 3,
+      "time": 4.733,
+      "player": [
+        713.05,
+        390.76
+      ],
+      "velocity": [
+        27.77,
+        -22.34
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": 444.667,
+      "water_active": true,
+      "water_transferred_area": 15493.333,
+      "cover_open": true,
+      "cover_fraction": 1.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            720.71,
+            453.75
+          ],
+          "angle": -0.0001
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 1380,
+      "pilot_phase": "float",
+      "state": "playing",
+      "chapter": 3,
+      "time": 5.233,
+      "player": [
+        727.0,
+        379.16
+      ],
+      "velocity": [
+        25.46,
+        -21.1
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": 434.667,
+      "water_active": true,
+      "water_transferred_area": 18293.333,
+      "cover_open": true,
+      "cover_fraction": 1.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            734.01,
+            442.15
+          ],
+          "angle": -0.0001
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 1410,
+      "pilot_phase": "float",
+      "state": "playing",
+      "chapter": 3,
+      "time": 5.733,
+      "player": [
+        738.73,
+        370.13
+      ],
+      "velocity": [
+        10.76,
+        -15.87
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": 424.667,
+      "water_active": true,
+      "water_transferred_area": 21093.333,
+      "cover_open": true,
+      "cover_fraction": 1.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            742.07,
+            433.12
+          ],
+          "angle": -0.0001
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 1440,
+      "pilot_phase": "float",
+      "state": "playing",
+      "chapter": 3,
+      "time": 6.233,
+      "player": [
+        741.6,
+        360.61
+      ],
+      "velocity": [
+        0.0,
+        -21.95
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": 414.667,
+      "water_active": true,
+      "water_transferred_area": 23893.333,
+      "cover_open": true,
+      "cover_fraction": 1.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            742.07,
+            423.6
+          ],
+          "angle": -0.0001
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 1470,
+      "pilot_phase": "float",
+      "state": "playing",
+      "chapter": 3,
+      "time": 6.733,
+      "player": [
+        742.0,
+        349.47
+      ],
+      "velocity": [
+        0.0,
+        -21.13
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": 404.667,
+      "water_active": true,
+      "water_transferred_area": 26693.333,
+      "cover_open": true,
+      "cover_fraction": 1.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            742.07,
+            412.46
+          ],
+          "angle": -0.0001
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 1500,
+      "pilot_phase": "float",
+      "state": "playing",
+      "chapter": 3,
+      "time": 7.233,
+      "player": [
+        742.06,
+        339.6
+      ],
+      "velocity": [
+        -0.0,
+        -19.19
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": 394.667,
+      "water_active": true,
+      "water_transferred_area": 29493.333,
+      "cover_open": true,
+      "cover_fraction": 1.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            742.07,
+            402.59
+          ],
+          "angle": -0.0001
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 1530,
+      "pilot_phase": "float",
+      "state": "playing",
+      "chapter": 3,
+      "time": 7.733,
+      "player": [
+        742.06,
+        329.71
+      ],
+      "velocity": [
+        -0.0,
+        -20.34
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": 384.667,
+      "water_active": true,
+      "water_transferred_area": 32293.333,
+      "cover_open": true,
+      "cover_fraction": 1.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            742.07,
+            392.69
+          ],
+          "angle": -0.0001
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 1560,
+      "pilot_phase": "float",
+      "state": "playing",
+      "chapter": 3,
+      "time": 8.233,
+      "player": [
+        742.07,
+        319.58
+      ],
+      "velocity": [
+        0.0,
+        -20.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": 374.667,
+      "water_active": true,
+      "water_transferred_area": 35093.333,
+      "cover_open": true,
+      "cover_fraction": 1.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            742.07,
+            382.57
+          ],
+          "angle": -0.0001
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 1590,
+      "pilot_phase": "float",
+      "state": "playing",
+      "chapter": 3,
+      "time": 8.733,
+      "player": [
+        742.07,
+        309.64
+      ],
+      "velocity": [
+        -0.0,
+        -19.91
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": 364.667,
+      "water_active": true,
+      "water_transferred_area": 37893.333,
+      "cover_open": true,
+      "cover_fraction": 1.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            742.07,
+            372.63
+          ],
+          "angle": -0.0001
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 1620,
+      "pilot_phase": "float",
+      "state": "playing",
+      "chapter": 3,
+      "time": 9.233,
+      "player": [
+        742.07,
+        299.63
+      ],
+      "velocity": [
+        -0.0,
+        -20.06
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": 354.667,
+      "water_active": true,
+      "water_transferred_area": 40693.333,
+      "cover_open": true,
+      "cover_fraction": 1.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            742.07,
+            362.62
+          ],
+          "angle": -0.0001
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 1650,
+      "pilot_phase": "float",
+      "state": "playing",
+      "chapter": 3,
+      "time": 9.733,
+      "player": [
+        742.07,
+        289.62
+      ],
+      "velocity": [
+        -0.0,
+        -19.98
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": 344.667,
+      "water_active": true,
+      "water_transferred_area": 43493.333,
+      "cover_open": true,
+      "cover_fraction": 1.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            742.07,
+            352.61
+          ],
+          "angle": -0.0001
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 1680,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 3,
+      "time": 10.233,
+      "player": [
+        773.34,
+        202.46
+      ],
+      "velocity": [
+        190.0,
+        -165.0
+      ],
+      "grounded": false,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": 334.667,
+      "water_active": true,
+      "water_transferred_area": 46293.333,
+      "cover_open": true,
+      "cover_fraction": 1.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            742.06,
+            333.26
+          ],
+          "angle": -0.0001
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 1710,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 3,
+      "time": 10.733,
+      "player": [
+        868.34,
+        249.02
+      ],
+      "velocity": [
+        190.0,
+        360.0
+      ],
+      "grounded": false,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": 330,
+      "water_active": false,
+      "water_transferred_area": 47600.0,
+      "cover_open": true,
+      "cover_fraction": 1.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            742.06,
+            317.47
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 1740,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 3,
+      "time": 11.233,
+      "player": [
+        962.33,
+        275.06
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": 330,
+      "water_active": false,
+      "water_transferred_area": 47600.0,
+      "cover_open": true,
+      "cover_fraction": 1.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            742.06,
+            326.84
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 1770,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 3,
+      "time": 11.733,
+      "player": [
+        1057.33,
+        275.06
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": 330,
+      "water_active": false,
+      "water_transferred_area": 47600.0,
+      "cover_open": true,
+      "cover_fraction": 1.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            742.06,
+            321.37
+          ],
+          "angle": -0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 1800,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 3,
+      "time": 12.233,
+      "player": [
+        1152.33,
+        275.06
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": 330,
+      "water_active": false,
+      "water_transferred_area": 47600.0,
+      "cover_open": true,
+      "cover_fraction": 1.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            742.06,
+            324.29
+          ],
+          "angle": -0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 1830,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 3,
+      "time": 12.733,
+      "player": [
+        1247.33,
+        275.06
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": 330,
+      "water_active": false,
+      "water_transferred_area": 47600.0,
+      "cover_open": true,
+      "cover_fraction": 1.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            742.06,
+            322.86
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 1860,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 3,
+      "time": 13.025,
+      "player": [
+        1302.75,
+        275.06
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": 330,
+      "water_active": false,
+      "water_transferred_area": 47600.0,
+      "cover_open": true,
+      "cover_fraction": 1.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": true,
+      "crates": [
+        {
+          "position": [
+            742.06,
+            323.04
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 1890,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 3,
+      "time": 13.025,
+      "player": [
+        1302.75,
+        275.06
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": 330,
+      "water_active": false,
+      "water_transferred_area": 47600.0,
+      "cover_open": true,
+      "cover_fraction": 1.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": true,
+      "crates": [
+        {
+          "position": [
+            742.06,
+            323.04
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 1920,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 3,
+      "time": 13.025,
+      "player": [
+        1302.75,
+        275.06
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": 330,
+      "water_active": false,
+      "water_transferred_area": 47600.0,
+      "cover_open": true,
+      "cover_fraction": 1.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": true,
+      "crates": [
+        {
+          "position": [
+            742.06,
+            323.04
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 1950,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 3,
+      "time": 13.025,
+      "player": [
+        1302.75,
+        275.06
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": 330,
+      "water_active": false,
+      "water_transferred_area": 47600.0,
+      "cover_open": true,
+      "cover_fraction": 1.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": true,
+      "crates": [
+        {
+          "position": [
+            742.06,
+            323.04
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 1980,
+      "pilot_phase": "approach",
+      "state": "playing",
+      "chapter": 4,
+      "time": 0.383,
+      "player": [
+        190.93,
+        395.19
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": 0.0,
+      "magnet": null
+    },
+    {
+      "frame": 2010,
+      "pilot_phase": "approach",
+      "state": "playing",
+      "chapter": 4,
+      "time": 0.883,
+      "player": [
+        285.93,
+        395.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": 0.0,
+      "magnet": null
+    },
+    {
+      "frame": 2040,
+      "pilot_phase": "approach",
+      "state": "playing",
+      "chapter": 4,
+      "time": 1.383,
+      "player": [
+        380.93,
+        395.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": 0.0,
+      "magnet": null
+    },
+    {
+      "frame": 2070,
+      "pilot_phase": "approach",
+      "state": "playing",
+      "chapter": 4,
+      "time": 1.883,
+      "player": [
+        475.93,
+        395.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": 0.0,
+      "magnet": null
+    },
+    {
+      "frame": 2100,
+      "pilot_phase": "approach",
+      "state": "playing",
+      "chapter": 4,
+      "time": 2.383,
+      "player": [
+        570.93,
+        395.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": 0.0,
+      "magnet": null
+    },
+    {
+      "frame": 2130,
+      "pilot_phase": "approach",
+      "state": "playing",
+      "chapter": 4,
+      "time": 2.883,
+      "player": [
+        665.32,
+        405.39
+      ],
+      "velocity": [
+        184.49,
+        9.75
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": -0.004,
+      "magnet": null
+    },
+    {
+      "frame": 2160,
+      "pilot_phase": "approach",
+      "state": "playing",
+      "chapter": 4,
+      "time": 3.383,
+      "player": [
+        760.31,
+        408.55
+      ],
+      "velocity": [
+        183.29,
+        -1.09
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": -0.0628,
+      "magnet": null
+    },
+    {
+      "frame": 2190,
+      "pilot_phase": "approach",
+      "state": "playing",
+      "chapter": 4,
+      "time": 3.883,
+      "player": [
+        855.26,
+        400.59
+      ],
+      "velocity": [
+        182.28,
+        -28.54
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": -0.1368,
+      "magnet": null
+    },
+    {
+      "frame": 2220,
+      "pilot_phase": "approach",
+      "state": "playing",
+      "chapter": 4,
+      "time": 4.383,
+      "player": [
+        950.17,
+        384.34
+      ],
+      "velocity": [
+        182.65,
+        -25.23
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": -0.1623,
+      "magnet": null
+    },
+    {
+      "frame": 2250,
+      "pilot_phase": "pump",
+      "state": "playing",
+      "chapter": 4,
+      "time": 4.883,
+      "player": [
+        1031.98,
+        325.25
+      ],
+      "velocity": [
+        58.49,
+        -287.5
+      ],
+      "grounded": false,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": -0.0943,
+      "magnet": null
+    },
+    {
+      "frame": 2280,
+      "pilot_phase": "pump",
+      "state": "playing",
+      "chapter": 4,
+      "time": 5.383,
+      "player": [
+        985.75,
+        310.57
+      ],
+      "velocity": [
+        -190.0,
+        237.5
+      ],
+      "grounded": false,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": 0.0131,
+      "magnet": null
+    },
+    {
+      "frame": 2310,
+      "pilot_phase": "pump",
+      "state": "playing",
+      "chapter": 4,
+      "time": 5.883,
+      "player": [
+        894.82,
+        410.28
+      ],
+      "velocity": [
+        -181.78,
+        -12.85
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": 0.1372,
+      "magnet": null
+    },
+    {
+      "frame": 2340,
+      "pilot_phase": "pump",
+      "state": "playing",
+      "chapter": 4,
+      "time": 6.383,
+      "player": [
+        800.01,
+        390.49
+      ],
+      "velocity": [
+        -180.01,
+        -58.41
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": 0.2608,
+      "magnet": null
+    },
+    {
+      "frame": 2370,
+      "pilot_phase": "pump",
+      "state": "playing",
+      "chapter": 4,
+      "time": 6.883,
+      "player": [
+        705.38,
+        360.56
+      ],
+      "velocity": [
+        -181.1,
+        -40.99
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": 0.29,
+      "magnet": null
+    },
+    {
+      "frame": 2400,
+      "pilot_phase": "pump",
+      "state": "playing",
+      "chapter": 4,
+      "time": 7.383,
+      "player": [
+        647.48,
+        269.46
+      ],
+      "velocity": [
+        25.7,
+        -147.5
+      ],
+      "grounded": false,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": 0.1906,
+      "magnet": null
+    },
+    {
+      "frame": 2430,
+      "pilot_phase": "pump",
+      "state": "playing",
+      "chapter": 4,
+      "time": 7.883,
+      "player": [
+        721.39,
+        324.77
+      ],
+      "velocity": [
+        190.0,
+        377.5
+      ],
+      "grounded": false,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": 0.0422,
+      "magnet": null
+    },
+    {
+      "frame": 2460,
+      "pilot_phase": "pump",
+      "state": "playing",
+      "chapter": 4,
+      "time": 8.383,
+      "player": [
+        812.39,
+        406.71
+      ],
+      "velocity": [
+        181.44,
+        -20.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": -0.141,
+      "magnet": null
+    },
+    {
+      "frame": 2490,
+      "pilot_phase": "pump",
+      "state": "playing",
+      "chapter": 4,
+      "time": 8.883,
+      "player": [
+        906.24,
+        379.8
+      ],
+      "velocity": [
+        165.81,
+        -72.45
+      ],
+      "grounded": false,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": -0.3037,
+      "magnet": null
+    },
+    {
+      "frame": 2520,
+      "pilot_phase": "pump",
+      "state": "playing",
+      "chapter": 4,
+      "time": 9.383,
+      "player": [
+        995.49,
+        344.29
+      ],
+      "velocity": [
+        180.52,
+        -47.55
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": -0.3439,
+      "magnet": null
+    },
+    {
+      "frame": 2550,
+      "pilot_phase": "pump",
+      "state": "playing",
+      "chapter": 4,
+      "time": 9.883,
+      "player": [
+        1028.08,
+        244.44
+      ],
+      "velocity": [
+        -88.71,
+        -42.5
+      ],
+      "grounded": false,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": -0.244,
+      "magnet": null
+    },
+    {
+      "frame": 2580,
+      "pilot_phase": "pump",
+      "state": "playing",
+      "chapter": 4,
+      "time": 10.383,
+      "player": [
+        940.94,
+        352.25
+      ],
+      "velocity": [
+        -190.0,
+        482.5
+      ],
+      "grounded": false,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": -0.0894,
+      "magnet": null
+    },
+    {
+      "frame": 2610,
+      "pilot_phase": "pump",
+      "state": "playing",
+      "chapter": 4,
+      "time": 10.883,
+      "player": [
+        849.77,
+        404.05
+      ],
+      "velocity": [
+        -181.69,
+        -23.17
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": 0.12,
+      "magnet": null
+    },
+    {
+      "frame": 2640,
+      "pilot_phase": "pump",
+      "state": "playing",
+      "chapter": 4,
+      "time": 11.383,
+      "player": [
+        758.18,
+        375.25
+      ],
+      "velocity": [
+        -156.39,
+        -75.59
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": 0.3003,
+      "magnet": null
+    },
+    {
+      "frame": 2670,
+      "pilot_phase": "pump",
+      "state": "playing",
+      "chapter": 4,
+      "time": 11.883,
+      "player": [
+        673.69,
+        339.25
+      ],
+      "velocity": [
+        -180.53,
+        -49.44
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": 0.3497,
+      "magnet": null
+    },
+    {
+      "frame": 2700,
+      "pilot_phase": "pump",
+      "state": "playing",
+      "chapter": 4,
+      "time": 12.383,
+      "player": [
+        661.35,
+        240.89
+      ],
+      "velocity": [
+        130.48,
+        27.5
+      ],
+      "grounded": false,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": 0.2642,
+      "magnet": null
+    },
+    {
+      "frame": 2730,
+      "pilot_phase": "pump",
+      "state": "playing",
+      "chapter": 4,
+      "time": 12.883,
+      "player": [
+        753.74,
+        383.7
+      ],
+      "velocity": [
+        190.0,
+        552.5
+      ],
+      "grounded": false,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": 0.1219,
+      "magnet": null
+    },
+    {
+      "frame": 2760,
+      "pilot_phase": "pump",
+      "state": "playing",
+      "chapter": 4,
+      "time": 13.383,
+      "player": [
+        844.95,
+        402.68
+      ],
+      "velocity": [
+        182.12,
+        -24.82
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": -0.0944,
+      "magnet": null
+    },
+    {
+      "frame": 2790,
+      "pilot_phase": "pump",
+      "state": "playing",
+      "chapter": 4,
+      "time": 13.883,
+      "player": [
+        936.31,
+        373.57
+      ],
+      "velocity": [
+        151.39,
+        -73.91
+      ],
+      "grounded": false,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": -0.2765,
+      "magnet": null
+    },
+    {
+      "frame": 2820,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 4,
+      "time": 14.383,
+      "player": [
+        1022.24,
+        325.78
+      ],
+      "velocity": [
+        190.0,
+        -410.0
+      ],
+      "grounded": false,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": -0.3268,
+      "magnet": null
+    },
+    {
+      "frame": 2850,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 4,
+      "time": 14.883,
+      "player": [
+        1117.24,
+        249.84
+      ],
+      "velocity": [
+        190.0,
+        115.0
+      ],
+      "grounded": false,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": -0.2619,
+      "magnet": null
+    },
+    {
+      "frame": 2880,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 4,
+      "time": 15.383,
+      "player": [
+        1211.97,
+        275.24
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": -0.141,
+      "magnet": null
+    },
+    {
+      "frame": 2910,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 4,
+      "time": 15.883,
+      "player": [
+        1306.97,
+        275.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": 0.0093,
+      "magnet": null
+    },
+    {
+      "frame": 2940,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 4,
+      "time": 16.383,
+      "player": [
+        1401.97,
+        275.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": 0.1562,
+      "magnet": null
+    },
+    {
+      "frame": 2970,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 4,
+      "time": 16.883,
+      "player": [
+        1496.97,
+        275.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": 0.2681,
+      "magnet": null
+    },
+    {
+      "frame": 3000,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 4,
+      "time": 17.175,
+      "player": [
+        1552.39,
+        275.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": true,
+      "crates": [],
+      "beam_angle": 0.3073,
+      "magnet": null
+    },
+    {
+      "frame": 3030,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 4,
+      "time": 17.175,
+      "player": [
+        1552.39,
+        275.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": true,
+      "crates": [],
+      "beam_angle": 0.3073,
+      "magnet": null
+    },
+    {
+      "frame": 3060,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 4,
+      "time": 17.175,
+      "player": [
+        1552.39,
+        275.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": true,
+      "crates": [],
+      "beam_angle": 0.3073,
+      "magnet": null
+    },
+    {
+      "frame": 3090,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 4,
+      "time": 17.175,
+      "player": [
+        1552.39,
+        275.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": true,
+      "crates": [],
+      "beam_angle": 0.3073,
+      "magnet": null
+    },
+    {
+      "frame": 3120,
+      "pilot_phase": "first",
+      "state": "playing",
+      "chapter": 5,
+      "time": 0.383,
+      "player": [
+        202.06,
+        435.24
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            440.0,
+            431.09
+          ],
+          "angle": -0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 3150,
+      "pilot_phase": "first",
+      "state": "playing",
+      "chapter": 5,
+      "time": 0.883,
+      "player": [
+        297.06,
+        435.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            440.0,
+            431.09
+          ],
+          "angle": -0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 3180,
+      "pilot_phase": "rise",
+      "state": "playing",
+      "chapter": 5,
+      "time": 1.383,
+      "player": [
+        353.2,
+        372.37
+      ],
+      "velocity": [
+        0.0,
+        -367.5
+      ],
+      "grounded": false,
+      "gravity": -1,
+      "gravity_remaining": 4.658,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            440.0,
+            368.31
+          ],
+          "angle": -0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 3210,
+      "pilot_phase": "ceiling",
+      "state": "playing",
+      "chapter": 5,
+      "time": 1.883,
+      "player": [
+        371.94,
+        169.33
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": -1,
+      "gravity_remaining": 4.158,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            440.0,
+            172.6
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 3240,
+      "pilot_phase": "ceiling",
+      "state": "playing",
+      "chapter": 5,
+      "time": 2.383,
+      "player": [
+        456.64,
+        169.83
+      ],
+      "velocity": [
+        183.99,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": -1,
+      "gravity_remaining": 3.658,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            497.82,
+            173.8
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 3270,
+      "pilot_phase": "ceiling",
+      "state": "playing",
+      "chapter": 5,
+      "time": 2.883,
+      "player": [
+        548.89,
+        169.85
+      ],
+      "velocity": [
+        183.99,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": -1,
+      "gravity_remaining": 3.158,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            590.73,
+            173.85
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 3300,
+      "pilot_phase": "ceiling",
+      "state": "playing",
+      "chapter": 5,
+      "time": 3.383,
+      "player": [
+        641.62,
+        169.85
+      ],
+      "velocity": [
+        183.99,
+        -0.0
+      ],
+      "grounded": true,
+      "gravity": -1,
+      "gravity_remaining": 2.658,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            683.49,
+            173.85
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 3330,
+      "pilot_phase": "ceiling",
+      "state": "playing",
+      "chapter": 5,
+      "time": 3.883,
+      "player": [
+        734.36,
+        169.85
+      ],
+      "velocity": [
+        183.99,
+        -0.0
+      ],
+      "grounded": true,
+      "gravity": -1,
+      "gravity_remaining": 2.158,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            776.24,
+            173.85
+          ],
+          "angle": -0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 3360,
+      "pilot_phase": "ceiling",
+      "state": "playing",
+      "chapter": 5,
+      "time": 4.383,
+      "player": [
+        827.11,
+        169.85
+      ],
+      "velocity": [
+        183.99,
+        -0.0
+      ],
+      "grounded": true,
+      "gravity": -1,
+      "gravity_remaining": 1.658,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            868.98,
+            173.85
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 3390,
+      "pilot_phase": "ceiling",
+      "state": "playing",
+      "chapter": 5,
+      "time": 4.883,
+      "player": [
+        919.85,
+        169.85
+      ],
+      "velocity": [
+        183.99,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": -1,
+      "gravity_remaining": 1.158,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            961.73,
+            173.85
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 3420,
+      "pilot_phase": "ceiling",
+      "state": "playing",
+      "chapter": 5,
+      "time": 5.383,
+      "player": [
+        1012.6,
+        169.85
+      ],
+      "velocity": [
+        183.99,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": -1,
+      "gravity_remaining": 0.658,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            1054.48,
+            173.85
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 3450,
+      "pilot_phase": "ceiling",
+      "state": "playing",
+      "chapter": 5,
+      "time": 5.883,
+      "player": [
+        1033.98,
+        169.85
+      ],
+      "velocity": [
+        0.0,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": -1,
+      "gravity_remaining": 0.158,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            1134.55,
+            173.85
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 3480,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 5,
+      "time": 6.383,
+      "player": [
+        1065.82,
+        232.63
+      ],
+      "velocity": [
+        190.0,
+        367.5
+      ],
+      "grounded": false,
+      "gravity": 1,
+      "gravity_remaining": 0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            1185.93,
+            236.63
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 3510,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 5,
+      "time": 6.883,
+      "player": [
+        1157.4,
+        435.67
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            1221.44,
+            432.38
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 3540,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 5,
+      "time": 7.383,
+      "player": [
+        1241.31,
+        435.17
+      ],
+      "velocity": [
+        183.99,
+        -0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            1282.48,
+            431.2
+          ],
+          "angle": -0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 3570,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 5,
+      "time": 7.883,
+      "player": [
+        1333.55,
+        435.15
+      ],
+      "velocity": [
+        183.99,
+        -0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            1375.39,
+            431.15
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 3600,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 5,
+      "time": 8.383,
+      "player": [
+        1426.27,
+        435.15
+      ],
+      "velocity": [
+        183.99,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            1468.15,
+            431.15
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 3630,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 5,
+      "time": 8.792,
+      "player": [
+        1502.02,
+        435.15
+      ],
+      "velocity": [
+        183.99,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": true,
+      "crates": [
+        {
+          "position": [
+            1543.89,
+            431.15
+          ],
+          "angle": -0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 3660,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 5,
+      "time": 8.792,
+      "player": [
+        1502.02,
+        435.15
+      ],
+      "velocity": [
+        183.99,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": true,
+      "crates": [
+        {
+          "position": [
+            1543.89,
+            431.15
+          ],
+          "angle": -0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 3690,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 5,
+      "time": 8.792,
+      "player": [
+        1502.02,
+        435.15
+      ],
+      "velocity": [
+        183.99,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": true,
+      "crates": [
+        {
+          "position": [
+            1543.89,
+            431.15
+          ],
+          "angle": -0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 3720,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 5,
+      "time": 8.792,
+      "player": [
+        1502.02,
+        435.15
+      ],
+      "velocity": [
+        183.99,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": true,
+      "crates": [
+        {
+          "position": [
+            1543.89,
+            431.15
+          ],
+          "angle": -0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": null
+    },
+    {
+      "frame": 3750,
+      "pilot_phase": "power",
+      "state": "playing",
+      "chapter": 6,
+      "time": 0.267,
+      "player": [
+        179.9,
+        435.35
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            720.0,
+            383.0
+          ],
+          "angle": 0.0
+        },
+        {
+          "position": [
+            940.0,
+            418.0
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": {
+        "enabled": false,
+        "box_gravity": 1,
+        "captured": []
+      }
+    },
+    {
+      "frame": 3780,
+      "pilot_phase": "power",
+      "state": "playing",
+      "chapter": 6,
+      "time": 0.767,
+      "player": [
+        274.9,
+        435.16
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            720.0,
+            383.0
+          ],
+          "angle": 0.0
+        },
+        {
+          "position": [
+            940.0,
+            418.0
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": {
+        "enabled": false,
+        "box_gravity": 1,
+        "captured": []
+      }
+    },
+    {
+      "frame": 3810,
+      "pilot_phase": "lift",
+      "state": "playing",
+      "chapter": 6,
+      "time": 1.267,
+      "player": [
+        368.45,
+        435.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            720.0,
+            383.0
+          ],
+          "angle": 0.0
+        },
+        {
+          "position": [
+            940.0,
+            418.0
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": {
+        "enabled": true,
+        "box_gravity": 1,
+        "captured": []
+      }
+    },
+    {
+      "frame": 3840,
+      "pilot_phase": "lift",
+      "state": "playing",
+      "chapter": 6,
+      "time": 1.767,
+      "player": [
+        463.45,
+        435.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            720.0,
+            383.0
+          ],
+          "angle": 0.0
+        },
+        {
+          "position": [
+            940.0,
+            418.0
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": {
+        "enabled": true,
+        "box_gravity": 1,
+        "captured": []
+      }
+    },
+    {
+      "frame": 3870,
+      "pilot_phase": "cross",
+      "state": "playing",
+      "chapter": 6,
+      "time": 2.267,
+      "player": [
+        478.88,
+        435.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            720.0,
+            305.49
+          ],
+          "angle": 0.0
+        },
+        {
+          "position": [
+            940.0,
+            298.56
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": {
+        "enabled": true,
+        "box_gravity": 1,
+        "captured": [
+          0
+        ]
+      }
+    },
+    {
+      "frame": 3900,
+      "pilot_phase": "cross",
+      "state": "playing",
+      "chapter": 6,
+      "time": 2.767,
+      "player": [
+        573.88,
+        435.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            720.0,
+            306.79
+          ],
+          "angle": 0.0
+        },
+        {
+          "position": [
+            940.0,
+            270.12
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": {
+        "enabled": true,
+        "box_gravity": 1,
+        "captured": [
+          0
+        ]
+      }
+    },
+    {
+      "frame": 3930,
+      "pilot_phase": "cross",
+      "state": "playing",
+      "chapter": 6,
+      "time": 3.267,
+      "player": [
+        668.88,
+        435.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            720.0,
+            306.85
+          ],
+          "angle": 0.0
+        },
+        {
+          "position": [
+            940.0,
+            419.47
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": {
+        "enabled": true,
+        "box_gravity": 1,
+        "captured": [
+          0
+        ]
+      }
+    },
+    {
+      "frame": 3960,
+      "pilot_phase": "cross",
+      "state": "playing",
+      "chapter": 6,
+      "time": 3.767,
+      "player": [
+        763.88,
+        435.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            720.0,
+            306.85
+          ],
+          "angle": 0.0
+        },
+        {
+          "position": [
+            940.0,
+            418.21
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": {
+        "enabled": true,
+        "box_gravity": 1,
+        "captured": [
+          0
+        ]
+      }
+    },
+    {
+      "frame": 3990,
+      "pilot_phase": "board",
+      "state": "playing",
+      "chapter": 6,
+      "time": 4.267,
+      "player": [
+        858.88,
+        370.41
+      ],
+      "velocity": [
+        190.0,
+        -252.5
+      ],
+      "grounded": false,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            720.0,
+            306.85
+          ],
+          "angle": 0.0
+        },
+        {
+          "position": [
+            940.0,
+            418.15
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": {
+        "enabled": true,
+        "box_gravity": 1,
+        "captured": [
+          0
+        ]
+      }
+    },
+    {
+      "frame": 4020,
+      "pilot_phase": "bank",
+      "state": "playing",
+      "chapter": 6,
+      "time": 4.767,
+      "player": [
+        953.32,
+        351.49
+      ],
+      "velocity": [
+        185.41,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            720.0,
+            306.85
+          ],
+          "angle": 0.0
+        },
+        {
+          "position": [
+            940.0,
+            418.15
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": {
+        "enabled": true,
+        "box_gravity": 1,
+        "captured": [
+          0
+        ]
+      }
+    },
+    {
+      "frame": 4050,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 6,
+      "time": 5.267,
+      "player": [
+        1048.32,
+        255.53
+      ],
+      "velocity": [
+        190.0,
+        27.5
+      ],
+      "grounded": false,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            720.0,
+            306.85
+          ],
+          "angle": 0.0
+        },
+        {
+          "position": [
+            940.0,
+            418.15
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": {
+        "enabled": true,
+        "box_gravity": 1,
+        "captured": [
+          0
+        ]
+      }
+    },
+    {
+      "frame": 4080,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 6,
+      "time": 5.767,
+      "player": [
+        1142.93,
+        295.45
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            720.0,
+            306.85
+          ],
+          "angle": 0.0
+        },
+        {
+          "position": [
+            940.0,
+            418.15
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": {
+        "enabled": true,
+        "box_gravity": 1,
+        "captured": [
+          0
+        ]
+      }
+    },
+    {
+      "frame": 4110,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 6,
+      "time": 6.267,
+      "player": [
+        1237.93,
+        295.16
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            720.0,
+            306.85
+          ],
+          "angle": 0.0
+        },
+        {
+          "position": [
+            940.0,
+            418.15
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": {
+        "enabled": true,
+        "box_gravity": 1,
+        "captured": [
+          0
+        ]
+      }
+    },
+    {
+      "frame": 4140,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 6,
+      "time": 6.767,
+      "player": [
+        1332.93,
+        295.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            720.0,
+            306.85
+          ],
+          "angle": 0.0
+        },
+        {
+          "position": [
+            940.0,
+            418.15
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": {
+        "enabled": true,
+        "box_gravity": 1,
+        "captured": [
+          0
+        ]
+      }
+    },
+    {
+      "frame": 4170,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 6,
+      "time": 7.267,
+      "player": [
+        1427.93,
+        295.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            720.0,
+            306.85
+          ],
+          "angle": 0.0
+        },
+        {
+          "position": [
+            940.0,
+            418.15
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": {
+        "enabled": true,
+        "box_gravity": 1,
+        "captured": [
+          0
+        ]
+      }
+    },
+    {
+      "frame": 4200,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 6,
+      "time": 7.292,
+      "player": [
+        1432.68,
+        295.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": true,
+      "crates": [
+        {
+          "position": [
+            720.0,
+            306.85
+          ],
+          "angle": 0.0
+        },
+        {
+          "position": [
+            940.0,
+            418.15
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": {
+        "enabled": true,
+        "box_gravity": 1,
+        "captured": [
+          0
+        ]
+      }
+    },
+    {
+      "frame": 4230,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 6,
+      "time": 7.292,
+      "player": [
+        1432.68,
+        295.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": true,
+      "crates": [
+        {
+          "position": [
+            720.0,
+            306.85
+          ],
+          "angle": 0.0
+        },
+        {
+          "position": [
+            940.0,
+            418.15
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": {
+        "enabled": true,
+        "box_gravity": 1,
+        "captured": [
+          0
+        ]
+      }
+    },
+    {
+      "frame": 4260,
+      "pilot_phase": "exit",
+      "state": "playing",
+      "chapter": 6,
+      "time": 7.292,
+      "player": [
+        1432.68,
+        295.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": true,
+      "crates": [
+        {
+          "position": [
+            720.0,
+            306.85
+          ],
+          "angle": 0.0
+        },
+        {
+          "position": [
+            940.0,
+            418.15
+          ],
+          "angle": 0.0
+        }
+      ],
+      "beam_angle": null,
+      "magnet": {
+        "enabled": true,
+        "box_gravity": 1,
+        "captured": [
+          0
+        ]
+      }
+    }
+  ],
+  "source_sha256": {
+    "echo_game/__init__.py": "a8e2e781e0cdd891795d49ebbcf7cd3f3d9460c61385db44aa3a3bc00af08f79",
+    "echo_game/__main__.py": "c3231b220cee8c6cbab3b59033a15dc7a7593e5577681026b822cc2c50ded2c2",
+    "echo_game/art.py": "78241575c16a18311e47c474a12359058259d371cef6e9e5976d2f81541876ac",
+    "echo_game/audio.py": "5322f34085e92a8a47adcee8b370ca59caa5614453f70425cd2e78178408c6e1",
+    "echo_game/challenges.py": "b9a7961a376b7b9e042fea797fde040939f807159941e8b9b3ea85514969e76c",
+    "echo_game/environment.py": "e6e550e6e4f92d856d6834c90c49a78c794fe59689cc75a72c74cc3a116cc6cd",
+    "echo_game/forest.py": "1e3338c0019817ca1e97baa7ae6e944e23cdee7e34a1af961683b054f73b902c",
+    "echo_game/game.py": "15d246eff2a856a0a375d698dd50c9bd1dc5a0c3cb9376a60f3623d2115dd131",
+    "echo_game/generate_assets.py": "6dfb38e9caa5102746786677c14f514079754057c182006792742f521aec34d8",
+    "echo_game/generate_blocks.py": "3592d979b761955db297385c7a020bb37a9eb84aab24d7b06ec2c5f5467d7eb8",
+    "echo_game/generate_cranes.py": "c62e075af4954e1c9225897b27b1ced21a7b51091dd1ddb141946fa83eb0bd2d",
+    "echo_game/generate_obstacles.py": "adff810b06bd43d4471b5f666940c1b92c2e0742e6cdd79eb835c22640aa88dd",
+    "echo_game/generate_rockets.py": "9f985b2eae8282697cc5d935c232bd9b0dbad0472045e49abe3931b74a885bca",
+    "echo_game/generate_watertowers.py": "11a38cc43dbd006da1a9aec04aad446068f156da7c1c7045f7f93f0cd1fae904",
+    "echo_game/levels.py": "c5dea5573833bcec37066d5187d7371303a02e0de7640e7972a386276a99bedd",
+    "echo_game/magnet.py": "8fd20c6361c804f5eecc4b3aa3e4447d969dd1de32692c9b6d51a6ea03ed99e7",
+    "echo_game/package_data.py": "105375688a4b0b84b1250352e2f7b13cb95260380b2d50d63fbeea7c9f900174",
+    "echo_game/physics.py": "dfe8b4157daeabb237f5e0b41e37fa1463ae59e19cd9e31e5df362e00450cf8a",
+    "echo_game/pilot.py": "6c9bd866ed93ed7bafec0def153593cf2d97d1dfd37e0da79a27fb2a26cfe5cb",
+    "echo_game/procedural.py": "6042a1305b8b87ed54b7b6b6d8f3efd1966452db82dd42c79ce1d183c18a1cae",
+    "echo_game/progress.py": "6b3abd1f59d576d75702b0599f14517cb67e93fb1b4acbae4f7cac434db0a42f",
+    "echo_game/puzzle_archetypes.py": "d9e9f59221eda9a6ec8218605d1cf60925f569d4ba25da9a9d867015fa19a5a2",
+    "echo_game/reference.py": "addd20fb3fd316db10257546b679281426d9c8e12534e6eca0a3f6d73fd5f45a",
+    "echo_game/room_art.py": "1feaedd9d9ab89b7cae2ecb6d726392986125d0e8957e515207137aa39011121",
+    "echo_game/rooms.py": "4e64722798447fe0f48064d69c01e6cc0e89d553e34cdb394acc3e70e045b056",
+    "echo_game/seesaw.py": "d9601efd89a04b4bc370f17a1278091c07f265f9a414b5b8b5faaad42c2f485d",
+    "echo_game/verify.py": "83fba8a7db8866f90ebc57098db8373cb8b50a4f0c3c7da0dd4fd6ab42cd4a11",
+    "echo_game/verify_challenges.py": "192f296358126275dd3c624ca36f0bbbe94ccef77107aff99da39714fcee0ee0"
+  }
+}

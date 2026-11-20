@@ -1,0 +1,129 @@
+{
+  "frames": 3600,
+  "wall_seconds": 78.623,
+  "state": "playing",
+  "physics": {
+    "chapter": 1,
+    "time": 60.0,
+    "player": [
+      11480.61,
+      380.19
+    ],
+    "velocity": [
+      190.0,
+      272.5
+    ],
+    "grounded": false,
+    "gravity": 1,
+    "gravity_remaining": 0.0,
+    "water_surface": null,
+    "water_active": false,
+    "water_transferred_area": 0.0,
+    "cover_open": false,
+    "cover_fraction": 0.0,
+    "rope_distance": null,
+    "gate_open": false,
+    "gate_fraction": 0.0,
+    "grab_kind": "",
+    "dead": false,
+    "complete": false,
+    "crates": [],
+    "beam_angle": null,
+    "magnet": null,
+    "endless": true,
+    "seed": 7,
+    "distance": 11340.61,
+    "furthest_distance": 11340.61,
+    "difficulty": 4.976,
+    "active_platforms": 8,
+    "active_hazards": 1,
+    "active_environment": 32,
+    "environment_spawned": 127,
+    "environment_cleaned": 95,
+    "environment_by_type": {
+      "bamboo": 8,
+      "wood": 11,
+      "rock": 15,
+      "grass": 65,
+      "dirt_block": 23,
+      "tree": 5
+    },
+    "densities": {
+      "environment": 1.0,
+      "obstacle": 1.0,
+      "puzzle": 1.0
+    },
+    "generated_until": 13257.1,
+    "generations": 34,
+    "fallbacks": 0,
+    "health": 5,
+    "max_health": 5,
+    "invulnerability": 0.0,
+    "lantern_on": true,
+    "lantern_energy": 0.4529,
+    "active_challenges": 3,
+    "active_barriers": 0,
+    "active_switches": 2,
+    "challenge_stats": {
+      "requests": 28,
+      "generated": 17,
+      "skipped": 11,
+      "fallbacks": 0,
+      "rejections": 0,
+      "by_kind": {
+        "beacon_charge": 1,
+        "light_gate": 5,
+        "sentry": 6,
+        "shadow_run": 5
+      }
+    }
+  },
+  "screenshot": "docs/echo/verification/endless-seed7.png",
+  "presentation": {
+    "style": "monochrome_forest",
+    "seed": 7,
+    "zoom": 1.6,
+    "chunk_builds": 35,
+    "cached_chunks": 12,
+    "cached_terrain": 5,
+    "cached_props": 17,
+    "cached_saws": 0,
+    "layers": [
+      "distant",
+      "mist",
+      "trunks"
+    ],
+    "camera": [
+      11147.405651678588,
+      219.01028464561855
+    ],
+    "hud": true
+  },
+  "source_sha256": {
+    "echo_game/__init__.py": "a8e2e781e0cdd891795d49ebbcf7cd3f3d9460c61385db44aa3a3bc00af08f79",
+    "echo_game/__main__.py": "c3231b220cee8c6cbab3b59033a15dc7a7593e5577681026b822cc2c50ded2c2",
+    "echo_game/art.py": "d6a87d6cb0d3ca2d52ece1420d087ee842f0a7a2c32ad00527a8c1c5d46d5ca0",
+    "echo_game/audio.py": "5322f34085e92a8a47adcee8b370ca59caa5614453f70425cd2e78178408c6e1",
+    "echo_game/challenges.py": "b9a7961a376b7b9e042fea797fde040939f807159941e8b9b3ea85514969e76c",
+    "echo_game/environment.py": "486f82560ec932465fe42d409ad9e3fab56f7f7867d2774646fca13601dfdd04",
+    "echo_game/forest.py": "2b8444fc16effbf601f8be0aa3200dc94a34faca0ebcf9ef142053d7ab142fc4",
+    "echo_game/game.py": "c45bd28c0df1e37506db9d2aef2a53587b6b5187851a0bef3b1aa253691ca978",
+    "echo_game/generate_assets.py": "6dfb38e9caa5102746786677c14f514079754057c182006792742f521aec34d8",
+    "echo_game/generate_blocks.py": "3592d979b761955db297385c7a020bb37a9eb84aab24d7b06ec2c5f5467d7eb8",
+    "echo_game/generate_cranes.py": "c62e075af4954e1c9225897b27b1ced21a7b51091dd1ddb141946fa83eb0bd2d",
+    "echo_game/generate_obstacles.py": "adff810b06bd43d4471b5f666940c1b92c2e0742e6cdd79eb835c22640aa88dd",
+    "echo_game/generate_rockets.py": "9f985b2eae8282697cc5d935c232bd9b0dbad0472045e49abe3931b74a885bca",
+    "echo_game/generate_watertowers.py": "11a38cc43dbd006da1a9aec04aad446068f156da7c1c7045f7f93f0cd1fae904",
+    "echo_game/levels.py": "ec4bad276188dcc595a6d6993c49db1852c73da1e995c9142a01b9c92b6f7894",
+    "echo_game/magnet.py": "23e87c2a78cfb89939f437a03ea9bfafe1134dc4a64149dd59383b64cf63d390",
+    "echo_game/package_data.py": "105375688a4b0b84b1250352e2f7b13cb95260380b2d50d63fbeea7c9f900174",
+    "echo_game/physics.py": "1ca2ae60870969384a1f1f72ddbdb4021ffbe72929ff52da6638b10bad2e0850",
+    "echo_game/pilot.py": "6c9bd866ed93ed7bafec0def153593cf2d97d1dfd37e0da79a27fb2a26cfe5cb",
+    "echo_game/procedural.py": "94a2648671772c503a8ede1e3ac4ce485f608d328d362a2878f4f72c3ccdc4dd",
+    "echo_game/progress.py": "6b3abd1f59d576d75702b0599f14517cb67e93fb1b4acbae4f7cac434db0a42f",
+    "echo_game/reference.py": "addd20fb3fd316db10257546b679281426d9c8e12534e6eca0a3f6d73fd5f45a",
+    "echo_game/seesaw.py": "d9601efd89a04b4bc370f17a1278091c07f265f9a414b5b8b5faaad42c2f485d",
+    "echo_game/verify.py": "83fba8a7db8866f90ebc57098db8373cb8b50a4f0c3c7da0dd4fd6ab42cd4a11",
+    "echo_game/verify_challenges.py": "192f296358126275dd3c624ca36f0bbbe94ccef77107aff99da39714fcee0ee0"
+  }
+}

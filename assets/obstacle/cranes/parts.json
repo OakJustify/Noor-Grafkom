@@ -1,0 +1,868 @@
+{
+  "canvas": [
+    660,
+    640
+  ],
+  "ground_y": 614,
+  "greyscale": true,
+  "parts": {
+    "base": [
+      {
+        "name": "slab_mid",
+        "shape": "slab",
+        "tone": "mid",
+        "file": "parts/base/slab_mid.png",
+        "width": 150.0,
+        "height": 34.0,
+        "origin": [
+          75.0,
+          0.0
+        ]
+      },
+      {
+        "name": "slab_light",
+        "shape": "slab",
+        "tone": "light",
+        "file": "parts/base/slab_light.png",
+        "width": 150.0,
+        "height": 34.0,
+        "origin": [
+          75.0,
+          0.0
+        ]
+      },
+      {
+        "name": "pads_mid",
+        "shape": "pads",
+        "tone": "mid",
+        "file": "parts/base/pads_mid.png",
+        "width": 156.0,
+        "height": 30.0,
+        "origin": [
+          78.0,
+          0.0
+        ]
+      },
+      {
+        "name": "pads_light",
+        "shape": "pads",
+        "tone": "light",
+        "file": "parts/base/pads_light.png",
+        "width": 156.0,
+        "height": 30.0,
+        "origin": [
+          78.0,
+          0.0
+        ]
+      },
+      {
+        "name": "grillage_mid",
+        "shape": "grillage",
+        "tone": "mid",
+        "file": "parts/base/grillage_mid.png",
+        "width": 140.0,
+        "height": 32.0,
+        "origin": [
+          70.0,
+          0.0
+        ]
+      },
+      {
+        "name": "grillage_light",
+        "shape": "grillage",
+        "tone": "light",
+        "file": "parts/base/grillage_light.png",
+        "width": 140.0,
+        "height": 32.0,
+        "origin": [
+          70.0,
+          0.0
+        ]
+      },
+      {
+        "name": "plinth_mid",
+        "shape": "plinth",
+        "tone": "mid",
+        "file": "parts/base/plinth_mid.png",
+        "width": 116.0,
+        "height": 42.0,
+        "origin": [
+          58.0,
+          0.0
+        ]
+      },
+      {
+        "name": "plinth_light",
+        "shape": "plinth",
+        "tone": "light",
+        "file": "parts/base/plinth_light.png",
+        "width": 116.0,
+        "height": 42.0,
+        "origin": [
+          58.0,
+          0.0
+        ]
+      }
+    ],
+    "mast": [
+      {
+        "name": "square_mid",
+        "shape": "square",
+        "tone": "mid",
+        "file": "parts/mast/square_mid.png",
+        "width": 58.0,
+        "height": 100.0,
+        "origin": [
+          29.0,
+          100
+        ]
+      },
+      {
+        "name": "square_dark",
+        "shape": "square",
+        "tone": "dark",
+        "file": "parts/mast/square_dark.png",
+        "width": 58.0,
+        "height": 100.0,
+        "origin": [
+          29.0,
+          100
+        ]
+      },
+      {
+        "name": "xbrace_mid",
+        "shape": "xbrace",
+        "tone": "mid",
+        "file": "parts/mast/xbrace_mid.png",
+        "width": 58.0,
+        "height": 100.0,
+        "origin": [
+          29.0,
+          100
+        ]
+      },
+      {
+        "name": "xbrace_dark",
+        "shape": "xbrace",
+        "tone": "dark",
+        "file": "parts/mast/xbrace_dark.png",
+        "width": 58.0,
+        "height": 100.0,
+        "origin": [
+          29.0,
+          100
+        ]
+      },
+      {
+        "name": "diamond_mid",
+        "shape": "diamond",
+        "tone": "mid",
+        "file": "parts/mast/diamond_mid.png",
+        "width": 58.0,
+        "height": 100.0,
+        "origin": [
+          29.0,
+          100
+        ]
+      },
+      {
+        "name": "diamond_dark",
+        "shape": "diamond",
+        "tone": "dark",
+        "file": "parts/mast/diamond_dark.png",
+        "width": 58.0,
+        "height": 100.0,
+        "origin": [
+          29.0,
+          100
+        ]
+      },
+      {
+        "name": "ladder_mid",
+        "shape": "ladder",
+        "tone": "mid",
+        "file": "parts/mast/ladder_mid.png",
+        "width": 58.0,
+        "height": 100.0,
+        "origin": [
+          29.0,
+          100
+        ]
+      },
+      {
+        "name": "ladder_dark",
+        "shape": "ladder",
+        "tone": "dark",
+        "file": "parts/mast/ladder_dark.png",
+        "width": 58.0,
+        "height": 100.0,
+        "origin": [
+          29.0,
+          100
+        ]
+      },
+      {
+        "name": "tubular_mid",
+        "shape": "tubular",
+        "tone": "mid",
+        "file": "parts/mast/tubular_mid.png",
+        "width": 58.0,
+        "height": 100.0,
+        "origin": [
+          29.0,
+          100
+        ]
+      },
+      {
+        "name": "tubular_dark",
+        "shape": "tubular",
+        "tone": "dark",
+        "file": "parts/mast/tubular_dark.png",
+        "width": 58.0,
+        "height": 100.0,
+        "origin": [
+          29.0,
+          100
+        ]
+      }
+    ],
+    "slew": [
+      {
+        "name": "ring_mid",
+        "shape": "ring",
+        "tone": "mid",
+        "file": "parts/slew/ring_mid.png",
+        "width": 68.0,
+        "height": 22.0,
+        "origin": [
+          34.0,
+          22
+        ]
+      },
+      {
+        "name": "ring_dark",
+        "shape": "ring",
+        "tone": "dark",
+        "file": "parts/slew/ring_dark.png",
+        "width": 68.0,
+        "height": 22.0,
+        "origin": [
+          34.0,
+          22
+        ]
+      },
+      {
+        "name": "box_mid",
+        "shape": "box",
+        "tone": "mid",
+        "file": "parts/slew/box_mid.png",
+        "width": 68.0,
+        "height": 22.0,
+        "origin": [
+          34.0,
+          22
+        ]
+      },
+      {
+        "name": "box_dark",
+        "shape": "box",
+        "tone": "dark",
+        "file": "parts/slew/box_dark.png",
+        "width": 68.0,
+        "height": 22.0,
+        "origin": [
+          34.0,
+          22
+        ]
+      },
+      {
+        "name": "toothed_mid",
+        "shape": "toothed",
+        "tone": "mid",
+        "file": "parts/slew/toothed_mid.png",
+        "width": 68.0,
+        "height": 22.0,
+        "origin": [
+          34.0,
+          22
+        ]
+      },
+      {
+        "name": "toothed_dark",
+        "shape": "toothed",
+        "tone": "dark",
+        "file": "parts/slew/toothed_dark.png",
+        "width": 68.0,
+        "height": 22.0,
+        "origin": [
+          34.0,
+          22
+        ]
+      }
+    ],
+    "cab": [
+      {
+        "name": "box_mid",
+        "shape": "box",
+        "tone": "mid",
+        "file": "parts/cab/box_mid.png",
+        "width": 54.0,
+        "height": 42.0,
+        "origin": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "box_light",
+        "shape": "box",
+        "tone": "light",
+        "file": "parts/cab/box_light.png",
+        "width": 54.0,
+        "height": 42.0,
+        "origin": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "rounded_mid",
+        "shape": "rounded",
+        "tone": "mid",
+        "file": "parts/cab/rounded_mid.png",
+        "width": 52.0,
+        "height": 40.0,
+        "origin": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "rounded_light",
+        "shape": "rounded",
+        "tone": "light",
+        "file": "parts/cab/rounded_light.png",
+        "width": 52.0,
+        "height": 40.0,
+        "origin": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "slanted_mid",
+        "shape": "slanted",
+        "tone": "mid",
+        "file": "parts/cab/slanted_mid.png",
+        "width": 58.0,
+        "height": 44.0,
+        "origin": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "slanted_light",
+        "shape": "slanted",
+        "tone": "light",
+        "file": "parts/cab/slanted_light.png",
+        "width": 58.0,
+        "height": 44.0,
+        "origin": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "hut_mid",
+        "shape": "hut",
+        "tone": "mid",
+        "file": "parts/cab/hut_mid.png",
+        "width": 56.0,
+        "height": 46.0,
+        "origin": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "hut_light",
+        "shape": "hut",
+        "tone": "light",
+        "file": "parts/cab/hut_light.png",
+        "width": 56.0,
+        "height": 46.0,
+        "origin": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "apex": [
+      {
+        "name": "pyramid_mid",
+        "shape": "pyramid",
+        "tone": "mid",
+        "file": "parts/apex/pyramid_mid.png",
+        "width": 48.0,
+        "height": 66.0,
+        "origin": [
+          24.0,
+          66
+        ]
+      },
+      {
+        "name": "pyramid_dark",
+        "shape": "pyramid",
+        "tone": "dark",
+        "file": "parts/apex/pyramid_dark.png",
+        "width": 48.0,
+        "height": 66.0,
+        "origin": [
+          24.0,
+          66
+        ]
+      },
+      {
+        "name": "cage_mid",
+        "shape": "cage",
+        "tone": "mid",
+        "file": "parts/apex/cage_mid.png",
+        "width": 42.0,
+        "height": 60.0,
+        "origin": [
+          21.0,
+          60
+        ]
+      },
+      {
+        "name": "cage_dark",
+        "shape": "cage",
+        "tone": "dark",
+        "file": "parts/apex/cage_dark.png",
+        "width": 42.0,
+        "height": 60.0,
+        "origin": [
+          21.0,
+          60
+        ]
+      },
+      {
+        "name": "spike_mid",
+        "shape": "spike",
+        "tone": "mid",
+        "file": "parts/apex/spike_mid.png",
+        "width": 30.0,
+        "height": 74.0,
+        "origin": [
+          15.0,
+          74
+        ]
+      },
+      {
+        "name": "spike_dark",
+        "shape": "spike",
+        "tone": "dark",
+        "file": "parts/apex/spike_dark.png",
+        "width": 30.0,
+        "height": 74.0,
+        "origin": [
+          15.0,
+          74
+        ]
+      },
+      {
+        "name": "tripod_mid",
+        "shape": "tripod",
+        "tone": "mid",
+        "file": "parts/apex/tripod_mid.png",
+        "width": 46.0,
+        "height": 56.0,
+        "origin": [
+          23.0,
+          56
+        ]
+      },
+      {
+        "name": "tripod_dark",
+        "shape": "tripod",
+        "tone": "dark",
+        "file": "parts/apex/tripod_dark.png",
+        "width": 46.0,
+        "height": 56.0,
+        "origin": [
+          23.0,
+          56
+        ]
+      }
+    ],
+    "jib": [
+      {
+        "name": "lattice_mid",
+        "shape": "lattice",
+        "tone": "mid",
+        "file": "parts/jib/lattice_mid.png",
+        "width": 340.0,
+        "height": 30.0,
+        "origin": [
+          0.0,
+          30
+        ]
+      },
+      {
+        "name": "lattice_dark",
+        "shape": "lattice",
+        "tone": "dark",
+        "file": "parts/jib/lattice_dark.png",
+        "width": 340.0,
+        "height": 30.0,
+        "origin": [
+          0.0,
+          30
+        ]
+      },
+      {
+        "name": "tapered_mid",
+        "shape": "tapered",
+        "tone": "mid",
+        "file": "parts/jib/tapered_mid.png",
+        "width": 300.0,
+        "height": 34.0,
+        "origin": [
+          0.0,
+          34
+        ]
+      },
+      {
+        "name": "tapered_dark",
+        "shape": "tapered",
+        "tone": "dark",
+        "file": "parts/jib/tapered_dark.png",
+        "width": 300.0,
+        "height": 34.0,
+        "origin": [
+          0.0,
+          34
+        ]
+      },
+      {
+        "name": "parallel_mid",
+        "shape": "parallel",
+        "tone": "mid",
+        "file": "parts/jib/parallel_mid.png",
+        "width": 320.0,
+        "height": 28.0,
+        "origin": [
+          0.0,
+          28
+        ]
+      },
+      {
+        "name": "parallel_dark",
+        "shape": "parallel",
+        "tone": "dark",
+        "file": "parts/jib/parallel_dark.png",
+        "width": 320.0,
+        "height": 28.0,
+        "origin": [
+          0.0,
+          28
+        ]
+      },
+      {
+        "name": "plate_mid",
+        "shape": "plate",
+        "tone": "mid",
+        "file": "parts/jib/plate_mid.png",
+        "width": 286.0,
+        "height": 26.0,
+        "origin": [
+          0.0,
+          26
+        ]
+      },
+      {
+        "name": "plate_dark",
+        "shape": "plate",
+        "tone": "dark",
+        "file": "parts/jib/plate_dark.png",
+        "width": 286.0,
+        "height": 26.0,
+        "origin": [
+          0.0,
+          26
+        ]
+      }
+    ],
+    "counterjib": [
+      {
+        "name": "lattice_mid",
+        "shape": "lattice",
+        "tone": "mid",
+        "file": "parts/counterjib/lattice_mid.png",
+        "width": 152.0,
+        "height": 26.0,
+        "origin": [
+          152,
+          26
+        ]
+      },
+      {
+        "name": "lattice_light",
+        "shape": "lattice",
+        "tone": "light",
+        "file": "parts/counterjib/lattice_light.png",
+        "width": 152.0,
+        "height": 26.0,
+        "origin": [
+          152,
+          26
+        ]
+      },
+      {
+        "name": "walkway_mid",
+        "shape": "walkway",
+        "tone": "mid",
+        "file": "parts/counterjib/walkway_mid.png",
+        "width": 140.0,
+        "height": 30.0,
+        "origin": [
+          140,
+          30
+        ]
+      },
+      {
+        "name": "walkway_light",
+        "shape": "walkway",
+        "tone": "light",
+        "file": "parts/counterjib/walkway_light.png",
+        "width": 140.0,
+        "height": 30.0,
+        "origin": [
+          140,
+          30
+        ]
+      },
+      {
+        "name": "boxed_mid",
+        "shape": "boxed",
+        "tone": "mid",
+        "file": "parts/counterjib/boxed_mid.png",
+        "width": 132.0,
+        "height": 26.0,
+        "origin": [
+          132,
+          26
+        ]
+      },
+      {
+        "name": "boxed_light",
+        "shape": "boxed",
+        "tone": "light",
+        "file": "parts/counterjib/boxed_light.png",
+        "width": 132.0,
+        "height": 26.0,
+        "origin": [
+          132,
+          26
+        ]
+      }
+    ],
+    "counterweight": [
+      {
+        "name": "slab_dark",
+        "shape": "slab",
+        "tone": "dark",
+        "file": "parts/counterweight/slab_dark.png",
+        "width": 58.0,
+        "height": 46.0,
+        "origin": [
+          29.0,
+          0.0
+        ]
+      },
+      {
+        "name": "slab_mid",
+        "shape": "slab",
+        "tone": "mid",
+        "file": "parts/counterweight/slab_mid.png",
+        "width": 58.0,
+        "height": 46.0,
+        "origin": [
+          29.0,
+          0.0
+        ]
+      },
+      {
+        "name": "stack_dark",
+        "shape": "stack",
+        "tone": "dark",
+        "file": "parts/counterweight/stack_dark.png",
+        "width": 54.0,
+        "height": 64.0,
+        "origin": [
+          27.0,
+          0.0
+        ]
+      },
+      {
+        "name": "stack_mid",
+        "shape": "stack",
+        "tone": "mid",
+        "file": "parts/counterweight/stack_mid.png",
+        "width": 54.0,
+        "height": 64.0,
+        "origin": [
+          27.0,
+          0.0
+        ]
+      },
+      {
+        "name": "ribbed_dark",
+        "shape": "ribbed",
+        "tone": "dark",
+        "file": "parts/counterweight/ribbed_dark.png",
+        "width": 56.0,
+        "height": 52.0,
+        "origin": [
+          28.0,
+          0.0
+        ]
+      },
+      {
+        "name": "ribbed_mid",
+        "shape": "ribbed",
+        "tone": "mid",
+        "file": "parts/counterweight/ribbed_mid.png",
+        "width": 56.0,
+        "height": 52.0,
+        "origin": [
+          28.0,
+          0.0
+        ]
+      },
+      {
+        "name": "frame_dark",
+        "shape": "frame",
+        "tone": "dark",
+        "file": "parts/counterweight/frame_dark.png",
+        "width": 54.0,
+        "height": 50.0,
+        "origin": [
+          27.0,
+          0.0
+        ]
+      },
+      {
+        "name": "frame_mid",
+        "shape": "frame",
+        "tone": "mid",
+        "file": "parts/counterweight/frame_mid.png",
+        "width": 54.0,
+        "height": 50.0,
+        "origin": [
+          27.0,
+          0.0
+        ]
+      }
+    ],
+    "hoist": [
+      {
+        "name": "block_dark",
+        "shape": "block",
+        "tone": "dark",
+        "file": "parts/hoist/block_dark.png",
+        "width": 30.0,
+        "height": 36.0,
+        "origin": [
+          15.0,
+          0.0
+        ]
+      },
+      {
+        "name": "block_mid",
+        "shape": "block",
+        "tone": "mid",
+        "file": "parts/hoist/block_mid.png",
+        "width": 30.0,
+        "height": 36.0,
+        "origin": [
+          15.0,
+          0.0
+        ]
+      },
+      {
+        "name": "double_dark",
+        "shape": "double",
+        "tone": "dark",
+        "file": "parts/hoist/double_dark.png",
+        "width": 36.0,
+        "height": 42.0,
+        "origin": [
+          18.0,
+          0.0
+        ]
+      },
+      {
+        "name": "double_mid",
+        "shape": "double",
+        "tone": "mid",
+        "file": "parts/hoist/double_mid.png",
+        "width": 36.0,
+        "height": 42.0,
+        "origin": [
+          18.0,
+          0.0
+        ]
+      },
+      {
+        "name": "hook_dark",
+        "shape": "hook",
+        "tone": "dark",
+        "file": "parts/hoist/hook_dark.png",
+        "width": 26.0,
+        "height": 46.0,
+        "origin": [
+          13.0,
+          0.0
+        ]
+      },
+      {
+        "name": "hook_mid",
+        "shape": "hook",
+        "tone": "mid",
+        "file": "parts/hoist/hook_mid.png",
+        "width": 26.0,
+        "height": 46.0,
+        "origin": [
+          13.0,
+          0.0
+        ]
+      },
+      {
+        "name": "clamp_dark",
+        "shape": "clamp",
+        "tone": "dark",
+        "file": "parts/hoist/clamp_dark.png",
+        "width": 50.0,
+        "height": 32.0,
+        "origin": [
+          25.0,
+          0.0
+        ]
+      },
+      {
+        "name": "clamp_mid",
+        "shape": "clamp",
+        "tone": "mid",
+        "file": "parts/hoist/clamp_mid.png",
+        "width": 50.0,
+        "height": 32.0,
+        "origin": [
+          25.0,
+          0.0
+        ]
+      }
+    ]
+  }
+}

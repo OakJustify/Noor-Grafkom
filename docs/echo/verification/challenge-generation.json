@@ -1,0 +1,126 @@
+{
+  "method": "Synthetic platforms through PuzzleGenerator/PuzzleValidator, plus real EndlessWorld physics with EndlessPilot input only.",
+  "difficulty_sweep": [
+    {
+      "difficulty": 1.0,
+      "requests": 1000,
+      "valid_generated": 268,
+      "valid_rate": 0.268,
+      "rejections": 0,
+      "challenge_fallbacks": 0,
+      "by_kind": {
+        "beacon_charge": 54,
+        "light_gate": 214
+      },
+      "seconds": 0.113
+    },
+    {
+      "difficulty": 4.0,
+      "requests": 1000,
+      "valid_generated": 562,
+      "valid_rate": 0.562,
+      "rejections": 0,
+      "challenge_fallbacks": 0,
+      "by_kind": {
+        "beacon_charge": 47,
+        "dark_gate": 18,
+        "light_gate": 288,
+        "lit_gauntlet": 10,
+        "sentry": 92,
+        "shadow_run": 107
+      },
+      "seconds": 0.159
+    },
+    {
+      "difficulty": 7.0,
+      "requests": 1000,
+      "valid_generated": 710,
+      "valid_rate": 0.71,
+      "rejections": 0,
+      "challenge_fallbacks": 0,
+      "by_kind": {
+        "beacon_charge": 30,
+        "dark_gate": 34,
+        "light_gate": 383,
+        "lit_gauntlet": 39,
+        "sentry": 119,
+        "shadow_run": 105
+      },
+      "seconds": 0.196
+    },
+    {
+      "difficulty": 10.0,
+      "requests": 1000,
+      "valid_generated": 803,
+      "valid_rate": 0.803,
+      "rejections": 0,
+      "challenge_fallbacks": 0,
+      "by_kind": {
+        "beacon_charge": 20,
+        "dark_gate": 67,
+        "light_gate": 395,
+        "lit_gauntlet": 85,
+        "sentry": 102,
+        "shadow_run": 134
+      },
+      "seconds": 0.216
+    }
+  ],
+  "low_resources": {
+    "health_fraction": 0.1,
+    "lantern_fraction": 0.1,
+    "requests": 1000,
+    "valid_generated": 831,
+    "by_kind": {
+      "beacon_charge": 831
+    }
+  },
+  "soak": {
+    "seeds": 30,
+    "frames_requested_per_seed": 6000,
+    "deaths": 0,
+    "min_distance": 8314.43,
+    "total_valid_challenges": 319,
+    "total_rejections": 0,
+    "platform_fallbacks": 0,
+    "challenge_fallbacks": 0,
+    "min_health": 5,
+    "min_lantern_energy": 0.475,
+    "wall_seconds": 55.275,
+    "mean_distance": 8880.71
+  },
+  "determinism": {
+    "same_seed": true,
+    "different_seed_differs": true
+  },
+  "source_sha256": {
+    "__init__.py": "a8e2e781e0cdd891795d49ebbcf7cd3f3d9460c61385db44aa3a3bc00af08f79",
+    "__main__.py": "c3231b220cee8c6cbab3b59033a15dc7a7593e5577681026b822cc2c50ded2c2",
+    "art.py": "78241575c16a18311e47c474a12359058259d371cef6e9e5976d2f81541876ac",
+    "audio.py": "5322f34085e92a8a47adcee8b370ca59caa5614453f70425cd2e78178408c6e1",
+    "challenges.py": "b9a7961a376b7b9e042fea797fde040939f807159941e8b9b3ea85514969e76c",
+    "environment.py": "e6e550e6e4f92d856d6834c90c49a78c794fe59689cc75a72c74cc3a116cc6cd",
+    "forest.py": "1e3338c0019817ca1e97baa7ae6e944e23cdee7e34a1af961683b054f73b902c",
+    "game.py": "15d246eff2a856a0a375d698dd50c9bd1dc5a0c3cb9376a60f3623d2115dd131",
+    "generate_assets.py": "6dfb38e9caa5102746786677c14f514079754057c182006792742f521aec34d8",
+    "generate_blocks.py": "3592d979b761955db297385c7a020bb37a9eb84aab24d7b06ec2c5f5467d7eb8",
+    "generate_cranes.py": "c62e075af4954e1c9225897b27b1ced21a7b51091dd1ddb141946fa83eb0bd2d",
+    "generate_obstacles.py": "adff810b06bd43d4471b5f666940c1b92c2e0742e6cdd79eb835c22640aa88dd",
+    "generate_rockets.py": "9f985b2eae8282697cc5d935c232bd9b0dbad0472045e49abe3931b74a885bca",
+    "generate_watertowers.py": "11a38cc43dbd006da1a9aec04aad446068f156da7c1c7045f7f93f0cd1fae904",
+    "levels.py": "c5dea5573833bcec37066d5187d7371303a02e0de7640e7972a386276a99bedd",
+    "magnet.py": "8fd20c6361c804f5eecc4b3aa3e4447d969dd1de32692c9b6d51a6ea03ed99e7",
+    "package_data.py": "105375688a4b0b84b1250352e2f7b13cb95260380b2d50d63fbeea7c9f900174",
+    "physics.py": "dfe8b4157daeabb237f5e0b41e37fa1463ae59e19cd9e31e5df362e00450cf8a",
+    "pilot.py": "6c9bd866ed93ed7bafec0def153593cf2d97d1dfd37e0da79a27fb2a26cfe5cb",
+    "procedural.py": "6042a1305b8b87ed54b7b6b6d8f3efd1966452db82dd42c79ce1d183c18a1cae",
+    "progress.py": "6b3abd1f59d576d75702b0599f14517cb67e93fb1b4acbae4f7cac434db0a42f",
+    "puzzle_archetypes.py": "d9e9f59221eda9a6ec8218605d1cf60925f569d4ba25da9a9d867015fa19a5a2",
+    "reference.py": "addd20fb3fd316db10257546b679281426d9c8e12534e6eca0a3f6d73fd5f45a",
+    "room_art.py": "1feaedd9d9ab89b7cae2ecb6d726392986125d0e8957e515207137aa39011121",
+    "rooms.py": "4e64722798447fe0f48064d69c01e6cc0e89d553e34cdb394acc3e70e045b056",
+    "seesaw.py": "d9601efd89a04b4bc370f17a1278091c07f265f9a414b5b8b5faaad42c2f485d",
+    "verify.py": "83fba8a7db8866f90ebc57098db8373cb8b50a4f0c3c7da0dd4fd6ab42cd4a11",
+    "verify_challenges.py": "192f296358126275dd3c624ca36f0bbbe94ccef77107aff99da39714fcee0ee0"
+  }
+}

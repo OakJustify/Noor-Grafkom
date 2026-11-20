@@ -1,0 +1,458 @@
+[
+  {
+    "file": "variants/crane-01.png",
+    "parts": {
+      "base": "pads_mid",
+      "mast": "xbrace_mid",
+      "mast_sections": 4,
+      "slew": "toothed_dark",
+      "cab": "box_mid",
+      "apex": "tripod_dark",
+      "jib": "tapered_mid",
+      "counterjib": "lattice_mid",
+      "counterweight": "frame_dark",
+      "hoist": "double_dark",
+      "hoist_at": 0.28,
+      "hoist_drop": 102.24,
+      "pendant": "double",
+      "section_h": 100.44
+    }
+  },
+  {
+    "file": "variants/crane-02.png",
+    "parts": {
+      "base": "grillage_light",
+      "mast": "xbrace_dark",
+      "mast_sections": 3,
+      "slew": "toothed_mid",
+      "cab": "box_light",
+      "apex": "spike_dark",
+      "jib": "lattice_dark",
+      "counterjib": "boxed_light",
+      "counterweight": "slab_dark",
+      "hoist": "hook_dark",
+      "hoist_at": 0.7,
+      "hoist_drop": 147.28,
+      "pendant": "single",
+      "section_h": 106.07
+    }
+  },
+  {
+    "file": "variants/crane-03.png",
+    "parts": {
+      "base": "pads_light",
+      "mast": "diamond_dark",
+      "mast_sections": 4,
+      "slew": "toothed_dark",
+      "cab": "box_mid",
+      "apex": "spike_dark",
+      "jib": "tapered_dark",
+      "counterjib": "lattice_mid",
+      "counterweight": "frame_mid",
+      "hoist": "clamp_mid",
+      "hoist_at": 0.54,
+      "hoist_drop": 81.75,
+      "pendant": "truss",
+      "section_h": 104.76
+    }
+  },
+  {
+    "file": "variants/crane-04.png",
+    "parts": {
+      "base": "plinth_mid",
+      "mast": "square_mid",
+      "mast_sections": 4,
+      "slew": "box_mid",
+      "cab": "hut_mid",
+      "apex": "tripod_dark",
+      "jib": "tapered_mid",
+      "counterjib": "walkway_light",
+      "counterweight": "frame_dark",
+      "hoist": "clamp_dark",
+      "hoist_at": 0.38,
+      "hoist_drop": 76.02,
+      "pendant": "double",
+      "section_h": 92.27
+    }
+  },
+  {
+    "file": "variants/crane-05.png",
+    "parts": {
+      "base": "slab_light",
+      "mast": "tubular_dark",
+      "mast_sections": 4,
+      "slew": "ring_mid",
+      "cab": "hut_mid",
+      "apex": "cage_dark",
+      "jib": "lattice_dark",
+      "counterjib": "walkway_mid",
+      "counterweight": "frame_dark",
+      "hoist": "hook_dark",
+      "hoist_at": 0.45,
+      "hoist_drop": 95.72,
+      "pendant": "double",
+      "section_h": 93.0
+    }
+  },
+  {
+    "file": "variants/crane-06.png",
+    "parts": {
+      "base": "pads_mid",
+      "mast": "tubular_dark",
+      "mast_sections": 3,
+      "slew": "toothed_dark",
+      "cab": "hut_mid",
+      "apex": "tripod_dark",
+      "jib": "lattice_mid",
+      "counterjib": "lattice_mid",
+      "counterweight": "slab_dark",
+      "hoist": "hook_dark",
+      "hoist_at": 0.32,
+      "hoist_drop": 142.02,
+      "pendant": "double",
+      "section_h": 103.35
+    }
+  },
+  {
+    "file": "variants/crane-07.png",
+    "parts": {
+      "base": "grillage_mid",
+      "mast": "xbrace_mid",
+      "mast_sections": 4,
+      "slew": "box_dark",
+      "cab": "box_mid",
+      "apex": "pyramid_dark",
+      "jib": "tapered_dark",
+      "counterjib": "lattice_light",
+      "counterweight": "frame_mid",
+      "hoist": "block_dark",
+      "hoist_at": 0.39,
+      "hoist_drop": 148.99,
+      "pendant": "double",
+      "section_h": 103.24
+    }
+  },
+  {
+    "file": "variants/crane-08.png",
+    "parts": {
+      "base": "pads_light",
+      "mast": "square_dark",
+      "mast_sections": 3,
+      "slew": "box_dark",
+      "cab": "box_mid",
+      "apex": "tripod_dark",
+      "jib": "lattice_mid",
+      "counterjib": "boxed_light",
+      "counterweight": "slab_dark",
+      "hoist": "hook_dark",
+      "hoist_at": 0.59,
+      "hoist_drop": 94.88,
+      "pendant": "double",
+      "section_h": 92.23
+    }
+  },
+  {
+    "file": "variants/crane-09.png",
+    "parts": {
+      "base": "plinth_mid",
+      "mast": "tubular_dark",
+      "mast_sections": 3,
+      "slew": "ring_dark",
+      "cab": "rounded_light",
+      "apex": "cage_dark",
+      "jib": "plate_dark",
+      "counterjib": "boxed_mid",
+      "counterweight": "ribbed_mid",
+      "hoist": "double_dark",
+      "hoist_at": 0.31,
+      "hoist_drop": 99.67,
+      "pendant": "truss",
+      "section_h": 96.68
+    }
+  },
+  {
+    "file": "variants/crane-10.png",
+    "parts": {
+      "base": "grillage_light",
+      "mast": "ladder_dark",
+      "mast_sections": 3,
+      "slew": "ring_mid",
+      "cab": null,
+      "apex": "tripod_dark",
+      "jib": "plate_mid",
+      "counterjib": "walkway_light",
+      "counterweight": "stack_dark",
+      "hoist": "hook_mid",
+      "hoist_at": 0.6,
+      "hoist_drop": 145.43,
+      "pendant": "single",
+      "section_h": 105.71
+    }
+  },
+  {
+    "file": "variants/crane-11.png",
+    "parts": {
+      "base": "plinth_mid",
+      "mast": "tubular_dark",
+      "mast_sections": 4,
+      "slew": "box_mid",
+      "cab": "hut_light",
+      "apex": "cage_mid",
+      "jib": "lattice_mid",
+      "counterjib": "lattice_light",
+      "counterweight": "stack_dark",
+      "hoist": "double_dark",
+      "hoist_at": 0.47,
+      "hoist_drop": 146.39,
+      "pendant": "double",
+      "section_h": 106.63
+    }
+  },
+  {
+    "file": "variants/crane-12.png",
+    "parts": {
+      "base": "slab_light",
+      "mast": "ladder_dark",
+      "mast_sections": 3,
+      "slew": "box_mid",
+      "cab": null,
+      "apex": "tripod_mid",
+      "jib": "lattice_mid",
+      "counterjib": "lattice_mid",
+      "counterweight": "frame_dark",
+      "hoist": "hook_mid",
+      "hoist_at": 0.46,
+      "hoist_drop": 88.24,
+      "pendant": "truss",
+      "section_h": 106.68
+    }
+  },
+  {
+    "file": "variants/crane-13.png",
+    "parts": {
+      "base": "plinth_mid",
+      "mast": "square_mid",
+      "mast_sections": 3,
+      "slew": "ring_dark",
+      "cab": "slanted_light",
+      "apex": "cage_dark",
+      "jib": "lattice_dark",
+      "counterjib": "walkway_mid",
+      "counterweight": "stack_dark",
+      "hoist": "double_mid",
+      "hoist_at": 0.41,
+      "hoist_drop": 52.27,
+      "pendant": "single",
+      "section_h": 92.14
+    }
+  },
+  {
+    "file": "variants/crane-14.png",
+    "parts": {
+      "base": "grillage_mid",
+      "mast": "xbrace_mid",
+      "mast_sections": 3,
+      "slew": "ring_mid",
+      "cab": "slanted_light",
+      "apex": "pyramid_mid",
+      "jib": "lattice_mid",
+      "counterjib": "boxed_mid",
+      "counterweight": "frame_mid",
+      "hoist": "double_mid",
+      "hoist_at": 0.29,
+      "hoist_drop": 83.67,
+      "pendant": "truss",
+      "section_h": 104.6
+    }
+  },
+  {
+    "file": "variants/crane-15.png",
+    "parts": {
+      "base": "pads_mid",
+      "mast": "tubular_mid",
+      "mast_sections": 4,
+      "slew": "ring_dark",
+      "cab": "hut_mid",
+      "apex": "pyramid_dark",
+      "jib": "lattice_mid",
+      "counterjib": "lattice_mid",
+      "counterweight": "frame_dark",
+      "hoist": "clamp_dark",
+      "hoist_at": 0.42,
+      "hoist_drop": 129.3,
+      "pendant": "double",
+      "section_h": 96.43
+    }
+  },
+  {
+    "file": "variants/crane-16.png",
+    "parts": {
+      "base": "pads_light",
+      "mast": "diamond_mid",
+      "mast_sections": 4,
+      "slew": "toothed_mid",
+      "cab": "hut_mid",
+      "apex": "tripod_dark",
+      "jib": "tapered_dark",
+      "counterjib": "boxed_light",
+      "counterweight": "slab_dark",
+      "hoist": "block_dark",
+      "hoist_at": 0.54,
+      "hoist_drop": 58.94,
+      "pendant": "single",
+      "section_h": 99.54
+    }
+  },
+  {
+    "file": "variants/crane-17.png",
+    "parts": {
+      "base": "slab_mid",
+      "mast": "diamond_dark",
+      "mast_sections": 4,
+      "slew": "box_mid",
+      "cab": "box_light",
+      "apex": "pyramid_dark",
+      "jib": "tapered_dark",
+      "counterjib": "lattice_light",
+      "counterweight": "ribbed_dark",
+      "hoist": "block_mid",
+      "hoist_at": 0.49,
+      "hoist_drop": 69.12,
+      "pendant": "double",
+      "section_h": 95.01
+    }
+  },
+  {
+    "file": "variants/crane-18.png",
+    "parts": {
+      "base": "grillage_light",
+      "mast": "diamond_mid",
+      "mast_sections": 3,
+      "slew": "box_dark",
+      "cab": "slanted_light",
+      "apex": "tripod_dark",
+      "jib": "lattice_dark",
+      "counterjib": "walkway_light",
+      "counterweight": "slab_mid",
+      "hoist": "block_dark",
+      "hoist_at": 0.65,
+      "hoist_drop": 85.81,
+      "pendant": "double",
+      "section_h": 96.96
+    }
+  },
+  {
+    "file": "variants/crane-19.png",
+    "parts": {
+      "base": "pads_light",
+      "mast": "tubular_dark",
+      "mast_sections": 3,
+      "slew": "box_dark",
+      "cab": "rounded_mid",
+      "apex": "cage_dark",
+      "jib": "tapered_dark",
+      "counterjib": "lattice_mid",
+      "counterweight": "slab_mid",
+      "hoist": "block_dark",
+      "hoist_at": 0.43,
+      "hoist_drop": 129.89,
+      "pendant": "single",
+      "section_h": 99.15
+    }
+  },
+  {
+    "file": "variants/crane-20.png",
+    "parts": {
+      "base": "slab_light",
+      "mast": "square_mid",
+      "mast_sections": 4,
+      "slew": "toothed_mid",
+      "cab": "box_light",
+      "apex": "pyramid_mid",
+      "jib": "tapered_dark",
+      "counterjib": "boxed_mid",
+      "counterweight": "ribbed_mid",
+      "hoist": "hook_dark",
+      "hoist_at": 0.64,
+      "hoist_drop": 130.36,
+      "pendant": "truss",
+      "section_h": 97.0
+    }
+  },
+  {
+    "file": "variants/crane-21.png",
+    "parts": {
+      "base": "slab_light",
+      "mast": "xbrace_mid",
+      "mast_sections": 4,
+      "slew": "box_mid",
+      "cab": null,
+      "apex": "pyramid_dark",
+      "jib": "plate_dark",
+      "counterjib": "lattice_mid",
+      "counterweight": "stack_mid",
+      "hoist": "clamp_dark",
+      "hoist_at": 0.42,
+      "hoist_drop": 111.34,
+      "pendant": "double",
+      "section_h": 96.68
+    }
+  },
+  {
+    "file": "variants/crane-22.png",
+    "parts": {
+      "base": "slab_mid",
+      "mast": "xbrace_mid",
+      "mast_sections": 3,
+      "slew": "toothed_mid",
+      "cab": "box_light",
+      "apex": "spike_dark",
+      "jib": "parallel_dark",
+      "counterjib": "boxed_mid",
+      "counterweight": "stack_dark",
+      "hoist": "block_mid",
+      "hoist_at": 0.69,
+      "hoist_drop": 126.58,
+      "pendant": "double",
+      "section_h": 103.82
+    }
+  },
+  {
+    "file": "variants/crane-23.png",
+    "parts": {
+      "base": "grillage_mid",
+      "mast": "tubular_mid",
+      "mast_sections": 3,
+      "slew": "ring_dark",
+      "cab": "slanted_mid",
+      "apex": "spike_mid",
+      "jib": "lattice_mid",
+      "counterjib": "boxed_light",
+      "counterweight": "slab_dark",
+      "hoist": "hook_dark",
+      "hoist_at": 0.41,
+      "hoist_drop": 87.26,
+      "pendant": "single",
+      "section_h": 93.98
+    }
+  },
+  {
+    "file": "variants/crane-24.png",
+    "parts": {
+      "base": "slab_light",
+      "mast": "ladder_dark",
+      "mast_sections": 4,
+      "slew": "toothed_dark",
+      "cab": "hut_light",
+      "apex": "tripod_dark",
+      "jib": "tapered_mid",
+      "counterjib": "lattice_mid",
+      "counterweight": "ribbed_dark",
+      "hoist": "double_mid",
+      "hoist_at": 0.64,
+      "hoist_drop": 80.14,
+      "pendant": "double",
+      "section_h": 94.98
+    }
+  }
+]

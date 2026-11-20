@@ -1,0 +1,410 @@
+[
+  {
+    "file": "variants/water-tower-01.png",
+    "parts": {
+      "base": "pads_mid",
+      "leg": "ibeam_dark",
+      "brace": "diagonal_mid",
+      "sections": 4,
+      "platform": "ring_light",
+      "railing": "mesh_mid",
+      "tank": "frustum_light",
+      "roof": "lowcone_wide_mid",
+      "vent": "pipe_dark",
+      "riser": "valve_mid",
+      "riser_side": "left",
+      "ladder_side": "right"
+    }
+  },
+  {
+    "file": "variants/water-tower-02.png",
+    "parts": {
+      "base": "plinth_light",
+      "leg": "square_dark",
+      "brace": "kbrace_dark",
+      "sections": 4,
+      "platform": "ring_light",
+      "railing": "rail_dark",
+      "tank": "cylinder_light",
+      "roof": "lowcone_wide_dark",
+      "vent": "hatch_dark",
+      "riser": "elbow_mid",
+      "riser_side": "right",
+      "ladder_side": "right"
+    }
+  },
+  {
+    "file": "variants/water-tower-03.png",
+    "parts": {
+      "base": "pads_light",
+      "leg": "square_mid",
+      "brace": "kbrace_dark",
+      "sections": 5,
+      "platform": "deck_mid",
+      "railing": "rail_dark",
+      "tank": "frustum_mid",
+      "roof": "lowcone_wide_dark",
+      "vent": "hatch_mid",
+      "riser": "conduit_dark",
+      "riser_side": "right",
+      "ladder_side": "left"
+    }
+  },
+  {
+    "file": "variants/water-tower-04.png",
+    "parts": {
+      "base": "ringbeam_mid",
+      "leg": "ibeam_mid",
+      "brace": "zigzag_dark",
+      "sections": 4,
+      "platform": "ring_mid",
+      "railing": "mesh_mid",
+      "tank": "sphere_mid",
+      "roof": "dome_narrow_dark",
+      "vent": "ball_dark",
+      "riser": "conduit_mid",
+      "riser_side": "right",
+      "ladder_side": "left"
+    }
+  },
+  {
+    "file": "variants/water-tower-05.png",
+    "parts": {
+      "base": "slab_light",
+      "leg": "ibeam_mid",
+      "brace": "diagonal_dark",
+      "sections": 4,
+      "platform": "girder_mid",
+      "railing": "mesh_dark",
+      "tank": "sphere_light",
+      "roof": "cone_narrow_mid",
+      "vent": "pipe_mid",
+      "riser": "conduit_mid",
+      "riser_side": "right",
+      "ladder_side": "right"
+    }
+  },
+  {
+    "file": "variants/water-tower-06.png",
+    "parts": {
+      "base": "pads_mid",
+      "leg": "ibeam_dark",
+      "brace": "xbrace_mid",
+      "sections": 5,
+      "platform": "girder_mid",
+      "railing": "rail_dark",
+      "tank": "barrel_mid",
+      "roof": "flat_wide_dark",
+      "vent": "hatch_dark",
+      "riser": "straight_mid",
+      "riser_side": "left",
+      "ladder_side": "right"
+    }
+  },
+  {
+    "file": "variants/water-tower-07.png",
+    "parts": {
+      "base": "plinth_mid",
+      "leg": "ibeam_mid",
+      "brace": "xbrace_mid",
+      "sections": 5,
+      "platform": "ring_light",
+      "railing": "cage_dark",
+      "tank": "sphere_light",
+      "roof": "flat_narrow_mid",
+      "vent": "hatch_mid",
+      "riser": "valve_dark",
+      "riser_side": "left",
+      "ladder_side": "right"
+    }
+  },
+  {
+    "file": "variants/water-tower-08.png",
+    "parts": {
+      "base": "pads_light",
+      "leg": "square_mid",
+      "brace": "zigzag_dark",
+      "sections": 5,
+      "platform": "ring_mid",
+      "railing": "cage_mid",
+      "tank": "barrel_mid",
+      "roof": "flat_wide_mid",
+      "vent": "ball_mid",
+      "riser": "elbow_mid",
+      "riser_side": "right",
+      "ladder_side": "left"
+    }
+  },
+  {
+    "file": "variants/water-tower-09.png",
+    "parts": {
+      "base": "ringbeam_mid",
+      "leg": "tapered_mid",
+      "brace": "diagonal_dark",
+      "sections": 5,
+      "platform": "girder_mid",
+      "railing": "mesh_mid",
+      "tank": "barrel_mid",
+      "roof": "lowcone_wide_dark",
+      "vent": "pipe_dark",
+      "riser": "straight_dark",
+      "riser_side": "left",
+      "ladder_side": "left"
+    }
+  },
+  {
+    "file": "variants/water-tower-10.png",
+    "parts": {
+      "base": "plinth_light",
+      "leg": "ibeam_dark",
+      "brace": "zigzag_mid",
+      "sections": 4,
+      "platform": "deck_light",
+      "railing": "rail_mid",
+      "tank": "cylinder_mid",
+      "roof": "cone_wide_dark",
+      "vent": "hatch_mid",
+      "riser": "straight_dark",
+      "riser_side": "left",
+      "ladder_side": "left"
+    }
+  },
+  {
+    "file": "variants/water-tower-11.png",
+    "parts": {
+      "base": "ringbeam_mid",
+      "leg": "ibeam_dark",
+      "brace": "diagonal_mid",
+      "sections": 3,
+      "platform": "girder_mid",
+      "railing": "rail_dark",
+      "tank": "frustum_light",
+      "roof": "dome_wide_dark",
+      "vent": "antenna_mid",
+      "riser": "valve_mid",
+      "riser_side": "left",
+      "ladder_side": "left"
+    }
+  },
+  {
+    "file": "variants/water-tower-12.png",
+    "parts": {
+      "base": "slab_light",
+      "leg": "square_mid",
+      "brace": "xbrace_mid",
+      "sections": 4,
+      "platform": "deck_light",
+      "railing": "mesh_mid",
+      "tank": "barrel_mid",
+      "roof": "dome_wide_mid",
+      "vent": "hatch_dark",
+      "riser": "straight_dark",
+      "riser_side": "right",
+      "ladder_side": "right"
+    }
+  },
+  {
+    "file": "variants/water-tower-13.png",
+    "parts": {
+      "base": "ringbeam_mid",
+      "leg": "ibeam_mid",
+      "brace": "zigzag_mid",
+      "sections": 5,
+      "platform": "girder_light",
+      "railing": "cage_mid",
+      "tank": "cylinder_mid",
+      "roof": "lowcone_wide_mid",
+      "vent": "ball_dark",
+      "riser": "valve_dark",
+      "riser_side": "left",
+      "ladder_side": "right"
+    }
+  },
+  {
+    "file": "variants/water-tower-14.png",
+    "parts": {
+      "base": "plinth_mid",
+      "leg": "tube_dark",
+      "brace": "xbrace_mid",
+      "sections": 4,
+      "platform": "ring_light",
+      "railing": "cage_dark",
+      "tank": "cylinder_mid",
+      "roof": "cone_wide_mid",
+      "vent": "antenna_dark",
+      "riser": "conduit_dark",
+      "riser_side": "left",
+      "ladder_side": "left"
+    }
+  },
+  {
+    "file": "variants/water-tower-15.png",
+    "parts": {
+      "base": "pads_mid",
+      "leg": "ibeam_mid",
+      "brace": "xbrace_dark",
+      "sections": 3,
+      "platform": "girder_light",
+      "railing": "cage_mid",
+      "tank": "frustum_light",
+      "roof": "lowcone_wide_dark",
+      "vent": "antenna_dark",
+      "riser": "elbow_mid",
+      "riser_side": "left",
+      "ladder_side": "right"
+    }
+  },
+  {
+    "file": "variants/water-tower-16.png",
+    "parts": {
+      "base": "pads_light",
+      "leg": "ibeam_dark",
+      "brace": "diagonal_dark",
+      "sections": 3,
+      "platform": "deck_mid",
+      "railing": "rail_dark",
+      "tank": "sphere_mid",
+      "roof": "cone_narrow_dark",
+      "vent": "hatch_dark",
+      "riser": "elbow_mid",
+      "riser_side": "left",
+      "ladder_side": "left"
+    }
+  },
+  {
+    "file": "variants/water-tower-17.png",
+    "parts": {
+      "base": "slab_mid",
+      "leg": "square_dark",
+      "brace": "xbrace_dark",
+      "sections": 4,
+      "platform": "deck_mid",
+      "railing": "rail_mid",
+      "tank": "frustum_mid",
+      "roof": "dome_wide_mid",
+      "vent": "antenna_mid",
+      "riser": "straight_mid",
+      "riser_side": "left",
+      "ladder_side": "right"
+    }
+  },
+  {
+    "file": "variants/water-tower-18.png",
+    "parts": {
+      "base": "plinth_light",
+      "leg": "square_dark",
+      "brace": "kbrace_dark",
+      "sections": 4,
+      "platform": "girder_light",
+      "railing": "mesh_mid",
+      "tank": "frustum_mid",
+      "roof": "lowcone_wide_mid",
+      "vent": "hatch_dark",
+      "riser": "elbow_dark",
+      "riser_side": "right",
+      "ladder_side": "left"
+    }
+  },
+  {
+    "file": "variants/water-tower-19.png",
+    "parts": {
+      "base": "pads_light",
+      "leg": "tapered_mid",
+      "brace": "diagonal_dark",
+      "sections": 4,
+      "platform": "girder_mid",
+      "railing": "rail_mid",
+      "tank": "barrel_mid",
+      "roof": "flat_wide_mid",
+      "vent": "ball_mid",
+      "riser": "elbow_mid",
+      "riser_side": "left",
+      "ladder_side": "left"
+    }
+  },
+  {
+    "file": "variants/water-tower-20.png",
+    "parts": {
+      "base": "slab_light",
+      "leg": "square_dark",
+      "brace": "xbrace_mid",
+      "sections": 4,
+      "platform": "ring_mid",
+      "railing": "cage_dark",
+      "tank": "frustum_mid",
+      "roof": "cone_wide_mid",
+      "vent": "pipe_mid",
+      "riser": "straight_dark",
+      "riser_side": "right",
+      "ladder_side": "left"
+    }
+  },
+  {
+    "file": "variants/water-tower-21.png",
+    "parts": {
+      "base": "slab_light",
+      "leg": "square_dark",
+      "brace": "zigzag_dark",
+      "sections": 4,
+      "platform": "ring_light",
+      "railing": "cage_mid",
+      "tank": "sphere_mid",
+      "roof": "dome_narrow_dark",
+      "vent": "hatch_mid",
+      "riser": "valve_dark",
+      "riser_side": "right",
+      "ladder_side": "right"
+    }
+  },
+  {
+    "file": "variants/water-tower-22.png",
+    "parts": {
+      "base": "slab_mid",
+      "leg": "tube_dark",
+      "brace": "kbrace_dark",
+      "sections": 4,
+      "platform": "ring_light",
+      "railing": "rail_mid",
+      "tank": "barrel_light",
+      "roof": "lowcone_wide_mid",
+      "vent": "pipe_mid",
+      "riser": "elbow_dark",
+      "riser_side": "right",
+      "ladder_side": "right"
+    }
+  },
+  {
+    "file": "variants/water-tower-23.png",
+    "parts": {
+      "base": "plinth_mid",
+      "leg": "ibeam_mid",
+      "brace": "kbrace_mid",
+      "sections": 3,
+      "platform": "girder_mid",
+      "railing": "mesh_dark",
+      "tank": "cylinder_mid",
+      "roof": "lowcone_wide_mid",
+      "vent": "antenna_mid",
+      "riser": "elbow_mid",
+      "riser_side": "left",
+      "ladder_side": "right"
+    }
+  },
+  {
+    "file": "variants/water-tower-24.png",
+    "parts": {
+      "base": "slab_light",
+      "leg": "tapered_mid",
+      "brace": "xbrace_mid",
+      "sections": 4,
+      "platform": "deck_light",
+      "railing": "cage_dark",
+      "tank": "frustum_mid",
+      "roof": "flat_wide_dark",
+      "vent": "hatch_mid",
+      "riser": "straight_mid",
+      "riser_side": "left",
+      "ladder_side": "right"
+    }
+  }
+]

@@ -1,0 +1,1043 @@
+{
+  "method": "Static byte inventory; no target execution or asset copying.",
+  "artifacts": [
+    {
+      "path": "/home/podistrict/Games/LIMBO-SteamRIP.com/LIMBO/limbo.exe",
+      "bytes": 5074432,
+      "sha256": "acea5e50330ac0356540cdcebd46fe5692b02528cac9dd3ae670a65b4d7bc4a4",
+      "matching_literal_count": 99,
+      "unique_matching_literal_count": 99,
+      "selected_literals": [
+        {
+          "offset": 3925996,
+          "text": "FindTargetSpring(Node):JointSpring2D"
+        },
+        {
+          "offset": 3929028,
+          "text": "worldgravity"
+        },
+        {
+          "offset": 3929044,
+          "text": "boygravity"
+        },
+        {
+          "offset": 3960640,
+          "text": "CONTEXT_PRESENCE_ACTION_GRAVITYEND_3"
+        },
+        {
+          "offset": 3960684,
+          "text": "CONTEXT_PRESENCE_ACTION_GRAVITYEND_2"
+        },
+        {
+          "offset": 3960728,
+          "text": "CONTEXT_PRESENCE_ACTION_GRAVITYEND_1"
+        },
+        {
+          "offset": 3960812,
+          "text": "CONTEXT_PRESENCE_ACTION_GRAVITYCRATE_1"
+        },
+        {
+          "offset": 3961464,
+          "text": "CONTEXT_PRESENCE_ACTION_SWINGROPE_1"
+        },
+        {
+          "offset": 3962228,
+          "text": "CONTEXT_PRESENCE_ACTION_ROPESDOORS_1"
+        },
+        {
+          "offset": 3970100,
+          "text": "propertychange"
+        },
+        {
+          "offset": 3970280,
+          "text": "JointPin2D"
+        },
+        {
+          "offset": 3970296,
+          "text": "Joint2D"
+        },
+        {
+          "offset": 4003704,
+          "text": "propertyvalue"
+        },
+        {
+          "offset": 4003720,
+          "text": "propertyname"
+        },
+        {
+          "offset": 4003748,
+          "text": "PropertyController"
+        },
+        {
+          "offset": 4004964,
+          "text": "BoyGrabState"
+        },
+        {
+          "offset": 4006796,
+          "text": "usergravity:0.0,7.0"
+        },
+        {
+          "offset": 4006932,
+          "text": "ropeSlopePenalty:0.0,1.0"
+        },
+        {
+          "offset": 4006964,
+          "text": "ropeVelocityLimit:0.0,10.0"
+        },
+        {
+          "offset": 4007408,
+          "text": "BoyRopeState"
+        },
+        {
+          "offset": 4011660,
+          "text": "rope_down"
+        },
+        {
+          "offset": 4011672,
+          "text": "rope_up"
+        },
+        {
+          "offset": 4011723,
+          "text": "=ropeLegDamping"
+        },
+        {
+          "offset": 4011744,
+          "text": "ropeLegStrength"
+        },
+        {
+          "offset": 4012052,
+          "text": "physicsStep"
+        },
+        {
+          "offset": 4012216,
+          "text": "gravityshift_90"
+        },
+        {
+          "offset": 4012236,
+          "text": "gravityshift"
+        },
+        {
+          "offset": 4012880,
+          "text": "gravityscale:0.0,1.0"
+        },
+        {
+          "offset": 4015968,
+          "text": "rungravity:0.0,20.0"
+        },
+        {
+          "offset": 4017576,
+          "text": "BoyUtils_IsRope(CollisionVolume2D):bool"
+        },
+        {
+          "offset": 4018476,
+          "text": "customgravity"
+        },
+        {
+          "offset": 4018564,
+          "text": "PhysicsCopyPosOrient"
+        },
+        {
+          "offset": 4018592,
+          "text": "PhysicsResetTranslate"
+        },
+        {
+          "offset": 4018620,
+          "text": "PhysicsCollisionManager"
+        },
+        {
+          "offset": 4018648,
+          "text": "PhysicsJoint2D"
+        },
+        {
+          "offset": 4018668,
+          "text": "PhysicsCleanup"
+        },
+        {
+          "offset": 4018688,
+          "text": "PhysicsValidate"
+        },
+        {
+          "offset": 4018708,
+          "text": "PhysicsPostIntegrate"
+        },
+        {
+          "offset": 4018736,
+          "text": "PhysicsIntegrate"
+        },
+        {
+          "offset": 4018756,
+          "text": "PhysicsCoreStep"
+        },
+        {
+          "offset": 4018796,
+          "text": "PhysicsWorld2D::Update"
+        },
+        {
+          "offset": 4020872,
+          "text": "Displayflags: Physics, Sfx, Animations, Scripts, Effects, ShowLockedBranches, TextPlates, Misc"
+        },
+        {
+          "offset": 4022048,
+          "text": "--------------------- timestep %s benchmark -----------------------"
+        },
+        {
+          "offset": 4022560,
+          "text": "debugflags:enabled,visualboy,busyboylog,deathdetector,sound,snd_dbg,snd_dbg_rtpc,script,animpose,bodylog,collisionlog,input,signal,skipblend,physics"
+        },
+        {
+          "offset": 4022828,
+          "text": "physicsstep"
+        },
+        {
+          "offset": 4024332,
+          "text": "Rope should always be batched, and never rendered using Draw"
+        },
+        {
+          "offset": 4026828,
+          "text": "ropeCurviness"
+        },
+        {
+          "offset": 4032340,
+          "text": "Physics"
+        },
+        {
+          "offset": 4032956,
+          "text": "skipvisualropegrab"
+        },
+        {
+          "offset": 4034944,
+          "text": "gravitySctipt"
+        },
+        {
+          "offset": 4035156,
+          "text": "collisionfriction:0,1.0"
+        },
+        {
+          "offset": 4035564,
+          "text": "gravity:-10.0,10.0"
+        },
+        {
+          "offset": 4038792,
+          "text": "PhysicsTriggerImpact"
+        },
+        {
+          "offset": 4038868,
+          "text": "PhysicsTriggerWater"
+        },
+        {
+          "offset": 4038916,
+          "text": "physicsfactor:0.0,100.0"
+        },
+        {
+          "offset": 4039132,
+          "text": "JointWind2D"
+        },
+        {
+          "offset": 4039976,
+          "text": "Warning: Can't attach different joint types!"
+        },
+        {
+          "offset": 4040032,
+          "text": "SetJointFlag(int,bool)"
+        },
+        {
+          "offset": 4040380,
+          "text": "GetCurrentTimeStep():int"
+        },
+        {
+          "offset": 4040736,
+          "text": "timestep:0.0001,0.1"
+        },
+        {
+          "offset": 4040780,
+          "text": "gravity:0,100"
+        },
+        {
+          "offset": 4040796,
+          "text": "PhysicsWorld2D"
+        },
+        {
+          "offset": 4042140,
+          "text": "JOINT2D_BREAKABLE"
+        },
+        {
+          "offset": 4042164,
+          "text": "JOINT2D_ANGLELIMITS"
+        },
+        {
+          "offset": 4042188,
+          "text": "JOINT2D_ANGLESPRING"
+        },
+        {
+          "offset": 4042212,
+          "text": "JOINT2D_PIN"
+        },
+        {
+          "offset": 4042520,
+          "text": "jointflags:pin,anglespring,anglelimits,breakable,motor"
+        },
+        {
+          "offset": 4042588,
+          "text": "JOINT2D_MOTOR"
+        },
+        {
+          "offset": 4042604,
+          "text": "JOINT2D_POSLIMITS"
+        },
+        {
+          "offset": 4042628,
+          "text": "JOINT2D_SLIDER"
+        },
+        {
+          "offset": 4042716,
+          "text": "jointflags:slider,poslimits,breakable,motor"
+        },
+        {
+          "offset": 4042768,
+          "text": "JointSlider2D"
+        },
+        {
+          "offset": 4042960,
+          "text": "JointSpring2D"
+        },
+        {
+          "offset": 4043716,
+          "text": "friction:0,1.0,,0.0001"
+        },
+        {
+          "offset": 4044096,
+          "text": "BODY2D_GRAVITY"
+        },
+        {
+          "offset": 4044480,
+          "text": "bodyflags:gravity,automass,autocm,customdrag,staticrot,wind,allowsleep"
+        },
+        {
+          "offset": 4045032,
+          "text": "lost physicsframe. running slowmotion"
+        },
+        {
+          "offset": 4047911,
+          "text": "DERROR: SetGenericPropertyData: pos > vCustomData.size() - index out of bounds (%d)"
+        },
+        {
+          "offset": 4059256,
+          "text": "CMD_SET_PROPERTY (size=%d)"
+        },
+        {
+          "offset": 4059292,
+          "text": "CMD_GET_PROPERTY"
+        },
+        {
+          "offset": 4061843,
+          "text": "property %s %s"
+        },
+        {
+          "offset": 4062952,
+          "text": "property_changed"
+        },
+        {
+          "offset": 4064876,
+          "text": "ThePhysics():PhysicsWorld2D"
+        },
+        {
+          "offset": 4069256,
+          "text": "Entity is %s, does not have property id %d"
+        },
+        {
+          "offset": 4069672,
+          "text": "Grab, Idle, Jump, Ladder, Push, Ragdoll, ReachPlateau, Rope, Run, Slide, StandTurn"
+        },
+        {
+          "offset": 4075392,
+          "text": "AKJointTrigger"
+        },
+        {
+          "offset": 4075564,
+          "text": "AKPhysicsTrigger"
+        },
+        {
+          "offset": 4075884,
+          "text": "AKJointTriggerRotate"
+        },
+        {
+          "offset": 4075968,
+          "text": "AKPhysicsTriggerImpact"
+        },
+        {
+          "offset": 4076164,
+          "text": "AKPhysicsTriggerMove"
+        },
+        {
+          "offset": 4076492,
+          "text": "AKPhysicsTriggerRoll"
+        },
+        {
+          "offset": 4076520,
+          "text": "AKPhysicsTriggerRotate"
+        },
+        {
+          "offset": 4076728,
+          "text": "AKPhysicsTriggerSlide"
+        },
+        {
+          "offset": 4076952,
+          "text": "AKPhysicsTriggerWaterImpact"
+        },
+        {
+          "offset": 4223608,
+          "text": "Property checksums: 0x%X (editor:0x%X)"
+        },
+        {
+          "offset": 4223756,
+          "text": "Format specification ('<') on non-property"
+        },
+        {
+          "offset": 4225008,
+          "text": "Unknown property or function %s on class %s"
+        },
+        {
+          "offset": 4225100,
+          "text": "Property type mismatch (%s expected, %s given)"
+        },
+        {
+          "offset": 4225204,
+          "text": "Can't access property on non-entity"
+        }
+      ],
+      "selected_literal_limit": 140
+    },
+    {
+      "path": "/home/podistrict/Games/LIMBO-SteamRIP.com/LIMBO/limbo_boot.pkg",
+      "bytes": 20612135,
+      "sha256": "e7b5128c8ea5251959f6af78f418f89ceb188d8dc2145e3a17afb5ecb8ebbf5f",
+      "package_table_hypothesis": {
+        "layout": "uint32 count, count * (uint32 identifier, uint32 offset, uint32 size), payload",
+        "count": 1641,
+        "payload_offset": 19696,
+        "all_ranges_within_file": true,
+        "last_member_ends_at_eof": true,
+        "limitations": "Member identifiers are opaque; filenames, compression and object serialization not decoded."
+      },
+      "matching_literal_count": 213,
+      "unique_matching_literal_count": 134,
+      "selected_literals": [
+        {
+          "offset": 427455,
+          "text": "This typeface is the property of Monotype Typography and its use by you is covered under the terms of a license agreement. You have obtained this typeface software either directly from Monotype or together with software "
+        },
+        {
+          "offset": 477094,
+          "text": "rootLegJoint"
+        },
+        {
+          "offset": 477182,
+          "text": "JointPin2D"
+        },
+        {
+          "offset": 503266,
+          "text": "endBoneLegJoint"
+        },
+        {
+          "offset": 521790,
+          "text": "BoyRopeState"
+        },
+        {
+          "offset": 522002,
+          "text": "BoyGrabState"
+        },
+        {
+          "offset": 610562,
+          "text": "JointSlider2D"
+        },
+        {
+          "offset": 634522,
+          "text": "shear_timestep must be > 0"
+        },
+        {
+          "offset": 779482,
+          "text": "BoneJoint1"
+        },
+        {
+          "offset": 845494,
+          "text": "custom gravity script does not have a body targeted"
+        },
+        {
+          "offset": 855326,
+          "text": "gravityZone must have a pivot as parent"
+        },
+        {
+          "offset": 874874,
+          "text": "timestep must be > 0"
+        },
+        {
+          "offset": 909094,
+          "text": "RopeLayer"
+        },
+        {
+          "offset": 909546,
+          "text": "data/sprites/props/rope/long_rope_01.png"
+        },
+        {
+          "offset": 937974,
+          "text": "\"data/sprites/props/various/woodspider_joint.pngBLUR_A\""
+        },
+        {
+          "offset": 939431,
+          "text": "\"data/sprites/characters/creatures/zombie_worm/joint_02.pngBLUR_A\""
+        },
+        {
+          "offset": 939607,
+          "text": "\"data/sprites/characters/creatures/zombie_worm/joint_03.pngBLUR_A\""
+        },
+        {
+          "offset": 939697,
+          "text": "\"data/sprites/props/rope/chain_02.pngBLUR_A\""
+        },
+        {
+          "offset": 939765,
+          "text": "\"data/sprites/props/rope/chain_01.pngBLUR_A\""
+        },
+        {
+          "offset": 940150,
+          "text": "\"data/sprites/props/wires/ropeknot.pngBLUR_A\""
+        },
+        {
+          "offset": 949587,
+          "text": "\"data/sprites/props/rope/rope_part_02.pngBLUR_A\""
+        },
+        {
+          "offset": 949659,
+          "text": "\"data/sprites/props/rope/rope_part_03.pngBLUR_A\""
+        },
+        {
+          "offset": 949892,
+          "text": "\"data/sprites/props/rope/rope_part_01.pngBLUR_A\""
+        },
+        {
+          "offset": 954463,
+          "text": "\"data/sprites/characters/creatures/zombie_worm/joint_04.pngBLUR_A\""
+        },
+        {
+          "offset": 959507,
+          "text": "\"data/sprites/props/rope/rope_knot_01.pngBLUR_A\""
+        },
+        {
+          "offset": 959745,
+          "text": "\"data/sprites/effects/water_rain/drope.pngBLUR_A\""
+        },
+        {
+          "offset": 960682,
+          "text": "\"data/sprites/props/rope/rope_01.pngBLUR_A\""
+        },
+        {
+          "offset": 962294,
+          "text": "\"data/sprites/props/rope/rope_part_03.png_A\""
+        },
+        {
+          "offset": 964934,
+          "text": "\"data/sprites/effects/water_rain/drope.png_A\""
+        },
+        {
+          "offset": 20119448,
+          "text": "rope_organic"
+        },
+        {
+          "offset": 20119462,
+          "text": "rope_chain"
+        },
+        {
+          "offset": 20140266,
+          "text": "rootLegJointOffPos"
+        },
+        {
+          "offset": 20142010,
+          "text": "trapJoint"
+        },
+        {
+          "offset": 20142167,
+          "text": "joint2"
+        },
+        {
+          "offset": 20142220,
+          "text": "joint1"
+        },
+        {
+          "offset": 20142273,
+          "text": "spiderJoint2"
+        },
+        {
+          "offset": 20142332,
+          "text": "spiderJoint1"
+        },
+        {
+          "offset": 20145632,
+          "text": "trapJoint1"
+        },
+        {
+          "offset": 20145689,
+          "text": "trapJoint2"
+        },
+        {
+          "offset": 20148565,
+          "text": "setImpactProperties"
+        },
+        {
+          "offset": 20172789,
+          "text": "AttachToTailJoint"
+        },
+        {
+          "offset": 20172853,
+          "text": "AttachToBellyJoint"
+        },
+        {
+          "offset": 20174358,
+          "text": "attachJoints"
+        },
+        {
+          "offset": 20199554,
+          "text": "scriptPropertyUpdater"
+        },
+        {
+          "offset": 20202143,
+          "text": "propertyUpdater"
+        },
+        {
+          "offset": 20222086,
+          "text": "ropeState"
+        },
+        {
+          "offset": 20222598,
+          "text": "specificRopeNode"
+        },
+        {
+          "offset": 20223188,
+          "text": "isSpecificRopeNode"
+        },
+        {
+          "offset": 20223597,
+          "text": "ropeVol"
+        },
+        {
+          "offset": 20264466,
+          "text": "AvoidPhysicsExplosions"
+        },
+        {
+          "offset": 20278482,
+          "text": "vJointLocalPos"
+        },
+        {
+          "offset": 20278543,
+          "text": "vStartJointLocalPos"
+        },
+        {
+          "offset": 20288659,
+          "text": "shear_timestep"
+        },
+        {
+          "offset": 20317835,
+          "text": "physics"
+        },
+        {
+          "offset": 20385501,
+          "text": "ropePiv"
+        },
+        {
+          "offset": 20385555,
+          "text": "ropePivStartPos"
+        },
+        {
+          "offset": 20385991,
+          "text": "jointWhosJointNeedsNewJoint"
+        },
+        {
+          "offset": 20386065,
+          "text": "newJoint"
+        },
+        {
+          "offset": 20386120,
+          "text": "setNewJoint"
+        },
+        {
+          "offset": 20386198,
+          "text": "tempJoint"
+        },
+        {
+          "offset": 20395320,
+          "text": "ropeUp"
+        },
+        {
+          "offset": 20395373,
+          "text": "ropeDown"
+        },
+        {
+          "offset": 20395428,
+          "text": "ropeJointSpring"
+        },
+        {
+          "offset": 20395490,
+          "text": "doorJointSpring"
+        },
+        {
+          "offset": 20395552,
+          "text": "ropeSmallWheel"
+        },
+        {
+          "offset": 20395613,
+          "text": "ropeLargeWheel"
+        },
+        {
+          "offset": 20395674,
+          "text": "ropeIsUp"
+        },
+        {
+          "offset": 20395735,
+          "text": "ropeIsDown"
+        },
+        {
+          "offset": 20395798,
+          "text": "boyIsOnRope"
+        },
+        {
+          "offset": 20395970,
+          "text": "boyOnRope"
+        },
+        {
+          "offset": 20396042,
+          "text": "boyOffRope"
+        },
+        {
+          "offset": 20408153,
+          "text": "fTimeStep"
+        },
+        {
+          "offset": 20416536,
+          "text": "gravityEndTrigger"
+        },
+        {
+          "offset": 20416902,
+          "text": "gravityTrigger"
+        },
+        {
+          "offset": 20417086,
+          "text": "gravitySuccess"
+        },
+        {
+          "offset": 20417209,
+          "text": "defaultTimeStep"
+        },
+        {
+          "offset": 20417496,
+          "text": "setSuccessGravity"
+        },
+        {
+          "offset": 20417560,
+          "text": "gravityJumpSuccessTimer"
+        },
+        {
+          "offset": 20417630,
+          "text": "gravityTriggerStartHeight"
+        },
+        {
+          "offset": 20417820,
+          "text": "gravityShiftStarted"
+        },
+        {
+          "offset": 20421948,
+          "text": "gravityIsUp"
+        },
+        {
+          "offset": 20422022,
+          "text": "gravityIsDown"
+        },
+        {
+          "offset": 20432483,
+          "text": "cocoonRopeContainer"
+        },
+        {
+          "offset": 20433693,
+          "text": "ropePin"
+        },
+        {
+          "offset": 20434374,
+          "text": "detachRope"
+        },
+        {
+          "offset": 20436814,
+          "text": "footRopeSpring"
+        },
+        {
+          "offset": 20436875,
+          "text": "headRopeSpring"
+        },
+        {
+          "offset": 20436936,
+          "text": "torsoRopeSpring"
+        },
+        {
+          "offset": 20436998,
+          "text": "thighRopeSpring"
+        },
+        {
+          "offset": 20437450,
+          "text": "ropeGfxVolumes"
+        },
+        {
+          "offset": 20437569,
+          "text": "ropeSnap"
+        },
+        {
+          "offset": 20437693,
+          "text": "lastRopeToEnableHack"
+        },
+        {
+          "offset": 20438381,
+          "text": "pelvisJoint"
+        },
+        {
+          "offset": 20438496,
+          "text": "curJointSpring"
+        },
+        {
+          "offset": 20439087,
+          "text": "ropeFadeIn"
+        },
+        {
+          "offset": 20439144,
+          "text": "ropeFadeInFraction"
+        },
+        {
+          "offset": 20439209,
+          "text": "fadeInRopes"
+        },
+        {
+          "offset": 20441937,
+          "text": "pelvisJointNode"
+        },
+        {
+          "offset": 20453958,
+          "text": "boy_in_rope"
+        },
+        {
+          "offset": 20454016,
+          "text": "item_in_rope"
+        },
+        {
+          "offset": 20455020,
+          "text": "lowFriction"
+        },
+        {
+          "offset": 20455078,
+          "text": "highFriction"
+        },
+        {
+          "offset": 20455137,
+          "text": "lowFrictionSet"
+        },
+        {
+          "offset": 20455399,
+          "text": "setLowFriction"
+        },
+        {
+          "offset": 20455468,
+          "text": "setHighFriction"
+        },
+        {
+          "offset": 20455824,
+          "text": "applyLowFriction"
+        },
+        {
+          "offset": 20493992,
+          "text": "changeGravity"
+        },
+        {
+          "offset": 20512031,
+          "text": "gravity"
+        },
+        {
+          "offset": 20514046,
+          "text": "setWorldGravity"
+        },
+        {
+          "offset": 20514387,
+          "text": "setBoyGravity"
+        },
+        {
+          "offset": 20515486,
+          "text": "defaultGravity"
+        },
+        {
+          "offset": 20515667,
+          "text": "waitSetGravity"
+        },
+        {
+          "offset": 20515728,
+          "text": "waitSetGravity2"
+        },
+        {
+          "offset": 20516391,
+          "text": "setGravityFunction"
+        },
+        {
+          "offset": 20516464,
+          "text": "setGravity"
+        },
+        {
+          "offset": 20516537,
+          "text": "resetWorldGravity"
+        },
+        {
+          "offset": 20516617,
+          "text": "resetBoyGravity"
+        },
+        {
+          "offset": 20517238,
+          "text": "currentGravity"
+        },
+        {
+          "offset": 20518245,
+          "text": "targetGravity"
+        },
+        {
+          "offset": 20518363,
+          "text": "currentGravityStrength"
+        },
+        {
+          "offset": 20519794,
+          "text": "gravityControllerLock"
+        },
+        {
+          "offset": 20521311,
+          "text": "disableGravity"
+        },
+        {
+          "offset": 20543921,
+          "text": "timestep"
+        },
+        {
+          "offset": 20551702,
+          "text": "organicRope"
+        },
+        {
+          "offset": 20551766,
+          "text": "chainRope"
+        },
+        {
+          "offset": 20551828,
+          "text": "findRopeType"
+        },
+        {
+          "offset": 20551895,
+          "text": "boyInRope"
+        },
+        {
+          "offset": 20584097,
+          "text": "generationJoint"
+        },
+        {
+          "offset": 20584233,
+          "text": "ropeWidth"
+        },
+        {
+          "offset": 20584840,
+          "text": "generateRope"
+        },
+        {
+          "offset": 20584982,
+          "text": "jointNode"
+        },
+        {
+          "offset": 20585673,
+          "text": "parentEndJoint"
+        },
+        {
+          "offset": 20587478,
+          "text": "ropeVolume"
+        },
+        {
+          "offset": 20599149,
+          "text": "target_joint"
+        }
+      ],
+      "selected_literal_limit": 140
+    },
+    {
+      "path": "/home/podistrict/Games/LIMBO-SteamRIP.com/LIMBO/limbo_runtime.pkg",
+      "bytes": 12586986,
+      "sha256": "e5cdd74fb89130f7dd3a5e61e949ad9e38f2962c6d03abaa6b5af09babcb14ff",
+      "package_table_hypothesis": {
+        "layout": "uint32 count, count * (uint32 identifier, uint32 offset, uint32 size), payload",
+        "count": 455,
+        "payload_offset": 5464,
+        "all_ranges_within_file": true,
+        "last_member_ends_at_eof": true,
+        "limitations": "Member identifiers are opaque; filenames, compression and object serialization not decoded."
+      },
+      "matching_literal_count": 206,
+      "unique_matching_literal_count": 11,
+      "selected_literals": [
+        {
+          "offset": 7754,
+          "text": "chapter35 = \"data/levels/modern_underground/magnetgravitytiming.branch 1\""
+        },
+        {
+          "offset": 8036,
+          "text": "chapter39 = \"data/levels/modern_underground/gravity_jump.branch 4\"boydir = \"1.000000\""
+        },
+        {
+          "offset": 8123,
+          "text": "boygravity = \"0.000000,0.000000\""
+        },
+        {
+          "offset": 8234,
+          "text": "worldgravity = \"0.000000,-10.000000\""
+        },
+        {
+          "offset": 22156,
+          "text": "worldgravity = \"0.000002,-10.000000\""
+        },
+        {
+          "offset": 22875,
+          "text": "worldgravity = \"10.000000,0.000001\""
+        },
+        {
+          "offset": 23232,
+          "text": "worldgravity = \"2.005630,-9.796808\""
+        },
+        {
+          "offset": 23591,
+          "text": "worldgravity = \"-0.524874,9.986216\""
+        },
+        {
+          "offset": 23771,
+          "text": "worldgravity = \"-0.524871,9.986216\""
+        },
+        {
+          "offset": 23950,
+          "text": "worldgravity = \"-0.524866,9.986216\""
+        },
+        {
+          "offset": 24128,
+          "text": "worldgravity = \"0.524863,-9.986216\""
+        }
+      ],
+      "selected_literal_limit": 140
+    }
+  ],
+  "settings_observations": [
+    "up      = \"UP\"",
+    "left    = \"LEFT\"",
+    "right   = \"RIGHT\"",
+    "action  = \"RCONTROL\"",
+    "action2 = \"LCONTROL\"",
+    "backbufferheight = 720",
+    "windowedmode = false",
+    "use30hz = false"
+  ],
+  "unknowns": [
+    "Exact collision and integration algorithms",
+    "Runtime timestep and physical units",
+    "True defaults of debug parameter ranges",
+    "Exact original puzzle geometry and behavior"
+  ]
+}
