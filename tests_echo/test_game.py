@@ -44,6 +44,55 @@ def test_focus_loss_pauses(game):
     assert game.state == "paused"
 
 
+def test_audio_state_matches_mute_argument():
+    unmuted = Game(persist=False)
+    try:
+        assert unmuted.audio.enabled
+        assert not unmuted.audio.muted
+    finally:
+        unmuted.close()
+    muted = Game(muted=True, persist=False)
+    try:
+        assert not muted.audio.enabled
+        assert muted.audio.muted
+    finally:
+        muted.close()
+
+
+def test_ending_clock_advances_and_new_run_restores_sanity(game):
+    game.state = "ending"
+    game.final_transition_timer = 6.0
+    game.update(1.0)
+    assert game.final_transition_timer == 7.0
+
+    game.sanity = 0.0
+    game.narrative_stage = 3
+    key(game, pygame.K_n)
+    assert game.state == "playing"
+    assert game.sanity == 1.0
+    assert game.narrative_stage == 0
+
+
+def test_pause_freezes_final_countdown(game):
+    game.start()
+    game.sanity = 0.0
+    game.narrative_stage = 3
+    game.final_transition_timer = 1.0
+    key(game, pygame.K_ESCAPE)
+    game.update(2.0)
+    assert game.state == "paused"
+    assert game.final_transition_timer == 1.0
+
+
+def test_atmosphere_desaturation_changes_canvas(game):
+    game.canvas.fill((0, 0, 0))
+    pygame.draw.rect(game.canvas, (255, 0, 0), (0, 0, 320, 540))
+    game.desaturation_factor = 1.0
+    game._apply_atmosphere_overlay()
+    red, green, blue, _ = game.canvas.get_at((160, 270))
+    assert red == green == blue
+
+
 def test_ending_new_journey_restarts_first_room(game):
     game.start(4)
     game.state = "ending"

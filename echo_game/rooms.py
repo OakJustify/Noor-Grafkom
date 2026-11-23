@@ -21,9 +21,23 @@ from .puzzle_archetypes import PuzzleArchetype
 from .seesaw import SeesawPilot
 
 
+@dataclass(frozen=True)
 class ProceduralRoom:
-    """Placeholder class for generated room type."""
-    pass
+    """A fully composed room; verification fills in the solution metadata."""
+
+    number: int
+    seed: int
+    theme: RoomTheme
+    level: Level
+    stages: tuple[PuzzleStage, ...]
+    template_index: int
+    layout_signature: str
+    puzzle_signature: str
+    background_signature: str
+    puzzle_name: str
+    puzzle_archetype: PuzzleArchetype
+    verified_solvable: bool = False
+    solution_trace: tuple = ()
 
 
 def fingerprint(value) -> str:
@@ -59,8 +73,6 @@ ARCHETYPES = (
     PuzzleArchetype.WATER_CRATE, PuzzleArchetype.SEESAW_LAUNCH,
     PuzzleArchetype.GRAVITY_MAZE, PuzzleArchetype.MAGNET_STAIRS,
 )
-
-blocked_archetype = PuzzleArchetype.CRATE_PLATE
 
 HINTS = {
     PuzzleArchetype.CRATE_PLATE: "HOLD E / MOVE THE CRATE TO ITS PLATE, THEN CROSS THE GATE",
@@ -325,7 +337,7 @@ class RoomPilot:
 class RoomVerifier:
     MAX_STEPS = 14400  # Up to two minutes of fixed-step input, bounded.
 
-    def simulate(self, room, *, interactions=True):
+    def simulate(self, room, *, interactions=True, blocked_archetype=None):
         world, pilot = ProceduralRoomWorld(room.seed, room), RoomPilot()
         trace = []
         stationary = 0
@@ -336,7 +348,8 @@ class RoomVerifier:
                 control = pilot.control(world)
                 if not interactions:
                     control = replace(control, grab=False, action=False, climb=0)
-                if world.room.stages[world.stage_index].archetype is blocked_archetype:
+                if (blocked_archetype is not None
+                        and world.room.stages[world.stage_index].archetype is blocked_archetype):
                     control = Input(move=1, jump=world.grounded)
             world.step(control, DT)
             stationary = stationary + 1 if world.player.velocity.length < 1 else 0
@@ -553,17 +566,14 @@ class ProceduralRoomGenerator:
         puzzle_sig = fingerprint([asdict(level)[key] for key in (
             "crates", "water", "water_raise", "seesaw", "rope", "magnet", "switches")]
                                  + [asdict(s) | {"archetype": s.archetype.value} for s in stages])
-        room = type('ProceduralRoom', (), {
-            'number': number, 'seed': seed, 'theme': theme, 'level': level,
-            'stages': tuple(stages), 'template_index': primary,
-            'layout_signature': layout_sig, 'puzzle_signature': puzzle_sig,
-            'background_signature': fingerprint(asdict(theme)),
-            'puzzle_name': " → ".join(s.variant.replace("_", " ").title() for s in stages),
-            'puzzle_archetype': ARCHETYPES[primary],
-            'verified_solvable': False,
-            'solution_trace': ()
-        })()
-        return room
+        return ProceduralRoom(
+            number=number, seed=seed, theme=theme, level=level,
+            stages=tuple(stages), template_index=primary,
+            layout_signature=layout_sig, puzzle_signature=puzzle_sig,
+            background_signature=fingerprint(asdict(theme)),
+            puzzle_name=" → ".join(s.variant.replace("_", " ").title() for s in stages),
+            puzzle_archetype=ARCHETYPES[primary],
+        )
 
 
 # Preserve the public entry names without preserving the old template shuffle.

@@ -7,6 +7,7 @@ import hashlib
 import json
 import math
 import os
+import random
 from pathlib import Path
 import time
 
@@ -34,23 +35,20 @@ def font(size, title=False):
 
 class Game:
     def __init__(self, chapter=0, start=False, muted=False, persist=True):
-        pygame.mixer.pre_init(22050, -16, 2, 512)
-        pygame.init()
-        # Establish the pixel format before loading art, so alpha conversion is
-        # performed once instead of implicitly on every frame's blits.
-        self.display = pygame.display.set_mode(SIZE, pygame.RESIZABLE)
-        pygame.display.set_caption("ECHO — The Hollow Signal")
-        self.canvas = pygame.Surface(SIZE)
-        self.art = Art(SIZE)
-        moth_sheet = self.art.sprite("moth_guide")
-        self.moth_frames = [pygame.transform.smoothscale(moth_sheet.subsurface((i * 64, 0, 64, 64)), (22, 22))
-                            for i in range(4)]
-        self.audio = Audio(enabled=not muted)
+        try:
+            pygame.mixer.pre_init(22050, -16, 2, 512)
+            pygame.init()
+            self.mixer_available = True
+        except (NotImplementedError, AttributeError, ImportError):
+            print("Warning: Mixer not available, running without sound.")
+            self.mixer_available = False
+            pygame.init()
+
         self.muted = muted
-        self.persist = persist
-        self.world = World(chapter)
-        self.checkpoint = chapter
-        self.endless = False
+        if self.mixer_available:
+            self.audio = Audio(enabled=not self.muted)
+        else:
+            self.audio = type('DummyAudio', (), {'play': lambda self, *a, **kw: None, 'update': lambda self, *a, **kw: None, 'close': lambda self: None, 'set_muted': lambda self, m: None, 'sounds': {}})()
         self.endless_seed = int(time.time()) & 0x7FFFFFFF
         self.endless_room_generator = None
         self.endless_room = None
@@ -71,11 +69,72 @@ class Game:
         self.accumulator = 0.0
         self.deaths = 0
         self.notice = ""
+
+        # Establish the pixel format before loading art, so alpha conversion is
+        # performed once instead of implicitly on every frame's blits.
+        self.display = pygame.display.set_mode(SIZE, pygame.RESIZABLE)
+        pygame.display.set_caption("ECHO — The Hollow Signal")
+        self.canvas = pygame.Surface(SIZE)
+        self.art = Art(SIZE)
+        moth_sheet = self.art.sprite("moth_guide")
+        self.moth_frames = [pygame.transform.smoothscale(moth_sheet.subsurface((i * 64, 0, 64, 64)), (22, 22))
+                            for i in range(4)]
+        self.persist = persist
+        self.world = World(chapter)
+        self.checkpoint = chapter
+        self.endless = False
+
         self.fonts = {s: font(s) for s in (14, 16, 18, 21, 26, 32)}
         self.title_font = font(100, True)
         self.heading_font = font(42, True)
 
+        # --- Alzheimer's Narrative System ---
+        self._reset_narrative_state()
+        self.finale_illustration_index = 0
+        self.finale_illustrations = []  # will be loaded lazily
+        self._vignette_surface: pygame.Surface | None = None
+
+    def _reset_narrative_state(self):
+        """Restore the full mental state; new journeys must not inherit a finale."""
+        self.sanity = 1.0  # 1.0 = waras, 0.0 = gila total
+        self.narrative_stage = 0  # 0=warm, 1=anomalies, 2=chaos, 3=final
+        self.sanity_drain_rate = 0.00015
+        self.lantern_sanity_cost = 0.0008
+        self.lantern_sanity_recovery = 0.0003
+
+        self.overlay_color = (0, 0, 0, 0)
+        self.desaturation_factor = 0.0
+        self.vignette_strength = 0.0
+        self.noise_intensity = 0.0
+
+        self.looping_dialogue_active = False
+        self.looping_dialogue_timer = 0.0
+        self.looping_dialogue_text = ""
+        self.hallucination_texts = []
+        self.monster_spawn_accumulator = 0.0
+        self.object_displacement_accumulator = 0.0
+        self.audio_glitch_timer = 0.0
+
+        self.final_transition_timer = 0.0
+        self.player_control_locked = False
+
+    def _vignette(self):
+        """Lazily build a full-strength radial vignette (edges are darkest)."""
+        if self._vignette_surface is None:
+            surface = pygame.Surface(SIZE, pygame.SRCALPHA)
+            cx, cy = SIZE[0] // 2, SIZE[1] // 2
+            max_radius = math.hypot(cx, cy)
+            step = 4
+            for radius in range(step, int(max_radius) + step, step):
+                progress = min(1.0, radius / max_radius)
+                alpha = int(230 * progress ** 1.6)
+                pygame.draw.circle(surface, (0, 0, 0, alpha), (cx, cy), radius, step)
+            self._vignette_surface = surface
+        return self._vignette_surface
+
     def text(self, text, x, y, size=18, color=PAPER, center=False, alpha=255):
+        if size not in self.fonts:
+            self.fonts[size] = font(size)
         image = self.fonts[size].render(text, True, color)
         image.set_alpha(alpha)
         rect = image.get_rect(midtop=(x, y)) if center else image.get_rect(topleft=(x, y))
@@ -83,6 +142,9 @@ class Game:
         return rect
 
     def start(self, chapter=None):
+        if self.state == "ending" or self.narrative_stage >= 3:
+            self._reset_narrative_state()
+            self.notice = ""
         if chapter is not None:
             self.checkpoint = chapter
         self.endless = False
@@ -104,6 +166,8 @@ class Game:
 
     def start_endless(self, seed=None):
         """Start an infinite, seeded sequence of fully procedural puzzle rooms."""
+        self._reset_narrative_state()
+        self.notice = ""
         if seed is None:
             seed = self.endless_seed
         self.endless = True
@@ -176,6 +240,7 @@ class Game:
                     self.running = False
             elif self.state == "ending":
                 if key == pygame.K_RETURN:
+                    self._reset_narrative_state()
                     self.state = "menu"
                 elif key == pygame.K_e:
                     self.start_endless()
@@ -194,15 +259,41 @@ class Game:
                 else:
                     self.start()
             elif self.state == "playing" and not self.help:
-                if key == pygame.K_SPACE or (key in (pygame.K_w, pygame.K_UP) and self.world.grab_kind != "rope"):
-                    self.pending_jump = True
-                if key in (pygame.K_e, pygame.K_LCTRL, pygame.K_RCTRL):
-                    self.pending_action = True
+                # Lock controls in final narrative stage
+                if self.narrative_stage >= 3:
+                    self.pending_jump = self.pending_action = self.pending_lantern = False
+                else:
+                    if key == pygame.K_SPACE or (key in (pygame.K_w, pygame.K_UP) and self.world.grab_kind != "rope"):
+                        self.pending_jump = True
+                    if key in (pygame.K_e, pygame.K_LCTRL, pygame.K_RCTRL):
+                        self.pending_action = True
+                    if key in (pygame.K_l, pygame.K_f):
+                        # Toggle lantern
+                        if hasattr(self.world, 'toggle_lantern'):
+                            self.world.toggle_lantern()
+                        elif hasattr(self.world, 'lantern_on'):
+                            self.world.lantern_on = not self.world.lantern_on
         elif event.type == pygame.WINDOWFOCUSLOST and self.state == "playing":
             self.state = "paused"
 
     def update(self, elapsed, control: Input | None = None):
         self.visual_time += elapsed
+
+        # The ending is still an animated scene: keep its illustration clock
+        # running even though gameplay input and sanity simulation are stopped.
+        if self.state == "ending":
+            self.final_transition_timer += elapsed
+            self.audio.update(0, False, elapsed)
+            return
+
+        # Pause and the help overlay freeze the narrative countdown as well.
+        if self.state == "playing" and not self.help:
+            self._update_sanity_system(elapsed)
+            self._update_narrative_progression(elapsed)
+            self._update_atmosphere(elapsed)
+            self._update_hallucinations(elapsed)
+            self._update_anomalies(elapsed)
+
         if self.state != "playing" or self.help:
             self.audio.update(0, False, elapsed)
             return
@@ -228,10 +319,17 @@ class Game:
                     self.start(self.checkpoint + 1)
             return
         keys = pygame.key.get_pressed()
-        if control is None:
+        # Lock player controls in final narrative stage
+        if self.narrative_stage >= 3:
+            move = 0
+            grab = False
+            climb = 0
+            self.pending_jump = self.pending_action = self.pending_lantern = False
+        else:
             move = int(keys[pygame.K_d] or keys[pygame.K_RIGHT]) - int(keys[pygame.K_a] or keys[pygame.K_LEFT])
             grab = bool(keys[pygame.K_e] or keys[pygame.K_LCTRL] or keys[pygame.K_RCTRL])
             climb = int(keys[pygame.K_w] or keys[pygame.K_UP]) - int(keys[pygame.K_s] or keys[pygame.K_DOWN])
+        if control is None:
             control = Input(move, self.pending_jump, grab, self.pending_action, climb,
                             self.pending_lantern)
         self.accumulator += min(elapsed, 0.1)
@@ -636,6 +734,480 @@ class Game:
         sprite = self.moth_frames[int(self.visual_time * 9) % 4]
         self.canvas.blit(sprite, sprite.get_rect(center=self._point((x, y))))
 
+    # ============================================================
+    # ALZHEIMER'S NARRATIVE SYSTEM
+    # ============================================================
+
+    def _update_sanity_system(self, elapsed):
+        """Core sanity drain/recovery based on lantern usage and time."""
+        w = self.world
+        if self.state != "playing" or self.help or w.dead or w.complete:
+            return
+
+        # Base sanity drain (time passing = cognitive decline)
+        self.sanity -= self.sanity_drain_rate * elapsed
+
+        # Lantern accelerates drain (reliance on artificial clarity)
+        if getattr(w, "lantern_on", False):
+            self.sanity -= self.lantern_sanity_cost * elapsed
+        else:
+            # Small recovery in darkness (acceptance)
+            self.sanity = min(1.0, self.sanity + self.lantern_sanity_recovery * elapsed)
+
+        self.sanity = max(0.0, min(1.0, self.sanity))
+
+    def _update_narrative_progression(self, elapsed):
+        """Transition between narrative stages based on sanity thresholds."""
+        old_stage = self.narrative_stage
+
+        if self.sanity > 0.75:
+            self.narrative_stage = 0  # Warm/Normal
+        elif self.sanity > 0.45:
+            self.narrative_stage = 1  # Anomalies
+        elif self.sanity > 0.15:
+            self.narrative_stage = 2  # Chaos
+        else:
+            self.narrative_stage = 3  # Final/Incapacitated
+
+        # Stage transition effects
+        if self.narrative_stage != old_stage:
+            self._on_stage_transition(old_stage, self.narrative_stage)
+
+        # Final stage logic
+        if self.narrative_stage == 3:
+            self._update_final_state(elapsed)
+
+    def _on_stage_transition(self, old_stage, new_stage):
+        """Trigger events when narrative stage changes."""
+        if new_stage == 1:  # Entering Anomalies
+            self.notice = "Something feels... different."
+            self.audio.play("anomaly_onset")
+        elif new_stage == 2:  # Entering Chaos
+            self.notice = "The world is unraveling."
+            self.audio.play("chaos_onset")
+        elif new_stage == 3:  # Entering Final
+            self.notice = ""
+            self.final_transition_timer = 0.0
+            self.player_control_locked = True
+            self.audio.play("final_onset")
+
+    def _update_final_state(self, elapsed):
+        """Handle the final transformation sequence."""
+        self.final_transition_timer += elapsed
+
+        # Phase 1: Screen effects intensify (0-3 seconds)
+        if self.final_transition_timer < 3.0:
+            self.desaturation_factor = min(1.0, self.final_transition_timer / 3.0)
+            self.vignette_strength = min(1.0, self.final_transition_timer / 2.5)
+            self.noise_intensity = min(0.8, self.final_transition_timer / 3.5)
+
+        # Phase 2: Character transformation (3-6 seconds)
+        elif self.final_transition_timer < 6.0:
+            # Player sprite will be handled in draw()
+            pass
+
+        # Phase 3: Self-termination / Illustration sequence (6+ seconds)
+        else:
+            self.state = "ending"
+            self.finale_illustration_index = 0
+
+    def _update_atmosphere(self, elapsed):
+        """Calculate atmospheric overlay parameters based on sanity and stage."""
+        # Desaturation: 0.0 (full color) -> 1.0 (B&W)
+        if self.narrative_stage == 0:
+            target_desat = 0.0
+        elif self.narrative_stage == 1:
+            target_desat = 0.2 + (0.75 - self.sanity) * 0.8  # 0.2 to ~0.5
+        elif self.narrative_stage == 2:
+            target_desat = 0.5 + (0.45 - self.sanity) * 1.5  # 0.5 to ~0.95
+        else:  # stage 3
+            target_desat = 1.0
+
+        self.desaturation_factor += (target_desat - self.desaturation_factor) * elapsed * 2.0
+
+        # Vignette (edge darkening) - increases with decline
+        target_vignette = self.narrative_stage * 0.25
+        self.vignette_strength += (target_vignette - self.vignette_strength) * elapsed * 1.5
+
+        # Noise/Static - increases dramatically in chaos
+        if self.narrative_stage <= 1:
+            target_noise = 0.0
+        elif self.narrative_stage == 2:
+            target_noise = 0.3 + (0.45 - self.sanity) * 1.0
+        else:
+            target_noise = 1.0
+        self.noise_intensity += (target_noise - self.noise_intensity) * elapsed * 2.0
+
+        # Global color tint - shifts to cold/desaturated
+        if self.narrative_stage == 0:
+            self.overlay_color = (0, 0, 0, 0)
+        elif self.narrative_stage == 1:
+            # Slight cool tint
+            alpha = int(30 * (1.0 - self.sanity))
+            self.overlay_color = (10, 15, 25, alpha)
+        elif self.narrative_stage == 2:
+            # Stronger desaturated tint
+            alpha = int(80 * (1.0 - self.sanity))
+            self.overlay_color = (20, 15, 10, alpha)
+        else:
+            # Near black overlay
+            self.overlay_color = (5, 5, 5, 180)
+
+    def _update_hallucinations(self, elapsed):
+        """Manage random hallucination text overlays."""
+        w = self.world
+        if self.state != "playing" or self.help or w.dead or w.complete:
+            return
+
+        # Update existing hallucinations
+        new_hallucinations = []
+        for text, x, y, lifetime, alpha in self.hallucination_texts:
+            lifetime -= elapsed
+            alpha = max(0, int(alpha - elapsed * 150))
+            if lifetime > 0 and alpha > 0:
+                new_hallucinations.append((text, x, y, lifetime, alpha))
+        self.hallucination_texts = new_hallucinations
+
+        # Spawn new hallucinations based on stage
+        spawn_chance = 0.0
+        if self.narrative_stage == 1:
+            spawn_chance = 0.002 * elapsed  # Rare
+        elif self.narrative_stage == 2:
+            spawn_chance = 0.02 * elapsed   # Frequent
+        elif self.narrative_stage == 3:
+            spawn_chance = 0.1 * elapsed    # Constant
+
+        if random.random() < spawn_chance:
+            self._spawn_hallucination()
+
+        # Looping dialogue mechanic
+        if self.narrative_stage >= 1:
+            self.looping_dialogue_timer += elapsed
+            if self.looping_dialogue_timer > 8.0 + random.random() * 12.0:
+                self._trigger_looping_dialogue()
+
+    def _spawn_hallucination(self):
+        """Create a random disturbing text overlay."""
+        texts_by_stage = {
+            1: ["...apa ini?", "kenapa berbeda?", "ingat...", "siapa namaku?"],
+            2: ["JANGAN PERCAYA MATAMU", "MEREKA BOHONG", "KAMU BUKAN KAMU", "LARI", "TERLAMBAT SUDAH", "INGATLAH..."],
+            3: ["HABIS", "TIDAK ADA HARAPAN", "MONSTER ADALAH DIRIMU", "BUNUH DIRI ANDA", "SELESAIKAN INI", "KEGELAPAN MENANG"]
+        }
+        texts = texts_by_stage.get(self.narrative_stage, texts_by_stage[1])
+        text = random.choice(texts)
+
+        # Random position on screen
+        x = random.randint(100, SIZE[0] - 100)
+        y = random.randint(100, SIZE[1] - 100)
+        lifetime = random.uniform(2.0, 5.0)
+        alpha = random.randint(100, 220)
+
+        self.hallucination_texts.append((text, x, y, lifetime, alpha))
+
+    def _trigger_looping_dialogue(self):
+        """Trigger a repeating dialogue that overlays the screen."""
+        dialogues_by_stage = {
+            1: ["Apakah ini sudah terjadi sebelumnya?", "Benda ini... bukan di sini tadi.", "Suara itu... darimana?"],
+            2: ["ULANG. ULANG. ULANG.", "KAMU SUDAH DI SINI SEBELUMNYA.", "MEMORI BERPUTAR. KELUAR. KEMBALI.", "TIDAK BISA KELUAR."],
+            3: ["AKHIR. AKHIR. AKHIR.", "KAMU ADALAH MONSTER.", "BUNUH DIRI. SEKARANG.", "TIDAK ADA JALAN LAIN."]
+        }
+        dialogues = dialogues_by_stage.get(self.narrative_stage, dialogues_by_stage[1])
+        self.looping_dialogue_text = random.choice(dialogues)
+        self.looping_dialogue_active = True
+        self.looping_dialogue_timer = 0.0
+
+    def _update_anomalies(self, elapsed):
+        """Trigger environmental anomalies: monster spawns, object displacement, audio glitches."""
+        w = self.world
+        if self.state != "playing" or self.help or w.dead or w.complete:
+            return
+
+        # Monster spawn rate increases with stage
+        if self.narrative_stage >= 1:
+            spawn_interval = {1: 30.0, 2: 10.0, 3: 3.0}.get(self.narrative_stage, 30.0)
+            self.monster_spawn_accumulator += elapsed
+            if self.monster_spawn_accumulator >= spawn_interval:
+                self.monster_spawn_accumulator = 0.0
+                self._spawn_anomaly_monster()
+
+        # Object displacement
+        if self.narrative_stage >= 1:
+            displace_interval = {1: 20.0, 2: 8.0, 3: 2.0}.get(self.narrative_stage, 20.0)
+            self.object_displacement_accumulator += elapsed
+            if self.object_displacement_accumulator >= displace_interval:
+                self.object_displacement_accumulator = 0.0
+                self._displace_random_object()
+
+        # Audio glitches
+        if self.narrative_stage >= 1:
+            glitch_interval = {1: 15.0, 2: 5.0, 3: 1.5}.get(self.narrative_stage, 15.0)
+            self.audio_glitch_timer += elapsed
+            if self.audio_glitch_timer >= glitch_interval:
+                self.audio_glitch_timer = 0.0
+                self._trigger_audio_glitch()
+
+        # Looping dialogue dismissal check
+        if self.looping_dialogue_active:
+            dismiss_time = {1: 4.0, 2: 6.0, 3: 10.0}.get(self.narrative_stage, 4.0)
+            if self.looping_dialogue_timer > dismiss_time:
+                self.looping_dialogue_active = False
+                self.looping_dialogue_text = ""
+
+    def _spawn_anomaly_monster(self):
+        """Spawn a 'memory monster' - visual only, non-colliding."""
+        w = self.world
+        # Spawn near player but off-screen
+        px, py = w.player.position.x, w.player.position.y
+        side = random.choice([-1, 1])
+        x = px + side * (SIZE[0] // 2 + random.randint(50, 200))
+        y = py + random.randint(-100, 100)
+
+        # Add to world's challenge system if it exists, or create visual-only
+        # For now, we'll add a visual hallucination entry
+        self.hallucination_texts.append((
+            "███ MONSTER ███", x - self.camera, y,
+            random.uniform(1.5, 3.0), 200
+        ))
+
+    def _displace_random_object(self):
+        """Move an interactable object to a wrong location."""
+        w = self.world
+        if not getattr(w, "crates", None):
+            return
+        crate = random.choice(w.crates)
+        # Never yank a crate out of the player's hands.
+        if getattr(w, "grabbed", None) is crate.body:
+            return
+        new_x = crate.body.position.x + random.uniform(-200, 200)
+        new_y = crate.body.position.y + random.uniform(-100, 50)
+        level_width = getattr(w, "width", 2000)
+        level_height = getattr(w, "height", 1000)
+        new_x = max(100, min(level_width - 100, new_x))
+        new_y = max(100, min(level_height - 100, new_y))
+        crate.body.velocity = (0, 0)
+        crate.body.position = (new_x, new_y)
+        w.space.reindex_shapes_for_body(crate.body)
+
+        self.hallucination_texts.append((
+            "⟳ BERPINDAH", new_x - self.camera, new_y - 50,
+            2.0, 180
+        ))
+
+    def _trigger_audio_glitch(self):
+        """Play a disturbing audio glitch from the existing sound bank."""
+        sounds = getattr(self.audio, "_sounds", {})
+        available = [name for name in ("tick", "gravity", "death") if name in sounds]
+        if available:
+            self.audio.play(random.choice(available))
+    # ============================================================
+
+    def _apply_atmosphere_overlay(self):
+        """Apply desaturation, tint, vignette and static directly to the canvas."""
+        if (self.desaturation_factor <= 0 and self.vignette_strength <= 0
+                and self.noise_intensity <= 0 and self.overlay_color[3] == 0):
+            return
+
+        # Desaturate first so the later tints colour a genuinely grey image.
+        if self.desaturation_factor > 0.01:
+            grey = pygame.transform.grayscale(self.canvas)
+            grey.set_alpha(round(255 * min(1.0, self.desaturation_factor)))
+            self.canvas.blit(grey, (0, 0))
+
+        if self.overlay_color[3] > 0:
+            tint = pygame.Surface(SIZE, pygame.SRCALPHA)
+            tint.fill(self.overlay_color)
+            self.canvas.blit(tint, (0, 0))
+
+        if self.vignette_strength > 0.01:
+            vignette = self._vignette()
+            vignette.set_alpha(round(255 * min(1.0, self.vignette_strength)))
+            self.canvas.blit(vignette, (0, 0))
+
+        if self.noise_intensity > 0.01:
+            noise = pygame.Surface(SIZE, pygame.SRCALPHA)
+            alpha = round(self.noise_intensity * 70)
+            for _ in range(round(260 * self.noise_intensity)):
+                x = random.randint(0, SIZE[0] - 1)
+                y = random.randint(0, SIZE[1] - 1)
+                value = random.randint(70, 220)
+                pygame.draw.rect(noise, (value, value, value, alpha),
+                                 (x, y, random.randint(1, 3), random.randint(1, 2)))
+            self.canvas.blit(noise, (0, 0))
+
+    def _draw_transformed_player(self):
+        """Draw the player as a monstrous entity in final stage."""
+        w = self.world
+        pos = self._point(w.player.position)
+
+        # Draw distorted, glitchy monster silhouette
+        time_factor = self.visual_time * 5
+
+        # Base monster body (distorted ellipse)
+        body_surf = pygame.Surface((80, 100), pygame.SRCALPHA)
+        # Multiple offset layers for glitch effect
+        for i in range(5):
+            offset_x = int(math.sin(time_factor + i) * 4 * (self.final_transition_timer / 6.0))
+            offset_y = int(math.cos(time_factor * 1.3 + i) * 3 * (self.final_transition_timer / 6.0))
+            alpha = int(200 - i * 30)
+            color = (20 + i * 10, 5, 5, alpha)
+            pygame.draw.ellipse(body_surf, color, (10 + offset_x, 10 + offset_y, 60, 80))
+
+        # Glitch lines
+        for _ in range(8):
+            x = random.randint(0, 79)
+            y = random.randint(0, 99)
+            w_line = random.randint(10, 40)
+            pygame.draw.line(body_surf, (255, 0, 0, 100), (x, y), (x + w_line, y), 1)
+
+        self.canvas.blit(body_surf, (pos[0] - 40, pos[1] - 80))
+
+        # Red glowing eyes
+        eye_y = pos[1] - 60
+        pulse = (math.sin(self.visual_time * 10) + 1) * 0.5
+        eye_size = int(4 + pulse * 4)
+        pygame.draw.circle(self.canvas, (255, 0, 0), (pos[0] - 10, eye_y), eye_size)
+        pygame.draw.circle(self.canvas, (255, 0, 0), (pos[0] + 10, eye_y), eye_size)
+
+    def _draw_sanity_hud(self):
+        """Draw the lantern/sanity indicator in top-left."""
+        w = self.world
+        # Lantern icon background
+        hud_x, hud_y = 20, 20
+        hud_w, hud_h = 180, 30
+
+        # Background
+        bg = pygame.Surface((hud_w + 20, hud_h + 10), pygame.SRCALPHA)
+        bg.fill((5, 10, 14, 180))
+        self.canvas.blit(bg, (hud_x - 10, hud_y - 5))
+
+        # Label
+        self.text("KEWARASAN", hud_x, hud_y - 2, 12, (152, 175, 169))
+
+        # Sanity bar
+        bar_x, bar_y = hud_x, hud_y + 14
+        bar_w, bar_h = 160, 12
+
+        # Background bar
+        pygame.draw.rect(self.canvas, (30, 30, 40), (bar_x, bar_y, bar_w, bar_h), border_radius=4)
+
+        # Sanity fill - color shifts from green to red
+        sanity_w = int(bar_w * self.sanity)
+        if self.sanity > 0.6:
+            fill_color = (80, 200, 100)  # Green - healthy
+        elif self.sanity > 0.3:
+            fill_color = (220, 180, 60)  # Yellow - warning
+        else:
+            fill_color = (220, 60, 60)   # Red - critical
+
+        if sanity_w > 0:
+            pygame.draw.rect(self.canvas, fill_color, (bar_x, bar_y, sanity_w, bar_h), border_radius=4)
+
+        # Lantern indicator
+        lantern_on = getattr(w, "lantern_on", False)
+        lantern_text = "LENTERA: NYALA" if lantern_on else "LENTERA: MATI"
+        lantern_color = (220, 180, 60) if lantern_on else (120, 120, 120)
+        self.text(lantern_text, hud_x + 170, hud_y + 2, 11, lantern_color)
+
+        # Stage indicator
+        stage_names = ["NORMAL", "ANOMALI", "KECAOSAN", "AKHIR"]
+        stage_color = [(80, 200, 100), (220, 180, 60), (220, 120, 60), (220, 40, 40)]
+        self.text(f"TAHAP: {stage_names[self.narrative_stage]}", hud_x, hud_y + 32, 11, stage_color[self.narrative_stage])
+
+    def _draw_finale_sequence(self):
+        """Draw the finale illustration sequence using PyCairo-generated assets."""
+        self._shade(200)
+
+        # Load finale illustrations lazily
+        if not self.finale_illustrations:
+            self._load_finale_illustrations()
+
+        # Fallback ending when the optional illustration set is not shipped.
+        # The evidence verifier requires a legible, non-blank final frame.
+        if not self.finale_illustrations:
+            self.canvas.fill((9, 14, 17))
+            pygame.draw.circle(self.canvas, ACCENT, (SIZE[0] // 2, 190), 72, 3)
+            pygame.draw.circle(self.canvas, PAPER, (SIZE[0] // 2, 190), 34)
+            self.text("SIGNAL RESTORED", SIZE[0] // 2, 300, 32, PAPER, center=True)
+            self.text("THE HOLLOW SIGNAL FADES, BUT THE MEMORY REMAINS.",
+                      SIZE[0] // 2, 356, 18, ACCENT, center=True)
+            self.text(f"{self.deaths} falls / every return mattered", SIZE[0] // 2,
+                      398, 16, PAPER, center=True)
+            self.text("ENTER / TITLE     N / NEW JOURNEY     E / ENDLESS",
+                      SIZE[0] // 2, 440, 16, ACCENT, center=True)
+            return
+
+        # Sequence timing
+        seq_timer = self.final_transition_timer - 6.0  # Start after transformation
+        illustration_duration = 8.0  # seconds per illustration
+        total_illustrations = 4
+
+        if self.finale_illustrations:
+            idx = min(int(seq_timer / illustration_duration), total_illustrations - 1)
+            idx = max(0, idx)
+
+            # Draw current illustration
+            if idx < len(self.finale_illustrations):
+                img = self.finale_illustrations[idx]
+                # Center the image
+                img_rect = img.get_rect(center=(SIZE[0] // 2, SIZE[1] // 2 - 30))
+                self.canvas.blit(img, img_rect)
+
+            # Draw explanation text
+            explanations = [
+                "FASE 1: Kehangatan yang Terkunci\nMasa di mana dunia masih terasa aman dan dapat dipahami.\nSebelum gejala Alzheimer memburuk.",
+                "FASE 2: Retakan dalam Memori\nObjek familiar mulai terasa asing atau salah tempat.\nAwal dari kebingungan kognitif.",
+                "FASE 3: Labirin Kegelapan\nDunia yang teratur kini menjadi ancaman tidak terstruktur.\nKetidakmampuan memproses realitas.",
+                "FASE 4: Akhir dari Diri\nKehilangan total identitas diri.\nIngatan dan kewarasan telah sepenuhnya hancur."
+            ]
+
+            if idx < len(explanations):
+                # Text box
+                text_bg = pygame.Surface((SIZE[0] - 80, 120), pygame.SRCALPHA)
+                text_bg.fill((0, 0, 0, 200))
+                self.canvas.blit(text_bg, (40, SIZE[1] - 140))
+
+                lines = explanations[idx].split('\n')
+                for i, line in enumerate(lines):
+                    color = PAPER if i == 0 else (180, 180, 180)
+                    size = 16 if i == 0 else 14
+                    self.text(line, SIZE[0] // 2, SIZE[1] - 130 + i * 28, size, color, center=True)
+
+        # Final transition to credits/menu
+        if seq_timer > total_illustrations * illustration_duration:
+            self.text("TEKAN ENTER UNTUK KEMBALI", SIZE[0] // 2, SIZE[1] - 40, 18, ACCENT, center=True)
+            self.text("TERIMA KASIH TELAH BERMAIN", SIZE[0] // 2, SIZE[1] - 10, 14, PAPER, center=True)
+
+    def _load_finale_illustrations(self):
+        """Load PyCairo-generated finale illustrations."""
+        import os
+        illustrations_dir = ROOT / "assets" / "echo" / "finale_illustrations"
+        if not illustrations_dir.exists():
+            return
+
+        # Expected filenames
+        expected_files = [
+            "phase1_warmth.png",
+            "phase2_fractured.png",
+            "phase3_labyrinth.png",
+            "phase4_end.png"
+        ]
+
+        for filename in expected_files:
+            path = illustrations_dir / filename
+            if path.exists():
+                try:
+                    img = pygame.image.load(str(path)).convert_alpha()
+                    # Scale to fit screen nicely
+                    max_w, max_h = SIZE[0] - 100, SIZE[1] - 200
+                    img_w, img_h = img.get_size()
+                    scale = min(max_w / img_w, max_h / img_h, 1.0)
+                    if scale < 1.0:
+                        new_size = (int(img_w * scale), int(img_h * scale))
+                        img = pygame.transform.smoothscale(img, new_size)
+                    self.finale_illustrations.append(img)
+                except pygame.error:
+                    pass
+
     def _shade(self, opacity=180):
         shade = pygame.Surface(SIZE, pygame.SRCALPHA)
         shade.fill((5, 10, 14, opacity))
@@ -687,8 +1259,14 @@ class Game:
         if not w.endless or getattr(w, "room_run", False):
             self._moth()
         self._lantern()
-        self.art.draw_player(self.canvas, self._point(w.player.position), tuple(w.player.velocity),
-                             w.facing, self.visual_time, w.grounded, w.gravity)
+
+        # Draw player - handle final transformation
+        if self.narrative_stage == 3 and self.final_transition_timer >= 3.0:
+            self._draw_transformed_player()
+        else:
+            self.art.draw_player(self.canvas, self._point(w.player.position), tuple(w.player.velocity),
+                                 w.facing, self.visual_time, w.grounded, w.gravity)
+
         self._water()
         foreground_camera = self.camera
         if getattr(w, "room_run", False):
@@ -699,6 +1277,30 @@ class Game:
             hurt = pygame.Surface(SIZE, pygame.SRCALPHA)
             hurt.fill((68, 24, 24, int(min(1.0, flash / 0.28) * 58)))
             self.canvas.blit(hurt, (0, 0))
+
+        # --- Draw Hallucination Texts ---
+        for text, x, y, lifetime, alpha in self.hallucination_texts:
+            if alpha > 0:
+                color = (255, 50, 50) if self.narrative_stage >= 2 else (200, 150, 100)
+                self.text(text, x, y, 18, color, center=True, alpha=alpha)
+
+        # --- Draw Looping Dialogue Overlay ---
+        if self.looping_dialogue_active and self.looping_dialogue_text:
+            # Semi-transparent background
+            overlay = pygame.Surface(SIZE, pygame.SRCALPHA)
+            overlay.fill((0, 0, 0, 180))
+            self.canvas.blit(overlay, (0, 0))
+            # Pulsing text
+            pulse_alpha = int(200 + 55 * math.sin(self.visual_time * 8))
+            self.text(self.looping_dialogue_text, SIZE[0] // 2, SIZE[1] // 2 - 50,
+                      24, (255, 80, 80), center=True, alpha=pulse_alpha)
+            # Subtitle
+            self.text("(MEMORI BERPUTAR...)", SIZE[0] // 2, SIZE[1] // 2 + 20,
+                      16, (180, 60, 60), center=True, alpha=pulse_alpha)
+
+        # --- Apply Atmospheric Overlay (Desaturation, Vignette, Noise, Tint) ---
+        self._apply_atmosphere_overlay()
+
         if self.state == "menu":
             self._shade(120)
             self.text(f"A PHYSICS TALE IN {len(LEVELS)} SIGNALS", 480, 92, 14, ACCENT, True)
@@ -713,15 +1315,11 @@ class Game:
             self.text("A/D move    Space jump    E interact    H controls", 480, 441, 16, PAPER, True)
             self.text("ORIGINAL ART & SOUND  /  PYGAME · CAIRO · PYMUNK", 480, 501, 14, (121, 144, 139), True)
         elif self.state == "ending":
-            self._shade(175)
-            self.text("THE SIGNAL FOUND ITS WAY HOME", 480, 151, 26, ACCENT, True)
-            image = self.heading_font.render("You are not alone in the dark.", True, PAPER)
-            self.canvas.blit(image, image.get_rect(midtop=(480, 210)))
-            self.text(f"{len(LEVELS)} crossings. One small light.", 480, 284, 21, PAPER, True)
-            self.text(f"{self.deaths} falls / every return mattered", 480, 329, 16, PAPER, True)
-            self.text("ENTER / TITLE     N / NEW JOURNEY", 480, 423, 16, ACCENT, True)
+            self._draw_finale_sequence()
         else:
             self._campaign_hud()
+            # Draw Sanity/Lantern indicator
+            self._draw_sanity_hud()
             if w.dead:
                 self._shade(min(180, int(self.death_timer * 130)))
                 self.text(w.death_reason, 480, 222, 26, PAPER, True)

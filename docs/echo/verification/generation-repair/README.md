@@ -130,21 +130,25 @@ reasons, with bounded attempts and at most 32 accepted objects per platform.
 **These objects are non-solid decorations.** Existing platform bodies remain the
 collision terrain. Solid wood/rock props are intentionally not introduced without
 controller-path validation. Campaign parallax artwork remains as atmosphere in
-the six rooms; endless mode replaces it with the dedicated forest renderer. The
-decorations are not relabeled as runtime entities or removed.
+the six rooms. The historical streaming Endless mode used a dedicated forest
+renderer; the current room-based Endless mode reuses the campaign presentation.
+The decorations are not relabeled as runtime entities or removed.
 
 ## Configuration and determinism
 
+> The density flags below belonged to the historical streaming mode and are no
+> longer exposed by the CLI. The current room-based mode is launched as follows.
+
 ```sh
-.venv-echo/bin/python play_echo.py --endless --seed 7 --environment-density 2 --obstacle-density 1 --puzzle-density 1.5
+.venv-echo/bin/python play_echo.py --endless --seed 7 --show-hud
 ```
 
-- Density values are finite multipliers in `[0, 3]`; defaults are all `1`.
-- `--environment-density 0`: no runtime environmental objects.
-- `--obstacle-density 0`: no saws, shadows, sentries, or damaging combinations.
-- `--puzzle-density 0`: no interactive gates; safe caches remain available.
-- `--no-enemies`: no sentries, including inside combined puzzles.
-- Restart preserves the explicit seed and configuration.
+- Density values were finite multipliers in `[0, 3]`; defaults were all `1`.
+- `--environment-density 0`: no runtime environmental objects (historical).
+- `--obstacle-density 0`: no saws, shadows, sentries, or damaging combinations (historical).
+- `--puzzle-density 0`: no interactive gates; safe caches remain available (historical).
+- `--no-enemies`: no sentries, including inside combined puzzles (historical).
+- The current mode still preserves the explicit seed across retries.
 - `GenerationConfig.challenge_min_width` now gates real challenge requests.
 - Profile combo probability and damage caps are consumed, not decorative fields.
 

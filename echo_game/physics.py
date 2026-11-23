@@ -201,6 +201,7 @@ class World:
         self.beam: Prop | None = None
         self.gate_body: pymunk.Body | None = None
         self.magnet: MagneticCeiling | None = None
+        self.lantern_on = False
         for rect in self.level.terrain:
             self._static_rect(rect)
         # Room bounds are solid; the bottom is deliberately a fall hazard.
@@ -597,6 +598,9 @@ class World:
             self.complete = True
             self._release()
             self.events.append("checkpoint")
+
+    def toggle_lantern(self):
+        self.lantern_on = not self.lantern_on
 
     def drain_events(self) -> list[str]:
         events = list(self.events)
