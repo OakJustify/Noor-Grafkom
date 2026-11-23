@@ -1,4 +1,26 @@
-# ECHO: The Hollow Signal
+# v3 games
+
+## NÜR — main game yang baru
+
+NÜR adalah rombakan vertical slice yang baru. **Menjalankan `play_echo.py`
+masih membuka ECHO lama**—itu disengaja supaya baseline dan test regresinya
+tetap utuh. Untuk memainkan NÜR, gunakan entrypoint ini:
+
+```bash
+cd ~/Projects/03-projects/02-games/noor-grafkom/v3
+.venv-echo/bin/python play_nur.py
+```
+
+Kontrol: **A/D** jalan, **Space/W/↑** lompat, **E** interaksi, **ESC** jeda,
+**R** ulang ruangan, **M** bisu. Tidak ada tutorial; pemain langsung spawn di
+rumah dengan lilin yang terus meredup.
+
+Rincian desain, sistem lilin, dan kredit audio CC0 ada di
+[`docs/nur/README.md`](docs/nur/README.md).
+
+---
+
+## ECHO: The Hollow Signal (baseline yang dipertahankan)
 
 An original six-room physics puzzle-platformer built with **Pygame, Pycairo,
 Pymunk and NumPy**. Includes generated characters, layered artwork, original
