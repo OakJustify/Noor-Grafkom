@@ -45,6 +45,10 @@ class Game:
                  muted: bool = False, persist: bool = True) -> None:
         if not pygame.get_init():
             pygame.init()
+        # Establish the display before loading art. Without set_mode(),
+        # pygame.display.get_surface() is None and the windowed blit crashes.
+        self.display = pygame.display.set_mode(config.SIZE, pygame.RESIZABLE)
+        pygame.display.set_caption(config.TITLE)
         self.seed = int(seed)
         self.persist = persist
         self.muted = muted
@@ -471,7 +475,7 @@ def main(argv: list[str] | None = None) -> int:
         if args.headless and frames >= args.frames:
             break
         if not args.headless:
-            display = pygame.display.get_surface()
+            display = game.display
             display.blit(pygame.transform.smoothscale(canvas, display.get_size()), (0, 0))
             pygame.display.flip()
 

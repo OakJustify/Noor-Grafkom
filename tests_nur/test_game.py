@@ -70,3 +70,10 @@ def test_lighting_overlay_darkens_without_erasing_everything(game):
     pixels = pygame.surfarray.array3d(surface)
     assert 0 <= int(pixels.mean()) < 120
     assert int(pixels.std()) > 4
+
+
+def test_windowed_launch_initialises_a_display(monkeypatch):
+    """Regression: the non-headless blit used to crash on a None display."""
+    quit_event = pygame.event.Event(pygame.QUIT)
+    monkeypatch.setattr(pygame.event, "get", lambda: [quit_event])
+    assert main(["--mute", "--no-save", "--seed", "7"]) == 0
