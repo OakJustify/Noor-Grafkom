@@ -84,6 +84,27 @@ def test_pause_freezes_final_countdown(game):
     assert game.final_transition_timer == 1.0
 
 
+def test_endless_never_reaches_final_stage(game):
+    game.start_endless(7)
+    game.sanity = 0.0
+    for _ in range(3):
+        game.update(1 / 60)
+    assert game.narrative_stage == 2
+    assert game.sanity == 0.15
+    assert game.state == "playing"
+    assert game.final_transition_timer == 0.0
+
+
+def test_endless_does_not_displace_puzzle_objects(game, monkeypatch):
+    game.start_endless(7)
+    game.narrative_stage = 2
+    game.object_displacement_accumulator = 8.0
+    calls = []
+    monkeypatch.setattr(game, "_displace_random_object", lambda: calls.append(1))
+    game.update(1 / 60)
+    assert calls == []
+
+
 def test_atmosphere_desaturation_changes_canvas(game):
     game.canvas.fill((0, 0, 0))
     pygame.draw.rect(game.canvas, (255, 0, 0), (0, 0, 320, 540))

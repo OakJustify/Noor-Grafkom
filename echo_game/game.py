@@ -98,9 +98,11 @@ class Game:
         """Restore the full mental state; new journeys must not inherit a finale."""
         self.sanity = 1.0  # 1.0 = waras, 0.0 = gila total
         self.narrative_stage = 0  # 0=warm, 1=anomalies, 2=chaos, 3=final
-        self.sanity_drain_rate = 0.00015
-        self.lantern_sanity_cost = 0.0008
-        self.lantern_sanity_recovery = 0.0003
+        # Darkness net is -0.002/s (~2 min to stage 1, ~8 min to finale).
+        # A lit lantern makes the net -0.0155/s, so the decline is much faster.
+        self.sanity_drain_rate = 0.0035
+        self.lantern_sanity_cost = 0.012
+        self.lantern_sanity_recovery = 0.0015
 
         self.overlay_color = (0, 0, 0, 0)
         self.desaturation_factor = 0.0
@@ -766,6 +768,11 @@ class Game:
             self.narrative_stage = 1  # Anomalies
         elif self.sanity > 0.15:
             self.narrative_stage = 2  # Chaos
+        elif self.endless:
+            # Endless is an infinite puzzle mode: keep the chaos atmosphere,
+            # but never lock controls or force the finale sequence.
+            self.narrative_stage = 2
+            self.sanity = 0.15
         else:
             self.narrative_stage = 3  # Final/Incapacitated
 
@@ -792,22 +799,16 @@ class Game:
             self.audio.play("final_onset")
 
     def _update_final_state(self, elapsed):
-        """Handle the final transformation sequence."""
+        """Handle the final transformation sequence (player + state only)."""
         self.final_transition_timer += elapsed
 
-        # Phase 1: Screen effects intensify (0-3 seconds)
-        if self.final_transition_timer < 3.0:
-            self.desaturation_factor = min(1.0, self.final_transition_timer / 3.0)
-            self.vignette_strength = min(1.0, self.final_transition_timer / 2.5)
-            self.noise_intensity = min(0.8, self.final_transition_timer / 3.5)
-
         # Phase 2: Character transformation (3-6 seconds)
-        elif self.final_transition_timer < 6.0:
+        if 3.0 <= self.final_transition_timer < 6.0:
             # Player sprite will be handled in draw()
             pass
 
         # Phase 3: Self-termination / Illustration sequence (6+ seconds)
-        else:
+        elif self.final_transition_timer >= 6.0:
             self.state = "ending"
             self.finale_illustration_index = 0
 
@@ -871,13 +872,13 @@ class Game:
         # Spawn new hallucinations based on stage
         spawn_chance = 0.0
         if self.narrative_stage == 1:
-            spawn_chance = 0.002 * elapsed  # Rare
+            spawn_chance = 0.1 * elapsed  # ~1 per 10 seconds
         elif self.narrative_stage == 2:
-            spawn_chance = 0.02 * elapsed   # Frequent
+            spawn_chance = 0.5 * elapsed  # ~1 per 2 seconds
         elif self.narrative_stage == 3:
-            spawn_chance = 0.1 * elapsed    # Constant
+            spawn_chance = 2.0 * elapsed  # ~2 per second
 
-        if random.random() < spawn_chance:
+        if random.random() < min(1.0, spawn_chance):
             self._spawn_hallucination()
 
         # Looping dialogue mechanic
@@ -930,8 +931,10 @@ class Game:
                 self.monster_spawn_accumulator = 0.0
                 self._spawn_anomaly_monster()
 
-        # Object displacement
-        if self.narrative_stage >= 1:
+        # Object displacement is campaign-only: silently teleporting relay
+        # crates would make seeded endless puzzles unsolvable while the run is
+        # held at the chaos stage.
+        if self.narrative_stage >= 1 and not self.endless:
             displace_interval = {1: 20.0, 2: 8.0, 3: 2.0}.get(self.narrative_stage, 20.0)
             self.object_displacement_accumulator += elapsed
             if self.object_displacement_accumulator >= displace_interval:
