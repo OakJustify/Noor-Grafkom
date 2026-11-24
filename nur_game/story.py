@@ -36,7 +36,7 @@ FRAGMENTS: tuple[Fragment, ...] = (
         "dua nada: rumah",
         0,
         560,
-        405,
+        367,
     ),
     Fragment(
         "key",
@@ -44,8 +44,8 @@ FRAGMENTS: tuple[Fragment, ...] = (
         "Laci dapur. Kunci kecil bertuliskan nama yang tidak lagi kau kenali.",
         "Laci dapur kosong. Tulisan itu adalah tulisan tanganmu sendiri.",
         "dua nada: ibu",
-        1,
-        980,
+        10,
+        3000,
         405,
     ),
     Fragment(
@@ -54,8 +54,8 @@ FRAGMENTS: tuple[Fragment, ...] = (
         "Tiga sendok gula. Dua cangkir air. Satu orang pulang sebelum air mendidih.",
         "Tiga sendok garam. Dua cangkir air. Satu orang tidak pernah pulang.",
         "dua nada: dapur",
-        2,
-        1380,
+        16,
+        3000,
         405,
     ),
     Fragment(
@@ -64,8 +64,8 @@ FRAGMENTS: tuple[Fragment, ...] = (
         "'Aku masih ingat jalan pulangnya.' — ditulis di bawah foto yang sama.",
         "'Aku tidak ingat siapa yang menuliskan ini.' — tulisan tangan yang sama.",
         "dua nada: diri",
-        3,
-        1380,
+        25,
+        3000,
         405,
     ),
 )

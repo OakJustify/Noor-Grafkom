@@ -2,7 +2,8 @@
 
 ## NÜR — main game yang baru
 
-NÜR adalah rombakan vertical slice yang baru. **Menjalankan `play_echo.py`
+NÜR sekarang mempunyai **campaign 29 ruangan**, termasuk empat babak baru di
+desa, arsip, hutan, dan lingkungan perawatan. **Menjalankan `play_echo.py`
 masih membuka ECHO lama**—itu disengaja supaya baseline dan test regresinya
 tetap utuh. Untuk memainkan NÜR, gunakan entrypoint ini:
 
@@ -12,8 +13,30 @@ cd ~/Projects/03-projects/02-games/noor-grafkom/v3
 ```
 
 Kontrol: **A/D** jalan, **Space/W/↑** lompat, **E** interaksi, **ESC** jeda,
-**R** ulang ruangan, **M** bisu. Tidak ada tutorial; pemain langsung spawn di
-rumah dengan lilin yang terus meredup.
+**R** ulang ruangan, **M** bisu. Tahan **E** untuk menarik krate atau memegang
+tali; **W/S** memanjat tali, **Space** melepas dengan lompatan. Pemain langsung
+spawn di rumah; petunjuk kecil hanya muncul dekat objek yang bisa dipakai.
+**J** membuka jurnal/peta dan menghentikan simulasi; **←/→** mengganti halaman.
+Tekan-lepas **E** untuk memilih komponen, mengubah saklar, memainkan nada atau
+memutar cermin. Tahan E hanya untuk menarik krate/memegang tali.
+
+Progress puzzle dan catatan disimpan otomatis di checkpoint. Lanjutkan dengan
+**C** di menu atau:
+
+```bash
+.venv-echo/bin/python play_nur.py --continue
+```
+
+Playtest input-only pada physics asli selesai dalam **19 menit 28 detik waktu
+game**, tanpa kematian atau delay membaca yang ditambahkan. Itu adalah run
+otomatis dengan jawaban sudah diketahui, bukan ukuran waktu/fun pemain manusia.
+Laporan, batasan dan screenshot aktual: [`docs/nur/verification/PLAYTEST.md`](docs/nur/verification/PLAYTEST.md).
+
+Lentera yang dibawa selalu melindungi dari monster, termasuk proyektil boss,
+bahkan ketika muatannya habis. Bayangan mundur dan memudar saat didekati.
+Gergaji dan jurang tetap berbahaya: tantangan datang dari rute rak, puzzle
+krate/pelat, ayunan tali, rangkaian, debit air, urutan nada dan jalur cahaya,
+bukan tabrakan dengan monster.
 
 Rincian desain, sistem lilin, dan kredit audio CC0 ada di
 [`docs/nur/README.md`](docs/nur/README.md).

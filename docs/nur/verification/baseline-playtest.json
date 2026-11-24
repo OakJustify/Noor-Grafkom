@@ -1,0 +1,127 @@
+{
+  "kind": "accelerated input-only live Pymunk playtest, not human wall-clock play",
+  "completed": true,
+  "gameplay_seconds": 45.825,
+  "active_input_seconds": 43.417,
+  "execution_seconds": 0.928,
+  "error": null,
+  "rooms": [
+    {
+      "room": 1,
+      "seconds": 7.992
+    },
+    {
+      "room": 2,
+      "seconds": 8.683
+    },
+    {
+      "room": 3,
+      "seconds": 9.383
+    },
+    {
+      "room": 4,
+      "seconds": 8.717
+    },
+    {
+      "room": 5,
+      "seconds": 11.05
+    }
+  ],
+  "simulation": {
+    "state": "ending",
+    "room": 5,
+    "room_name": "YANG MENYEBUT NAMA",
+    "time": 45.825,
+    "camera": 640.0,
+    "lantern": {
+      "capacity": 0.5,
+      "charge": 0.4289,
+      "collections": 2,
+      "deaths": 0,
+      "carried": true
+    },
+    "memory": {
+      "found": [
+        "key",
+        "recipe"
+      ],
+      "false": [
+        "key"
+      ],
+      "candles": 0,
+      "truth": 0
+    },
+    "narrative": {
+      "elapsed": 45.825,
+      "stage": 3,
+      "line": "Kau kembali lebih awal dari biasanya.",
+      "shown": [
+        "Rumah ini lebih sunyi dari biasanya.",
+        "sepertinya kamu lupa menutup pintu",
+        "kau membunuhku!",
+        "Tadi ada tiga kursi. Sekarang empat.",
+        "Kau tidak pernah menyalakan lilin itu.",
+        "Ada seseorang di belakangmu yang mengangguk.",
+        "sepertinya kamu lupa menutup pintu",
+        "Wajah di foto itu berubah setiap kau berkedip.",
+        "Rumah ini lebih sunyi dari biasanya.",
+        "Jamnya berhenti, tapi terus berjalan.",
+        "Kau kembali lebih awal dari biasanya."
+      ]
+    },
+    "physics": {
+      "chapter": 5,
+      "time": 11.05,
+      "player": [
+        1080.69,
+        375.15
+      ],
+      "velocity": [
+        0.0,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": null,
+      "magnet": null
+    },
+    "player_animation": {
+      "pose": "idle",
+      "frame": 3
+    },
+    "threats": {
+      "active": 2,
+      "positions": [
+        [
+          410.7,
+          425.0
+        ],
+        [
+          1491.1,
+          425.0
+        ]
+      ],
+      "repelled": 0
+    },
+    "boss": {
+      "phase": 2,
+      "echoes": 3,
+      "presses": 3,
+      "shards": 0,
+      "done": true
+    }
+  }
+}

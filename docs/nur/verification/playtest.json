@@ -1,0 +1,270 @@
+{
+  "kind": "accelerated input-only live Pymunk playtest, not human wall-clock play",
+  "completed": true,
+  "gameplay_seconds": 1168.275,
+  "active_input_seconds": 1163.292,
+  "distance_pixels": 203912.1,
+  "quest_steps_solved": 144,
+  "waiting_policy": "no reading delays, no idle padding; known solutions and maximum normal speed",
+  "execution_seconds": 27.347,
+  "error": null,
+  "rooms": [
+    {
+      "room": 1,
+      "seconds": 7.992
+    },
+    {
+      "room": 2,
+      "seconds": 8.683
+    },
+    {
+      "room": 3,
+      "seconds": 9.383
+    },
+    {
+      "room": 4,
+      "seconds": 8.717
+    },
+    {
+      "room": 5,
+      "seconds": 45.858
+    },
+    {
+      "room": 6,
+      "seconds": 40.533
+    },
+    {
+      "room": 7,
+      "seconds": 51.575
+    },
+    {
+      "room": 8,
+      "seconds": 50.742
+    },
+    {
+      "room": 9,
+      "seconds": 52.083
+    },
+    {
+      "room": 10,
+      "seconds": 55.808
+    },
+    {
+      "room": 11,
+      "seconds": 39.817
+    },
+    {
+      "room": 12,
+      "seconds": 55.767
+    },
+    {
+      "room": 13,
+      "seconds": 21.283
+    },
+    {
+      "room": 14,
+      "seconds": 50.742
+    },
+    {
+      "room": 15,
+      "seconds": 49.283
+    },
+    {
+      "room": 16,
+      "seconds": 46.933
+    },
+    {
+      "room": 17,
+      "seconds": 55.583
+    },
+    {
+      "room": 18,
+      "seconds": 48.017
+    },
+    {
+      "room": 19,
+      "seconds": 53.725
+    },
+    {
+      "room": 20,
+      "seconds": 50.742
+    },
+    {
+      "room": 21,
+      "seconds": 18.958
+    },
+    {
+      "room": 22,
+      "seconds": 39.975
+    },
+    {
+      "room": 23,
+      "seconds": 46.45
+    },
+    {
+      "room": 24,
+      "seconds": 40.417
+    },
+    {
+      "room": 25,
+      "seconds": 49.867
+    },
+    {
+      "room": 26,
+      "seconds": 50.742
+    },
+    {
+      "room": 27,
+      "seconds": 51.117
+    },
+    {
+      "room": 28,
+      "seconds": 56.433
+    },
+    {
+      "room": 29,
+      "seconds": 11.05
+    }
+  ],
+  "captures": [
+    {
+      "file": "chapter-05.png",
+      "gameplay_seconds": 36.0,
+      "room": 5
+    },
+    {
+      "file": "chapter-06.png",
+      "gameplay_seconds": 92.083,
+      "room": 6
+    },
+    {
+      "file": "chapter-07.png",
+      "gameplay_seconds": 156.092,
+      "room": 7
+    },
+    {
+      "file": "chapter-08.png",
+      "gameplay_seconds": 185.9,
+      "room": 8
+    },
+    {
+      "file": "chapter-11.png",
+      "gameplay_seconds": 332.817,
+      "room": 11
+    },
+    {
+      "file": "chapter-15.png",
+      "gameplay_seconds": 533.4,
+      "room": 15
+    },
+    {
+      "file": "chapter-24.png",
+      "gameplay_seconds": 920.317,
+      "room": 24
+    }
+  ],
+  "simulation": {
+    "state": "ending",
+    "room": 29,
+    "room_name": "YANG MENYEBUT NAMA",
+    "time": 1168.275,
+    "camera": 640.0,
+    "lantern": {
+      "capacity": 0.25,
+      "charge": 0.2158,
+      "collections": 3,
+      "deaths": 0,
+      "carried": true
+    },
+    "memory": {
+      "found": [
+        "key",
+        "letter",
+        "recipe"
+      ],
+      "false": [
+        "key",
+        "letter"
+      ],
+      "candles": 0,
+      "truth": 0
+    },
+    "narrative": {
+      "elapsed": 1168.275,
+      "anchor_index": 3,
+      "stage": 3,
+      "line": "Ada seseorang di belakangmu yang mengangguk.",
+      "shown": [
+        "Rumah ini lebih sunyi dari biasanya.",
+        "Kau sudah memberitahuku. Dua kali. Mungkin tiga.",
+        "Jamnya berhenti, tapi terus berjalan.",
+        "Kau tidak pernah menyalakan lilin itu.",
+        "Itu bukan nama kami. Itu nama yang kauberikan.",
+        "Ibu menyuruhmu pulang. Atau aku?",
+        "Wajah di foto itu berubah setiap kau berkedip.",
+        "Jamnya berhenti, tapi terus berjalan.",
+        "Kau tidak pernah menyalakan lilin itu.",
+        "Rumah ini lebih sunyi dari biasanya.",
+        "Kau kembali lebih awal dari biasanya.",
+        "Ada seseorang di belakangmu yang mengangguk."
+      ]
+    },
+    "physics": {
+      "chapter": 29,
+      "time": 11.05,
+      "player": [
+        1080.69,
+        375.15
+      ],
+      "velocity": [
+        0.0,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [],
+      "beam_angle": null,
+      "magnet": null
+    },
+    "player_animation": {
+      "pose": "idle",
+      "frame": 3
+    },
+    "quest": null,
+    "journal_entries": 147,
+    "play_seconds": 1168.275,
+    "threats": {
+      "active": 2,
+      "positions": [
+        [
+          410.7,
+          425.0
+        ],
+        [
+          1490.9,
+          425.0
+        ]
+      ],
+      "repelled": 0
+    },
+    "boss": {
+      "phase": 2,
+      "echoes": 3,
+      "presses": 3,
+      "shards": 0,
+      "done": true
+    }
+  }
+}

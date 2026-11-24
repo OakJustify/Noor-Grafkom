@@ -30,13 +30,13 @@ BLOOD = (76, 18, 26)
 
 # Lantern capacity falls in fixed quarters: 100 -> 75 -> 50 -> 25 -> 0.
 LIGHT_STEP = 0.25
-LIGHT_DECAY_PER_SECOND = 0.0032
+LIGHT_DECAY_PER_SECOND = 0.00028
 LIGHT_FLOOR = 0.045
 
 # Dialogue cadence shortens as the world degrades.
 DIALOGUE_COOLDOWN = (9.0, 6.0, 3.5, 2.0)
 
 THREAT_TELEGRAPH = 1.0
-BOSS_ARENA_ROOM = 4
+BOSS_ARENA_ROOM = 28
 
 SEED = 0x4E00  # "NÜ"

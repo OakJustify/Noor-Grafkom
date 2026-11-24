@@ -7,6 +7,7 @@ generated here is authored for NÜR and released CC0 alongside the game.
 from __future__ import annotations
 
 import math
+import io
 import random
 import struct
 import wave
@@ -129,6 +130,28 @@ class Audio:
         sound.set_volume(max(0.0, min(1.0, volume)))
         sound.play()
         self.cooldowns[key] = 0.08
+
+    def play_note(self, note: int) -> None:
+        if not self.available:
+            return
+        key = f"note_{note}"
+        if key not in self.sounds:
+            frequency = (261.63, 329.63, 392.0, 440.0)[note]
+            frames = bytearray()
+            for i in range(int(RATE * 0.35)):
+                t = i / RATE
+                envelope = min(1, t * 80) * math.exp(-8 * t)
+                value = (math.sin(math.tau * frequency * t) + 0.25 * math.sin(math.tau * frequency * 2 * t)) * envelope * 0.5
+                frames.extend(struct.pack("<h", int(value * 32767)))
+            stream = io.BytesIO()
+            with wave.open(stream, "wb") as handle:
+                handle.setnchannels(1)
+                handle.setsampwidth(2)
+                handle.setframerate(RATE)
+                handle.writeframes(frames)
+            stream.seek(0)
+            self.sounds[key] = pygame.mixer.Sound(file=stream)
+        self.play(key, 0.65)
 
     def update(self, dt: float, stage: int, illumination: float, boss: bool = False) -> None:
         if not self.enabled or not self.available:

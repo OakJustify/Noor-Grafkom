@@ -23,6 +23,9 @@ class Lantern:
         self.charge = 1.0
         self.collections = 0
         self.deaths = 0
+        # Possession, not brightness, is the contract for monster protection.
+        # Even the last ember wards off shadows; charge only limits visibility.
+        self.carried = True
 
     @property
     def illumination(self) -> float:
@@ -31,6 +34,10 @@ class Lantern:
     @property
     def radius(self) -> float:
         return 58.0 + 285.0 * self.illumination
+
+    @property
+    def protects(self) -> bool:
+        return self.carried
 
     def step(self, dt: float) -> None:
         self.charge = max(0.0, self.charge - config.LIGHT_DECAY_PER_SECOND * dt)
@@ -43,7 +50,7 @@ class Lantern:
     def die(self) -> None:
         """Death costs charge, never capacity, so progress stays recoverable."""
         self.deaths += 1
-        self.charge = max(config.LIGHT_FLOOR, self.charge - 0.08)
+        self.charge = max(0.0, self.charge - 0.08)
 
     def snapshot(self) -> dict:
         return {
@@ -51,6 +58,7 @@ class Lantern:
             "charge": round(self.charge, 4),
             "collections": self.collections,
             "deaths": self.deaths,
+            "carried": self.carried,
         }
 
 
@@ -137,7 +145,8 @@ class Narrative:
             pool = list(INTRUSIONS)
         return self.rng.choice(pool)
 
-    def update(self, dt: float, illumination: float, room: int, boss: bool = False) -> str | None:
+    def update(self, dt: float, illumination: float, room: int, boss: bool = False,
+               longform: bool = False) -> str | None:
         """Advance drift and return a new caption when one should appear."""
         self.elapsed += dt
         self.line_age += dt
@@ -159,11 +168,14 @@ class Narrative:
         self.shown = (*self.shown[-11:], self.line)
         self.line_age = 0.0
         self.cooldown = config.DIALOGUE_COOLDOWN[self.stage] + self.rng.uniform(-0.6, 1.1)
+        if longform:
+            self.cooldown *= 5
         return self.line
 
     def snapshot(self) -> dict:
         return {
             "elapsed": round(self.elapsed, 3),
+            "anchor_index": self.anchor_index,
             "stage": self.stage,
             "line": self.line,
             "shown": list(self.shown),

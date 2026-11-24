@@ -18,9 +18,12 @@ from .art import NurArt
 from .audio import Audio
 from .boss import AlzheimerBoss
 from .levels import NUR_LEVELS, room_count
-from echo_game.physics import DT, Input, World
+from echo_game.physics import DT, Input
+from .physics import NurWorld
 from .state import Lantern, Memory, Narrative
 from .story import CUTSCENES, FRAGMENTS, OKIR_EPILOGUE
+from .wisp import WispAnimation
+from .quests import QuestState
 
 FALSE_KEYS = frozenset({"key", "letter"})
 EVENT_SOUNDS = {
@@ -65,6 +68,12 @@ class Game:
         self.pending_action = False
         self.cutscene_index = 0
         self.cutscene_timer = 0.0
+        self.candle_taken = False
+        self.player_animation = WispAnimation()
+        self.quest_progress = {}
+        self.journal = {}
+        self.journal_page = 0
+        self.play_seconds = 0.0
 
         self.canvas = pygame.Surface(config.SIZE)
         self.art = NurArt(config.SIZE)
@@ -81,8 +90,15 @@ class Game:
         self.boss = self._build_boss(self.room) if self.room == config.BOSS_ARENA_ROOM else None
 
     # ---------------------------------------------------------------- construction
-    def _build_world(self, room: int) -> World:
-        return World(room, NUR_LEVELS[room].level)
+    def _build_world(self, room: int) -> NurWorld:
+        world = NurWorld(room, NUR_LEVELS[room].level)
+        plan = NUR_LEVELS[room].quest
+        if plan:
+            world.quest = QuestState(plan, self.quest_progress.get(str(room)))
+            if world.quest.stage:
+                checkpoint = plan.nodes[plan.order[world.quest.stage - 1]]
+                world.player.position = (checkpoint.x, 430)
+        return world
 
     def _build_threats(self, room: int):
         from .threats import ThreatDirector
@@ -110,6 +126,12 @@ class Game:
         self.death_timer = self.complete_timer = self.accumulator = 0.0
         self.cutscene_index = 0
         self.cutscene_timer = 0.0
+        self.candle_taken = False
+        self.player_animation = WispAnimation()
+        self.quest_progress = {}
+        self.journal = {}
+        self.journal_page = 0
+        self.play_seconds = 0.0
         self.world = self._build_world(self.room)
         self.threats = self._build_threats(self.room)
         self.boss = self._build_boss(self.room) if self.room == config.BOSS_ARENA_ROOM else None
@@ -117,6 +139,8 @@ class Game:
         self._save()
 
     def restart_room(self, keep_boss: bool = False) -> None:
+        self._remember_quest()
+        self.player_animation = WispAnimation()
         self.world = self._build_world(self.room)
         self.threats = self._build_threats(self.room)
         if not keep_boss and self.room == config.BOSS_ARENA_ROOM:
@@ -125,16 +149,115 @@ class Game:
         self.state = "playing"
         self.camera = 0.0
 
+    def _remember_quest(self):
+        if self.world.quest:
+            self.quest_progress[str(self.world.chapter)] = self.world.quest.snapshot()
+
     def _save(self) -> None:
         if not self.persist:
             return
         try:
+            self._remember_quest()
             config.SAVE_PATH.parent.mkdir(parents=True, exist_ok=True)
-            config.SAVE_PATH.write_text(
-                json.dumps({"room": self.room, "seed": self.seed}), encoding="utf-8"
+            temporary = config.SAVE_PATH.with_suffix(".json.tmp")
+            temporary.write_text(
+                json.dumps({"version": 2, "room": self.room, "seed": self.seed,
+                            "lantern": self.lantern.snapshot(), "memory": self.memory.snapshot(),
+                            "candle_taken": self.candle_taken, "journal": self.journal,
+                            "quests": self.quest_progress, "play_seconds": self.play_seconds,
+                            "narrative": self.narrative.snapshot()},
+                           ensure_ascii=False), encoding="utf-8"
             )
+            temporary.replace(config.SAVE_PATH)
         except OSError:
             pass
+
+    def load_save(self) -> bool:
+        try:
+            saved = json.loads(config.SAVE_PATH.read_text(encoding="utf-8"))
+            if not isinstance(saved, dict) or saved.get("version", 1) not in (1, 2):
+                return False
+            room, seed = int(saved["room"]), int(saved["seed"])
+            if saved.get("version", 1) == 1 and room == 4:
+                room = config.BOSS_ARENA_ROOM
+            if not 0 <= room < room_count():
+                return False
+            lantern = saved.get("lantern", {})
+            memory = saved.get("memory", {})
+            if not isinstance(lantern, dict) or not isinstance(memory, dict):
+                return False
+            if not all(math.isfinite(float(lantern.get(key, 1))) for key in ("capacity", "charge")):
+                return False
+            capacity = max(0.0, min(1.0, float(lantern.get("capacity", 1))))
+            charge = max(0.0, min(capacity, float(lantern.get("charge", capacity))))
+            quests = saved.get("quests", {})
+            journal = saved.get("journal", {})
+            if not isinstance(quests, dict) or not isinstance(journal, dict):
+                return False
+            for key, value in quests.items():
+                if not key.isdigit() or not 0 <= int(key) < room_count() or NUR_LEVELS[int(key)].quest is None:
+                    return False
+                if not isinstance(value, dict) or not isinstance(value.get("values", []), list):
+                    return False
+                if not all(isinstance(n, int) for n in value.get("values", [])):
+                    return False
+                if not isinstance(value.get("stage", 0), int) or not isinstance(value.get("inspected", []), list):
+                    return False
+                if not all(isinstance(n, int) and 0 <= n < 6 for n in value.get("inspected", [])):
+                    return False
+            fragment_keys = {fragment.key for fragment in FRAGMENTS}
+            for key, value in journal.items():
+                if not isinstance(value, str):
+                    return False
+                if key.startswith("memory:"):
+                    if key.split(":", 1)[1] not in fragment_keys:
+                        return False
+                else:
+                    parts = key.split(":")
+                    if (len(parts) != 2 or not all(part.isdigit() for part in parts)
+                            or not 0 <= int(parts[0]) < room_count() or not 0 <= int(parts[1]) < 6):
+                        return False
+            found, false = set(memory.get("found", [])), set(memory.get("false", []))
+            if not found <= fragment_keys or not false <= found:
+                return False
+            collections, deaths = int(lantern.get("collections", 0)), int(lantern.get("deaths", 0))
+            play_seconds = float(saved.get("play_seconds", 0))
+            truth, candles = int(memory.get("truth", 0)), int(memory.get("candles", 0))
+            narrative = saved.get("narrative", {})
+            if not isinstance(narrative, dict):
+                return False
+            elapsed = float(narrative.get("elapsed", 0))
+            shown = narrative.get("shown", [])
+            if not isinstance(shown, list) or not all(isinstance(line, str) for line in shown):
+                return False
+            anchor = int(narrative.get("anchor_index", min(3, len(shown))))
+            if (not math.isfinite(play_seconds) or not math.isfinite(elapsed)
+                    or min(play_seconds, elapsed, collections, deaths, truth, candles) < 0 or candles > 1):
+                return False
+        except (OSError, KeyError, ValueError, TypeError):
+            return False
+        self.room, self.seed = room, seed
+        self.lantern = Lantern()
+        self.lantern.capacity, self.lantern.charge = capacity, charge
+        self.lantern.collections, self.lantern.deaths = collections, deaths
+        self.memory = Memory()
+        self.memory.found, self.memory.false = found, false & found
+        self.memory.truth, self.memory.candles = truth, candles
+        self.candle_taken = bool(saved.get("candle_taken", False))
+        self.quest_progress, self.journal = quests, journal
+        self.play_seconds = max(0.0, play_seconds)
+        self.narrative.reset(seed)
+        self.narrative.elapsed = elapsed
+        self.narrative.shown = tuple(shown[-12:])
+        self.narrative.anchor_index = max(0, min(3, anchor))
+        self.world = self._build_world(room)
+        self.threats = self._build_threats(room)
+        self.boss = self._build_boss(room) if room == config.BOSS_ARENA_ROOM else None
+        self.player_animation = WispAnimation()
+        self.camera = self.accumulator = self.death_timer = self.complete_timer = 0.0
+        self.state = "playing"
+        self._say("Perjalanan dilanjutkan. J membuka jurnal.")
+        return True
 
     def _say(self, text: str, seconds: float = 4.2) -> None:
         self.notice = text
@@ -143,6 +266,7 @@ class Game:
     # ---------------------------------------------------------------- input
     def event(self, event: pygame.event.Event) -> None:
         if event.type == pygame.QUIT:
+            self._save()
             self.running = False
             return
         if event.type != pygame.KEYDOWN:
@@ -157,6 +281,9 @@ class Game:
                 self.start()
             elif key == pygame.K_ESCAPE:
                 self.running = False
+            elif key == pygame.K_c:
+                if not self.load_save():
+                    self._say("Belum ada checkpoint yang bisa dibuka.")
             return
         if self.state == "ending":
             if key == pygame.K_RETURN:
@@ -164,8 +291,22 @@ class Game:
             elif key == pygame.K_ESCAPE:
                 self.running = False
             return
+        if key == pygame.K_j and self.state in ("playing", "journal"):
+            if self.state == "playing":
+                self.journal_page = max(0, (len(self.journal) - 1) // 3)
+            self.state = "journal" if self.state == "playing" else "playing"
+            return
+        if self.state == "journal":
+            if key in (pygame.K_ESCAPE, pygame.K_j):
+                self.state = "playing"
+            elif key in (pygame.K_RIGHT, pygame.K_PAGEDOWN):
+                self.journal_page += 1
+            elif key in (pygame.K_LEFT, pygame.K_PAGEUP):
+                self.journal_page = max(0, self.journal_page - 1)
+            return
         if key == pygame.K_ESCAPE:
             self.state = "paused" if self.state == "playing" else "playing"
+            self._save()
             return
         if self.state == "paused":
             if key == pygame.K_r:
@@ -173,18 +314,22 @@ class Game:
             return
         if key == pygame.K_e:
             self.pending_action = True
+        elif key == pygame.K_r:
+            self.restart_room()
 
     def _control(self) -> Input:
         keys = pygame.key.get_pressed()
         action = self.pending_action or bool(keys[pygame.K_e] or keys[pygame.K_LCTRL])
         self.pending_action = False
+        climbing = self.world.grab_kind == "rope"
         return Input(
             move=(-1 if keys[pygame.K_a] or keys[pygame.K_LEFT] else 0)
                  + (1 if keys[pygame.K_d] or keys[pygame.K_RIGHT] else 0),
-            jump=bool(keys[pygame.K_SPACE] or keys[pygame.K_w] or keys[pygame.K_UP]),
-            grab=False,
+            jump=bool(keys[pygame.K_SPACE] or (not climbing and (keys[pygame.K_w] or keys[pygame.K_UP]))),
+            grab=bool(keys[pygame.K_e] or keys[pygame.K_LCTRL]),
             action=action,
-            climb=0.0,
+            climb=(1.0 if keys[pygame.K_w] or keys[pygame.K_UP] else 0.0)
+                  - (1.0 if keys[pygame.K_s] or keys[pygame.K_DOWN] else 0.0),
             lantern=False,
         )
 
@@ -209,6 +354,7 @@ class Game:
 
         if control is None:
             control = self._control()
+        self.play_seconds += dt
         self.lantern.step(dt)
 
         self.accumulator = min(0.1, self.accumulator + dt)
@@ -223,14 +369,31 @@ class Game:
                 break
 
         px, py = self._player_xy()
-        self._collect(px, py)
-        touched = self.threats.update(dt, (px, py), self.narrative.stage, not self.world.dead)
+        if not self.world.dead:
+            self.player_animation.update(dt, self.world.player.velocity, self.world.grounded)
+        if self.world.quest:
+            result = self.world.quest.update(control, self.world)
+            if result:
+                if result.get("note") is not None:
+                    self.audio.play_note(result["note"])
+                index = min(range(len(self.world.quest.plan.nodes)),
+                            key=lambda n: abs(px - self.world.quest.plan.nodes[n].x))
+                self.journal[f"{self.room:02d}:{index}"] = result["journal"]
+                self._say(result["text"], 6)
+                if result.get("solved"):
+                    self.audio.play("memory", 0.45)
+                    self._save()
+        self._collect(px, py, control.action)
+        touched = self.threats.update(dt, (px, py), self.narrative.stage, not self.world.dead,
+                                     self.lantern.illumination, self.lantern.protects)
         if touched and not self.world.dead:
             self.world.kill("Sesuatu menyentuhmu dari luar cahaya.")
-        self.narrative.update(dt, self.lantern.illumination, self.room, boss=self.boss is not None)
+        self.narrative.update(dt, self.lantern.illumination, self.room, boss=self.boss is not None,
+                              longform=self.world.quest is not None)
 
         if self.boss is not None and not self.world.dead:
-            event = self.boss.update(dt, (px, py), control.action, self.lantern.illumination)
+            event = self.boss.update(dt, (px, py), control.action, self.lantern.illumination,
+                                     self.lantern.protects)
             self._handle_boss_event(event)
 
         if self.world.dead:
@@ -247,7 +410,7 @@ class Game:
             if self.complete_timer >= 1.0 and self.room < room_count() - 1:
                 self.room += 1
                 self.restart_room()
-                self._say(NUR_LEVELS[self.room].name, 2.0)
+                self._say(f"{NUR_LEVELS[self.room].name}\nJ: jurnal / E: periksa mekanisme", 3.0)
                 self._save()
             return
         self.complete_timer = 0.0
@@ -256,7 +419,7 @@ class Game:
         maximum = max(0.0, self.world.level.width - config.SIZE[0])
         self.camera += (max(0.0, min(maximum, target)) - self.camera) * min(1.0, dt * 3.5)
 
-    def _collect(self, px: float, py: float) -> None:
+    def _collect(self, px: float, py: float, action: bool = False) -> None:
         for fragment in FRAGMENTS:
             if fragment.room != self.room or fragment.key in self.memory.found:
                 continue
@@ -264,11 +427,18 @@ class Game:
                 self.memory.add(fragment.key, false=fragment.key in FALSE_KEYS)
                 self.lantern.collect_fragment()
                 caption = fragment.false_text if fragment.key in self.memory.false else fragment.true_text
+                if self.memory.candles:
+                    self.memory.restore()
+                    caption = fragment.true_text if fragment.key not in self.memory.false else fragment.false_text
+                self.journal[f"memory:{fragment.key}"] = f"{fragment.title}: {caption}"
                 self._say(f"{fragment.title}\n{caption}", 5.2)
                 self.audio.play("memory", 0.65)
                 return
         candle = NUR_LEVELS[self.room].candle
-        if candle and self.memory.gain_candle():
+        if (candle and not self.candle_taken and action
+                and math.hypot(px - candle[0], py - candle[1]) < 48
+                and self.memory.gain_candle()):
+            self.candle_taken = True
             self.memory.restore()
             self._say("Lilin ingatan meleleh. Sebuah ingatan kembali. Cahaya tidak bertambah.", 4.8)
             self.audio.play("tick", 0.7)
@@ -277,7 +447,9 @@ class Game:
         if event is None:
             return
         if event == "hit":
-            self.lantern.charge = max(config.LIGHT_FLOOR, self.lantern.charge - 0.12)
+            if self.lantern.protects:
+                return
+            self.lantern.charge = max(0.0, self.lantern.charge - 0.12)
             self._say("Salah ingatan mengenaimu.", 1.8)
             self.audio.play("glitch", 0.7)
         elif event == "echo":
@@ -306,12 +478,15 @@ class Game:
 
     def draw(self) -> pygame.Surface:
         canvas = self.canvas
-        canvas.fill(config.VOID)
+        canvas.fill((245, 238, 224))
         px, py = self._player_xy()
         screen_x = px - self.camera
 
         self.art.draw_background(canvas, self.camera, self.room, self.visual_time)
         self.art.draw_terrain(canvas, self.world, self.camera, self.lantern.illumination)
+        self.art.draw_exit(canvas, self.world.level.exit, self.camera, self.visual_time,
+                           self.boss is not None,
+                           ready=self.world.quest is None or self.world.quest.complete)
         for fragment in FRAGMENTS:
             if fragment.room == self.room:
                 self.art.draw_fragment(canvas, fragment, self.camera, self.visual_time,
@@ -319,25 +494,29 @@ class Game:
         candle = NUR_LEVELS[self.room].candle
         if candle:
             self.art.draw_memory_candle(canvas, candle, self.camera, self.visual_time,
-                                        not self.memory.candles)
+                                         not self.candle_taken)
         self.threats.draw(canvas, self.camera, self.lantern.illumination)
         if self.boss is not None:
             self.boss.draw(canvas, self.camera, self.lantern.illumination)
-        self.art.draw_player(canvas, (px, py), self.camera, self.lantern.illumination,
-                             self.world.facing, self.visual_time)
+        if self.world.quest:
+            self.world.quest.draw(canvas, self.camera, self.fonts[14], self.visual_time)
         self.art.draw_lighting(canvas, (screen_x, py), self.lantern.illumination,
                                self.narrative.stage, self.visual_time)
+        # Draw player LAST so it's always clearly visible.
+        self.art.draw_player(canvas, (px, py), self.camera, self.lantern.illumination,
+                              self.world.facing, self.visual_time,
+                              self.world.player.velocity, self.world.grounded, self.player_animation)
+        self._draw_interactions(px, py)
 
         if self.state != "menu":
             self._draw_hud()
-        if self.narrative.line and self.state == "playing":
+        show_intrusion = not self.world.quest or (self.notice_timer <= 0 and self.narrative.line_age < 6)
+        if self.narrative.line and self.state == "playing" and show_intrusion:
             alpha = max(0, min(255, int(255 * min(1.0, self.narrative.line_age * 1.8))))
-            self._text(self.narrative.line, config.SIZE[0] // 2, 72, 21,
-                       (178, 168, 154), center=True, alpha=alpha)
+            self._caption(self.narrative.line, 69, 21, alpha)
         if self.notice_timer > 0 and self.state == "playing":
             alpha = min(255, int(self.notice_timer * 130))
-            self._text(self.notice, config.SIZE[0] // 2, 424, 18,
-                       config.BONE, center=True, alpha=alpha)
+            self._caption(self.notice, 112, 18, alpha)
         if self.boss is not None and self.state == "playing" and self.boss.phase == 1:
             self._text(self.boss.line, config.SIZE[0] // 2, 300, 26,
                        (196, 158, 138), center=True)
@@ -346,6 +525,8 @@ class Game:
             self._draw_menu()
         elif self.state == "paused":
             self._draw_pause()
+        elif self.state == "journal":
+            self._draw_journal()
         elif self.state == "ending":
             self._draw_ending()
         return canvas
@@ -354,37 +535,169 @@ class Game:
         # Diegetic candle: the wax is the remaining light; no numeric bar.
         x, y = 26, 486
         height = round(26 * self.lantern.illumination)
-        pygame.draw.rect(self.canvas, (69, 63, 54), (x, y, 12, 30))
+        # Candle holder.
+        pygame.draw.rect(self.canvas, (46, 42, 38), (x - 6, y - 4, 24, 40), border_radius=4)
+        pygame.draw.rect(self.canvas, (69, 63, 54), (x, y, 12, 30), border_radius=2)
         if height:
-            pygame.draw.rect(self.canvas, config.WAX, (x, y + 30 - height, 12, height))
-        pygame.draw.ellipse(self.canvas, config.EMBER, (x - 2, y - 10 - height // 2, 16, 12))
+            pygame.draw.rect(self.canvas, config.WAX, (x, y + 30 - height, 12, height), border_radius=2)
+        flicker = 0.78 + 0.22 * math.sin(self.visual_time * 9.7)
+        flame_h = round((10 + height // 3) * flicker)
+        pygame.draw.ellipse(self.canvas, config.EMBER, (x - 3, y - 8 - flame_h, 10, flame_h + 6))
+        if self.lantern.illumination > 0.18:
+            pygame.draw.ellipse(self.canvas, config.WAX, (x, y - 4 - flame_h // 2, 4, 5))
+        glow = pygame.Surface((64, 64), pygame.SRCALPHA)
+        pygame.draw.circle(glow, (214, 118, 58, int(42 * self.lantern.illumination * flicker)), (32, 32), 28)
+        self.canvas.blit(glow, (x - 26, y - 34))
+        # Memory fragments as small paper marks.
         for index in range(len(FRAGMENTS)):
             colour = config.WAX if index < len(self.memory.found) else (48, 46, 45)
-            pygame.draw.circle(self.canvas, colour, (x + 30 + index * 13, y + 14), 4, 1)
+            rx = x + 30 + index * 14
+            pygame.draw.rect(self.canvas, colour, (rx - 4, y + 10, 8, 11), 1, border_radius=1)
+            if index < len(self.memory.found):
+                pygame.draw.line(self.canvas, config.EMBER, (rx - 2, y + 13), (rx + 2, y + 13), 1)
         if self.memory.truth:
-            self._text("·" * self.memory.truth, x + 30, y - 4, 21, config.WAX)
+            self._text("·" * self.memory.truth, x + 30, y - 8, 21, config.WAX)
+        self._text("LENTERA / TERLINDUNGI" if self.lantern.protects else "TANPA LENTERA",
+                   126, 497, 12, config.WAX)
+        title_colour = (54, 65, 67)
+        if self.world.quest:
+            panel = pygame.Surface((932, 54), pygame.SRCALPHA)
+            panel.fill((19, 35, 44, 215))
+            self.canvas.blit(panel, (14, 14))
+            title_colour = config.BONE
+        self._text(f"{self.room + 1:02d} / {room_count()}  ·  {NUR_LEVELS[self.room].name}", 25, 22, 16,
+                   title_colour)
+        if self.world.quest:
+            quest = self.world.quest
+            self._text(f"INGATAN {quest.stage} / 6  ·  {quest.goal}", 480, 48, 16, config.BONE, center=True)
+            self._text("J / JURNAL", 806, 497, 12, config.WAX)
+            if quest.current:
+                dx = quest.current.x - self.world.player.position.x
+                arrow = "←" if dx < -60 else "→" if dx > 60 else "E"
+                self._text(f"{arrow}  {abs(dx):.0f} px", 864, 23, 14, config.WAX)
+        if self.boss:
+            taken = sum(e["taken"] for e in self.boss.echoes)
+            label = f"GEMA  {taken} / 3" if self.boss.phase == 0 else f"DIAM  {self.boss.name_presses} / 3"
+            self._text(label, 760, 22, 16, (54, 65, 67))
+
+    def _caption(self, text: str, y: int, size: int, alpha: int) -> None:
+        # Long memories wrap instead of disappearing beyond the screen edges.
+        font = self.fonts[size]
+        lines = []
+        for paragraph in text.split("\n"):
+            line = ""
+            for word in paragraph.split():
+                candidate = f"{line} {word}".strip()
+                if line and font.size(candidate)[0] > 720:
+                    lines.append(line)
+                    line = word
+                else:
+                    line = candidate
+            lines.append(line)
+        width = max(font.size(line)[0] for line in lines) + 36
+        panel = pygame.Surface((width, len(lines) * (size + 4) + 18), pygame.SRCALPHA)
+        pygame.draw.rect(panel, (20, 31, 37, round(alpha * 0.88)), panel.get_rect(), border_radius=4)
+        pygame.draw.line(panel, (*config.WAX, alpha), (12, 0), (width - 12, 0))
+        self.canvas.blit(panel, (config.SIZE[0] // 2 - width // 2, y - 7))
+        self._text("\n".join(lines), config.SIZE[0] // 2, y + 2, size,
+                   config.BONE, center=True, alpha=alpha)
+
+    def _draw_interactions(self, px: float, py: float) -> None:
+        if self.state != "playing" or self.world.dead:
+            return
+        hints = []
+        if self.world.quest:
+            for node in self.world.quest.plan.nodes:
+                if abs(px - node.x) < 70 and abs(py - node.y) < 65:
+                    hints.append((node.x, node.y - 60, "E / PERIKSA" if node.kind == "source" else "E / PILIH · J / PETUNJUK"))
+        for crate in self.world.crates:
+            x, y = crate.body.position
+            if math.hypot(px - x, py - y) < 85:
+                hints.append((x, y - crate.size[1] / 2 - 30, "E  /  TAHAN & TARIK"))
+        if self.world.ropes:
+            nearest = min(self.world.ropes, key=lambda b: b.position.get_distance((px, py)))
+            if nearest.position.get_distance((px, py)) < 80:
+                hints.append((px, py - 65, "E  /  PEGANG     W/S  /  PANJAT"))
+        candle = NUR_LEVELS[self.room].candle
+        if candle and not self.candle_taken and math.hypot(px - candle[0], py - candle[1]) < 70:
+            hints.append((candle[0], candle[1] - 54, "E  /  INGAT KEMBALI"))
+        if self.boss and self.boss.phase == 1 and math.hypot(px - self.boss.x, py - self.boss.y) < 155:
+            hints.append((px, py - 70, "E  /  BERHENTI MENJAWAB"))
+        for x, y, label in hints[:1]:
+            image = self.fonts[14].render(label, True, config.WAX)
+            width = image.get_width() + 20
+            sx = max(width // 2 + 8, min(config.SIZE[0] - width // 2 - 8, x - self.camera))
+            area = pygame.Rect(0, 0, width, 27)
+            area.midtop = (round(sx), round(y))
+            pygame.draw.rect(self.canvas, (25, 39, 45), area, border_radius=4)
+            self.canvas.blit(image, image.get_rect(center=area.center))
 
     def _draw_menu(self) -> None:
         veil = pygame.Surface(config.SIZE, pygame.SRCALPHA)
-        veil.fill((4, 5, 7, 220))
+        veil.fill((12, 25, 33, 225))
         self.canvas.blit(veil, (0, 0))
-        self._text(config.TITLE, config.SIZE[0] // 2, 150, 78, config.BONE,
-                   center=True)
+        glow = pygame.Surface((360, 180), pygame.SRCALPHA)
+        pygame.draw.ellipse(glow, (204, 174, 112, 26), (0, 0, 360, 180))
+        self.canvas.blit(glow, (config.SIZE[0] // 2 - 180, 120))
+        self._text(config.TITLE, config.SIZE[0] // 2, 148, 78, config.BONE, center=True)
         self._text("sebuah kisah tentang cahaya yang tidak bisa kembali",
-                   config.SIZE[0] // 2, 250, 21, (120, 114, 106), center=True)
+                   config.SIZE[0] // 2, 248, 21, (175, 180, 170), center=True)
+        self._text("RUMAH  DESA  ARSIP  HUTAN  PERAWAT  PULANG",
+                   config.SIZE[0] // 2, 292, 12, (145, 158, 154), center=True)
         self._text("ENTER  —  masuk ke rumah", config.SIZE[0] // 2, 360, 18,
                    config.WAX, center=True)
         self._text("M  —  suara   /   ESC  —  keluar", config.SIZE[0] // 2, 398, 14,
-                   (96, 91, 86), center=True)
+                    (145, 158, 154), center=True)
+        self._text("C — lanjut checkpoint / J — jurnal saat bermain", config.SIZE[0] // 2, 438, 14,
+                   (145, 158, 154), center=True)
 
     def _draw_pause(self) -> None:
         veil = pygame.Surface(config.SIZE, pygame.SRCALPHA)
-        veil.fill((4, 5, 7, 190))
+        veil.fill((12, 25, 33, 220))
         self.canvas.blit(veil, (0, 0))
-        self._text("BERHENTI SEBENTAR", config.SIZE[0] // 2, 240, 32,
+        self._text("BERHENTI SEBENTAR", config.SIZE[0] // 2, 228, 32,
                    config.BONE, center=True)
-        self._text("ESC kembali  /  R mengulang ruangan", config.SIZE[0] // 2, 300, 16,
-                   (120, 114, 106), center=True)
+        self._text("cahaya tetap menunggu", config.SIZE[0] // 2, 272, 16,
+                    (175, 180, 170), center=True)
+        self._text("ESC kembali  /  R mengulang ruangan", config.SIZE[0] // 2, 320, 16,
+                    config.WAX, center=True)
+
+    def _draw_journal(self):
+        veil = pygame.Surface(config.SIZE, pygame.SRCALPHA)
+        veil.fill((12, 25, 33, 242))
+        self.canvas.blit(veil, (0, 0))
+        self._text("CATATAN JALAN PULANG", 480, 28, 32, config.BONE, center=True)
+        if self.world.quest:
+            quest = self.world.quest
+            x = self.world.player.position.x
+            left, width, top = 90, 780, 86
+            pygame.draw.line(self.canvas, (71, 106, 112), (left, top), (left + width, top), 3)
+            for index, node in enumerate(quest.plan.nodes):
+                colour = config.WAX if index in quest.plan.order[:quest.stage] else (107, 151, 148)
+                nx = round(left + width * node.x / self.world.level.width)
+                pygame.draw.circle(self.canvas, colour, (nx, top), 5)
+            px = round(left + width * x / self.world.level.width)
+            pygame.draw.polygon(self.canvas, config.BONE, [(px - 4, top - 14), (px + 4, top - 14), (px, top - 6)])
+        entries = list(self.journal.items())
+        pages = max(1, (len(entries) + 2) // 3)
+        self.journal_page = min(self.journal_page, pages - 1)
+        if not entries:
+            self._text("Belum ada catatan. Dekati benda bercahaya dan tekan E.", 480, 145, 18, config.BONE, center=True)
+        for offset, (key, text) in enumerate(entries[self.journal_page * 3:self.journal_page * 3 + 3]):
+            title = "MEMORI" if key.startswith("memory:") else NUR_LEVELS[int(key.split(":")[0])].name
+            self._text(title, 60, 100 + offset * 124, 18, config.WAX)
+            words, lines, line = text.replace("\n", " ").split(), [], ""
+            for word in words:
+                candidate = (line + " " + word).strip()
+                if self.fonts[16].size(candidate)[0] > 830:
+                    lines.append(line)
+                    line = word
+                else:
+                    line = candidate
+            lines.append(line)
+            self._text("\n".join(lines), 60, 130 + offset * 124, 16, config.BONE)
+        self._text(f"{self.journal_page + 1} / {pages}  ·  ←/→ halaman  ·  J/ESC kembali", 480, 492, 16,
+                   config.WAX, center=True)
 
     def _draw_ending(self) -> None:
         cut = CUTSCENES[min(self.cutscene_index, len(CUTSCENES) - 1)]
@@ -415,6 +728,10 @@ class Game:
             "memory": self.memory.snapshot(),
             "narrative": self.narrative.snapshot(),
             "physics": self.world.snapshot(),
+            "player_animation": self.player_animation.snapshot(),
+            "quest": self.world.quest.snapshot() if self.world.quest else None,
+            "journal_entries": len(self.journal),
+            "play_seconds": round(self.play_seconds, 3),
             "threats": self.threats.snapshot(),
             "boss": self.boss.snapshot() if self.boss else None,
         }
@@ -433,6 +750,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--room", type=int, choices=range(1, room_count() + 1), default=1)
     parser.add_argument("--seed", type=int, default=config.SEED)
     parser.add_argument("--menu", action="store_true", help="Show the title screen instead of spawning at home")
+    parser.add_argument("--continue", dest="resume", action="store_true", help="Resume the saved campaign checkpoint")
     parser.add_argument("--mute", action="store_true")
     parser.add_argument("--no-save", action="store_true")
     parser.add_argument("--headless", action="store_true")
@@ -460,6 +778,9 @@ def main(argv: list[str] | None = None) -> int:
         muted=args.mute,
         persist=not args.no_save,
     )
+    if args.resume and not game.load_save():
+        game.state = "menu"
+        game._say("Checkpoint tidak ditemukan atau rusak.")
     clock = pygame.time.Clock()
     frames = 0
     while game.running:

@@ -24,13 +24,15 @@ class Threat:
     lunge: float = 0.0
     cooldown: float = 0.0
     phase: float = 0.0
+    repelled: float = 0.0
 
     def __post_init__(self) -> None:
         self.x = self.spawn.x
         self.y = self.spawn.y
         self.phase = self.rng_key * math.tau
 
-    def update(self, dt: float, player: tuple[float, float], player_alive: bool) -> bool:
+    def update(self, dt: float, player: tuple[float, float], player_alive: bool,
+              illumination: float = 1.0, lantern_carried: bool = True) -> bool:
         """Return True when the threat touches the player."""
         if not self.active or not player_alive:
             return False
@@ -38,6 +40,24 @@ class Threat:
         px, py = player
         distance = math.hypot(px - self.x, py - self.y)
         self.cooldown = max(0.0, self.cooldown - dt)
+
+        # Darkness changes atmosphere, never the lantern's protection contract.
+        protected = lantern_carried
+        self.repelled += ((1.0 if protected and distance < 150 else 0.0)
+                          - self.repelled) * min(1.0, dt * 5)
+        if protected:
+            # Cancel attacks immediately, including an already committed lunge.
+            self.telegraph = self.lunge = 0.0
+            self.cooldown = max(self.cooldown, 0.6)
+            if distance < 150 and abs(py - self.y) < 90:
+                self.direction = 1 if self.x >= px else -1
+                self.x += self.direction * min(100 * dt, 150 - distance)
+            else:
+                self.x += self.direction * 28 * dt
+                if abs(self.x - self.spawn.x) > self.spawn.patrol + 150:
+                    self.direction = -1 if self.x > self.spawn.x else 1
+            self.y += (self.spawn.y - self.y) * min(1.0, dt * 3)
+            return False
 
         if self.lunge > 0:
             self.lunge -= dt
@@ -66,23 +86,31 @@ class Threat:
         y = round(self.y)
         if not -80 < x < screen.get_width() + 80:
             return
+        from .illustration import shadow_sprite
+
+        variant = int(self.rng_key * 3) % 3
+        image = shadow_sprite(variant, int(self.phase * 5) % 8).copy()
+        image.set_alpha(round(220 - self.repelled * 135))
+        screen.blit(image, (x - image.get_width() // 2, y - 52))
+        if self.repelled > 0.05:
+            for i in range(5):
+                sx = x + math.sin(self.phase * 2 + i * 1.7) * (22 + i * 4)
+                sy = y - 20 - (self.phase * 24 + i * 13) % 65
+                pygame.draw.circle(screen, config.WAX, (round(sx), round(sy)), 1)
+        # Warning rings exist only when the lantern is absent.
         sway = math.sin(self.phase * 1.7) * 3
-        body = (36, 34, 40) if illumination > 0.35 else (20, 20, 25)
-        pygame.draw.ellipse(screen, body, (x - 15, y - 32 + sway, 30, 62))
-        pygame.draw.polygon(
-            screen,
-            body,
-            [(x - 11, y - 8), (x - 25, y + 22 + sway), (x - 7, y + 14),
-             (x + 7, y + 14), (x + 25, y + 22 + sway), (x + 11, y - 8)],
-        )
         if self.telegraph > 0:
             progress = 1.0 - self.telegraph / config.THREAT_TELEGRAPH
-            radius = round(10 + 30 * progress)
-            colour = (int(90 + 70 * progress), int(72 + 30 * progress), 64)
-            pygame.draw.circle(screen, colour, (x, y - 14), radius, 2)
-            pygame.draw.circle(screen, colour, (x, y - 14), 3)
+            radius = round(12 + 34 * progress)
+            colour = (int(110 + 90 * progress), int(84 + 40 * progress), 70)
+            pygame.draw.circle(screen, colour, (x, y - 16 + sway), radius, 2)
+            pygame.draw.circle(screen, colour, (x, y - 16 + sway), 4)
+            ring = pygame.Surface((radius * 2 + 8, radius * 2 + 8), pygame.SRCALPHA)
+            pygame.draw.circle(ring, (*colour, 35), (radius + 4, radius + 4), radius + 2, 2)
+            screen.blit(ring, (x - radius - 4, y - 16 + sway - radius - 4))
         if self.lunge > 0:
-            pygame.draw.line(screen, (96, 82, 72), (x, y - 18), (x + self.direction * 28, y - 12), 2)
+            pygame.draw.line(screen, (110, 92, 78), (x, y - 20 + sway),
+                             (x + self.direction * 32, y - 12 + sway), 2)
 
 
 class ThreatDirector:
@@ -94,7 +122,8 @@ class ThreatDirector:
         self.time_accumulator = 0.0
         self.extra = 0
 
-    def update(self, dt: float, player: tuple[float, float], stage: int, alive: bool) -> bool:
+    def update(self, dt: float, player: tuple[float, float], stage: int, alive: bool,
+              illumination: float = 1.0, lantern_carried: bool = True) -> bool:
         self.time_accumulator += dt
         # One additional memory pressure per 25 seconds, capped so the screen
         # stays readable. Stage 2 activates dormant authored threats early.
@@ -104,7 +133,7 @@ class ThreatDirector:
         touched = False
         for index, threat in enumerate(self.threats):
             threat.active = index == 0 or threat.spawn.minimum_stage <= stage or index <= self.extra
-            touched = threat.update(dt, player, alive) or touched
+            touched = threat.update(dt, player, alive, illumination, lantern_carried) or touched
         return touched
 
     def draw(self, screen: pygame.Surface, camera: float, illumination: float) -> None:
@@ -116,4 +145,5 @@ class ThreatDirector:
         return {
             "active": sum(1 for threat in self.threats if threat.active),
             "positions": [[round(t.x, 1), round(t.y, 1)] for t in self.threats if t.active],
+            "repelled": sum(1 for t in self.threats if t.active and t.repelled > 0.1),
         }
