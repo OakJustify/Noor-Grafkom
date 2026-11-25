@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Obstacle_FurnitureLeg_Table",
+  "category": "FurnitureLeg",
+  "variant": "Table",
+  "tag": "Obstacle",
+  "layer": {
+    "name": "Obstacle",
+    "index": 8
+  },
+  "colliders": [
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0,
+        0,
+        0.12,
+        0.7
+      ],
+      "isTrigger": false
+    },
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0.12,
+        0,
+        0.18,
+        0.12
+      ],
+      "isTrigger": false
+    }
+  ],
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.3,
+      0.7
+    ],
+    "silhouette": "single square table leg and apron stub",
+    "palette": [
+      "#74593f",
+      "#483727"
+    ],
+    "details": [
+      "square profile",
+      "apron stub"
+    ]
+  },
+  "obstacleData": {
+    "id": "ObstacleData_FurnitureLeg_Table",
+    "obstacleType": "FurnitureLeg",
+    "trippingChance": 0.7,
+    "noiseLevel": 0.42,
+    "canBeCleared": false,
+    "clearTime": 0.0
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Platform_Sofa_ThreeSeater",
+  "category": "Sofa",
+  "variant": "ThreeSeater",
+  "tag": "Platform",
+  "layer": {
+    "name": "Standable",
+    "index": 7
+  },
+  "collider": {
+    "type": "BoxCollider2D",
+    "rect": [
+      0,
+      0.44,
+      1.9,
+      0.1
+    ],
+    "isTrigger": false
+  },
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      1.9,
+      0.88
+    ],
+    "standableSurface": [
+      0,
+      0.44,
+      1.9,
+      0.1
+    ],
+    "silhouette": "three cushions with rolled arms",
+    "palette": [
+      "#5c6b67",
+      "#394541"
+    ],
+    "details": [
+      "three cushions",
+      "rolled arms"
+    ]
+  },
+  "platformData": {
+    "id": "PlatformData_Sofa_ThreeSeater",
+    "platformType": "Sofa",
+    "maxStandAngle": 45.0,
+    "isStable": true,
+    "creakSound": null
+  }
+}

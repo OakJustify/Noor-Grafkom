@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Platform_Cabinet_Wardrobe",
+  "category": "Cabinet",
+  "variant": "Wardrobe",
+  "tag": "Platform",
+  "layer": {
+    "name": "Standable",
+    "index": 7
+  },
+  "collider": {
+    "type": "BoxCollider2D",
+    "rect": [
+      0,
+      1.92,
+      0.96,
+      0.08
+    ],
+    "isTrigger": false
+  },
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.96,
+      2.0
+    ],
+    "standableSurface": [
+      0,
+      1.92,
+      0.96,
+      0.08
+    ],
+    "silhouette": "tall wardrobe with two panelled doors",
+    "palette": [
+      "#6b5138",
+      "#3f3021"
+    ],
+    "details": [
+      "tall doors",
+      "brass knobs"
+    ]
+  },
+  "platformData": {
+    "id": "PlatformData_Cabinet_Wardrobe",
+    "platformType": "Cabinet",
+    "maxStandAngle": 45.0,
+    "isStable": true,
+    "creakSound": null
+  }
+}

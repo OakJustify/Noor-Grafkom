@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Obstacle_DecorItem_Figurine",
+  "category": "DecorItem",
+  "variant": "Figurine",
+  "tag": "Obstacle",
+  "layer": {
+    "name": "Obstacle",
+    "index": 8
+  },
+  "colliders": [
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0.06,
+        0,
+        0.1,
+        0.3
+      ],
+      "isTrigger": false
+    },
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0,
+        0.3,
+        0.22,
+        0.08
+      ],
+      "isTrigger": false
+    }
+  ],
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.22,
+      0.38
+    ],
+    "silhouette": "small ceramic figure on a round plinth",
+    "palette": [
+      "#b2a58e",
+      "#706758"
+    ],
+    "details": [
+      "round plinth",
+      "chipped arm"
+    ]
+  },
+  "obstacleData": {
+    "id": "ObstacleData_DecorItem_Figurine",
+    "obstacleType": "DecorItem",
+    "trippingChance": 0.4,
+    "noiseLevel": 0.44,
+    "canBeCleared": true,
+    "clearTime": 1.1
+  }
+}

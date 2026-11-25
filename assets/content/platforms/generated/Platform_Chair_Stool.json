@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Platform_Chair_Stool",
+  "category": "Chair",
+  "variant": "Stool",
+  "tag": "Platform",
+  "layer": {
+    "name": "Standable",
+    "index": 7
+  },
+  "collider": {
+    "type": "BoxCollider2D",
+    "rect": [
+      0,
+      0.46,
+      0.38,
+      0.06
+    ],
+    "isTrigger": false
+  },
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.38,
+      0.52
+    ],
+    "standableSurface": [
+      0,
+      0.46,
+      0.38,
+      0.06
+    ],
+    "silhouette": "round seat on three splayed legs",
+    "palette": [
+      "#a07a4c",
+      "#6b4e2f"
+    ],
+    "details": [
+      "round seat",
+      "splayed legs"
+    ]
+  },
+  "platformData": {
+    "id": "PlatformData_Chair_Stool",
+    "platformType": "Chair",
+    "maxStandAngle": 45.0,
+    "isStable": true,
+    "creakSound": null
+  }
+}

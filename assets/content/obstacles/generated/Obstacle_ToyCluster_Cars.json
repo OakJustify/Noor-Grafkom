@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Obstacle_ToyCluster_Cars",
+  "category": "ToyCluster",
+  "variant": "Cars",
+  "tag": "Obstacle",
+  "layer": {
+    "name": "Obstacle",
+    "index": 8
+  },
+  "colliders": [
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0,
+        0,
+        0.26,
+        0.18
+      ],
+      "isTrigger": false
+    },
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0.28,
+        0,
+        0.28,
+        0.24
+      ],
+      "isTrigger": false
+    },
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0.58,
+        0,
+        0.26,
+        0.2
+      ],
+      "isTrigger": false
+    }
+  ],
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.84,
+      0.24
+    ],
+    "silhouette": "three little cars abandoned bumper to bumper",
+    "palette": [
+      "#5e8b7e",
+      "#b09148"
+    ],
+    "details": [
+      "wheel pairs",
+      "open doors"
+    ]
+  },
+  "obstacleData": {
+    "id": "ObstacleData_ToyCluster_Cars",
+    "obstacleType": "ToyCluster",
+    "trippingChance": 0.68,
+    "noiseLevel": 0.66,
+    "canBeCleared": true,
+    "clearTime": 1.2
+  }
+}

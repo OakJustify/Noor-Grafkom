@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Obstacle_ClothPile_Laundry",
+  "category": "ClothPile",
+  "variant": "Laundry",
+  "tag": "Obstacle",
+  "layer": {
+    "name": "Obstacle",
+    "index": 8
+  },
+  "colliders": [
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0,
+        0,
+        0.36,
+        0.22
+      ],
+      "isTrigger": false
+    },
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0.36,
+        0,
+        0.44,
+        0.3
+      ],
+      "isTrigger": false
+    }
+  ],
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.8,
+      0.3
+    ],
+    "silhouette": "crumpled laundry spilling from a heap",
+    "palette": [
+      "#a9a394",
+      "#726d60"
+    ],
+    "details": [
+      "loose sleeve",
+      "creased folds"
+    ]
+  },
+  "obstacleData": {
+    "id": "ObstacleData_ClothPile_Laundry",
+    "obstacleType": "ClothPile",
+    "trippingChance": 0.5,
+    "noiseLevel": 0.18,
+    "canBeCleared": true,
+    "clearTime": 2.0
+  }
+}

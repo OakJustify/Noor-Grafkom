@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Obstacle_PlantPot_Large",
+  "category": "PlantPot",
+  "variant": "Large",
+  "tag": "Obstacle",
+  "layer": {
+    "name": "Obstacle",
+    "index": 8
+  },
+  "colliders": [
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0,
+        0,
+        0.58,
+        0.42
+      ],
+      "isTrigger": false
+    },
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0.08,
+        0.42,
+        0.42,
+        0.3
+      ],
+      "isTrigger": false
+    }
+  ],
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.58,
+      0.72
+    ],
+    "silhouette": "large glazed pot holding a thin stem",
+    "palette": [
+      "#7e8c96",
+      "#4e5960"
+    ],
+    "details": [
+      "glazed band",
+      "thin stem"
+    ]
+  },
+  "obstacleData": {
+    "id": "ObstacleData_PlantPot_Large",
+    "obstacleType": "PlantPot",
+    "trippingChance": 0.64,
+    "noiseLevel": 0.74,
+    "canBeCleared": true,
+    "clearTime": 2.0
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Platform_Chair_Dining",
+  "category": "Chair",
+  "variant": "Dining",
+  "tag": "Platform",
+  "layer": {
+    "name": "Standable",
+    "index": 7
+  },
+  "collider": {
+    "type": "BoxCollider2D",
+    "rect": [
+      0,
+      0.46,
+      0.46,
+      0.06
+    ],
+    "isTrigger": false
+  },
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.46,
+      0.94
+    ],
+    "standableSurface": [
+      0,
+      0.46,
+      0.46,
+      0.06
+    ],
+    "silhouette": "straight slatted back and woven seat",
+    "palette": [
+      "#8a6b48",
+      "#54402c"
+    ],
+    "details": [
+      "slat back",
+      "woven seat"
+    ]
+  },
+  "platformData": {
+    "id": "PlatformData_Chair_Dining",
+    "platformType": "Chair",
+    "maxStandAngle": 45.0,
+    "isStable": true,
+    "creakSound": null
+  }
+}

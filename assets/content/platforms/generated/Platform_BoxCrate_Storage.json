@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Platform_BoxCrate_Storage",
+  "category": "BoxCrate",
+  "variant": "Storage",
+  "tag": "Platform",
+  "layer": {
+    "name": "Standable",
+    "index": 7
+  },
+  "collider": {
+    "type": "BoxCollider2D",
+    "rect": [
+      0,
+      0.58,
+      0.8,
+      0.06
+    ],
+    "isTrigger": false
+  },
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.8,
+      0.64
+    ],
+    "standableSurface": [
+      0,
+      0.58,
+      0.8,
+      0.06
+    ],
+    "silhouette": "lidded storage trunk with two latches",
+    "palette": [
+      "#7a6246",
+      "#4b3c2b"
+    ],
+    "details": [
+      "two latches",
+      "lid seam"
+    ]
+  },
+  "platformData": {
+    "id": "PlatformData_BoxCrate_Storage",
+    "platformType": "BoxCrate",
+    "maxStandAngle": 45.0,
+    "isStable": true,
+    "creakSound": null
+  }
+}

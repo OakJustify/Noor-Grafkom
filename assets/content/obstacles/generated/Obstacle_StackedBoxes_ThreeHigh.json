@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Obstacle_StackedBoxes_ThreeHigh",
+  "category": "StackedBoxes",
+  "variant": "ThreeHigh",
+  "tag": "Obstacle",
+  "layer": {
+    "name": "Obstacle",
+    "index": 8
+  },
+  "colliders": [
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0,
+        0,
+        0.46,
+        0.28
+      ],
+      "isTrigger": false
+    },
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0,
+        0.28,
+        0.46,
+        0.28
+      ],
+      "isTrigger": false
+    },
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0,
+        0.56,
+        0.46,
+        0.28
+      ],
+      "isTrigger": false
+    }
+  ],
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.46,
+      0.84
+    ],
+    "silhouette": "three shrinking cartons in a column",
+    "palette": [
+      "#8f7352",
+      "#5b4833"
+    ],
+    "details": [
+      "shrinking tiers",
+      "three tape lines"
+    ]
+  },
+  "obstacleData": {
+    "id": "ObstacleData_StackedBoxes_ThreeHigh",
+    "obstacleType": "StackedBoxes",
+    "trippingChance": 0.72,
+    "noiseLevel": 0.58,
+    "canBeCleared": true,
+    "clearTime": 2.6
+  }
+}

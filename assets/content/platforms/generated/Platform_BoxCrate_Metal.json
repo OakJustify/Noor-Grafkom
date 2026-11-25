@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Platform_BoxCrate_Metal",
+  "category": "BoxCrate",
+  "variant": "Metal",
+  "tag": "Platform",
+  "layer": {
+    "name": "Standable",
+    "index": 7
+  },
+  "collider": {
+    "type": "BoxCollider2D",
+    "rect": [
+      0,
+      0.48,
+      0.6,
+      0.06
+    ],
+    "isTrigger": false
+  },
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.6,
+      0.54
+    ],
+    "standableSurface": [
+      0,
+      0.48,
+      0.6,
+      0.06
+    ],
+    "silhouette": "riveted steel case with a lid seam",
+    "palette": [
+      "#6e757b",
+      "#454b50"
+    ],
+    "details": [
+      "rivet row",
+      "lid seam"
+    ]
+  },
+  "platformData": {
+    "id": "PlatformData_BoxCrate_Metal",
+    "platformType": "BoxCrate",
+    "maxStandAngle": 45.0,
+    "isStable": true,
+    "creakSound": null
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Obstacle_WireTangle_ExtensionCords",
+  "category": "WireTangle",
+  "variant": "ExtensionCords",
+  "tag": "Obstacle",
+  "layer": {
+    "name": "Obstacle",
+    "index": 8
+  },
+  "colliders": [
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0,
+        0,
+        0.34,
+        0.1
+      ],
+      "isTrigger": false
+    },
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0.34,
+        0,
+        0.34,
+        0.14
+      ],
+      "isTrigger": false
+    },
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0.68,
+        0,
+        0.28,
+        0.1
+      ],
+      "isTrigger": false
+    }
+  ],
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.96,
+      0.14
+    ],
+    "silhouette": "long extension cord crossed over itself",
+    "palette": [
+      "#3b3f42",
+      "#6a6055"
+    ],
+    "details": [
+      "three crossings",
+      "flat plug"
+    ]
+  },
+  "obstacleData": {
+    "id": "ObstacleData_WireTangle_ExtensionCords",
+    "obstacleType": "WireTangle",
+    "trippingChance": 0.88,
+    "noiseLevel": 0.16,
+    "canBeCleared": true,
+    "clearTime": 1.1
+  }
+}

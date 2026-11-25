@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Platform_Appliance_Fridge",
+  "category": "Appliance",
+  "variant": "Fridge",
+  "tag": "Platform",
+  "layer": {
+    "name": "Standable",
+    "index": 7
+  },
+  "collider": {
+    "type": "BoxCollider2D",
+    "rect": [
+      0,
+      1.82,
+      0.76,
+      0.08
+    ],
+    "isTrigger": false
+  },
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.76,
+      1.9
+    ],
+    "standableSurface": [
+      0,
+      1.82,
+      0.76,
+      0.08
+    ],
+    "silhouette": "tall refrigerator with two doors",
+    "palette": [
+      "#c2c6c4",
+      "#7f8787"
+    ],
+    "details": [
+      "upper door",
+      "handle strip"
+    ]
+  },
+  "platformData": {
+    "id": "PlatformData_Appliance_Fridge",
+    "platformType": "Appliance",
+    "maxStandAngle": 45.0,
+    "isStable": true,
+    "creakSound": null
+  }
+}

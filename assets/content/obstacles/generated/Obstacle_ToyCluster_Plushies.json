@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Obstacle_ToyCluster_Plushies",
+  "category": "ToyCluster",
+  "variant": "Plushies",
+  "tag": "Obstacle",
+  "layer": {
+    "name": "Obstacle",
+    "index": 8
+  },
+  "colliders": [
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0,
+        0,
+        0.3,
+        0.4
+      ],
+      "isTrigger": false
+    },
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0.3,
+        0,
+        0.4,
+        0.48
+      ],
+      "isTrigger": false
+    }
+  ],
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.7,
+      0.48
+    ],
+    "silhouette": "soft toys collapsed into a pile",
+    "palette": [
+      "#a8798c",
+      "#6d5262"
+    ],
+    "details": [
+      "button eyes",
+      "limp limbs"
+    ]
+  },
+  "obstacleData": {
+    "id": "ObstacleData_ToyCluster_Plushies",
+    "obstacleType": "ToyCluster",
+    "trippingChance": 0.58,
+    "noiseLevel": 0.56,
+    "canBeCleared": true,
+    "clearTime": 1.4
+  }
+}

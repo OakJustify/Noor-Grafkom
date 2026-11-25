@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Platform_MiscHousehold_Dresser",
+  "category": "MiscHousehold",
+  "variant": "Dresser",
+  "tag": "Platform",
+  "layer": {
+    "name": "Standable",
+    "index": 7
+  },
+  "collider": {
+    "type": "BoxCollider2D",
+    "rect": [
+      0,
+      1.02,
+      1.05,
+      0.08
+    ],
+    "isTrigger": false
+  },
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      1.05,
+      1.1
+    ],
+    "standableSurface": [
+      0,
+      1.02,
+      1.05,
+      0.08
+    ],
+    "silhouette": "tall chest of four drawers",
+    "palette": [
+      "#876244",
+      "#553c29"
+    ],
+    "details": [
+      "four drawers",
+      "carved pulls"
+    ]
+  },
+  "platformData": {
+    "id": "PlatformData_MiscHousehold_Dresser",
+    "platformType": "MiscHousehold",
+    "maxStandAngle": 45.0,
+    "isStable": true,
+    "creakSound": null
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Obstacle_RugEdge_Torn",
+  "category": "RugEdge",
+  "variant": "Torn",
+  "tag": "Obstacle",
+  "layer": {
+    "name": "Obstacle",
+    "index": 8
+  },
+  "colliders": [
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0,
+        0,
+        0.4,
+        0.06
+      ],
+      "isTrigger": false
+    },
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0.4,
+        0,
+        0.32,
+        0.14
+      ],
+      "isTrigger": false
+    }
+  ],
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.72,
+      0.14
+    ],
+    "silhouette": "rug edge torn into uneven tabs",
+    "palette": [
+      "#877553",
+      "#574b36"
+    ],
+    "details": [
+      "uneven tabs",
+      "loose threads"
+    ]
+  },
+  "obstacleData": {
+    "id": "ObstacleData_RugEdge_Torn",
+    "obstacleType": "RugEdge",
+    "trippingChance": 0.68,
+    "noiseLevel": 0.1,
+    "canBeCleared": true,
+    "clearTime": 1.2
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Platform_Table_Dining",
+  "category": "Table",
+  "variant": "Dining",
+  "tag": "Platform",
+  "layer": {
+    "name": "Standable",
+    "index": 7
+  },
+  "collider": {
+    "type": "BoxCollider2D",
+    "rect": [
+      0,
+      0.7,
+      1.6,
+      0.08
+    ],
+    "isTrigger": false
+  },
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      1.6,
+      0.78
+    ],
+    "standableSurface": [
+      0,
+      0.7,
+      1.6,
+      0.08
+    ],
+    "silhouette": "long plank top on four turned legs",
+    "palette": [
+      "#8b5e3c",
+      "#5c3a22"
+    ],
+    "details": [
+      "plank seams",
+      "turned legs"
+    ]
+  },
+  "platformData": {
+    "id": "PlatformData_Table_Dining",
+    "platformType": "Table",
+    "maxStandAngle": 45.0,
+    "isStable": true,
+    "creakSound": null
+  }
+}

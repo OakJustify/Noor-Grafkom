@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Platform_Sofa_TwoSeater",
+  "category": "Sofa",
+  "variant": "TwoSeater",
+  "tag": "Platform",
+  "layer": {
+    "name": "Standable",
+    "index": 7
+  },
+  "collider": {
+    "type": "BoxCollider2D",
+    "rect": [
+      0,
+      0.42,
+      1.3,
+      0.1
+    ],
+    "isTrigger": false
+  },
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      1.3,
+      0.86
+    ],
+    "standableSurface": [
+      0,
+      0.42,
+      1.3,
+      0.1
+    ],
+    "silhouette": "two deep cushions with low arms",
+    "palette": [
+      "#6d5a66",
+      "#433842"
+    ],
+    "details": [
+      "two cushions",
+      "low arms"
+    ]
+  },
+  "platformData": {
+    "id": "PlatformData_Sofa_TwoSeater",
+    "platformType": "Sofa",
+    "maxStandAngle": 45.0,
+    "isStable": true,
+    "creakSound": null
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Platform_Shelf_Bookshelf",
+  "category": "Shelf",
+  "variant": "Bookshelf",
+  "tag": "Platform",
+  "layer": {
+    "name": "Standable",
+    "index": 7
+  },
+  "collider": {
+    "type": "BoxCollider2D",
+    "rect": [
+      0,
+      0.84,
+      0.92,
+      0.08
+    ],
+    "isTrigger": false
+  },
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.92,
+      1.8
+    ],
+    "standableSurface": [
+      0,
+      0.84,
+      0.92,
+      0.08
+    ],
+    "silhouette": "tall shelf with three loaded levels",
+    "palette": [
+      "#6a4a32",
+      "#43301f"
+    ],
+    "details": [
+      "three shelves",
+      "book rows"
+    ]
+  },
+  "platformData": {
+    "id": "PlatformData_Shelf_Bookshelf",
+    "platformType": "Shelf",
+    "maxStandAngle": 45.0,
+    "isStable": true,
+    "creakSound": null
+  }
+}

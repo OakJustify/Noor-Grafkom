@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Platform_Cabinet_Kitchen",
+  "category": "Cabinet",
+  "variant": "Kitchen",
+  "tag": "Platform",
+  "layer": {
+    "name": "Standable",
+    "index": 7
+  },
+  "collider": {
+    "type": "BoxCollider2D",
+    "rect": [
+      0,
+      0.82,
+      1.0,
+      0.08
+    ],
+    "isTrigger": false
+  },
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      1.0,
+      0.9
+    ],
+    "standableSurface": [
+      0,
+      0.82,
+      1.0,
+      0.08
+    ],
+    "silhouette": "double-door base with a counter lip",
+    "palette": [
+      "#a9a394",
+      "#6f6a5e"
+    ],
+    "details": [
+      "two doors",
+      "counter lip"
+    ]
+  },
+  "platformData": {
+    "id": "PlatformData_Cabinet_Kitchen",
+    "platformType": "Cabinet",
+    "maxStandAngle": 45.0,
+    "isStable": true,
+    "creakSound": null
+  }
+}

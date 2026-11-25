@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Platform_Chair_Armchair",
+  "category": "Chair",
+  "variant": "Armchair",
+  "tag": "Platform",
+  "layer": {
+    "name": "Standable",
+    "index": 7
+  },
+  "collider": {
+    "type": "BoxCollider2D",
+    "rect": [
+      0,
+      0.44,
+      0.86,
+      0.08
+    ],
+    "isTrigger": false
+  },
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.86,
+      0.96
+    ],
+    "standableSurface": [
+      0,
+      0.44,
+      0.86,
+      0.08
+    ],
+    "silhouette": "upholstered seat between low arms",
+    "palette": [
+      "#6b4a54",
+      "#3d2b33"
+    ],
+    "details": [
+      "padded arms",
+      "button tufting"
+    ]
+  },
+  "platformData": {
+    "id": "PlatformData_Chair_Armchair",
+    "platformType": "Chair",
+    "maxStandAngle": 45.0,
+    "isStable": true,
+    "creakSound": null
+  }
+}

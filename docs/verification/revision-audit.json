@@ -1,0 +1,22 @@
+{
+  "source_matched_reports": {
+    "campaign-sprint.json": true,
+    "campaign-walk.json": true,
+    "runtime.json": true,
+    "smoke.json": true,
+    "captures/captures.json": true
+  },
+  "removed_paths": [
+    "echo_game",
+    "tests_echo",
+    "requirements-echo.txt",
+    "assets/echo",
+    "assets/block",
+    "assets/obstacle",
+    "assets/player",
+    "nur_game/companions.py"
+  ],
+  "player_save_preserved": true,
+  "tests": "228 passed (tests_v4 + tests_nur)",
+  "v3_directory_present": true
+}

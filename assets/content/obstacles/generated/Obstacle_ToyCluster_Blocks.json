@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Obstacle_ToyCluster_Blocks",
+  "category": "ToyCluster",
+  "variant": "Blocks",
+  "tag": "Obstacle",
+  "layer": {
+    "name": "Obstacle",
+    "index": 8
+  },
+  "colliders": [
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0,
+        0,
+        0.2,
+        0.2
+      ],
+      "isTrigger": false
+    },
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0.2,
+        0,
+        0.22,
+        0.36
+      ],
+      "isTrigger": false
+    },
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0.42,
+        0,
+        0.2,
+        0.28
+      ],
+      "isTrigger": false
+    }
+  ],
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.62,
+      0.36
+    ],
+    "silhouette": "three painted wooden blocks toppled together",
+    "palette": [
+      "#c2684f",
+      "#4c7a91"
+    ],
+    "details": [
+      "letter faces",
+      "uneven stack"
+    ]
+  },
+  "obstacleData": {
+    "id": "ObstacleData_ToyCluster_Blocks",
+    "obstacleType": "ToyCluster",
+    "trippingChance": 0.62,
+    "noiseLevel": 0.72,
+    "canBeCleared": true,
+    "clearTime": 1.8
+  }
+}

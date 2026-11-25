@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Obstacle_WireTangle_ChargerCables",
+  "category": "WireTangle",
+  "variant": "ChargerCables",
+  "tag": "Obstacle",
+  "layer": {
+    "name": "Obstacle",
+    "index": 8
+  },
+  "colliders": [
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0,
+        0,
+        0.22,
+        0.08
+      ],
+      "isTrigger": false
+    },
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0.22,
+        0,
+        0.3,
+        0.12
+      ],
+      "isTrigger": false
+    }
+  ],
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.52,
+      0.12
+    ],
+    "silhouette": "thin black charging leads looped twice",
+    "palette": [
+      "#2f3336",
+      "#4a4f52"
+    ],
+    "details": [
+      "coiled loop",
+      "small plug"
+    ]
+  },
+  "obstacleData": {
+    "id": "ObstacleData_WireTangle_ChargerCables",
+    "obstacleType": "WireTangle",
+    "trippingChance": 0.92,
+    "noiseLevel": 0.12,
+    "canBeCleared": true,
+    "clearTime": 0.9
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Obstacle_Threshold_Step",
+  "category": "Threshold",
+  "variant": "Step",
+  "tag": "Obstacle",
+  "layer": {
+    "name": "Obstacle",
+    "index": 8
+  },
+  "colliders": [
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0,
+        0,
+        0.74,
+        0.22
+      ],
+      "isTrigger": false
+    }
+  ],
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.74,
+      0.22
+    ],
+    "silhouette": "single raised stone step",
+    "palette": [
+      "#928a7c",
+      "#5d574d"
+    ],
+    "details": [
+      "chipped nose",
+      "mortar seam"
+    ]
+  },
+  "obstacleData": {
+    "id": "ObstacleData_Threshold_Step",
+    "obstacleType": "Threshold",
+    "trippingChance": 0.64,
+    "noiseLevel": 0.34,
+    "canBeCleared": false,
+    "clearTime": 0.0
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Obstacle_DecorItem_Lamp",
+  "category": "DecorItem",
+  "variant": "Lamp",
+  "tag": "Obstacle",
+  "layer": {
+    "name": "Obstacle",
+    "index": 8
+  },
+  "colliders": [
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0.14,
+        0,
+        0.1,
+        0.5
+      ],
+      "isTrigger": false
+    },
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0,
+        0.5,
+        0.38,
+        0.22
+      ],
+      "isTrigger": false
+    }
+  ],
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.38,
+      0.72
+    ],
+    "silhouette": "table lamp with a wide shade",
+    "palette": [
+      "#c0a878",
+      "#7a6a4c"
+    ],
+    "details": [
+      "wide shade",
+      "weighted base"
+    ]
+  },
+  "obstacleData": {
+    "id": "ObstacleData_DecorItem_Lamp",
+    "obstacleType": "DecorItem",
+    "trippingChance": 0.42,
+    "noiseLevel": 0.56,
+    "canBeCleared": true,
+    "clearTime": 1.8
+  }
+}

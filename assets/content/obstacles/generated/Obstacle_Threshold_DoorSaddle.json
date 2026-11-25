@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Obstacle_Threshold_DoorSaddle",
+  "category": "Threshold",
+  "variant": "DoorSaddle",
+  "tag": "Obstacle",
+  "layer": {
+    "name": "Obstacle",
+    "index": 8
+  },
+  "colliders": [
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0,
+        0,
+        0.9,
+        0.1
+      ],
+      "isTrigger": false
+    }
+  ],
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.9,
+      0.1
+    ],
+    "silhouette": "worn metal door saddle",
+    "palette": [
+      "#777d80",
+      "#494e50"
+    ],
+    "details": [
+      "bevelled top",
+      "screw heads"
+    ]
+  },
+  "obstacleData": {
+    "id": "ObstacleData_Threshold_DoorSaddle",
+    "obstacleType": "Threshold",
+    "trippingChance": 0.56,
+    "noiseLevel": 0.3,
+    "canBeCleared": false,
+    "clearTime": 0.0
+  }
+}

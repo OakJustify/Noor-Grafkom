@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Platform_MiscHousehold_TVStand",
+  "category": "MiscHousehold",
+  "variant": "TVStand",
+  "tag": "Platform",
+  "layer": {
+    "name": "Standable",
+    "index": 7
+  },
+  "collider": {
+    "type": "BoxCollider2D",
+    "rect": [
+      0,
+      0.42,
+      1.1,
+      0.06
+    ],
+    "isTrigger": false
+  },
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      1.1,
+      0.48
+    ],
+    "standableSurface": [
+      0,
+      0.42,
+      1.1,
+      0.06
+    ],
+    "silhouette": "low media console with an open shelf",
+    "palette": [
+      "#5c4a3c",
+      "#382d24"
+    ],
+    "details": [
+      "open shelf",
+      "cable holes"
+    ]
+  },
+  "platformData": {
+    "id": "PlatformData_MiscHousehold_TVStand",
+    "platformType": "MiscHousehold",
+    "maxStandAngle": 45.0,
+    "isStable": true,
+    "creakSound": null
+  }
+}

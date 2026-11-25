@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Obstacle_FurnitureLeg_Bed",
+  "category": "FurnitureLeg",
+  "variant": "Bed",
+  "tag": "Obstacle",
+  "layer": {
+    "name": "Obstacle",
+    "index": 8
+  },
+  "colliders": [
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0,
+        0,
+        0.14,
+        0.44
+      ],
+      "isTrigger": false
+    },
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0.14,
+        0,
+        0.22,
+        0.1
+      ],
+      "isTrigger": false
+    }
+  ],
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.36,
+      0.44
+    ],
+    "silhouette": "short bedpost beside a low rail",
+    "palette": [
+      "#6b5744",
+      "#40352a"
+    ],
+    "details": [
+      "blocky post",
+      "low rail"
+    ]
+  },
+  "obstacleData": {
+    "id": "ObstacleData_FurnitureLeg_Bed",
+    "obstacleType": "FurnitureLeg",
+    "trippingChance": 0.74,
+    "noiseLevel": 0.46,
+    "canBeCleared": false,
+    "clearTime": 0.0
+  }
+}

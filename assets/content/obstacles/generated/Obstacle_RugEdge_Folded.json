@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Obstacle_RugEdge_Folded",
+  "category": "RugEdge",
+  "variant": "Folded",
+  "tag": "Obstacle",
+  "layer": {
+    "name": "Obstacle",
+    "index": 8
+  },
+  "colliders": [
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0,
+        0,
+        0.32,
+        0.08
+      ],
+      "isTrigger": false
+    },
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0.32,
+        0,
+        0.28,
+        0.2
+      ],
+      "isTrigger": false
+    }
+  ],
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.6,
+      0.2
+    ],
+    "silhouette": "rug folded back on itself",
+    "palette": [
+      "#5c7384",
+      "#3a4b57"
+    ],
+    "details": [
+      "fold ridge",
+      "frayed edge"
+    ]
+  },
+  "obstacleData": {
+    "id": "ObstacleData_RugEdge_Folded",
+    "obstacleType": "RugEdge",
+    "trippingChance": 0.72,
+    "noiseLevel": 0.14,
+    "canBeCleared": true,
+    "clearTime": 1.0
+  }
+}

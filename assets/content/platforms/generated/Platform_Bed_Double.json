@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Platform_Bed_Double",
+  "category": "Bed",
+  "variant": "Double",
+  "tag": "Platform",
+  "layer": {
+    "name": "Standable",
+    "index": 7
+  },
+  "collider": {
+    "type": "BoxCollider2D",
+    "rect": [
+      0,
+      0.48,
+      1.6,
+      0.08
+    ],
+    "isTrigger": false
+  },
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      1.6,
+      0.56
+    ],
+    "standableSurface": [
+      0,
+      0.48,
+      1.6,
+      0.08
+    ],
+    "silhouette": "wide mattress with two pillows",
+    "palette": [
+      "#a7a093",
+      "#6d675c"
+    ],
+    "details": [
+      "two pillows",
+      "wide frame"
+    ]
+  },
+  "platformData": {
+    "id": "PlatformData_Bed_Double",
+    "platformType": "Bed",
+    "maxStandAngle": 45.0,
+    "isStable": true,
+    "creakSound": null
+  }
+}

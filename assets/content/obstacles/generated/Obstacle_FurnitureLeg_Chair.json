@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Obstacle_FurnitureLeg_Chair",
+  "category": "FurnitureLeg",
+  "variant": "Chair",
+  "tag": "Obstacle",
+  "layer": {
+    "name": "Obstacle",
+    "index": 8
+  },
+  "colliders": [
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0,
+        0,
+        0.1,
+        0.56
+      ],
+      "isTrigger": false
+    },
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0.1,
+        0,
+        0.14,
+        0.1
+      ],
+      "isTrigger": false
+    }
+  ],
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.24,
+      0.56
+    ],
+    "silhouette": "tapered chair leg with a rung remnant",
+    "palette": [
+      "#896948",
+      "#55402b"
+    ],
+    "details": [
+      "tapered profile",
+      "rung remnant"
+    ]
+  },
+  "obstacleData": {
+    "id": "ObstacleData_FurnitureLeg_Chair",
+    "obstacleType": "FurnitureLeg",
+    "trippingChance": 0.66,
+    "noiseLevel": 0.38,
+    "canBeCleared": false,
+    "clearTime": 0.0
+  }
+}

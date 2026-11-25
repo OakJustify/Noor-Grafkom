@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Platform_BoxCrate_Wooden",
+  "category": "BoxCrate",
+  "variant": "Wooden",
+  "tag": "Platform",
+  "layer": {
+    "name": "Standable",
+    "index": 7
+  },
+  "collider": {
+    "type": "BoxCollider2D",
+    "rect": [
+      0,
+      0.52,
+      0.7,
+      0.06
+    ],
+    "isTrigger": false
+  },
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.7,
+      0.58
+    ],
+    "standableSurface": [
+      0,
+      0.52,
+      0.7,
+      0.06
+    ],
+    "silhouette": "slatted wood crate with iron corners",
+    "palette": [
+      "#9c7043",
+      "#654729"
+    ],
+    "details": [
+      "slat gaps",
+      "iron corners"
+    ]
+  },
+  "platformData": {
+    "id": "PlatformData_BoxCrate_Wooden",
+    "platformType": "BoxCrate",
+    "maxStandAngle": 45.0,
+    "isStable": true,
+    "creakSound": null
+  }
+}

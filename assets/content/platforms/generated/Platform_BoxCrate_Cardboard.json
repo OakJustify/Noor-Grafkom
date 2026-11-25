@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Platform_BoxCrate_Cardboard",
+  "category": "BoxCrate",
+  "variant": "Cardboard",
+  "tag": "Platform",
+  "layer": {
+    "name": "Standable",
+    "index": 7
+  },
+  "collider": {
+    "type": "BoxCollider2D",
+    "rect": [
+      0,
+      0.44,
+      0.62,
+      0.06
+    ],
+    "isTrigger": false
+  },
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.62,
+      0.5
+    ],
+    "standableSurface": [
+      0,
+      0.44,
+      0.62,
+      0.06
+    ],
+    "silhouette": "taped corrugated shipping box",
+    "palette": [
+      "#b08a5e",
+      "#8a6b45"
+    ],
+    "details": [
+      "packing tape",
+      "folded flaps"
+    ]
+  },
+  "platformData": {
+    "id": "PlatformData_BoxCrate_Cardboard",
+    "platformType": "BoxCrate",
+    "maxStandAngle": 45.0,
+    "isStable": true,
+    "creakSound": null
+  }
+}

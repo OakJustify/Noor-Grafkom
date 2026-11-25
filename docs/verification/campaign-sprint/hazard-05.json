@@ -1,0 +1,165 @@
+{
+  "kind": "Actual-input route frame",
+  "machine": "PENDULUM",
+  "simulation": {
+    "version": 4,
+    "state": "playing",
+    "region": 5,
+    "region_name": "KEBUN AMBANG",
+    "world_width": 112360,
+    "transitions": 4,
+    "camera": 12997.93,
+    "lantern": {
+      "capacity": 0.965,
+      "charge": 0.9455,
+      "collections": 1,
+      "deaths": 0,
+      "carried": true,
+      "band": 0,
+      "focus": false,
+      "refuges_used": [
+        "refuge:0",
+        "refuge:1",
+        "refuge:2",
+        "refuge:3",
+        "refuge:4"
+      ],
+      "recoveries": 0,
+      "radius": 443.18
+    },
+    "stamina": {
+      "amount": 0.388667,
+      "recovery_delay": 0.0,
+      "exhausted": false
+    },
+    "physics": {
+      "chapter": 5,
+      "time": 94.117,
+      "player": [
+        13426.58,
+        435.15
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            470.99,
+            431.04
+          ],
+          "angle": 0.0002
+        },
+        {
+          "position": [
+            5707.71,
+            429.11
+          ],
+          "angle": 0.0013
+        }
+      ],
+      "sprinting": false,
+      "stamina": {
+        "amount": 0.388667,
+        "recovery_delay": 0.0,
+        "exhausted": false
+      },
+      "width": 112360,
+      "persistent_space": true,
+      "phase": 0,
+      "gliding": false,
+      "solved": 6,
+      "open_paths": [
+        2,
+        4
+      ],
+      "hazards": {
+        "count": 28,
+        "kinds": [
+          "PRESSER",
+          "SPIKES",
+          "STEAM",
+          "FALLING BEAM",
+          "PENDULUM"
+        ],
+        "deaths": 0,
+        "last_hit": null,
+        "trips": 1
+      }
+    },
+    "refuges": {
+      "visited": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "threads": [],
+      "delivered": []
+    },
+    "threats": {
+      "active": 2,
+      "kinds": [
+        "PELANGKAH",
+        "PENYAPU"
+      ],
+      "warnings": 0,
+      "attacks": 0,
+      "unlocked": [
+        "PELANGKAH",
+        "PENYAPU"
+      ],
+      "elapsed": 94.158,
+      "population": 232
+    },
+    "quest": {
+      "schema": "hallucination-v1",
+      "stage": 6,
+      "values": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "inspected": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "phase": 0
+    },
+    "player_animation": {
+      "pose": "walk",
+      "frame": 2
+    },
+    "play_seconds": 94.158,
+    "journal_entries": 12,
+    "audio_targets": [
+      0.18909258333335519,
+      0.013088899999973798,
+      0.0
+    ],
+    "boss": null
+  }
+}

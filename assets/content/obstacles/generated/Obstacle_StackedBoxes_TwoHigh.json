@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Obstacle_StackedBoxes_TwoHigh",
+  "category": "StackedBoxes",
+  "variant": "TwoHigh",
+  "tag": "Obstacle",
+  "layer": {
+    "name": "Obstacle",
+    "index": 8
+  },
+  "colliders": [
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0,
+        0,
+        0.5,
+        0.3
+      ],
+      "isTrigger": false
+    },
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0,
+        0.3,
+        0.5,
+        0.3
+      ],
+      "isTrigger": false
+    }
+  ],
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.5,
+      0.6
+    ],
+    "silhouette": "two identical cartons stacked square",
+    "palette": [
+      "#a58259",
+      "#775b3d"
+    ],
+    "details": [
+      "flush stack",
+      "tape line"
+    ]
+  },
+  "obstacleData": {
+    "id": "ObstacleData_StackedBoxes_TwoHigh",
+    "obstacleType": "StackedBoxes",
+    "trippingChance": 0.66,
+    "noiseLevel": 0.52,
+    "canBeCleared": true,
+    "clearTime": 2.0
+  }
+}

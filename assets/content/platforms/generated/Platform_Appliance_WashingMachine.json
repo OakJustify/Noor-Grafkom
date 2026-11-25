@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Platform_Appliance_WashingMachine",
+  "category": "Appliance",
+  "variant": "WashingMachine",
+  "tag": "Platform",
+  "layer": {
+    "name": "Standable",
+    "index": 7
+  },
+  "collider": {
+    "type": "BoxCollider2D",
+    "rect": [
+      0,
+      0.78,
+      0.64,
+      0.08
+    ],
+    "isTrigger": false
+  },
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.64,
+      0.86
+    ],
+    "standableSurface": [
+      0,
+      0.78,
+      0.64,
+      0.08
+    ],
+    "silhouette": "front-loading drum with a round door",
+    "palette": [
+      "#b9bcc0",
+      "#737a80"
+    ],
+    "details": [
+      "round door",
+      "control dial"
+    ]
+  },
+  "platformData": {
+    "id": "PlatformData_Appliance_WashingMachine",
+    "platformType": "Appliance",
+    "maxStandAngle": 45.0,
+    "isStable": true,
+    "creakSound": null
+  }
+}

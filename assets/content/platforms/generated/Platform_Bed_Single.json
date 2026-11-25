@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Platform_Bed_Single",
+  "category": "Bed",
+  "variant": "Single",
+  "tag": "Platform",
+  "layer": {
+    "name": "Standable",
+    "index": 7
+  },
+  "collider": {
+    "type": "BoxCollider2D",
+    "rect": [
+      0,
+      0.44,
+      1.0,
+      0.08
+    ],
+    "isTrigger": false
+  },
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      1.0,
+      0.52
+    ],
+    "standableSurface": [
+      0,
+      0.44,
+      1.0,
+      0.08
+    ],
+    "silhouette": "narrow mattress on a low frame",
+    "palette": [
+      "#8e9a94",
+      "#5d6b66"
+    ],
+    "details": [
+      "narrow mattress",
+      "low frame"
+    ]
+  },
+  "platformData": {
+    "id": "PlatformData_Bed_Single",
+    "platformType": "Bed",
+    "maxStandAngle": 45.0,
+    "isStable": true,
+    "creakSound": null
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Obstacle_ClothPile_Towels",
+  "category": "ClothPile",
+  "variant": "Towels",
+  "tag": "Obstacle",
+  "layer": {
+    "name": "Obstacle",
+    "index": 8
+  },
+  "colliders": [
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0,
+        0,
+        0.26,
+        0.24
+      ],
+      "isTrigger": false
+    },
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0.26,
+        0,
+        0.3,
+        0.34
+      ],
+      "isTrigger": false
+    }
+  ],
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.56,
+      0.34
+    ],
+    "silhouette": "stack of towels with one hanging corner",
+    "palette": [
+      "#b6b0a0",
+      "#7d776b"
+    ],
+    "details": [
+      "terry stripes",
+      "hanging corner"
+    ]
+  },
+  "obstacleData": {
+    "id": "ObstacleData_ClothPile_Towels",
+    "obstacleType": "ClothPile",
+    "trippingChance": 0.44,
+    "noiseLevel": 0.1,
+    "canBeCleared": true,
+    "clearTime": 1.6
+  }
+}

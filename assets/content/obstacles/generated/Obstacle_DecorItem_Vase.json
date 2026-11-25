@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Obstacle_DecorItem_Vase",
+  "category": "DecorItem",
+  "variant": "Vase",
+  "tag": "Obstacle",
+  "layer": {
+    "name": "Obstacle",
+    "index": 8
+  },
+  "colliders": [
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0.04,
+        0,
+        0.16,
+        0.34
+      ],
+      "isTrigger": false
+    },
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0,
+        0.34,
+        0.24,
+        0.12
+      ],
+      "isTrigger": false
+    }
+  ],
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.24,
+      0.46
+    ],
+    "silhouette": "tall narrow vase with a flared lip",
+    "palette": [
+      "#6a8f92",
+      "#3f5c60"
+    ],
+    "details": [
+      "flared lip",
+      "painted band"
+    ]
+  },
+  "obstacleData": {
+    "id": "ObstacleData_DecorItem_Vase",
+    "obstacleType": "DecorItem",
+    "trippingChance": 0.46,
+    "noiseLevel": 0.68,
+    "canBeCleared": true,
+    "clearTime": 1.6
+  }
+}

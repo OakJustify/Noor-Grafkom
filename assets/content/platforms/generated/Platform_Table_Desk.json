@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Platform_Table_Desk",
+  "category": "Table",
+  "variant": "Desk",
+  "tag": "Platform",
+  "layer": {
+    "name": "Standable",
+    "index": 7
+  },
+  "collider": {
+    "type": "BoxCollider2D",
+    "rect": [
+      0,
+      0.68,
+      1.4,
+      0.08
+    ],
+    "isTrigger": false
+  },
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      1.4,
+      0.76
+    ],
+    "standableSurface": [
+      0,
+      0.68,
+      1.4,
+      0.08
+    ],
+    "silhouette": "flat writing top between side panels",
+    "palette": [
+      "#6f5744",
+      "#3f3227"
+    ],
+    "details": [
+      "side panels",
+      "cable notch"
+    ]
+  },
+  "platformData": {
+    "id": "PlatformData_Table_Desk",
+    "platformType": "Table",
+    "maxStandAngle": 45.0,
+    "isStable": true,
+    "creakSound": null
+  }
+}

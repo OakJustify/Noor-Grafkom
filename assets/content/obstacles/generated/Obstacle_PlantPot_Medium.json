@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Obstacle_PlantPot_Medium",
+  "category": "PlantPot",
+  "variant": "Medium",
+  "tag": "Obstacle",
+  "layer": {
+    "name": "Obstacle",
+    "index": 8
+  },
+  "colliders": [
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0,
+        0,
+        0.4,
+        0.3
+      ],
+      "isTrigger": false
+    },
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0.06,
+        0.3,
+        0.28,
+        0.22
+      ],
+      "isTrigger": false
+    }
+  ],
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.4,
+      0.52
+    ],
+    "silhouette": "medium plastic planter with a saucer",
+    "palette": [
+      "#6d7f6a",
+      "#455245"
+    ],
+    "details": [
+      "wide saucer",
+      "moulded rim"
+    ]
+  },
+  "obstacleData": {
+    "id": "ObstacleData_PlantPot_Medium",
+    "obstacleType": "PlantPot",
+    "trippingChance": 0.58,
+    "noiseLevel": 0.66,
+    "canBeCleared": true,
+    "clearTime": 1.4
+  }
+}

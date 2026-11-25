@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Platform_Table_Side",
+  "category": "Table",
+  "variant": "Side",
+  "tag": "Platform",
+  "layer": {
+    "name": "Standable",
+    "index": 7
+  },
+  "collider": {
+    "type": "BoxCollider2D",
+    "rect": [
+      0,
+      0.55,
+      0.55,
+      0.07
+    ],
+    "isTrigger": false
+  },
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.55,
+      0.62
+    ],
+    "standableSurface": [
+      0,
+      0.55,
+      0.55,
+      0.07
+    ],
+    "silhouette": "narrow square top with one drawer",
+    "palette": [
+      "#9a6b43",
+      "#634024"
+    ],
+    "details": [
+      "single drawer",
+      "tapered legs"
+    ]
+  },
+  "platformData": {
+    "id": "PlatformData_Table_Side",
+    "platformType": "Table",
+    "maxStandAngle": 45.0,
+    "isStable": true,
+    "creakSound": null
+  }
+}

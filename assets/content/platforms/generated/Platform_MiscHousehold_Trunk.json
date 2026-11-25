@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Platform_MiscHousehold_Trunk",
+  "category": "MiscHousehold",
+  "variant": "Trunk",
+  "tag": "Platform",
+  "layer": {
+    "name": "Standable",
+    "index": 7
+  },
+  "collider": {
+    "type": "BoxCollider2D",
+    "rect": [
+      0,
+      0.46,
+      0.92,
+      0.06
+    ],
+    "isTrigger": false
+  },
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.92,
+      0.52
+    ],
+    "standableSurface": [
+      0,
+      0.46,
+      0.92,
+      0.06
+    ],
+    "silhouette": "domed travelling trunk with straps",
+    "palette": [
+      "#745337",
+      "#472f1e"
+    ],
+    "details": [
+      "domed lid",
+      "leather straps"
+    ]
+  },
+  "platformData": {
+    "id": "PlatformData_MiscHousehold_Trunk",
+    "platformType": "MiscHousehold",
+    "maxStandAngle": 45.0,
+    "isStable": true,
+    "creakSound": null
+  }
+}

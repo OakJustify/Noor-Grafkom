@@ -1,0 +1,32 @@
+{
+  "kind": "staged v4 artwork preview; not traversal evidence",
+  "samples": [
+    {
+      "room": 1,
+      "charge": 1.0,
+      "camera": 0
+    },
+    {
+      "room": 2,
+      "charge": 0.72,
+      "camera": 2770
+    },
+    {
+      "room": 3,
+      "charge": 0.48,
+      "camera": 5190
+    },
+    {
+      "room": 4,
+      "charge": 0.23,
+      "camera": 7580
+    },
+    {
+      "room": 29,
+      "charge": 0.0,
+      "camera": 111360
+    }
+  ],
+  "warmed_home_draw_ms": 9.43,
+  "timing_scope": "headless rendering only; excludes window, input and simulation"
+}

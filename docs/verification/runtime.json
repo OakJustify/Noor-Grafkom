@@ -1,0 +1,128 @@
+{
+  "kind": "Headless debug-spawn timing fixtures; offline sound-bed mixes (music/foley not included)",
+  "platform": "Linux-7.3.5-2-cachyos-x86_64-with-glibc2.44",
+  "python": "3.14.9",
+  "pygame": "2.5.8",
+  "resolution": [
+    960,
+    540
+  ],
+  "renderer": [
+    {
+      "region": 1,
+      "band": "bright",
+      "first_draw_ms": 92.43,
+      "cached_update_draw_p50_ms": 8.293,
+      "cached_update_draw_p95_ms": 18.539
+    },
+    {
+      "region": 1,
+      "band": "dim",
+      "first_draw_ms": 27.642,
+      "cached_update_draw_p50_ms": 13.445,
+      "cached_update_draw_p95_ms": 19.186
+    },
+    {
+      "region": 11,
+      "band": "bright",
+      "first_draw_ms": 52.759,
+      "cached_update_draw_p50_ms": 9.433,
+      "cached_update_draw_p95_ms": 15.498
+    },
+    {
+      "region": 11,
+      "band": "dim",
+      "first_draw_ms": 9.754,
+      "cached_update_draw_p50_ms": 13.066,
+      "cached_update_draw_p95_ms": 17.667
+    },
+    {
+      "region": 17,
+      "band": "bright",
+      "first_draw_ms": 62.808,
+      "cached_update_draw_p50_ms": 9.462,
+      "cached_update_draw_p95_ms": 16.018
+    },
+    {
+      "region": 17,
+      "band": "dim",
+      "first_draw_ms": 15.396,
+      "cached_update_draw_p50_ms": 12.079,
+      "cached_update_draw_p95_ms": 16.932
+    },
+    {
+      "region": 29,
+      "band": "bright",
+      "first_draw_ms": 49.16,
+      "cached_update_draw_p50_ms": 7.595,
+      "cached_update_draw_p95_ms": 9.493
+    },
+    {
+      "region": 29,
+      "band": "dim",
+      "first_draw_ms": 10.461,
+      "cached_update_draw_p50_ms": 10.655,
+      "cached_update_draw_p95_ms": 17.615
+    }
+  ],
+  "unwanted_game_paths": [],
+  "audio_excerpts": [
+    {
+      "file": "sound-bed-bright.wav",
+      "charge": 1,
+      "gains": [
+        0.2,
+        0.0,
+        0.0
+      ],
+      "peak": 771
+    },
+    {
+      "file": "sound-bed-dim.wav",
+      "charge": 0.12,
+      "gains": [
+        0.024,
+        0.2112,
+        0.18333333333333335
+      ],
+      "peak": 2369
+    }
+  ],
+  "sources": {
+    "__init__.py": "67514fa792ccf7f7",
+    "__main__.py": "9a2fbaad1426e8ed",
+    "art.py": "add812597e3123df",
+    "audio.py": "7ba374faa2eff218",
+    "baseline_game.py": "3021a55e005caf4d",
+    "boss.py": "8337ccae9aceacb9",
+    "config.py": "600a50aaa239309e",
+    "continuum.py": "3a11f685dc52cf87",
+    "encounters.py": "1a2d187c8b4bbdaf",
+    "engine.py": "d9cecdd1bc0be529",
+    "environments.py": "6004f404e5ab5ab3",
+    "foley.py": "1447f6883d5112ec",
+    "game.py": "cfc97d57acfe1d3d",
+    "generate_assets.py": "1c0f70b6bb2fb9dd",
+    "generate_wisp.py": "500a10b22e03fc09",
+    "geometry.py": "b52f8756ad68b1b9",
+    "hallucinations.py": "14213e83a8dc1ae4",
+    "hazards.py": "a47f8239fdb5dbe1",
+    "illustration.py": "827b56076689659f",
+    "journey.py": "2bcfce12765af8a7",
+    "levels.py": "2a99fc0d405cd3e7",
+    "light.py": "b50a9ec220085c8d",
+    "materials.py": "5703d3e32ee193ac",
+    "music.py": "1e31735bac727f17",
+    "physics.py": "f983901b1d9f3ea4",
+    "procedural.py": "d7ccdadc91449baa",
+    "quests.py": "a9a6429d051bae7e",
+    "refuges.py": "0fa819ede9e68ef9",
+    "scenery.py": "0062a141d3a77655",
+    "soundscape.py": "deb4025bf7d5aa06",
+    "state.py": "cfa7b4251b13a1dc",
+    "story.py": "12476b868ea8e3b3",
+    "threats.py": "6542b8805d07300e",
+    "vistas.py": "878d76c26f638d30",
+    "wisp.py": "4f9df263454f3ee0"
+  }
+}

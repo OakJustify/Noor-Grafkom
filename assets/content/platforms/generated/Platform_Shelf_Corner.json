@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Platform_Shelf_Corner",
+  "category": "Shelf",
+  "variant": "Corner",
+  "tag": "Platform",
+  "layer": {
+    "name": "Standable",
+    "index": 7
+  },
+  "collider": {
+    "type": "BoxCollider2D",
+    "rect": [
+      0,
+      1.12,
+      0.68,
+      0.08
+    ],
+    "isTrigger": false
+  },
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.68,
+      1.2
+    ],
+    "standableSurface": [
+      0,
+      1.12,
+      0.68,
+      0.08
+    ],
+    "silhouette": "triangular two-sided corner unit",
+    "palette": [
+      "#76543b",
+      "#4a3425"
+    ],
+    "details": [
+      "diagonal back",
+      "two faces"
+    ]
+  },
+  "platformData": {
+    "id": "PlatformData_Shelf_Corner",
+    "platformType": "Shelf",
+    "maxStandAngle": 45.0,
+    "isStable": true,
+    "creakSound": null
+  }
+}

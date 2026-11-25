@@ -1,0 +1,36 @@
+# Puzzle catalog index
+
+26 puzzles. Generated from `puzzle_catalog.json` by `scripts/generate_content.py`; edit the table in that script and regenerate rather than editing this file by hand.
+
+Every `requiredComponents` name is from the F4 component framework (Task F4 of `TASK_SPLIT_SPEC.md`); `GateLock` is the gate-facing lock named in the same spec. All puzzles are designed to be solvable in 60 seconds or less; a positive `timeLimit` is the authoring budget in seconds and never exceeds 60.
+
+Puzzle-specific prefab dependencies (`*_Gate`, `*_Pedestal`, etc.) are F4-owned forward references. Dependencies prefixed `Platform_` or `Obstacle_` resolve to this repository's generated libraries.
+
+| ID | Name | Category | Diff | Components | Prefabs | Variant params | Unlock | Failure |
+|---|---|---|---|---|---|---|---|---|
+| puzzle_001 | Lantern Color Match | ColorLogic | 1 | `ColorCycler`, `SigilDetector`, `GateLock` | `Sigil_Gate`, `ColorPedestal` | colorCount=3, sequenceLength=1, timeLimit=0 | All sigils match the lantern colour at once | Sigils reset; minor sanity drain |
+| puzzle_021 | Three-Lantern Sort | ColorLogic | 2 | `ColorCycler`, `PressurePlate`, `GateLock` | `ColorPedestal`, `Plate_Pair` | colorCount=3, plateCount=3, timeLimit=45 | Each colour rests on its matching plate | Plates clear and lanterns return to neutral |
+| puzzle_002 | Echo Sigil Sequence | SequenceMemory | 2 | `SequenceMemory`, `GateLock` | `Sigil_Gate`, `Echo_Recorder` | sequenceLength=4, repeatCount=1, timeLimit=30 | Target sequence replayed without an error | Sequence reshuffles; one sanity drain |
+| puzzle_016 | Tile Step Pattern | SequenceMemory | 3 | `PatternMatch`, `GateLock` | `Plate_Pair`, `Sigil_Gate` | tileCount=6, sequenceLength=4, timeLimit=40 | All tiles light up in the target order | Tiles dim and the pattern restarts |
+| puzzle_003 | Twin Plate Gate | PressurePlate | 1 | `PressurePlate`, `GateLock` | `Plate_Pair`, `Platform_BoxCrate_Wooden` | plateCount=2, holdSeconds=2, timeLimit=25 | Both plates stay down for two seconds | Plates release and the gate stays shut |
+| puzzle_015 | Counterweight Match | PressurePlate | 3 | `WeightBalance`, `GateLock` | `Counterweight_Scale`, `Obstacle_PlantPot_Large` | weightSteps=3, tolerance=0.1, timeLimit=50 | Scale balanced within tolerance for one second | Weights return to their starting slots |
+| puzzle_017 | Ghost Plate Holder | PressurePlate | 4 | `TimeEcho`, `GateLock` | `Echo_Recorder`, `Plate_Pair` | echoSeconds=6, plateCount=2, timeLimit=60 | Echo holds the far plate while you hold the near one | Echo dissolves and both plates release |
+| puzzle_004 | Silhouette Lock | ShadowAlignment | 2 | `ShadowAligner`, `GateLock` | `Silhouette_Screen`, `Sigil_Gate` | silhouetteCount=1, tolerancePixels=6, timeLimit=35 | Shadow overlaps the drawn silhouette | Silhouette returns to its neutral outline |
+| puzzle_022 | Orbiting Shadow | ShadowAlignment | 4 | `ShadowAligner`, `TimingWindow`, `GateLock` | `Silhouette_Screen`, `Lantern_Altar` | silhouetteCount=2, swingPeriod=2.5, timeLimit=50 | Both shadows stay aligned through one full swing | Swing restarts from the centre |
+| puzzle_005 | Three Knocks | SoundTrigger | 1 | `SoundTrigger`, `GateLock` | `Rhythm_Pillar`, `Sigil_Gate` | cueCount=3, cueGap=0.8, timeLimit=20 | Three knocks are answered in order | Knocking pattern changes |
+| puzzle_019 | Melody Answer | SoundTrigger | 3 | `SoundMemory`, `GateLock` | `Rhythm_Pillar`, `Sigil_Gate` | noteCount=5, repeatCount=1, timeLimit=40 | Melody replayed note for note | Melody resets with a soft dissonance sting |
+| puzzle_006 | Beam Bender | MirrorReflection | 2 | `MirrorReflector`, `GateLock` | `Mirror_Pedestal`, `Beam_Emitter` | mirrorCount=2, targetCount=1, timeLimit=40 | Beam lands on the target receptor | Mirrors snap back to their neutral angles |
+| puzzle_014 | Prism Split | MirrorReflection | 4 | `MirrorReflector`, `LaserGrid`, `GateLock` | `Prism_Rail`, `Beam_Emitter`, `Sigil_Gate` | mirrorCount=3, targetCount=2, timeLimit=55 | Both receptors are lit without crossing a beam | Beams retract and prisms realign |
+| puzzle_007 | Glyph Key | SymbolDecoding | 2 | `SymbolDecoder`, `GateLock` | `Glyph_Alcove`, `Sigil_Gate` | glyphCount=4, sequenceLength=3, timeLimit=45 | Entered glyphs match the carved key | Glyphs scramble but the key stays visible |
+| puzzle_023 | Mirrored Glyph | SymbolDecoding | 4 | `SymbolDecoder`, `MirrorReflector`, `GateLock` | `Glyph_Alcove`, `Mirror_Pedestal` | glyphCount=3, sequenceLength=3, timeLimit=55 | Reflected glyphs are entered in the right order | Mirror darkens and the glyphs reset |
+| puzzle_008 | Pendulum Press | TimingWindow | 2 | `TimingWindow`, `GateLock` | `Rhythm_Pillar`, `Sigil_Gate` | windowSeconds=0.4, cueCount=3, timeLimit=30 | Three presses land inside successive windows | Pendulum resets its phase |
+| puzzle_024 | Two-Beat Lock | TimingWindow | 4 | `TimingWindow`, `SoundTrigger`, `GateLock` | `Rhythm_Pillar`, `Sigil_Gate` | windowSeconds=0.3, cueCount=4, timeLimit=50 | Both cues are answered on the same beat | Cue pair desynchronises and restarts |
+| puzzle_009 | Quarter Turn | SpatialReasoning | 3 | `RoomRotator`, `GateLock` | `Sigil_Gate`, `Platform_Shelf_Floating` | rotationSteps=4, timeLimit=45 | Room rotated until the exit aligns | Room returns to zero degrees |
+| puzzle_018 | False Perspective | SpatialReasoning | 4 | `PerspectiveShift`, `GateLock` | `Perspective_Rail`, `Platform_Shelf_Floating` | angleCount=3, timeLimit=50 | Shifted platforms form a continuous walkway | Camera snaps back to the default angle |
+| puzzle_010 | Fuel for Passage | ResourceTrade | 2 | `FuelTrade`, `GateLock` | `Lantern_Altar`, `Sigil_Gate` | fuelCost=0.25, refundOnFailure=True, timeLimit=25 | Fuel spent and the gate latch released | Fuel refunded and the latch drops back |
+| puzzle_025 | Two Candles | ResourceTrade | 4 | `FuelTrade`, `WeightBalance`, `GateLock` | `Fuel_Cache`, `Counterweight_Scale` | fuelCost=0.35, weightSteps=2, timeLimit=55 | Both counterweights filled from the reserve | Fuel refunded and the weights empty |
+| puzzle_011 | Rising Tide | Environmental | 2 | `WaterLevel`, `GateLock` | `Water_Valve`, `Platform_BoxCrate_Plastic` | waterLevels=3, timeLimit=45 | Float platform lifts to the alcove | Water drains back to the low mark |
+| puzzle_012 | Wind Lift | Environmental | 3 | `WindCurrent`, `GateLock` | `Wind_Fan`, `Obstacle_ClothPile_Laundry` | fanCount=2, gustSeconds=2, timeLimit=45 | Gust carries the cloth clear of the latch | Fans stop and the cloth settles back |
+| puzzle_020 | Thaw and Climb | Environmental | 5 | `EnvironmentalCombo`, `GateLock` | `Vine_Anchor`, `Platform_Shelf_Bookshelf` | chainLength=4, timeLimit=60 | Ice melts, water grows the vine, vine reaches the ledge | Ice reforms and the vine withers |
+| puzzle_013 | Hidden Embers | MemoryPalace | 2 | `MemoryPalace`, `GateLock` | `Memory_Niche`, `Sigil_Gate` | objectCount=4, revealSeconds=2, timeLimit=45 | All hidden embers touched after the reveal | Embers rehide in new slots |
+| puzzle_026 | Hidden Order | MemoryPalace | 4 | `MemoryPalace`, `SequenceMemory`, `GateLock` | `Memory_Niche`, `Echo_Recorder` | objectCount=5, sequenceLength=3, timeLimit=55 | Hidden objects touched in the revealed order | Order reshuffles and objects rehide |

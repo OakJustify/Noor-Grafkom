@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Platform_BoxCrate_Plastic",
+  "category": "BoxCrate",
+  "variant": "Plastic",
+  "tag": "Platform",
+  "layer": {
+    "name": "Standable",
+    "index": 7
+  },
+  "collider": {
+    "type": "BoxCollider2D",
+    "rect": [
+      0,
+      0.4,
+      0.56,
+      0.06
+    ],
+    "isTrigger": false
+  },
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.56,
+      0.46
+    ],
+    "standableSurface": [
+      0,
+      0.4,
+      0.56,
+      0.06
+    ],
+    "silhouette": "moulded tote with handle slots",
+    "palette": [
+      "#3f6d78",
+      "#27474f"
+    ],
+    "details": [
+      "handle slots",
+      "ribbed sides"
+    ]
+  },
+  "platformData": {
+    "id": "PlatformData_BoxCrate_Plastic",
+    "platformType": "BoxCrate",
+    "maxStandAngle": 45.0,
+    "isStable": true,
+    "creakSound": null
+  }
+}

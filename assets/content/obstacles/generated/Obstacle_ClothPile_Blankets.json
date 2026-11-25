@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Obstacle_ClothPile_Blankets",
+  "category": "ClothPile",
+  "variant": "Blankets",
+  "tag": "Obstacle",
+  "layer": {
+    "name": "Obstacle",
+    "index": 8
+  },
+  "colliders": [
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0,
+        0,
+        0.4,
+        0.18
+      ],
+      "isTrigger": false
+    },
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0.4,
+        0,
+        0.52,
+        0.26
+      ],
+      "isTrigger": false
+    }
+  ],
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.92,
+      0.26
+    ],
+    "silhouette": "two folded blankets slipped askew",
+    "palette": [
+      "#6c7484",
+      "#424958"
+    ],
+    "details": [
+      "woven fringe",
+      "rolled edge"
+    ]
+  },
+  "obstacleData": {
+    "id": "ObstacleData_ClothPile_Blankets",
+    "obstacleType": "ClothPile",
+    "trippingChance": 0.48,
+    "noiseLevel": 0.12,
+    "canBeCleared": true,
+    "clearTime": 2.4
+  }
+}

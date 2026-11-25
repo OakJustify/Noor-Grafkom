@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Platform_Table_Coffee",
+  "category": "Table",
+  "variant": "Coffee",
+  "tag": "Platform",
+  "layer": {
+    "name": "Standable",
+    "index": 7
+  },
+  "collider": {
+    "type": "BoxCollider2D",
+    "rect": [
+      0,
+      0.36,
+      1.1,
+      0.06
+    ],
+    "isTrigger": false
+  },
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      1.1,
+      0.42
+    ],
+    "standableSurface": [
+      0,
+      0.36,
+      1.1,
+      0.06
+    ],
+    "silhouette": "low oval top on stubby legs",
+    "palette": [
+      "#7a5230",
+      "#4d3520"
+    ],
+    "details": [
+      "oval top",
+      "stubby legs"
+    ]
+  },
+  "platformData": {
+    "id": "PlatformData_Table_Coffee",
+    "platformType": "Table",
+    "maxStandAngle": 45.0,
+    "isStable": true,
+    "creakSound": null
+  }
+}

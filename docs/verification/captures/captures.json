@@ -1,0 +1,1866 @@
+{
+  "kind": "Actual D, Shift, E, jump and F inputs from new-game spawn; intentional button death; no position/light/trap assignments",
+  "records": [
+    {
+      "file": "01-walk.png",
+      "simulation": {
+        "version": 4,
+        "state": "playing",
+        "region": 1,
+        "region_name": "RUMAH",
+        "world_width": 112360,
+        "transitions": 0,
+        "camera": 0.0,
+        "lantern": {
+          "capacity": 1.0,
+          "charge": 0.9995,
+          "collections": 0,
+          "deaths": 0,
+          "carried": true,
+          "band": 0,
+          "focus": false,
+          "refuges_used": [],
+          "recoveries": 0,
+          "radius": 464.78
+        },
+        "stamina": {
+          "amount": 1.0,
+          "recovery_delay": 0.0,
+          "exhausted": false
+        },
+        "physics": {
+          "chapter": 1,
+          "time": 0.833,
+          "player": [
+            277.56,
+            435.16
+          ],
+          "velocity": [
+            187.7,
+            0.0
+          ],
+          "grounded": true,
+          "gravity": 1,
+          "gravity_remaining": 0.0,
+          "water_surface": null,
+          "water_active": false,
+          "water_transferred_area": 0.0,
+          "cover_open": false,
+          "cover_fraction": 0.0,
+          "rope_distance": null,
+          "gate_open": false,
+          "gate_fraction": 0.0,
+          "grab_kind": "",
+          "dead": false,
+          "complete": false,
+          "crates": [
+            {
+              "position": [
+                470.0,
+                431.09
+              ],
+              "angle": 0.0002
+            },
+            {
+              "position": [
+                5210.0,
+                429.16
+              ],
+              "angle": 0.0
+            }
+          ],
+          "sprinting": false,
+          "stamina": {
+            "amount": 1.0,
+            "recovery_delay": 0.0,
+            "exhausted": false
+          },
+          "width": 112360,
+          "persistent_space": true,
+          "phase": 0,
+          "gliding": false,
+          "solved": 0,
+          "open_paths": [],
+          "hazards": {
+            "count": 28,
+            "kinds": [
+              "PRESSER",
+              "SPIKES",
+              "STEAM",
+              "FALLING BEAM",
+              "PENDULUM"
+            ],
+            "deaths": 0,
+            "last_hit": null,
+            "trips": 0
+          }
+        },
+        "refuges": {
+          "visited": [],
+          "threads": [],
+          "delivered": []
+        },
+        "threats": {
+          "active": 0,
+          "kinds": [],
+          "warnings": 0,
+          "attacks": 0,
+          "unlocked": [],
+          "elapsed": 0.833,
+          "population": 232
+        },
+        "quest": null,
+        "player_animation": {
+          "pose": "walk",
+          "frame": 7
+        },
+        "play_seconds": 0.833,
+        "journal_entries": 0,
+        "audio_targets": [
+          0.1998927500000004,
+          0.00012869999999952418,
+          0.0
+        ],
+        "boss": null
+      }
+    },
+    {
+      "file": "02-run.png",
+      "simulation": {
+        "version": 4,
+        "state": "playing",
+        "region": 1,
+        "region_name": "RUMAH",
+        "world_width": 112360,
+        "transitions": 0,
+        "camera": 0.0,
+        "lantern": {
+          "capacity": 1.0,
+          "charge": 0.9995,
+          "collections": 0,
+          "deaths": 0,
+          "carried": true,
+          "band": 0,
+          "focus": false,
+          "refuges_used": [],
+          "recoveries": 0,
+          "radius": 464.78
+        },
+        "stamina": {
+          "amount": 0.796333,
+          "recovery_delay": 0.9,
+          "exhausted": false
+        },
+        "physics": {
+          "chapter": 1,
+          "time": 0.833,
+          "player": [
+            358.96,
+            435.16
+          ],
+          "velocity": [
+            297.7,
+            0.0
+          ],
+          "grounded": true,
+          "gravity": 1,
+          "gravity_remaining": 0.0,
+          "water_surface": null,
+          "water_active": false,
+          "water_transferred_area": 0.0,
+          "cover_open": false,
+          "cover_fraction": 0.0,
+          "rope_distance": null,
+          "gate_open": false,
+          "gate_fraction": 0.0,
+          "grab_kind": "",
+          "dead": false,
+          "complete": false,
+          "crates": [
+            {
+              "position": [
+                470.0,
+                431.09
+              ],
+              "angle": 0.0002
+            },
+            {
+              "position": [
+                5210.0,
+                429.16
+              ],
+              "angle": 0.0
+            }
+          ],
+          "sprinting": true,
+          "stamina": {
+            "amount": 0.796333,
+            "recovery_delay": 0.9,
+            "exhausted": false
+          },
+          "width": 112360,
+          "persistent_space": true,
+          "phase": 0,
+          "gliding": false,
+          "solved": 0,
+          "open_paths": [],
+          "hazards": {
+            "count": 28,
+            "kinds": [
+              "PRESSER",
+              "SPIKES",
+              "STEAM",
+              "FALLING BEAM",
+              "PENDULUM"
+            ],
+            "deaths": 0,
+            "last_hit": null,
+            "trips": 0
+          }
+        },
+        "refuges": {
+          "visited": [],
+          "threads": [],
+          "delivered": []
+        },
+        "threats": {
+          "active": 0,
+          "kinds": [],
+          "warnings": 0,
+          "attacks": 0,
+          "unlocked": [],
+          "elapsed": 0.833,
+          "population": 232
+        },
+        "quest": null,
+        "player_animation": {
+          "pose": "run",
+          "frame": 4
+        },
+        "play_seconds": 0.833,
+        "journal_entries": 0,
+        "audio_targets": [
+          0.1998927500000004,
+          0.00012869999999952418,
+          0.0
+        ],
+        "boss": null
+      }
+    },
+    {
+      "file": "03-wick-station.png",
+      "simulation": {
+        "version": 4,
+        "state": "playing",
+        "region": 1,
+        "region_name": "RUMAH",
+        "world_width": 112360,
+        "transitions": 0,
+        "camera": 0,
+        "lantern": {
+          "capacity": 1.0,
+          "charge": 1.0,
+          "collections": 0,
+          "deaths": 0,
+          "carried": true,
+          "band": 0,
+          "focus": false,
+          "refuges_used": [
+            "refuge:0"
+          ],
+          "recoveries": 0,
+          "radius": 465.0
+        },
+        "stamina": {
+          "amount": 1.0,
+          "recovery_delay": 0,
+          "exhausted": false
+        },
+        "physics": {
+          "chapter": 1,
+          "time": 0.0,
+          "player": [
+            130.0,
+            430.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "grounded": false,
+          "gravity": 1,
+          "gravity_remaining": 0.0,
+          "water_surface": null,
+          "water_active": false,
+          "water_transferred_area": 0.0,
+          "cover_open": false,
+          "cover_fraction": 0.0,
+          "rope_distance": null,
+          "gate_open": false,
+          "gate_fraction": 0.0,
+          "grab_kind": "",
+          "dead": false,
+          "complete": false,
+          "crates": [
+            {
+              "position": [
+                470.0,
+                431.0
+              ],
+              "angle": 0.0
+            },
+            {
+              "position": [
+                5210.0,
+                431.0
+              ],
+              "angle": 0.0
+            }
+          ],
+          "sprinting": false,
+          "stamina": {
+            "amount": 1.0,
+            "recovery_delay": 0,
+            "exhausted": false
+          },
+          "width": 112360,
+          "persistent_space": true,
+          "phase": 0,
+          "gliding": false,
+          "solved": 0,
+          "open_paths": [],
+          "hazards": {
+            "count": 28,
+            "kinds": [
+              "PRESSER",
+              "SPIKES",
+              "STEAM",
+              "FALLING BEAM",
+              "PENDULUM"
+            ],
+            "deaths": 0,
+            "last_hit": null,
+            "trips": 0
+          }
+        },
+        "refuges": {
+          "visited": [
+            0
+          ],
+          "threads": [],
+          "delivered": []
+        },
+        "threats": {
+          "active": 0,
+          "kinds": [],
+          "warnings": 0,
+          "attacks": 0,
+          "unlocked": [],
+          "elapsed": 0,
+          "population": 232
+        },
+        "quest": null,
+        "player_animation": {
+          "pose": "idle",
+          "frame": 0
+        },
+        "play_seconds": 0.008,
+        "journal_entries": 1,
+        "audio_targets": [
+          0.2,
+          0.0,
+          0.0
+        ],
+        "boss": null
+      }
+    },
+    {
+      "file": "04-button-warning.png",
+      "simulation": {
+        "version": 4,
+        "state": "playing",
+        "region": 1,
+        "region_name": "RUMAH",
+        "world_width": 112360,
+        "transitions": 0,
+        "camera": 1597.23,
+        "lantern": {
+          "capacity": 0.975,
+          "charge": 0.9698,
+          "collections": 1,
+          "deaths": 0,
+          "carried": true,
+          "band": 0,
+          "focus": false,
+          "refuges_used": [
+            "refuge:0"
+          ],
+          "recoveries": 0,
+          "radius": 452.92
+        },
+        "stamina": {
+          "amount": 1.0,
+          "recovery_delay": 0.0,
+          "exhausted": false
+        },
+        "physics": {
+          "chapter": 1,
+          "time": 10.208,
+          "player": [
+            2046.35,
+            435.15
+          ],
+          "velocity": [
+            187.7,
+            0.0
+          ],
+          "grounded": true,
+          "gravity": 1,
+          "gravity_remaining": 0.0,
+          "water_surface": null,
+          "water_active": false,
+          "water_transferred_area": 0.0,
+          "cover_open": false,
+          "cover_fraction": 0.0,
+          "rope_distance": null,
+          "gate_open": false,
+          "gate_fraction": 0.0,
+          "grab_kind": "",
+          "dead": false,
+          "complete": false,
+          "crates": [
+            {
+              "position": [
+                470.98,
+                431.04
+              ],
+              "angle": 0.0002
+            },
+            {
+              "position": [
+                5210.0,
+                429.15
+              ],
+              "angle": 0.0
+            }
+          ],
+          "sprinting": false,
+          "stamina": {
+            "amount": 1.0,
+            "recovery_delay": 0.0,
+            "exhausted": false
+          },
+          "width": 112360,
+          "persistent_space": true,
+          "phase": 0,
+          "gliding": false,
+          "solved": 0,
+          "open_paths": [],
+          "hazards": {
+            "count": 28,
+            "kinds": [
+              "PRESSER",
+              "SPIKES",
+              "STEAM",
+              "FALLING BEAM",
+              "PENDULUM"
+            ],
+            "deaths": 0,
+            "last_hit": null,
+            "trips": 1
+          }
+        },
+        "refuges": {
+          "visited": [
+            0
+          ],
+          "threads": [],
+          "delivered": []
+        },
+        "threats": {
+          "active": 0,
+          "kinds": [],
+          "warnings": 0,
+          "attacks": 0,
+          "unlocked": [],
+          "elapsed": 10.217,
+          "population": 232
+        },
+        "quest": null,
+        "player_animation": {
+          "pose": "walk",
+          "frame": 4
+        },
+        "play_seconds": 10.217,
+        "journal_entries": 2,
+        "audio_targets": [
+          0.19395891666667053,
+          0.007249299999995387,
+          0.0
+        ],
+        "boss": null
+      }
+    },
+    {
+      "file": "05-presser-death.png",
+      "simulation": {
+        "version": 4,
+        "state": "playing",
+        "region": 1,
+        "region_name": "RUMAH",
+        "world_width": 112360,
+        "transitions": 0,
+        "camera": 1686.62,
+        "lantern": {
+          "capacity": 0.975,
+          "charge": 0.9694,
+          "collections": 1,
+          "deaths": 0,
+          "carried": true,
+          "band": 0,
+          "focus": false,
+          "refuges_used": [
+            "refuge:0"
+          ],
+          "recoveries": 0,
+          "radius": 452.76
+        },
+        "stamina": {
+          "amount": 1.0,
+          "recovery_delay": 0.0,
+          "exhausted": false
+        },
+        "physics": {
+          "chapter": 1,
+          "time": 10.8,
+          "player": [
+            2104.79,
+            435.15
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "grounded": true,
+          "gravity": 1,
+          "gravity_remaining": 0.0,
+          "water_surface": null,
+          "water_active": false,
+          "water_transferred_area": 0.0,
+          "cover_open": false,
+          "cover_fraction": 0.0,
+          "rope_distance": null,
+          "gate_open": false,
+          "gate_fraction": 0.0,
+          "grab_kind": "",
+          "dead": true,
+          "complete": false,
+          "crates": [
+            {
+              "position": [
+                470.98,
+                431.04
+              ],
+              "angle": 0.0002
+            },
+            {
+              "position": [
+                5210.0,
+                429.15
+              ],
+              "angle": 0.0
+            }
+          ],
+          "sprinting": false,
+          "stamina": {
+            "amount": 1.0,
+            "recovery_delay": 0.0,
+            "exhausted": false
+          },
+          "width": 112360,
+          "persistent_space": true,
+          "phase": 0,
+          "gliding": false,
+          "solved": 0,
+          "open_paths": [],
+          "hazards": {
+            "count": 28,
+            "kinds": [
+              "PRESSER",
+              "SPIKES",
+              "STEAM",
+              "FALLING BEAM",
+              "PENDULUM"
+            ],
+            "deaths": 1,
+            "last_hit": "PRESSER",
+            "trips": 1
+          }
+        },
+        "refuges": {
+          "visited": [
+            0
+          ],
+          "threads": [],
+          "delivered": []
+        },
+        "threats": {
+          "active": 0,
+          "kinds": [],
+          "warnings": 0,
+          "attacks": 0,
+          "unlocked": [],
+          "elapsed": 10.808,
+          "population": 232
+        },
+        "quest": null,
+        "player_animation": {
+          "pose": "idle",
+          "frame": 1
+        },
+        "play_seconds": 10.808,
+        "journal_entries": 2,
+        "audio_targets": [
+          0.19388200000000413,
+          0.007341599999995045,
+          0.0
+        ],
+        "boss": null
+      }
+    },
+    {
+      "file": "06-retry-same-world.png",
+      "simulation": {
+        "version": 4,
+        "state": "playing",
+        "region": 1,
+        "region_name": "RUMAH",
+        "world_width": 112360,
+        "transitions": 0,
+        "camera": 0.0,
+        "lantern": {
+          "capacity": 0.975,
+          "charge": 0.8886,
+          "collections": 1,
+          "deaths": 1,
+          "carried": true,
+          "band": 0,
+          "focus": false,
+          "refuges_used": [
+            "refuge:0"
+          ],
+          "recoveries": 0,
+          "radius": 420.44
+        },
+        "stamina": {
+          "amount": 1.0,
+          "recovery_delay": 0.0,
+          "exhausted": false
+        },
+        "physics": {
+          "chapter": 1,
+          "time": 11.0,
+          "player": [
+            155.0,
+            436.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "grounded": true,
+          "gravity": 1,
+          "gravity_remaining": 0.0,
+          "water_surface": null,
+          "water_active": false,
+          "water_transferred_area": 0.0,
+          "cover_open": false,
+          "cover_fraction": 0.0,
+          "rope_distance": null,
+          "gate_open": false,
+          "gate_fraction": 0.0,
+          "grab_kind": "",
+          "dead": false,
+          "complete": false,
+          "crates": [
+            {
+              "position": [
+                470.98,
+                431.04
+              ],
+              "angle": 0.0002
+            },
+            {
+              "position": [
+                5210.0,
+                429.15
+              ],
+              "angle": 0.0
+            }
+          ],
+          "sprinting": false,
+          "stamina": {
+            "amount": 1.0,
+            "recovery_delay": 0.0,
+            "exhausted": false
+          },
+          "width": 112360,
+          "persistent_space": true,
+          "phase": 0,
+          "gliding": false,
+          "solved": 0,
+          "open_paths": [],
+          "hazards": {
+            "count": 28,
+            "kinds": [
+              "PRESSER",
+              "SPIKES",
+              "STEAM",
+              "FALLING BEAM",
+              "PENDULUM"
+            ],
+            "deaths": 1,
+            "last_hit": "PRESSER",
+            "trips": 1
+          }
+        },
+        "refuges": {
+          "visited": [
+            0
+          ],
+          "threads": [],
+          "delivered": []
+        },
+        "threats": {
+          "active": 0,
+          "kinds": [],
+          "warnings": 0,
+          "attacks": 0,
+          "unlocked": [],
+          "elapsed": 12.058,
+          "population": 232
+        },
+        "quest": null,
+        "player_animation": {
+          "pose": "idle",
+          "frame": 1
+        },
+        "play_seconds": 12.058,
+        "journal_entries": 2,
+        "audio_targets": [
+          0.17771950000000475,
+          0.026736599999994313,
+          0.0
+        ],
+        "boss": null
+      }
+    },
+    {
+      "file": "13-ribbon-on-lookout.png",
+      "simulation": {
+        "version": 4,
+        "state": "playing",
+        "region": 1,
+        "region_name": "RUMAH",
+        "world_width": 112360,
+        "transitions": 0,
+        "camera": 1376.34,
+        "lantern": {
+          "capacity": 0.975,
+          "charge": 0.9704,
+          "collections": 1,
+          "deaths": 0,
+          "carried": true,
+          "band": 0,
+          "focus": false,
+          "refuges_used": [
+            "refuge:0"
+          ],
+          "recoveries": 0,
+          "radius": 453.17
+        },
+        "stamina": {
+          "amount": 0.861333,
+          "recovery_delay": 0.0,
+          "exhausted": false
+        },
+        "physics": {
+          "chapter": 1,
+          "time": 9.217,
+          "player": [
+            1824.49,
+            325.28
+          ],
+          "velocity": [
+            187.7,
+            0.0
+          ],
+          "grounded": true,
+          "gravity": 1,
+          "gravity_remaining": 0.0,
+          "water_surface": null,
+          "water_active": false,
+          "water_transferred_area": 0.0,
+          "cover_open": false,
+          "cover_fraction": 0.0,
+          "rope_distance": null,
+          "gate_open": false,
+          "gate_fraction": 0.0,
+          "grab_kind": "",
+          "dead": false,
+          "complete": false,
+          "crates": [
+            {
+              "position": [
+                470.98,
+                431.04
+              ],
+              "angle": 0.0002
+            },
+            {
+              "position": [
+                5210.0,
+                429.15
+              ],
+              "angle": 0.0
+            }
+          ],
+          "sprinting": false,
+          "stamina": {
+            "amount": 0.861333,
+            "recovery_delay": 0.0,
+            "exhausted": false
+          },
+          "width": 112360,
+          "persistent_space": true,
+          "phase": 0,
+          "gliding": false,
+          "solved": 0,
+          "open_paths": [],
+          "hazards": {
+            "count": 28,
+            "kinds": [
+              "PRESSER",
+              "SPIKES",
+              "STEAM",
+              "FALLING BEAM",
+              "PENDULUM"
+            ],
+            "deaths": 0,
+            "last_hit": null,
+            "trips": 0
+          }
+        },
+        "refuges": {
+          "visited": [
+            0
+          ],
+          "threads": [
+            0
+          ],
+          "delivered": []
+        },
+        "threats": {
+          "active": 0,
+          "kinds": [],
+          "warnings": 0,
+          "attacks": 0,
+          "unlocked": [],
+          "elapsed": 9.225,
+          "population": 232
+        },
+        "quest": null,
+        "player_animation": {
+          "pose": "walk",
+          "frame": 4
+        },
+        "play_seconds": 9.233,
+        "journal_entries": 3,
+        "audio_targets": [
+          0.1940867500000034,
+          0.007095899999995953,
+          0.0
+        ],
+        "boss": null
+      }
+    },
+    {
+      "file": "14-ribbon-deposited.png",
+      "simulation": {
+        "version": 4,
+        "state": "playing",
+        "region": 2,
+        "region_name": "KORIDOR",
+        "world_width": 112360,
+        "transitions": 1,
+        "camera": 1857.45,
+        "lantern": {
+          "capacity": 0.975,
+          "charge": 0.975,
+          "collections": 1,
+          "deaths": 0,
+          "carried": true,
+          "band": 0,
+          "focus": false,
+          "refuges_used": [
+            "refuge:0",
+            "refuge:1",
+            "thread:0"
+          ],
+          "recoveries": 0,
+          "radius": 455.0
+        },
+        "stamina": {
+          "amount": 0.8295,
+          "recovery_delay": 0,
+          "exhausted": false
+        },
+        "physics": {
+          "chapter": 2,
+          "time": 11.758,
+          "player": [
+            2305.84,
+            435.3
+          ],
+          "velocity": [
+            187.7,
+            0.0
+          ],
+          "grounded": true,
+          "gravity": 1,
+          "gravity_remaining": 0.0,
+          "water_surface": null,
+          "water_active": false,
+          "water_transferred_area": 0.0,
+          "cover_open": false,
+          "cover_fraction": 0.0,
+          "rope_distance": null,
+          "gate_open": false,
+          "gate_fraction": 0.0,
+          "grab_kind": "",
+          "dead": false,
+          "complete": false,
+          "crates": [
+            {
+              "position": [
+                470.98,
+                431.04
+              ],
+              "angle": 0.0002
+            },
+            {
+              "position": [
+                5210.0,
+                429.15
+              ],
+              "angle": 0.0
+            }
+          ],
+          "sprinting": false,
+          "stamina": {
+            "amount": 0.8295,
+            "recovery_delay": 0,
+            "exhausted": false
+          },
+          "width": 112360,
+          "persistent_space": true,
+          "phase": 0,
+          "gliding": false,
+          "solved": 0,
+          "open_paths": [],
+          "hazards": {
+            "count": 28,
+            "kinds": [
+              "PRESSER",
+              "SPIKES",
+              "STEAM",
+              "FALLING BEAM",
+              "PENDULUM"
+            ],
+            "deaths": 0,
+            "last_hit": null,
+            "trips": 0
+          }
+        },
+        "refuges": {
+          "visited": [
+            0,
+            1
+          ],
+          "threads": [
+            0
+          ],
+          "delivered": [
+            0
+          ]
+        },
+        "threats": {
+          "active": 0,
+          "kinds": [],
+          "warnings": 0,
+          "attacks": 0,
+          "unlocked": [],
+          "elapsed": 11.775,
+          "population": 232
+        },
+        "quest": null,
+        "player_animation": {
+          "pose": "walk",
+          "frame": 1
+        },
+        "play_seconds": 11.783,
+        "journal_entries": 4,
+        "audio_targets": [
+          0.1937552500000046,
+          0.0074936999999944826,
+          0.0
+        ],
+        "boss": null
+      }
+    },
+    {
+      "file": "07-bright.png",
+      "simulation": {
+        "version": 4,
+        "state": "playing",
+        "region": 1,
+        "region_name": "RUMAH",
+        "world_width": 112360,
+        "transitions": 0,
+        "camera": 0,
+        "lantern": {
+          "capacity": 1.0,
+          "charge": 1.0,
+          "collections": 0,
+          "deaths": 0,
+          "carried": true,
+          "band": 0,
+          "focus": false,
+          "refuges_used": [],
+          "recoveries": 0,
+          "radius": 465.0
+        },
+        "stamina": {
+          "amount": 1.0,
+          "recovery_delay": 0.0,
+          "exhausted": false
+        },
+        "physics": {
+          "chapter": 1,
+          "time": 0.0,
+          "player": [
+            130.0,
+            430.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "grounded": false,
+          "gravity": 1,
+          "gravity_remaining": 0.0,
+          "water_surface": null,
+          "water_active": false,
+          "water_transferred_area": 0.0,
+          "cover_open": false,
+          "cover_fraction": 0.0,
+          "rope_distance": null,
+          "gate_open": false,
+          "gate_fraction": 0.0,
+          "grab_kind": "",
+          "dead": false,
+          "complete": false,
+          "crates": [
+            {
+              "position": [
+                470.0,
+                431.0
+              ],
+              "angle": 0.0
+            },
+            {
+              "position": [
+                5210.0,
+                431.0
+              ],
+              "angle": 0.0
+            }
+          ],
+          "sprinting": false,
+          "stamina": {
+            "amount": 1.0,
+            "recovery_delay": 0.0,
+            "exhausted": false
+          },
+          "width": 112360,
+          "persistent_space": true,
+          "phase": 0,
+          "gliding": false,
+          "solved": 0,
+          "open_paths": [],
+          "hazards": {
+            "count": 28,
+            "kinds": [
+              "PRESSER",
+              "SPIKES",
+              "STEAM",
+              "FALLING BEAM",
+              "PENDULUM"
+            ],
+            "deaths": 0,
+            "last_hit": null,
+            "trips": 0
+          }
+        },
+        "refuges": {
+          "visited": [],
+          "threads": [],
+          "delivered": []
+        },
+        "threats": {
+          "active": 0,
+          "kinds": [],
+          "warnings": 0,
+          "attacks": 0,
+          "unlocked": [],
+          "elapsed": 0,
+          "population": 232
+        },
+        "quest": null,
+        "player_animation": {
+          "pose": "idle",
+          "frame": 0
+        },
+        "play_seconds": 0.0,
+        "journal_entries": 0,
+        "audio_targets": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "boss": null
+      }
+    },
+    {
+      "file": "08-uncertain.png",
+      "simulation": {
+        "version": 4,
+        "state": "playing",
+        "region": 1,
+        "region_name": "RUMAH",
+        "world_width": 112360,
+        "transitions": 0,
+        "camera": 0.0,
+        "lantern": {
+          "capacity": 1.0,
+          "charge": 0.6498,
+          "collections": 0,
+          "deaths": 0,
+          "carried": true,
+          "band": 1,
+          "focus": true,
+          "refuges_used": [],
+          "recoveries": 0,
+          "radius": 414.94
+        },
+        "stamina": {
+          "amount": 1.0,
+          "recovery_delay": 0.0,
+          "exhausted": false
+        },
+        "physics": {
+          "chapter": 1,
+          "time": 18.775,
+          "player": [
+            130.0,
+            435.15
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "grounded": true,
+          "gravity": 1,
+          "gravity_remaining": 0.0,
+          "water_surface": null,
+          "water_active": false,
+          "water_transferred_area": 0.0,
+          "cover_open": false,
+          "cover_fraction": 0.0,
+          "rope_distance": null,
+          "gate_open": false,
+          "gate_fraction": 0.0,
+          "grab_kind": "",
+          "dead": false,
+          "complete": false,
+          "crates": [
+            {
+              "position": [
+                470.0,
+                431.09
+              ],
+              "angle": 0.0002
+            },
+            {
+              "position": [
+                5210.0,
+                429.15
+              ],
+              "angle": 0.0
+            }
+          ],
+          "sprinting": false,
+          "stamina": {
+            "amount": 1.0,
+            "recovery_delay": 0.0,
+            "exhausted": false
+          },
+          "width": 112360,
+          "persistent_space": true,
+          "phase": 0,
+          "gliding": false,
+          "solved": 0,
+          "open_paths": [],
+          "hazards": {
+            "count": 28,
+            "kinds": [
+              "PRESSER",
+              "SPIKES",
+              "STEAM",
+              "FALLING BEAM",
+              "PENDULUM"
+            ],
+            "deaths": 0,
+            "last_hit": null,
+            "trips": 0
+          }
+        },
+        "refuges": {
+          "visited": [],
+          "threads": [],
+          "delivered": []
+        },
+        "threats": {
+          "active": 2,
+          "kinds": [
+            "PELANGKAH",
+            "PENYAPU"
+          ],
+          "warnings": 0,
+          "attacks": 0,
+          "unlocked": [
+            "PELANGKAH",
+            "PENYAPU"
+          ],
+          "elapsed": 18.775,
+          "population": 232
+        },
+        "quest": null,
+        "player_animation": {
+          "pose": "focus",
+          "frame": 6
+        },
+        "play_seconds": 18.775,
+        "journal_entries": 0,
+        "audio_targets": [
+          0.1300003333333498,
+          0.08399959999998025,
+          0.0
+        ],
+        "boss": null
+      }
+    },
+    {
+      "file": "09-fractured.png",
+      "simulation": {
+        "version": 4,
+        "state": "playing",
+        "region": 1,
+        "region_name": "RUMAH",
+        "world_width": 112360,
+        "transitions": 0,
+        "camera": 0.0,
+        "lantern": {
+          "capacity": 1.0,
+          "charge": 0.3499,
+          "collections": 0,
+          "deaths": 0,
+          "carried": true,
+          "band": 2,
+          "focus": true,
+          "refuges_used": [],
+          "recoveries": 0,
+          "radius": 294.96
+        },
+        "stamina": {
+          "amount": 1.0,
+          "recovery_delay": 0.0,
+          "exhausted": false
+        },
+        "physics": {
+          "chapter": 1,
+          "time": 34.858,
+          "player": [
+            130.0,
+            435.15
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "grounded": true,
+          "gravity": 1,
+          "gravity_remaining": 0.0,
+          "water_surface": null,
+          "water_active": false,
+          "water_transferred_area": 0.0,
+          "cover_open": false,
+          "cover_fraction": 0.0,
+          "rope_distance": null,
+          "gate_open": false,
+          "gate_fraction": 0.0,
+          "grab_kind": "",
+          "dead": false,
+          "complete": false,
+          "crates": [
+            {
+              "position": [
+                470.0,
+                431.09
+              ],
+              "angle": 0.0002
+            },
+            {
+              "position": [
+                5210.0,
+                429.15
+              ],
+              "angle": 0.0
+            }
+          ],
+          "sprinting": false,
+          "stamina": {
+            "amount": 1.0,
+            "recovery_delay": 0.0,
+            "exhausted": false
+          },
+          "width": 112360,
+          "persistent_space": true,
+          "phase": 0,
+          "gliding": false,
+          "solved": 0,
+          "open_paths": [],
+          "hazards": {
+            "count": 28,
+            "kinds": [
+              "PRESSER",
+              "SPIKES",
+              "STEAM",
+              "FALLING BEAM",
+              "PENDULUM"
+            ],
+            "deaths": 0,
+            "last_hit": null,
+            "trips": 0
+          }
+        },
+        "refuges": {
+          "visited": [],
+          "threads": [],
+          "delivered": []
+        },
+        "threats": {
+          "active": 5,
+          "kinds": [
+            "LONCENG KOSONG",
+            "PELANGKAH",
+            "PENYAPU",
+            "SAYAP RETAK",
+            "SERIBU KAKI"
+          ],
+          "warnings": 0,
+          "attacks": 0,
+          "unlocked": [
+            "LONCENG KOSONG",
+            "PELANGKAH",
+            "PENYAPU",
+            "SAYAP RETAK",
+            "SERIBU KAKI"
+          ],
+          "elapsed": 34.858,
+          "population": 232
+        },
+        "quest": null,
+        "player_animation": {
+          "pose": "focus",
+          "frame": 6
+        },
+        "play_seconds": 34.858,
+        "journal_entries": 0,
+        "audio_targets": [
+          0.07000950000001986,
+          0.15598859999997616,
+          0.05552916666661152
+        ],
+        "boss": null
+      }
+    },
+    {
+      "file": "10-near-dark.png",
+      "simulation": {
+        "version": 4,
+        "state": "playing",
+        "region": 1,
+        "region_name": "RUMAH",
+        "world_width": 112360,
+        "transitions": 0,
+        "camera": 0.0,
+        "lantern": {
+          "capacity": 1.0,
+          "charge": 0.0899,
+          "collections": 0,
+          "deaths": 0,
+          "carried": true,
+          "band": 3,
+          "focus": true,
+          "refuges_used": [],
+          "recoveries": 0,
+          "radius": 190.95
+        },
+        "stamina": {
+          "amount": 1.0,
+          "recovery_delay": 0.0,
+          "exhausted": false
+        },
+        "physics": {
+          "chapter": 1,
+          "time": 48.8,
+          "player": [
+            130.0,
+            435.15
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "grounded": true,
+          "gravity": 1,
+          "gravity_remaining": 0.0,
+          "water_surface": null,
+          "water_active": false,
+          "water_transferred_area": 0.0,
+          "cover_open": false,
+          "cover_fraction": 0.0,
+          "rope_distance": null,
+          "gate_open": false,
+          "gate_fraction": 0.0,
+          "grab_kind": "",
+          "dead": false,
+          "complete": false,
+          "crates": [
+            {
+              "position": [
+                470.0,
+                431.09
+              ],
+              "angle": 0.0002
+            },
+            {
+              "position": [
+                5210.0,
+                429.15
+              ],
+              "angle": 0.0
+            }
+          ],
+          "sprinting": false,
+          "stamina": {
+            "amount": 1.0,
+            "recovery_delay": 0.0,
+            "exhausted": false
+          },
+          "width": 112360,
+          "persistent_space": true,
+          "phase": 0,
+          "gliding": false,
+          "solved": 0,
+          "open_paths": [],
+          "hazards": {
+            "count": 28,
+            "kinds": [
+              "PRESSER",
+              "SPIKES",
+              "STEAM",
+              "FALLING BEAM",
+              "PENDULUM"
+            ],
+            "deaths": 0,
+            "last_hit": null,
+            "trips": 0
+          }
+        },
+        "refuges": {
+          "visited": [],
+          "threads": [],
+          "delivered": []
+        },
+        "threats": {
+          "active": 7,
+          "kinds": [
+            "AKAR BERGERAK",
+            "LONCENG KOSONG",
+            "PELANGKAH",
+            "PEMBURU",
+            "PENYAPU",
+            "SAYAP RETAK",
+            "SERIBU KAKI"
+          ],
+          "warnings": 0,
+          "attacks": 0,
+          "unlocked": [
+            "AKAR BERGERAK",
+            "LONCENG KOSONG",
+            "PELANGKAH",
+            "PEMBURU",
+            "PENYAPU",
+            "RODA MATA",
+            "SAYAP RETAK",
+            "SERIBU KAKI"
+          ],
+          "elapsed": 48.8,
+          "population": 232
+        },
+        "quest": null,
+        "player_animation": {
+          "pose": "focus",
+          "frame": 6
+        },
+        "play_seconds": 48.8,
+        "journal_entries": 0,
+        "audio_targets": [
+          0.018007083333351933,
+          0.21839149999997767,
+          0.1999803240740224
+        ],
+        "boss": null
+      }
+    },
+    {
+      "file": "11-blackout.png",
+      "simulation": {
+        "version": 4,
+        "state": "playing",
+        "region": 1,
+        "region_name": "RUMAH",
+        "world_width": 112360,
+        "transitions": 0,
+        "camera": 0.0,
+        "lantern": {
+          "capacity": 1.0,
+          "charge": 0,
+          "collections": 0,
+          "deaths": 0,
+          "carried": true,
+          "band": 3,
+          "focus": true,
+          "refuges_used": [],
+          "recoveries": 0,
+          "radius": 0
+        },
+        "stamina": {
+          "amount": 1.0,
+          "recovery_delay": 0.0,
+          "exhausted": false
+        },
+        "physics": {
+          "chapter": 1,
+          "time": 53.617,
+          "player": [
+            130.0,
+            435.15
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "grounded": true,
+          "gravity": 1,
+          "gravity_remaining": 0.0,
+          "water_surface": null,
+          "water_active": false,
+          "water_transferred_area": 0.0,
+          "cover_open": false,
+          "cover_fraction": 0.0,
+          "rope_distance": null,
+          "gate_open": false,
+          "gate_fraction": 0.0,
+          "grab_kind": "",
+          "dead": false,
+          "complete": false,
+          "crates": [
+            {
+              "position": [
+                470.0,
+                431.09
+              ],
+              "angle": 0.0002
+            },
+            {
+              "position": [
+                5210.0,
+                429.15
+              ],
+              "angle": 0.0
+            }
+          ],
+          "sprinting": false,
+          "stamina": {
+            "amount": 1.0,
+            "recovery_delay": 0.0,
+            "exhausted": false
+          },
+          "width": 112360,
+          "persistent_space": true,
+          "phase": 0,
+          "gliding": false,
+          "solved": 0,
+          "open_paths": [],
+          "hazards": {
+            "count": 28,
+            "kinds": [
+              "PRESSER",
+              "SPIKES",
+              "STEAM",
+              "FALLING BEAM",
+              "PENDULUM"
+            ],
+            "deaths": 0,
+            "last_hit": null,
+            "trips": 0
+          }
+        },
+        "refuges": {
+          "visited": [],
+          "threads": [],
+          "delivered": []
+        },
+        "threats": {
+          "active": 7,
+          "kinds": [
+            "AKAR BERGERAK",
+            "LONCENG KOSONG",
+            "PELANGKAH",
+            "PEMBURU",
+            "PENYAPU",
+            "SAYAP RETAK",
+            "SERIBU KAKI"
+          ],
+          "warnings": 0,
+          "attacks": 0,
+          "unlocked": [
+            "AKAR BERGERAK",
+            "LONCENG KOSONG",
+            "PELANGKAH",
+            "PEMBURU",
+            "PENYAPU",
+            "RODA MATA",
+            "SAYAP RETAK",
+            "SERIBU KAKI"
+          ],
+          "elapsed": 53.617,
+          "population": 232
+        },
+        "quest": null,
+        "player_animation": {
+          "pose": "focus",
+          "frame": 4
+        },
+        "play_seconds": 53.625,
+        "journal_entries": 0,
+        "audio_targets": [
+          9.833333351797836e-06,
+          0.23998819999997784,
+          0.2499726851851339
+        ],
+        "boss": null
+      }
+    },
+    {
+      "file": "12-recovery.png",
+      "simulation": {
+        "version": 4,
+        "state": "playing",
+        "region": 1,
+        "region_name": "RUMAH",
+        "world_width": 112360,
+        "transitions": 0,
+        "camera": 0,
+        "lantern": {
+          "capacity": 0.98,
+          "charge": 0.28,
+          "collections": 0,
+          "deaths": 0,
+          "carried": true,
+          "band": 2,
+          "focus": false,
+          "refuges_used": [],
+          "recoveries": 1,
+          "radius": 177.0
+        },
+        "stamina": {
+          "amount": 1.0,
+          "recovery_delay": 0.0,
+          "exhausted": false
+        },
+        "physics": {
+          "chapter": 1,
+          "time": 53.617,
+          "player": [
+            155.0,
+            438.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "grounded": false,
+          "gravity": 1,
+          "gravity_remaining": 0.0,
+          "water_surface": null,
+          "water_active": false,
+          "water_transferred_area": 0.0,
+          "cover_open": false,
+          "cover_fraction": 0.0,
+          "rope_distance": null,
+          "gate_open": false,
+          "gate_fraction": 0.0,
+          "grab_kind": "",
+          "dead": false,
+          "complete": false,
+          "crates": [
+            {
+              "position": [
+                470.0,
+                431.09
+              ],
+              "angle": 0.0002
+            },
+            {
+              "position": [
+                5210.0,
+                429.15
+              ],
+              "angle": 0.0
+            }
+          ],
+          "sprinting": false,
+          "stamina": {
+            "amount": 1.0,
+            "recovery_delay": 0.0,
+            "exhausted": false
+          },
+          "width": 112360,
+          "persistent_space": true,
+          "phase": 0,
+          "gliding": false,
+          "solved": 0,
+          "open_paths": [],
+          "hazards": {
+            "count": 28,
+            "kinds": [
+              "PRESSER",
+              "SPIKES",
+              "STEAM",
+              "FALLING BEAM",
+              "PENDULUM"
+            ],
+            "deaths": 0,
+            "last_hit": null,
+            "trips": 0
+          }
+        },
+        "refuges": {
+          "visited": [],
+          "threads": [],
+          "delivered": []
+        },
+        "threats": {
+          "active": 7,
+          "kinds": [
+            "AKAR BERGERAK",
+            "LONCENG KOSONG",
+            "PELANGKAH",
+            "PEMBURU",
+            "PENYAPU",
+            "SAYAP RETAK",
+            "SERIBU KAKI"
+          ],
+          "warnings": 0,
+          "attacks": 0,
+          "unlocked": [
+            "AKAR BERGERAK",
+            "LONCENG KOSONG",
+            "PELANGKAH",
+            "PEMBURU",
+            "PENYAPU",
+            "RODA MATA",
+            "SAYAP RETAK",
+            "SERIBU KAKI"
+          ],
+          "elapsed": 53.617,
+          "population": 232
+        },
+        "quest": null,
+        "player_animation": {
+          "pose": "idle",
+          "frame": 0
+        },
+        "play_seconds": 53.625,
+        "journal_entries": 0,
+        "audio_targets": [
+          0.0,
+          0.24,
+          0.25
+        ],
+        "boss": null
+      }
+    }
+  ],
+  "sources": {
+    "__init__.py": "67514fa792ccf7f7",
+    "__main__.py": "9a2fbaad1426e8ed",
+    "art.py": "add812597e3123df",
+    "audio.py": "7ba374faa2eff218",
+    "baseline_game.py": "3021a55e005caf4d",
+    "boss.py": "8337ccae9aceacb9",
+    "config.py": "600a50aaa239309e",
+    "continuum.py": "3a11f685dc52cf87",
+    "encounters.py": "1a2d187c8b4bbdaf",
+    "engine.py": "d9cecdd1bc0be529",
+    "environments.py": "6004f404e5ab5ab3",
+    "foley.py": "1447f6883d5112ec",
+    "game.py": "cfc97d57acfe1d3d",
+    "generate_assets.py": "1c0f70b6bb2fb9dd",
+    "generate_wisp.py": "500a10b22e03fc09",
+    "geometry.py": "b52f8756ad68b1b9",
+    "hallucinations.py": "14213e83a8dc1ae4",
+    "hazards.py": "a47f8239fdb5dbe1",
+    "illustration.py": "827b56076689659f",
+    "journey.py": "2bcfce12765af8a7",
+    "levels.py": "2a99fc0d405cd3e7",
+    "light.py": "b50a9ec220085c8d",
+    "materials.py": "5703d3e32ee193ac",
+    "music.py": "1e31735bac727f17",
+    "physics.py": "f983901b1d9f3ea4",
+    "procedural.py": "d7ccdadc91449baa",
+    "quests.py": "a9a6429d051bae7e",
+    "refuges.py": "0fa819ede9e68ef9",
+    "scenery.py": "0062a141d3a77655",
+    "soundscape.py": "deb4025bf7d5aa06",
+    "state.py": "cfa7b4251b13a1dc",
+    "story.py": "12476b868ea8e3b3",
+    "threats.py": "6542b8805d07300e",
+    "vistas.py": "878d76c26f638d30",
+    "wisp.py": "4f9df263454f3ee0"
+  }
+}

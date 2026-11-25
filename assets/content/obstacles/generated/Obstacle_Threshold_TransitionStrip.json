@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Obstacle_Threshold_TransitionStrip",
+  "category": "Threshold",
+  "variant": "TransitionStrip",
+  "tag": "Obstacle",
+  "layer": {
+    "name": "Obstacle",
+    "index": 8
+  },
+  "colliders": [
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0,
+        0,
+        1.02,
+        0.06
+      ],
+      "isTrigger": false
+    }
+  ],
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      1.02,
+      0.06
+    ],
+    "silhouette": "thin strip joining two floor heights",
+    "palette": [
+      "#8a704f",
+      "#5a4833"
+    ],
+    "details": [
+      "narrow profile",
+      "grooved surface"
+    ]
+  },
+  "obstacleData": {
+    "id": "ObstacleData_Threshold_TransitionStrip",
+    "obstacleType": "Threshold",
+    "trippingChance": 0.5,
+    "noiseLevel": 0.22,
+    "canBeCleared": false,
+    "clearTime": 0.0
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Platform_Appliance_Oven",
+  "category": "Appliance",
+  "variant": "Oven",
+  "tag": "Platform",
+  "layer": {
+    "name": "Standable",
+    "index": 7
+  },
+  "collider": {
+    "type": "BoxCollider2D",
+    "rect": [
+      0,
+      0.56,
+      0.62,
+      0.06
+    ],
+    "isTrigger": false
+  },
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.62,
+      0.62
+    ],
+    "standableSurface": [
+      0,
+      0.56,
+      0.62,
+      0.06
+    ],
+    "silhouette": "built-in oven with a glass window",
+    "palette": [
+      "#555b60",
+      "#303438"
+    ],
+    "details": [
+      "glass window",
+      "four knobs"
+    ]
+  },
+  "platformData": {
+    "id": "PlatformData_Appliance_Oven",
+    "platformType": "Appliance",
+    "maxStandAngle": 45.0,
+    "isStable": true,
+    "creakSound": null
+  }
+}

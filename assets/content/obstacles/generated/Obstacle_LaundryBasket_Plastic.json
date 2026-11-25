@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Obstacle_LaundryBasket_Plastic",
+  "category": "LaundryBasket",
+  "variant": "Plastic",
+  "tag": "Obstacle",
+  "layer": {
+    "name": "Obstacle",
+    "index": 8
+  },
+  "colliders": [
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0,
+        0,
+        0.54,
+        0.44
+      ],
+      "isTrigger": false
+    },
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0.06,
+        0.44,
+        0.42,
+        0.14
+      ],
+      "isTrigger": false
+    }
+  ],
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.54,
+      0.58
+    ],
+    "silhouette": "plastic laundry basket with cut-out handles",
+    "palette": [
+      "#4f7a83",
+      "#2f5057"
+    ],
+    "details": [
+      "cut-out handles",
+      "tapered body"
+    ]
+  },
+  "obstacleData": {
+    "id": "ObstacleData_LaundryBasket_Plastic",
+    "obstacleType": "LaundryBasket",
+    "trippingChance": 0.6,
+    "noiseLevel": 0.42,
+    "canBeCleared": true,
+    "clearTime": 1.6
+  }
+}

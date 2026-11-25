@@ -1,0 +1,407 @@
+{
+  "kind": "known-solution input-only route; visible machinery avoided by waiting/jumping, no NPCs",
+  "completed": true,
+  "gameplay_seconds": 1301.525,
+  "active_input_seconds": 1290.167,
+  "execution_seconds": 53.704,
+  "one_space_preserved": true,
+  "milestones": 144,
+  "perception_shifts": 88,
+  "observed_monster_forms": [
+    "PENYAPU",
+    "PELANGKAH",
+    "LONCENG KOSONG",
+    "SERIBU KAKI",
+    "SAYAP RETAK",
+    "PEMBURU",
+    "AKAR BERGERAK",
+    "RODA MATA"
+  ],
+  "maximum_onscreen_monsters": 8,
+  "unlock_progression": [
+    {
+      "seconds": 20.008,
+      "charge": 0.9695,
+      "kinds": [
+        "PENYAPU"
+      ]
+    },
+    {
+      "seconds": 90.0,
+      "charge": 0.9494,
+      "kinds": [
+        "PENYAPU",
+        "PELANGKAH"
+      ]
+    },
+    {
+      "seconds": 180.0,
+      "charge": 0.9089,
+      "kinds": [
+        "PENYAPU",
+        "PELANGKAH",
+        "LONCENG KOSONG"
+      ]
+    },
+    {
+      "seconds": 300.008,
+      "charge": 0.827,
+      "kinds": [
+        "PENYAPU",
+        "PELANGKAH",
+        "LONCENG KOSONG",
+        "SERIBU KAKI"
+      ]
+    },
+    {
+      "seconds": 420.008,
+      "charge": 0.7315,
+      "kinds": [
+        "PENYAPU",
+        "PELANGKAH",
+        "LONCENG KOSONG",
+        "SERIBU KAKI",
+        "SAYAP RETAK"
+      ]
+    },
+    {
+      "seconds": 570.008,
+      "charge": 0.6456,
+      "kinds": [
+        "PENYAPU",
+        "PELANGKAH",
+        "LONCENG KOSONG",
+        "SERIBU KAKI",
+        "SAYAP RETAK",
+        "PEMBURU"
+      ]
+    },
+    {
+      "seconds": 720.008,
+      "charge": 0.547,
+      "kinds": [
+        "PENYAPU",
+        "PELANGKAH",
+        "LONCENG KOSONG",
+        "SERIBU KAKI",
+        "SAYAP RETAK",
+        "PEMBURU",
+        "AKAR BERGERAK"
+      ]
+    },
+    {
+      "seconds": 900.008,
+      "charge": 0.433,
+      "kinds": [
+        "PENYAPU",
+        "PELANGKAH",
+        "LONCENG KOSONG",
+        "SERIBU KAKI",
+        "SAYAP RETAK",
+        "PEMBURU",
+        "AKAR BERGERAK",
+        "RODA MATA"
+      ]
+    }
+  ],
+  "refuges_visited": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28
+  ],
+  "sprint": false,
+  "error": null,
+  "simulation": {
+    "version": 4,
+    "state": "ending",
+    "region": 29,
+    "region_name": "YANG MENYEBUT NAMA",
+    "world_width": 112360,
+    "transitions": 28,
+    "camera": 111400.0,
+    "lantern": {
+      "capacity": 0.16,
+      "charge": 0.1526,
+      "collections": 3,
+      "deaths": 0,
+      "carried": true,
+      "band": 3,
+      "focus": false,
+      "refuges_used": [
+        "refuge:0",
+        "refuge:1",
+        "refuge:10",
+        "refuge:11",
+        "refuge:12",
+        "refuge:13",
+        "refuge:14",
+        "refuge:15",
+        "refuge:16",
+        "refuge:17",
+        "refuge:18",
+        "refuge:19",
+        "refuge:2",
+        "refuge:20",
+        "refuge:21",
+        "refuge:22",
+        "refuge:23",
+        "refuge:24",
+        "refuge:25",
+        "refuge:26",
+        "refuge:27",
+        "refuge:28",
+        "refuge:3",
+        "refuge:4",
+        "refuge:5",
+        "refuge:6",
+        "refuge:7",
+        "refuge:8",
+        "refuge:9"
+      ],
+      "recoveries": 0,
+      "radius": 126.06
+    },
+    "stamina": {
+      "amount": 1.0,
+      "recovery_delay": 0.0,
+      "exhausted": false
+    },
+    "physics": {
+      "chapter": 29,
+      "time": 1301.283,
+      "player": [
+        111840.68,
+        375.15
+      ],
+      "velocity": [
+        0.0,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            470.99,
+            431.04
+          ],
+          "angle": 0.0002
+        },
+        {
+          "position": [
+            5707.59,
+            429.11
+          ],
+          "angle": 0.0013
+        }
+      ],
+      "sprinting": false,
+      "stamina": {
+        "amount": 1.0,
+        "recovery_delay": 0.0,
+        "exhausted": false
+      },
+      "width": 112360,
+      "persistent_space": true,
+      "phase": 0,
+      "gliding": false,
+      "solved": 144,
+      "open_paths": [
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "hazards": {
+        "count": 28,
+        "kinds": [
+          "PRESSER",
+          "SPIKES",
+          "STEAM",
+          "FALLING BEAM",
+          "PENDULUM"
+        ],
+        "deaths": 0,
+        "last_hit": null,
+        "trips": 5
+      }
+    },
+    "refuges": {
+      "visited": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      "threads": [],
+      "delivered": []
+    },
+    "threats": {
+      "active": 8,
+      "kinds": [
+        "AKAR BERGERAK",
+        "LONCENG KOSONG",
+        "PELANGKAH",
+        "PEMBURU",
+        "PENYAPU",
+        "RODA MATA",
+        "SAYAP RETAK",
+        "SERIBU KAKI"
+      ],
+      "warnings": 0,
+      "attacks": 0,
+      "unlocked": [
+        "AKAR BERGERAK",
+        "LONCENG KOSONG",
+        "PELANGKAH",
+        "PEMBURU",
+        "PENYAPU",
+        "RODA MATA",
+        "SAYAP RETAK",
+        "SERIBU KAKI"
+      ],
+      "elapsed": 1301.525,
+      "population": 232
+    },
+    "quest": null,
+    "player_animation": {
+      "pose": "idle",
+      "frame": 3
+    },
+    "play_seconds": 1301.525,
+    "journal_entries": 176,
+    "audio_targets": [
+      0.03053099999999791,
+      0.2033628000000025,
+      0.16519166666667248
+    ],
+    "boss": {
+      "phase": 2,
+      "echoes": 3,
+      "presses": 3,
+      "shards": 0,
+      "done": true
+    }
+  },
+  "sources": {
+    "__init__.py": "67514fa792ccf7f7",
+    "__main__.py": "9a2fbaad1426e8ed",
+    "art.py": "add812597e3123df",
+    "audio.py": "7ba374faa2eff218",
+    "baseline_game.py": "3021a55e005caf4d",
+    "boss.py": "8337ccae9aceacb9",
+    "config.py": "600a50aaa239309e",
+    "continuum.py": "3a11f685dc52cf87",
+    "encounters.py": "1a2d187c8b4bbdaf",
+    "engine.py": "d9cecdd1bc0be529",
+    "environments.py": "6004f404e5ab5ab3",
+    "foley.py": "1447f6883d5112ec",
+    "game.py": "cfc97d57acfe1d3d",
+    "generate_assets.py": "1c0f70b6bb2fb9dd",
+    "generate_wisp.py": "500a10b22e03fc09",
+    "geometry.py": "b52f8756ad68b1b9",
+    "hallucinations.py": "14213e83a8dc1ae4",
+    "hazards.py": "a47f8239fdb5dbe1",
+    "illustration.py": "827b56076689659f",
+    "journey.py": "2bcfce12765af8a7",
+    "levels.py": "2a99fc0d405cd3e7",
+    "light.py": "b50a9ec220085c8d",
+    "materials.py": "5703d3e32ee193ac",
+    "music.py": "1e31735bac727f17",
+    "physics.py": "f983901b1d9f3ea4",
+    "procedural.py": "d7ccdadc91449baa",
+    "quests.py": "a9a6429d051bae7e",
+    "refuges.py": "0fa819ede9e68ef9",
+    "scenery.py": "0062a141d3a77655",
+    "soundscape.py": "deb4025bf7d5aa06",
+    "state.py": "cfa7b4251b13a1dc",
+    "story.py": "12476b868ea8e3b3",
+    "threats.py": "6542b8805d07300e",
+    "vistas.py": "878d76c26f638d30",
+    "wisp.py": "4f9df263454f3ee0"
+  }
+}

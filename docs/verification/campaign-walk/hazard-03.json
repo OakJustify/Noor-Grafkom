@@ -1,0 +1,138 @@
+{
+  "kind": "Actual-input route frame",
+  "machine": "STEAM",
+  "simulation": {
+    "version": 4,
+    "state": "playing",
+    "region": 3,
+    "region_name": "DAPUR",
+    "world_width": 112360,
+    "transitions": 2,
+    "camera": 6345.56,
+    "lantern": {
+      "capacity": 0.975,
+      "charge": 0.9678,
+      "collections": 1,
+      "deaths": 0,
+      "carried": true,
+      "band": 0,
+      "focus": false,
+      "refuges_used": [
+        "refuge:0",
+        "refuge:1",
+        "refuge:2"
+      ],
+      "recoveries": 0,
+      "radius": 452.11
+    },
+    "stamina": {
+      "amount": 0.985667,
+      "recovery_delay": 0.0,
+      "exhausted": false
+    },
+    "physics": {
+      "chapter": 3,
+      "time": 35.933,
+      "player": [
+        6785.99,
+        435.03
+      ],
+      "velocity": [
+        187.7,
+        0.0
+      ],
+      "grounded": true,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            470.99,
+            431.04
+          ],
+          "angle": 0.0002
+        },
+        {
+          "position": [
+            5707.59,
+            429.11
+          ],
+          "angle": 0.0013
+        }
+      ],
+      "sprinting": false,
+      "stamina": {
+        "amount": 0.985667,
+        "recovery_delay": 0.0,
+        "exhausted": false
+      },
+      "width": 112360,
+      "persistent_space": true,
+      "phase": 0,
+      "gliding": false,
+      "solved": 0,
+      "open_paths": [
+        2
+      ],
+      "hazards": {
+        "count": 28,
+        "kinds": [
+          "PRESSER",
+          "SPIKES",
+          "STEAM",
+          "FALLING BEAM",
+          "PENDULUM"
+        ],
+        "deaths": 0,
+        "last_hit": null,
+        "trips": 0
+      }
+    },
+    "refuges": {
+      "visited": [
+        0,
+        1,
+        2
+      ],
+      "threads": [],
+      "delivered": []
+    },
+    "threats": {
+      "active": 1,
+      "kinds": [
+        "PENYAPU"
+      ],
+      "warnings": 0,
+      "attacks": 0,
+      "unlocked": [
+        "PENYAPU"
+      ],
+      "elapsed": 35.958,
+      "population": 232
+    },
+    "quest": null,
+    "player_animation": {
+      "pose": "walk",
+      "frame": 2
+    },
+    "play_seconds": 35.958,
+    "journal_entries": 4,
+    "audio_targets": [
+      0.19355700000000534,
+      0.007731599999993603,
+      0.0
+    ],
+    "boss": null
+  }
+}

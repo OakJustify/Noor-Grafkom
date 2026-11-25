@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Obstacle_DecorItem_Frame",
+  "category": "DecorItem",
+  "variant": "Frame",
+  "tag": "Obstacle",
+  "layer": {
+    "name": "Obstacle",
+    "index": 8
+  },
+  "colliders": [
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0,
+        0,
+        0.46,
+        0.1
+      ],
+      "isTrigger": false
+    },
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0,
+        0.46,
+        0.46,
+        0.1
+      ],
+      "isTrigger": false
+    },
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0,
+        0.1,
+        0.06,
+        0.36
+      ],
+      "isTrigger": false
+    },
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0.4,
+        0.1,
+        0.06,
+        0.36
+      ],
+      "isTrigger": false
+    }
+  ],
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.46,
+      0.56
+    ],
+    "silhouette": "empty picture frame leaning at an angle",
+    "palette": [
+      "#8c6b45",
+      "#57422c"
+    ],
+    "details": [
+      "mitred corners",
+      "bare backing"
+    ]
+  },
+  "obstacleData": {
+    "id": "ObstacleData_DecorItem_Frame",
+    "obstacleType": "DecorItem",
+    "trippingChance": 0.38,
+    "noiseLevel": 0.32,
+    "canBeCleared": true,
+    "clearTime": 0.9
+  }
+}

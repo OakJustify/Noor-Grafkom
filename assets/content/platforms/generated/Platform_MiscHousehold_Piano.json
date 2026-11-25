@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Platform_MiscHousehold_Piano",
+  "category": "MiscHousehold",
+  "variant": "Piano",
+  "tag": "Platform",
+  "layer": {
+    "name": "Standable",
+    "index": 7
+  },
+  "collider": {
+    "type": "BoxCollider2D",
+    "rect": [
+      0,
+      0.72,
+      1.44,
+      0.08
+    ],
+    "isTrigger": false
+  },
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      1.44,
+      1.16
+    ],
+    "standableSurface": [
+      0,
+      0.72,
+      1.44,
+      0.08
+    ],
+    "silhouette": "upright piano with a keyboard shelf",
+    "palette": [
+      "#3d322c",
+      "#211b18"
+    ],
+    "details": [
+      "keyboard shelf",
+      "music stand"
+    ]
+  },
+  "platformData": {
+    "id": "PlatformData_MiscHousehold_Piano",
+    "platformType": "MiscHousehold",
+    "maxStandAngle": 45.0,
+    "isStable": true,
+    "creakSound": null
+  }
+}

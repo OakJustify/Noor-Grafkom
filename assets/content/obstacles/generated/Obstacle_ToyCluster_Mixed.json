@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Obstacle_ToyCluster_Mixed",
+  "category": "ToyCluster",
+  "variant": "Mixed",
+  "tag": "Obstacle",
+  "layer": {
+    "name": "Obstacle",
+    "index": 8
+  },
+  "colliders": [
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0,
+        0,
+        0.3,
+        0.3
+      ],
+      "isTrigger": false
+    },
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0.3,
+        0,
+        0.34,
+        0.42
+      ],
+      "isTrigger": false
+    },
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0.64,
+        0,
+        0.3,
+        0.26
+      ],
+      "isTrigger": false
+    }
+  ],
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.94,
+      0.42
+    ],
+    "silhouette": "blocks, a plush and a car in one heap",
+    "palette": [
+      "#8f6a55",
+      "#4f6d80"
+    ],
+    "details": [
+      "mixed textures",
+      "scattered pieces"
+    ]
+  },
+  "obstacleData": {
+    "id": "ObstacleData_ToyCluster_Mixed",
+    "obstacleType": "ToyCluster",
+    "trippingChance": 0.7,
+    "noiseLevel": 0.74,
+    "canBeCleared": true,
+    "clearTime": 2.2
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Platform_BookStack_Vertical",
+  "category": "BookStack",
+  "variant": "Vertical",
+  "tag": "Platform",
+  "layer": {
+    "name": "Standable",
+    "index": 7
+  },
+  "collider": {
+    "type": "BoxCollider2D",
+    "rect": [
+      0,
+      0.36,
+      0.34,
+      0.06
+    ],
+    "isTrigger": false
+  },
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.34,
+      0.42
+    ],
+    "standableSurface": [
+      0,
+      0.36,
+      0.34,
+      0.06
+    ],
+    "silhouette": "upright books packed side by side",
+    "palette": [
+      "#4d5f45",
+      "#8a5a35"
+    ],
+    "details": [
+      "varying heights",
+      "spine bands"
+    ]
+  },
+  "platformData": {
+    "id": "PlatformData_BookStack_Vertical",
+    "platformType": "BookStack",
+    "maxStandAngle": 45.0,
+    "isStable": true,
+    "creakSound": null
+  }
+}

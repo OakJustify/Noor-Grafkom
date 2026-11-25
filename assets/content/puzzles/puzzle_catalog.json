@@ -1,0 +1,581 @@
+{
+  "puzzles": [
+    {
+      "id": "puzzle_001",
+      "name": "Lantern Color Match",
+      "category": "ColorLogic",
+      "difficulty": 1,
+      "description": "Cycle the lantern between red, green and blue until it matches the wall sigil.",
+      "requiredComponents": [
+        "ColorCycler",
+        "SigilDetector",
+        "GateLock"
+      ],
+      "prefabDependencies": [
+        "Sigil_Gate",
+        "ColorPedestal"
+      ],
+      "variantParams": {
+        "colorCount": 3,
+        "sequenceLength": 1,
+        "timeLimit": 0
+      },
+      "unlockCondition": "All sigils match the lantern colour at once",
+      "failureState": "Sigils reset; minor sanity drain"
+    },
+    {
+      "id": "puzzle_021",
+      "name": "Three-Lantern Sort",
+      "category": "ColorLogic",
+      "difficulty": 2,
+      "description": "Sort three lit lanterns onto the plate bearing their own colour.",
+      "requiredComponents": [
+        "ColorCycler",
+        "PressurePlate",
+        "GateLock"
+      ],
+      "prefabDependencies": [
+        "ColorPedestal",
+        "Plate_Pair"
+      ],
+      "variantParams": {
+        "colorCount": 3,
+        "plateCount": 3,
+        "timeLimit": 45
+      },
+      "unlockCondition": "Each colour rests on its matching plate",
+      "failureState": "Plates clear and lanterns return to neutral"
+    },
+    {
+      "id": "puzzle_002",
+      "name": "Echo Sigil Sequence",
+      "category": "SequenceMemory",
+      "difficulty": 2,
+      "description": "Watch a short sigil sequence flash, then repeat the same presses on the altar.",
+      "requiredComponents": [
+        "SequenceMemory",
+        "GateLock"
+      ],
+      "prefabDependencies": [
+        "Sigil_Gate",
+        "Echo_Recorder"
+      ],
+      "variantParams": {
+        "sequenceLength": 4,
+        "repeatCount": 1,
+        "timeLimit": 30
+      },
+      "unlockCondition": "Target sequence replayed without an error",
+      "failureState": "Sequence reshuffles; one sanity drain"
+    },
+    {
+      "id": "puzzle_016",
+      "name": "Tile Step Pattern",
+      "category": "SequenceMemory",
+      "difficulty": 3,
+      "description": "Step across floor tiles in the order shown by the brief highlight pattern.",
+      "requiredComponents": [
+        "PatternMatch",
+        "GateLock"
+      ],
+      "prefabDependencies": [
+        "Plate_Pair",
+        "Sigil_Gate"
+      ],
+      "variantParams": {
+        "tileCount": 6,
+        "sequenceLength": 4,
+        "timeLimit": 40
+      },
+      "unlockCondition": "All tiles light up in the target order",
+      "failureState": "Tiles dim and the pattern restarts"
+    },
+    {
+      "id": "puzzle_003",
+      "name": "Twin Plate Gate",
+      "category": "PressurePlate",
+      "difficulty": 1,
+      "description": "Stand on one plate and push a crate onto the other to open the gate.",
+      "requiredComponents": [
+        "PressurePlate",
+        "GateLock"
+      ],
+      "prefabDependencies": [
+        "Plate_Pair",
+        "Platform_BoxCrate_Wooden"
+      ],
+      "variantParams": {
+        "plateCount": 2,
+        "holdSeconds": 2,
+        "timeLimit": 25
+      },
+      "unlockCondition": "Both plates stay down for two seconds",
+      "failureState": "Plates release and the gate stays shut"
+    },
+    {
+      "id": "puzzle_015",
+      "name": "Counterweight Match",
+      "category": "PressurePlate",
+      "difficulty": 3,
+      "description": "Fill the scale with household objects until the pointer sits inside the marked band.",
+      "requiredComponents": [
+        "WeightBalance",
+        "GateLock"
+      ],
+      "prefabDependencies": [
+        "Counterweight_Scale",
+        "Obstacle_PlantPot_Large"
+      ],
+      "variantParams": {
+        "weightSteps": 3,
+        "tolerance": 0.1,
+        "timeLimit": 50
+      },
+      "unlockCondition": "Scale balanced within tolerance for one second",
+      "failureState": "Weights return to their starting slots"
+    },
+    {
+      "id": "puzzle_017",
+      "name": "Ghost Plate Holder",
+      "category": "PressurePlate",
+      "difficulty": 4,
+      "description": "Record a short echo so the ghost holds the far plate while you cross to the near one.",
+      "requiredComponents": [
+        "TimeEcho",
+        "GateLock"
+      ],
+      "prefabDependencies": [
+        "Echo_Recorder",
+        "Plate_Pair"
+      ],
+      "variantParams": {
+        "echoSeconds": 6,
+        "plateCount": 2,
+        "timeLimit": 60
+      },
+      "unlockCondition": "Echo holds the far plate while you hold the near one",
+      "failureState": "Echo dissolves and both plates release"
+    },
+    {
+      "id": "puzzle_004",
+      "name": "Silhouette Lock",
+      "category": "ShadowAlignment",
+      "difficulty": 2,
+      "description": "Move the lantern until its cast shadow fits the silhouette drawn on the screen.",
+      "requiredComponents": [
+        "ShadowAligner",
+        "GateLock"
+      ],
+      "prefabDependencies": [
+        "Silhouette_Screen",
+        "Sigil_Gate"
+      ],
+      "variantParams": {
+        "silhouetteCount": 1,
+        "tolerancePixels": 6,
+        "timeLimit": 35
+      },
+      "unlockCondition": "Shadow overlaps the drawn silhouette",
+      "failureState": "Silhouette returns to its neutral outline"
+    },
+    {
+      "id": "puzzle_022",
+      "name": "Orbiting Shadow",
+      "category": "ShadowAlignment",
+      "difficulty": 4,
+      "description": "Hold two shadows inside their outlines while the lantern swings on a slow arc.",
+      "requiredComponents": [
+        "ShadowAligner",
+        "TimingWindow",
+        "GateLock"
+      ],
+      "prefabDependencies": [
+        "Silhouette_Screen",
+        "Lantern_Altar"
+      ],
+      "variantParams": {
+        "silhouetteCount": 2,
+        "swingPeriod": 2.5,
+        "timeLimit": 50
+      },
+      "unlockCondition": "Both shadows stay aligned through one full swing",
+      "failureState": "Swing restarts from the centre"
+    },
+    {
+      "id": "puzzle_005",
+      "name": "Three Knocks",
+      "category": "SoundTrigger",
+      "difficulty": 1,
+      "description": "Knock three times on the pillar, leaving a short pause between each knock.",
+      "requiredComponents": [
+        "SoundTrigger",
+        "GateLock"
+      ],
+      "prefabDependencies": [
+        "Rhythm_Pillar",
+        "Sigil_Gate"
+      ],
+      "variantParams": {
+        "cueCount": 3,
+        "cueGap": 0.8,
+        "timeLimit": 20
+      },
+      "unlockCondition": "Three knocks are answered in order",
+      "failureState": "Knocking pattern changes"
+    },
+    {
+      "id": "puzzle_019",
+      "name": "Melody Answer",
+      "category": "SoundTrigger",
+      "difficulty": 3,
+      "description": "Listen to a short melody on the pillar, then hum it back by pressing the tone stones.",
+      "requiredComponents": [
+        "SoundMemory",
+        "GateLock"
+      ],
+      "prefabDependencies": [
+        "Rhythm_Pillar",
+        "Sigil_Gate"
+      ],
+      "variantParams": {
+        "noteCount": 5,
+        "repeatCount": 1,
+        "timeLimit": 40
+      },
+      "unlockCondition": "Melody replayed note for note",
+      "failureState": "Melody resets with a soft dissonance sting"
+    },
+    {
+      "id": "puzzle_006",
+      "name": "Beam Bender",
+      "category": "MirrorReflection",
+      "difficulty": 2,
+      "description": "Rotate two mirrors so the lantern beam reaches the receptor across the room.",
+      "requiredComponents": [
+        "MirrorReflector",
+        "GateLock"
+      ],
+      "prefabDependencies": [
+        "Mirror_Pedestal",
+        "Beam_Emitter"
+      ],
+      "variantParams": {
+        "mirrorCount": 2,
+        "targetCount": 1,
+        "timeLimit": 40
+      },
+      "unlockCondition": "Beam lands on the target receptor",
+      "failureState": "Mirrors snap back to their neutral angles"
+    },
+    {
+      "id": "puzzle_014",
+      "name": "Prism Split",
+      "category": "MirrorReflection",
+      "difficulty": 4,
+      "description": "Split one beam through prisms and aim both halves at separate receptors.",
+      "requiredComponents": [
+        "MirrorReflector",
+        "LaserGrid",
+        "GateLock"
+      ],
+      "prefabDependencies": [
+        "Prism_Rail",
+        "Beam_Emitter",
+        "Sigil_Gate"
+      ],
+      "variantParams": {
+        "mirrorCount": 3,
+        "targetCount": 2,
+        "timeLimit": 55
+      },
+      "unlockCondition": "Both receptors are lit without crossing a beam",
+      "failureState": "Beams retract and prisms realign"
+    },
+    {
+      "id": "puzzle_007",
+      "name": "Glyph Key",
+      "category": "SymbolDecoding",
+      "difficulty": 2,
+      "description": "Translate the carved glyph key and enter the matching three-symbol word.",
+      "requiredComponents": [
+        "SymbolDecoder",
+        "GateLock"
+      ],
+      "prefabDependencies": [
+        "Glyph_Alcove",
+        "Sigil_Gate"
+      ],
+      "variantParams": {
+        "glyphCount": 4,
+        "sequenceLength": 3,
+        "timeLimit": 45
+      },
+      "unlockCondition": "Entered glyphs match the carved key",
+      "failureState": "Glyphs scramble but the key stays visible"
+    },
+    {
+      "id": "puzzle_023",
+      "name": "Mirrored Glyph",
+      "category": "SymbolDecoding",
+      "difficulty": 4,
+      "description": "Read glyphs from a mirror and enter them in the order they appear in the reflection.",
+      "requiredComponents": [
+        "SymbolDecoder",
+        "MirrorReflector",
+        "GateLock"
+      ],
+      "prefabDependencies": [
+        "Glyph_Alcove",
+        "Mirror_Pedestal"
+      ],
+      "variantParams": {
+        "glyphCount": 3,
+        "sequenceLength": 3,
+        "timeLimit": 55
+      },
+      "unlockCondition": "Reflected glyphs are entered in the right order",
+      "failureState": "Mirror darkens and the glyphs reset"
+    },
+    {
+      "id": "puzzle_008",
+      "name": "Pendulum Press",
+      "category": "TimingWindow",
+      "difficulty": 2,
+      "description": "Press the switch as the pendulum crosses the marked centre line, three times running.",
+      "requiredComponents": [
+        "TimingWindow",
+        "GateLock"
+      ],
+      "prefabDependencies": [
+        "Rhythm_Pillar",
+        "Sigil_Gate"
+      ],
+      "variantParams": {
+        "windowSeconds": 0.4,
+        "cueCount": 3,
+        "timeLimit": 30
+      },
+      "unlockCondition": "Three presses land inside successive windows",
+      "failureState": "Pendulum resets its phase"
+    },
+    {
+      "id": "puzzle_024",
+      "name": "Two-Beat Lock",
+      "category": "TimingWindow",
+      "difficulty": 4,
+      "description": "Answer a visual flash and its audio tick on the same beat to arm the latch.",
+      "requiredComponents": [
+        "TimingWindow",
+        "SoundTrigger",
+        "GateLock"
+      ],
+      "prefabDependencies": [
+        "Rhythm_Pillar",
+        "Sigil_Gate"
+      ],
+      "variantParams": {
+        "windowSeconds": 0.3,
+        "cueCount": 4,
+        "timeLimit": 50
+      },
+      "unlockCondition": "Both cues are answered on the same beat",
+      "failureState": "Cue pair desynchronises and restarts"
+    },
+    {
+      "id": "puzzle_009",
+      "name": "Quarter Turn",
+      "category": "SpatialReasoning",
+      "difficulty": 3,
+      "description": "Rotate the room in ninety-degree steps until the exit lines up with the walkway.",
+      "requiredComponents": [
+        "RoomRotator",
+        "GateLock"
+      ],
+      "prefabDependencies": [
+        "Sigil_Gate",
+        "Platform_Shelf_Floating"
+      ],
+      "variantParams": {
+        "rotationSteps": 4,
+        "timeLimit": 45
+      },
+      "unlockCondition": "Room rotated until the exit aligns",
+      "failureState": "Room returns to zero degrees"
+    },
+    {
+      "id": "puzzle_018",
+      "name": "False Perspective",
+      "category": "SpatialReasoning",
+      "difficulty": 4,
+      "description": "Shift the viewing angle until separated planks read as one continuous bridge.",
+      "requiredComponents": [
+        "PerspectiveShift",
+        "GateLock"
+      ],
+      "prefabDependencies": [
+        "Perspective_Rail",
+        "Platform_Shelf_Floating"
+      ],
+      "variantParams": {
+        "angleCount": 3,
+        "timeLimit": 50
+      },
+      "unlockCondition": "Shifted platforms form a continuous walkway",
+      "failureState": "Camera snaps back to the default angle"
+    },
+    {
+      "id": "puzzle_010",
+      "name": "Fuel for Passage",
+      "category": "ResourceTrade",
+      "difficulty": 2,
+      "description": "Spend a quarter of the lantern charge to release the latch on the passage gate.",
+      "requiredComponents": [
+        "FuelTrade",
+        "GateLock"
+      ],
+      "prefabDependencies": [
+        "Lantern_Altar",
+        "Sigil_Gate"
+      ],
+      "variantParams": {
+        "fuelCost": 0.25,
+        "refundOnFailure": true,
+        "timeLimit": 25
+      },
+      "unlockCondition": "Fuel spent and the gate latch released",
+      "failureState": "Fuel refunded and the latch drops back"
+    },
+    {
+      "id": "puzzle_025",
+      "name": "Two Candles",
+      "category": "ResourceTrade",
+      "difficulty": 4,
+      "description": "Pour fuel into two counterweights to balance a scale that opens the inner door.",
+      "requiredComponents": [
+        "FuelTrade",
+        "WeightBalance",
+        "GateLock"
+      ],
+      "prefabDependencies": [
+        "Fuel_Cache",
+        "Counterweight_Scale"
+      ],
+      "variantParams": {
+        "fuelCost": 0.35,
+        "weightSteps": 2,
+        "timeLimit": 55
+      },
+      "unlockCondition": "Both counterweights filled from the reserve",
+      "failureState": "Fuel refunded and the weights empty"
+    },
+    {
+      "id": "puzzle_011",
+      "name": "Rising Tide",
+      "category": "Environmental",
+      "difficulty": 2,
+      "description": "Open the valve in stages so the floating crate rises to the high alcove.",
+      "requiredComponents": [
+        "WaterLevel",
+        "GateLock"
+      ],
+      "prefabDependencies": [
+        "Water_Valve",
+        "Platform_BoxCrate_Plastic"
+      ],
+      "variantParams": {
+        "waterLevels": 3,
+        "timeLimit": 45
+      },
+      "unlockCondition": "Float platform lifts to the alcove",
+      "failureState": "Water drains back to the low mark"
+    },
+    {
+      "id": "puzzle_012",
+      "name": "Wind Lift",
+      "category": "Environmental",
+      "difficulty": 3,
+      "description": "Aim two fans so a gust carries the fallen laundry off the latch.",
+      "requiredComponents": [
+        "WindCurrent",
+        "GateLock"
+      ],
+      "prefabDependencies": [
+        "Wind_Fan",
+        "Obstacle_ClothPile_Laundry"
+      ],
+      "variantParams": {
+        "fanCount": 2,
+        "gustSeconds": 2,
+        "timeLimit": 45
+      },
+      "unlockCondition": "Gust carries the cloth clear of the latch",
+      "failureState": "Fans stop and the cloth settles back"
+    },
+    {
+      "id": "puzzle_020",
+      "name": "Thaw and Climb",
+      "category": "Environmental",
+      "difficulty": 5,
+      "description": "Light the candle, melt the ice, let the water feed the vine, then climb the ledge.",
+      "requiredComponents": [
+        "EnvironmentalCombo",
+        "GateLock"
+      ],
+      "prefabDependencies": [
+        "Vine_Anchor",
+        "Platform_Shelf_Bookshelf"
+      ],
+      "variantParams": {
+        "chainLength": 4,
+        "timeLimit": 60
+      },
+      "unlockCondition": "Ice melts, water grows the vine, vine reaches the ledge",
+      "failureState": "Ice reforms and the vine withers"
+    },
+    {
+      "id": "puzzle_013",
+      "name": "Hidden Embers",
+      "category": "MemoryPalace",
+      "difficulty": 2,
+      "description": "Four embers are revealed briefly, then hidden; touch each one from memory.",
+      "requiredComponents": [
+        "MemoryPalace",
+        "GateLock"
+      ],
+      "prefabDependencies": [
+        "Memory_Niche",
+        "Sigil_Gate"
+      ],
+      "variantParams": {
+        "objectCount": 4,
+        "revealSeconds": 2,
+        "timeLimit": 45
+      },
+      "unlockCondition": "All hidden embers touched after the reveal",
+      "failureState": "Embers rehide in new slots"
+    },
+    {
+      "id": "puzzle_026",
+      "name": "Hidden Order",
+      "category": "MemoryPalace",
+      "difficulty": 4,
+      "description": "Remember both the places and the order of five embers, then touch them in sequence.",
+      "requiredComponents": [
+        "MemoryPalace",
+        "SequenceMemory",
+        "GateLock"
+      ],
+      "prefabDependencies": [
+        "Memory_Niche",
+        "Echo_Recorder"
+      ],
+      "variantParams": {
+        "objectCount": 5,
+        "sequenceLength": 3,
+        "timeLimit": 55
+      },
+      "unlockCondition": "Hidden objects touched in the revealed order",
+      "failureState": "Order reshuffles and objects rehide"
+    }
+  ]
+}

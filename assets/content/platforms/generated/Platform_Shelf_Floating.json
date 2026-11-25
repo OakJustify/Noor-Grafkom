@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Platform_Shelf_Floating",
+  "category": "Shelf",
+  "variant": "Floating",
+  "tag": "Platform",
+  "layer": {
+    "name": "Standable",
+    "index": 7
+  },
+  "collider": {
+    "type": "BoxCollider2D",
+    "rect": [
+      0,
+      0.06,
+      0.74,
+      0.06
+    ],
+    "isTrigger": false
+  },
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.74,
+      0.12
+    ],
+    "standableSurface": [
+      0,
+      0.06,
+      0.74,
+      0.06
+    ],
+    "silhouette": "thin bracketless wall plank",
+    "palette": [
+      "#8e7350",
+      "#5e4b33"
+    ],
+    "details": [
+      "hidden bracket",
+      "thin profile"
+    ]
+  },
+  "platformData": {
+    "id": "PlatformData_Shelf_Floating",
+    "platformType": "Shelf",
+    "maxStandAngle": 45.0,
+    "isStable": true,
+    "creakSound": null
+  }
+}

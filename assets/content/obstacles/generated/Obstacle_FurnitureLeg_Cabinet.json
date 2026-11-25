@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Obstacle_FurnitureLeg_Cabinet",
+  "category": "FurnitureLeg",
+  "variant": "Cabinet",
+  "tag": "Obstacle",
+  "layer": {
+    "name": "Obstacle",
+    "index": 8
+  },
+  "colliders": [
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0,
+        0,
+        0.12,
+        0.64
+      ],
+      "isTrigger": false
+    },
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0.12,
+        0,
+        0.16,
+        0.14
+      ],
+      "isTrigger": false
+    }
+  ],
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.28,
+      0.64
+    ],
+    "silhouette": "cabinet plinth leg and base ledge",
+    "palette": [
+      "#5f4d3c",
+      "#382d22"
+    ],
+    "details": [
+      "plinth foot",
+      "base ledge"
+    ]
+  },
+  "obstacleData": {
+    "id": "ObstacleData_FurnitureLeg_Cabinet",
+    "obstacleType": "FurnitureLeg",
+    "trippingChance": 0.68,
+    "noiseLevel": 0.4,
+    "canBeCleared": false,
+    "clearTime": 0.0
+  }
+}

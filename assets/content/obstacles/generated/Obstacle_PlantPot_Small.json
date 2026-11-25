@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Obstacle_PlantPot_Small",
+  "category": "PlantPot",
+  "variant": "Small",
+  "tag": "Obstacle",
+  "layer": {
+    "name": "Obstacle",
+    "index": 8
+  },
+  "colliders": [
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0,
+        0,
+        0.26,
+        0.2
+      ],
+      "isTrigger": false
+    },
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0.04,
+        0.2,
+        0.18,
+        0.14
+      ],
+      "isTrigger": false
+    }
+  ],
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.26,
+      0.34
+    ],
+    "silhouette": "small ceramic pot with dry soil",
+    "palette": [
+      "#b58567",
+      "#6f5c4c"
+    ],
+    "details": [
+      "tapered rim",
+      "dry soil"
+    ]
+  },
+  "obstacleData": {
+    "id": "ObstacleData_PlantPot_Small",
+    "obstacleType": "PlantPot",
+    "trippingChance": 0.52,
+    "noiseLevel": 0.58,
+    "canBeCleared": true,
+    "clearTime": 1.0
+  }
+}

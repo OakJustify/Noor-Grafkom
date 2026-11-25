@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Platform_Cabinet_Bedside",
+  "category": "Cabinet",
+  "variant": "Bedside",
+  "tag": "Platform",
+  "layer": {
+    "name": "Standable",
+    "index": 7
+  },
+  "collider": {
+    "type": "BoxCollider2D",
+    "rect": [
+      0,
+      0.52,
+      0.48,
+      0.06
+    ],
+    "isTrigger": false
+  },
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.48,
+      0.58
+    ],
+    "standableSurface": [
+      0,
+      0.52,
+      0.48,
+      0.06
+    ],
+    "silhouette": "small cabinet with one drawer",
+    "palette": [
+      "#8b6a4a",
+      "#573f2a"
+    ],
+    "details": [
+      "one drawer",
+      "rounded top"
+    ]
+  },
+  "platformData": {
+    "id": "PlatformData_Cabinet_Bedside",
+    "platformType": "Cabinet",
+    "maxStandAngle": 45.0,
+    "isStable": true,
+    "creakSound": null
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Platform_Chair_Office",
+  "category": "Chair",
+  "variant": "Office",
+  "tag": "Platform",
+  "layer": {
+    "name": "Standable",
+    "index": 7
+  },
+  "collider": {
+    "type": "BoxCollider2D",
+    "rect": [
+      0,
+      0.52,
+      0.58,
+      0.08
+    ],
+    "isTrigger": false
+  },
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.58,
+      1.12
+    ],
+    "standableSurface": [
+      0,
+      0.52,
+      0.58,
+      0.08
+    ],
+    "silhouette": "swivel seat with a tall slatted back",
+    "palette": [
+      "#4a5259",
+      "#2b3136"
+    ],
+    "details": [
+      "swivel base",
+      "tall slats"
+    ]
+  },
+  "platformData": {
+    "id": "PlatformData_Chair_Office",
+    "platformType": "Chair",
+    "maxStandAngle": 45.0,
+    "isStable": true,
+    "creakSound": null
+  }
+}

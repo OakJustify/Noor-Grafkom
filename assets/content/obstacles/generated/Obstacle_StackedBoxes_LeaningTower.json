@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Obstacle_StackedBoxes_LeaningTower",
+  "category": "StackedBoxes",
+  "variant": "LeaningTower",
+  "tag": "Obstacle",
+  "layer": {
+    "name": "Obstacle",
+    "index": 8
+  },
+  "colliders": [
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0,
+        0,
+        0.44,
+        0.26
+      ],
+      "isTrigger": false
+    },
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0.18,
+        0.26,
+        0.44,
+        0.26
+      ],
+      "isTrigger": false
+    },
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0.1,
+        0.52,
+        0.4,
+        0.26
+      ],
+      "isTrigger": false
+    }
+  ],
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.62,
+      0.78
+    ],
+    "silhouette": "three cartons stacked at increasing offsets",
+    "palette": [
+      "#9c6f4d",
+      "#63472f"
+    ],
+    "details": [
+      "offset tiers",
+      "crushed corner"
+    ]
+  },
+  "obstacleData": {
+    "id": "ObstacleData_StackedBoxes_LeaningTower",
+    "obstacleType": "StackedBoxes",
+    "trippingChance": 0.82,
+    "noiseLevel": 0.64,
+    "canBeCleared": true,
+    "clearTime": 3.2
+  }
+}

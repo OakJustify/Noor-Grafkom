@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "prefab": "Obstacle_RugEdge_CurledCorner",
+  "category": "RugEdge",
+  "variant": "CurledCorner",
+  "tag": "Obstacle",
+  "layer": {
+    "name": "Obstacle",
+    "index": 8
+  },
+  "colliders": [
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0,
+        0,
+        0.3,
+        0.06
+      ],
+      "isTrigger": false
+    },
+    {
+      "type": "BoxCollider2D",
+      "rect": [
+        0.3,
+        0,
+        0.14,
+        0.16
+      ],
+      "isTrigger": false
+    }
+  ],
+  "visual": {
+    "bounds": [
+      0,
+      0,
+      0.44,
+      0.16
+    ],
+    "silhouette": "rug corner curled up from the floor",
+    "palette": [
+      "#9b5f52",
+      "#6b4038"
+    ],
+    "details": [
+      "lifted corner",
+      "woven border"
+    ]
+  },
+  "obstacleData": {
+    "id": "ObstacleData_RugEdge_CurledCorner",
+    "obstacleType": "RugEdge",
+    "trippingChance": 0.78,
+    "noiseLevel": 0.12,
+    "canBeCleared": true,
+    "clearTime": 0.8
+  }
+}
