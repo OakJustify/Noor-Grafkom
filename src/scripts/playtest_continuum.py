@@ -32,6 +32,8 @@ class ContinuousPilot:
         self.pendulum_crossing=set()
 
     def control(self,game):
+        if game.state != 'playing':
+            return NurInput()
         control=self.route_control(game)
         return self.avoid_machinery(game,control)
 
@@ -107,6 +109,10 @@ class ContinuousPilot:
                 room=game.room,boss=game.boss)
             return self.journey.control(view)
         local_x=px-r.start
+        if game.room == 28 and game.boss is None:
+            jump = any(rect.h < 30 and -12 < rect.x-px < 68 and rect.y < py+24
+                       for rect in r.terrain)
+            return NurInput(move=1, jump=jump, sprint=self.sprint)
         if game.room==28 and game.boss:
             boss=game.boss
             if boss.phase==0:
@@ -146,6 +152,10 @@ def run(output,max_seconds=2400,sprint=True,captures=None):
     pilot=ContinuousPilot(sprint=sprint)
     original_space=game.world.space
     elapsed=active=0.
+    cutscene_seconds=0.
+    scene_completion_order=[]
+    story_cues=[]
+    recorded_cues=set()
     wall=time.perf_counter()
     solved=shifts=0
     captures_taken=set()
@@ -161,11 +171,30 @@ def run(output,max_seconds=2400,sprint=True,captures=None):
     previous_anchor=None
     try:
         for step in range(round(max_seconds/DT)):
+            was_cutscene=game.state=='cutscene'
+            seen_before=set(game.story.seen)
+            if was_cutscene:
+                key=(game.story.active,game.story.cue_index)
+                if key not in recorded_cues:
+                    recorded_cues.add(key)
+                    cue=game.story.cue
+                    record={'scene':key[0],'cue':key[1],'shot':cue.shot,
+                            'speaker':cue.speaker,'subtitle':cue.text,
+                            'simulation_seconds':round(elapsed,3),
+                            'position':list(game._player_xy())}
+                    if captures:
+                        captures.mkdir(parents=True,exist_ok=True)
+                        filename=f'{key[0]}-cue-{key[1]+1:02d}.png'
+                        pygame.image.save(game.draw(),str(captures/filename))
+                        record['capture']=str(captures/filename)
+                    story_cues.append(record)
             control=pilot.control(game)
             before=sum(q.stage for q in game.world.quests.values())
             phase=game.world.phase
             game.update(DT,control)
             elapsed+=DT
+            cutscene_seconds+=DT if was_cutscene else 0
+            scene_completion_order.extend(sorted(game.story.seen-seen_before))
             active+=DT if control.move or control.action or control.jump or control.grab or control.shift else 0
             solved+=sum(q.stage for q in game.world.quests.values())-before
             shifts+=game.world.phase!=phase
@@ -221,8 +250,12 @@ def run(output,max_seconds=2400,sprint=True,captures=None):
             for i,image in enumerate(images):
                 sheet.blit(pygame.transform.smoothscale(image,(480,270)),((i%3)*480,(i//3)*270))
             pygame.image.save(sheet,str(captures/'campaign.png'))
-        report={"kind":"known-solution input-only route; visible machinery avoided by waiting/jumping, no NPCs",
-                "completed":game.state=='ending',"gameplay_seconds":round(elapsed,3),
+        report={"kind":"known-solution input-only route; puzzles and machinery, subtitle-only story cinematics",
+                "completed":game.state=='ending' and game.story.completed,
+                "gameplay_seconds":round(game.play_seconds,3),
+                "simulation_seconds":round(elapsed,3),"cutscene_seconds":round(cutscene_seconds,3),
+                "scene_completion_order":scene_completion_order,"story":game.story.snapshot(),
+                "story_cues":story_cues,
                 "active_input_seconds":round(active,3),"execution_seconds":round(time.perf_counter()-wall,3),
                 "one_space_preserved":space_preserved,"milestones":solved,"perception_shifts":shifts,
                 "observed_monster_forms":[BESTIARY[k][0] for k in sorted(observed_forms)],

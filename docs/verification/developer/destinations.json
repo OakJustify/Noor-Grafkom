@@ -1,0 +1,316 @@
+{
+  "developer_mode": true,
+  "destinations_verified": 6,
+  "same_physics_space": true,
+  "checkpoint_unchanged": true,
+  "hud_text_fits": true,
+  "records": [
+    {
+      "fragment": "F01",
+      "title": "Pita merah",
+      "shortcut": "F1",
+      "region": 2,
+      "fragment_position": [
+        2475.0,
+        438.0
+      ],
+      "arrival": [
+        2385.0,
+        438.0
+      ],
+      "collection_position": [
+        2425.91276041667,
+        435.83725606652604
+      ],
+      "scene": "CS01",
+      "movement_steps": 12,
+      "approach_capture": "D:\\Aku Coding\\Py\\Projects\\Noor-Grafkom\\docs\\verification\\developer\\F01-approach.png",
+      "cutscene_capture": "D:\\Aku Coding\\Py\\Projects\\Noor-Grafkom\\docs\\verification\\developer\\F01-cutscene.png",
+      "story": {
+        "version": 1,
+        "collected": [
+          "F01"
+        ],
+        "seen": [
+          "CS00"
+        ],
+        "active": "CS01",
+        "finale_requested": false,
+        "completed": false
+      }
+    },
+    {
+      "fragment": "F02",
+      "title": "Cangkir biru",
+      "shortcut": "F2",
+      "region": 6,
+      "fragment_position": [
+        13955.0,
+        438.0
+      ],
+      "arrival": [
+        13865.0,
+        438.0
+      ],
+      "collection_position": [
+        13905.91276041668,
+        435.8287515202681
+      ],
+      "scene": "CS02",
+      "movement_steps": 12,
+      "approach_capture": "D:\\Aku Coding\\Py\\Projects\\Noor-Grafkom\\docs\\verification\\developer\\F02-approach.png",
+      "cutscene_capture": "D:\\Aku Coding\\Py\\Projects\\Noor-Grafkom\\docs\\verification\\developer\\F02-cutscene.png",
+      "story": {
+        "version": 1,
+        "collected": [
+          "F01",
+          "F02"
+        ],
+        "seen": [
+          "CS00",
+          "CS01"
+        ],
+        "active": "CS02",
+        "finale_requested": false,
+        "completed": false
+      }
+    },
+    {
+      "fragment": "F03",
+      "title": "Kunci kecil",
+      "shortcut": "F3",
+      "region": 11,
+      "fragment_position": [
+        35055.0,
+        438.0
+      ],
+      "arrival": [
+        34965.0,
+        438.0
+      ],
+      "collection_position": [
+        35005.91276041672,
+        435.8288567609645
+      ],
+      "scene": "CS03",
+      "movement_steps": 12,
+      "approach_capture": "D:\\Aku Coding\\Py\\Projects\\Noor-Grafkom\\docs\\verification\\developer\\F03-approach.png",
+      "cutscene_capture": "D:\\Aku Coding\\Py\\Projects\\Noor-Grafkom\\docs\\verification\\developer\\F03-cutscene.png",
+      "story": {
+        "version": 1,
+        "collected": [
+          "F01",
+          "F02",
+          "F03"
+        ],
+        "seen": [
+          "CS00",
+          "CS01",
+          "CS02"
+        ],
+        "active": "CS03",
+        "finale_requested": false,
+        "completed": false
+      }
+    },
+    {
+      "fragment": "F04",
+      "title": "Foto terlipat",
+      "shortcut": "F4",
+      "region": 16,
+      "fragment_position": [
+        56155.0,
+        438.0
+      ],
+      "arrival": [
+        56065.0,
+        438.0
+      ],
+      "collection_position": [
+        56105.91276041672,
+        435.82885545864883
+      ],
+      "scene": "CS04",
+      "movement_steps": 12,
+      "approach_capture": "D:\\Aku Coding\\Py\\Projects\\Noor-Grafkom\\docs\\verification\\developer\\F04-approach.png",
+      "cutscene_capture": "D:\\Aku Coding\\Py\\Projects\\Noor-Grafkom\\docs\\verification\\developer\\F04-cutscene.png",
+      "story": {
+        "version": 1,
+        "collected": [
+          "F01",
+          "F02",
+          "F03",
+          "F04"
+        ],
+        "seen": [
+          "CS00",
+          "CS01",
+          "CS02",
+          "CS03"
+        ],
+        "active": "CS04",
+        "finale_requested": false,
+        "completed": false
+      }
+    },
+    {
+      "fragment": "F05",
+      "title": "Catatan dapur",
+      "shortcut": "F5",
+      "region": 21,
+      "fragment_position": [
+        77255.0,
+        438.0
+      ],
+      "arrival": [
+        77165.0,
+        438.0
+      ],
+      "collection_position": [
+        77205.91276041656,
+        435.82885547476445
+      ],
+      "scene": "CS05",
+      "movement_steps": 12,
+      "approach_capture": "D:\\Aku Coding\\Py\\Projects\\Noor-Grafkom\\docs\\verification\\developer\\F05-approach.png",
+      "cutscene_capture": "D:\\Aku Coding\\Py\\Projects\\Noor-Grafkom\\docs\\verification\\developer\\F05-cutscene.png",
+      "story": {
+        "version": 1,
+        "collected": [
+          "F01",
+          "F02",
+          "F03",
+          "F04",
+          "F05"
+        ],
+        "seen": [
+          "CS00",
+          "CS01",
+          "CS02",
+          "CS03",
+          "CS04"
+        ],
+        "active": "CS05",
+        "finale_requested": false,
+        "completed": false
+      }
+    },
+    {
+      "fragment": "F06",
+      "title": "Kain bersulam",
+      "shortcut": "F6",
+      "region": 26,
+      "fragment_position": [
+        98355.0,
+        438.0
+      ],
+      "arrival": [
+        98265.0,
+        438.0
+      ],
+      "collection_position": [
+        98305.91276041656,
+        435.8288554745652
+      ],
+      "scene": "CS06",
+      "movement_steps": 12,
+      "approach_capture": "D:\\Aku Coding\\Py\\Projects\\Noor-Grafkom\\docs\\verification\\developer\\F06-approach.png",
+      "cutscene_capture": "D:\\Aku Coding\\Py\\Projects\\Noor-Grafkom\\docs\\verification\\developer\\F06-cutscene.png",
+      "story": {
+        "version": 1,
+        "collected": [
+          "F01",
+          "F02",
+          "F03",
+          "F04",
+          "F05",
+          "F06"
+        ],
+        "seen": [
+          "CS00",
+          "CS01",
+          "CS02",
+          "CS03",
+          "CS04",
+          "CS05"
+        ],
+        "active": "CS06",
+        "finale_requested": false,
+        "completed": false
+      }
+    }
+  ],
+  "sources": {
+    "__init__.py": "22dba40bfa1abecc",
+    "__main__.py": "153aae8b4f39509b",
+    "art\\__init__.py": "804262bca5280663",
+    "art\\core.py": "d6528035a0c5c44a",
+    "art\\legacy.py": "79500ca9b1c8ff38",
+    "audio\\__init__.py": "87d8bccf1d9c6fc1",
+    "audio\\player.py": "905a223821bc0b44",
+    "audio\\synthesis.py": "d791f68264e16bf2",
+    "baseline_game.py": "829959c47cba7c8f",
+    "boss.py": "3cd509f64ae5999b",
+    "cinematics\\__init__.py": "8249d3689f24ade4",
+    "cinematics\\catalog.py": "a67f8064b34774aa",
+    "cinematics\\fragments.py": "f44185e219cd06a9",
+    "cinematics\\portraits.py": "1e04b4d927a0f396",
+    "cinematics\\progress.py": "8da31f241fd89db4",
+    "cinematics\\renderer.py": "ee66e6b5d1e6df64",
+    "config.py": "aa352fff40e5abd3",
+    "continuum.py": "566c19cd6394b507",
+    "encounters.py": "0324d90ef0165054",
+    "engine\\__init__.py": "e7c8fdce71563d67",
+    "engine\\capabilities.py": "aa3f036d0dedb58b",
+    "engine\\constants.py": "e3ff7869c6e9976e",
+    "engine\\controls.py": "4e91bb082f71aec3",
+    "engine\\world.py": "f058ea67f350f246",
+    "environments.py": "bb76a8a8becb12ec",
+    "foley.py": "9b0defea9f788c21",
+    "game\\__init__.py": "b9ad006eaaa9bf68",
+    "game\\cli.py": "2b0ed6be79297e21",
+    "game\\controller.py": "03d19576096b0948",
+    "game\\finale.py": "7568c56d73c4fa7a",
+    "game\\persistence.py": "44896b0bb24f575e",
+    "game\\presentation.py": "6ab074460c7a30b3",
+    "generate_assets.py": "047a4cfda78dca77",
+    "generate_wisp.py": "deb5262cb8a92472",
+    "geometry.py": "d8a56ca613eef653",
+    "hallucinations\\__init__.py": "46ab44616c6a5d32",
+    "hallucinations\\projection.py": "0ce13dadf4ce3256",
+    "hallucinations\\state.py": "2511f77ca6258572",
+    "hazards.py": "d462284245f9a9b1",
+    "illustration.py": "0c7feee6f6705b92",
+    "journey.py": "24ae0e6d7391f83a",
+    "levels.py": "1a6919529e903872",
+    "light.py": "92aa22942699feda",
+    "materials.py": "ecfd41d9088e0c9b",
+    "monsters.py": "74d40f772db1c445",
+    "music.py": "b529452c4863b196",
+    "physics.py": "8de60ba8001f00e4",
+    "procedural.py": "153a31db78a32d29",
+    "puzzles\\__init__.py": "d3e17d478dba69ff",
+    "puzzles\\base.py": "2d0e91ae6ef55346",
+    "puzzles\\catalog.py": "8b858bac92b63e6b",
+    "puzzles\\components.py": "870dbc9548370f5d",
+    "puzzles\\manager.py": "ea0a0d4897df0c2f",
+    "puzzles\\registry.py": "659e9c1c863c83f4",
+    "quests.py": "db6a42023ba77e4b",
+    "refuges.py": "edb6f73b3723795d",
+    "sanity\\__init__.py": "17db9426cfd2e4a8",
+    "sanity\\core.py": "16bce75258204958",
+    "sanity\\effects.py": "396138b8baa77d13",
+    "sanity\\phantoms.py": "7381f3892a6759df",
+    "scenery.py": "d20845037633f3e2",
+    "soundscape.py": "9dc5725480a7b8b0",
+    "spawn_manager\\__init__.py": "354d57649f40c41a",
+    "spawn_manager\\manager.py": "4dc6a840e14c0e86",
+    "spawn_manager\\types.py": "a751c531261467bb",
+    "state.py": "07825d6038631d94",
+    "story.py": "fe327bc1ad017e0c",
+    "threats.py": "5e4c8d4388b6b15c",
+    "vistas.py": "86f7fcc829354fed",
+    "wisp.py": "20a6e5b472b82bfb"
+  },
+  "visual_review": "Captured and layout-checked; artistic visual inspection not claimed."
+}

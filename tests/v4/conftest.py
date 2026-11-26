@@ -10,6 +10,7 @@ from nur_game.game import Game
 
 @pytest.fixture
 def game():
-    g=Game(seed=1234,muted=True,persist=False)
+    # Mechanic regressions run without narrative playback; story tests use the live default.
+    g=Game(seed=1234,muted=True,persist=False,cinematics=False)
     yield g
     g.audio.close()

@@ -1,0 +1,1399 @@
+{
+  "kind": "known-solution input-only route; puzzles and machinery, subtitle-only story cinematics",
+  "completed": true,
+  "gameplay_seconds": 1199.908,
+  "simulation_seconds": 1521.908,
+  "cutscene_seconds": 322.0,
+  "scene_completion_order": [
+    "CS00",
+    "CS01",
+    "CS02",
+    "CS03",
+    "CS04",
+    "CS05",
+    "CS06",
+    "CS07",
+    "CS08"
+  ],
+  "story": {
+    "version": 1,
+    "collected": [
+      "F01",
+      "F02",
+      "F03",
+      "F04",
+      "F05",
+      "F06"
+    ],
+    "seen": [
+      "CS00",
+      "CS01",
+      "CS02",
+      "CS03",
+      "CS04",
+      "CS05",
+      "CS06",
+      "CS07",
+      "CS08"
+    ],
+    "active": null,
+    "finale_requested": true,
+    "completed": true
+  },
+  "story_cues": [
+    {
+      "scene": "CS00",
+      "cue": 0,
+      "shot": "morning_lane",
+      "speaker": "",
+      "subtitle": "",
+      "simulation_seconds": 0.0,
+      "position": [
+        130.0,
+        430.0
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS00-cue-01.png"
+    },
+    {
+      "scene": "CS00",
+      "cue": 1,
+      "shot": "lantern_pickup",
+      "speaker": "",
+      "subtitle": "",
+      "simulation_seconds": 5.0,
+      "position": [
+        130.0,
+        430.0
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS00-cue-02.png"
+    },
+    {
+      "scene": "CS00",
+      "cue": 2,
+      "shot": "red_fence",
+      "speaker": "",
+      "subtitle": "Ikuti jalan.",
+      "simulation_seconds": 10.0,
+      "position": [
+        130.0,
+        430.0
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS00-cue-03.png"
+    },
+    {
+      "scene": "CS01",
+      "cue": 0,
+      "shot": "ribbon_hands",
+      "speaker": "",
+      "subtitle": "",
+      "simulation_seconds": 25.733,
+      "position": [
+        2423.2061298823387,
+        435.15074537610667
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS01-cue-01.png"
+    },
+    {
+      "scene": "CS01",
+      "cue": 1,
+      "shot": "ribbon_hands",
+      "speaker": "ANAK",
+      "subtitle": "Yang ini miring.",
+      "simulation_seconds": 28.733,
+      "position": [
+        2423.2061298823387,
+        435.15074537610667
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS01-cue-02.png"
+    },
+    {
+      "scene": "CS01",
+      "cue": 2,
+      "shot": "ribbon_school",
+      "speaker": "PEREMPUAN",
+      "subtitle": "Kepalamu juga dari tadi tidak bisa diam.",
+      "simulation_seconds": 32.733,
+      "position": [
+        2423.2061298823387,
+        435.15074537610667
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS01-cue-03.png"
+    },
+    {
+      "scene": "CS01",
+      "cue": 3,
+      "shot": "ribbon_school",
+      "speaker": "ANAK",
+      "subtitle": "Sudah?",
+      "simulation_seconds": 37.733,
+      "position": [
+        2423.2061298823387,
+        435.15074537610667
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS01-cue-04.png"
+    },
+    {
+      "scene": "CS01",
+      "cue": 4,
+      "shot": "ribbon_school",
+      "speaker": "PEREMPUAN",
+      "subtitle": "Sudah. Tasnya jangan ketinggalan.",
+      "simulation_seconds": 40.733,
+      "position": [
+        2423.2061298823387,
+        435.15074537610667
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS01-cue-05.png"
+    },
+    {
+      "scene": "CS01",
+      "cue": 5,
+      "shot": "bag_door",
+      "speaker": "PEREMPUAN",
+      "subtitle": "Nah, kan.",
+      "simulation_seconds": 45.733,
+      "position": [
+        2423.2061298823387,
+        435.15074537610667
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS01-cue-06.png"
+    },
+    {
+      "scene": "CS01",
+      "cue": 6,
+      "shot": "ribbon_hands",
+      "speaker": "",
+      "subtitle": "",
+      "simulation_seconds": 48.733,
+      "position": [
+        2423.2061298823387,
+        435.15074537610667
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS01-cue-07.png"
+    },
+    {
+      "scene": "CS02",
+      "cue": 0,
+      "shot": "mug_detail",
+      "speaker": "",
+      "subtitle": "",
+      "simulation_seconds": 136.308,
+      "position": [
+        13904.062009634628,
+        435.1500000000005
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS02-cue-01.png"
+    },
+    {
+      "scene": "CS02",
+      "cue": 1,
+      "shot": "mug_drawing",
+      "speaker": "ANAK",
+      "subtitle": "Ini rumah kita.",
+      "simulation_seconds": 139.308,
+      "position": [
+        13904.062009634628,
+        435.1500000000005
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS02-cue-02.png"
+    },
+    {
+      "scene": "CS02",
+      "cue": 2,
+      "shot": "mug_drawing",
+      "speaker": "PEREMPUAN",
+      "subtitle": "Pohonnya tinggi sekali.",
+      "simulation_seconds": 143.308,
+      "position": [
+        13904.062009634628,
+        435.1500000000005
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS02-cue-03.png"
+    },
+    {
+      "scene": "CS02",
+      "cue": 3,
+      "shot": "mug_drawing",
+      "speaker": "ANAK",
+      "subtitle": "Biar kelihatan dari jauh. Kalau pulang, tinggal cari pohonnya.",
+      "simulation_seconds": 147.308,
+      "position": [
+        13904.062009634628,
+        435.1500000000005
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS02-cue-04.png"
+    },
+    {
+      "scene": "CS02",
+      "cue": 4,
+      "shot": "drawing_wall",
+      "speaker": "PEREMPUAN",
+      "subtitle": "Ya sudah. Jangan ditutup kalender, nanti rumahnya hilang.",
+      "simulation_seconds": 153.308,
+      "position": [
+        13904.062009634628,
+        435.1500000000005
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS02-cue-05.png"
+    },
+    {
+      "scene": "CS02",
+      "cue": 5,
+      "shot": "mug_detail",
+      "speaker": "ANAK",
+      "subtitle": "Masih panas?",
+      "simulation_seconds": 159.308,
+      "position": [
+        13904.062009634628,
+        435.1500000000005
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS02-cue-06.png"
+    },
+    {
+      "scene": "CS02",
+      "cue": 6,
+      "shot": "mug_detail",
+      "speaker": "PEREMPUAN",
+      "subtitle": "Masih.",
+      "simulation_seconds": 162.308,
+      "position": [
+        13904.062009634628,
+        435.1500000000005
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS02-cue-07.png"
+    },
+    {
+      "scene": "CS02",
+      "cue": 7,
+      "shot": "mug_detail",
+      "speaker": "",
+      "subtitle": "",
+      "simulation_seconds": 164.308,
+      "position": [
+        13904.062009634628,
+        435.1500000000005
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS02-cue-08.png"
+    },
+    {
+      "scene": "CS03",
+      "cue": 0,
+      "shot": "crossroad_wait",
+      "speaker": "",
+      "subtitle": "",
+      "simulation_seconds": 421.717,
+      "position": [
+        35005.34676385034,
+        435.090778060272
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS03-cue-01.png"
+    },
+    {
+      "scene": "CS03",
+      "cue": 1,
+      "shot": "crossroad_wait",
+      "speaker": "PEREMPUAN",
+      "subtitle": "Tadi... lewat sini.",
+      "simulation_seconds": 426.717,
+      "position": [
+        35005.34676385034,
+        435.090778060272
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS03-cue-02.png"
+    },
+    {
+      "scene": "CS03",
+      "cue": 2,
+      "shot": "crossroad_together",
+      "speaker": "PEREMPUAN MUDA",
+      "subtitle": "Bu, aku cari dari tadi.",
+      "simulation_seconds": 431.717,
+      "position": [
+        35005.34676385034,
+        435.090778060272
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS03-cue-03.png"
+    },
+    {
+      "scene": "CS03",
+      "cue": 3,
+      "shot": "crossroad_wait",
+      "speaker": "PEREMPUAN",
+      "subtitle": "Pohonnya dipindah?",
+      "simulation_seconds": 436.717,
+      "position": [
+        35005.34676385034,
+        435.090778060272
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS03-cue-04.png"
+    },
+    {
+      "scene": "CS03",
+      "cue": 4,
+      "shot": "crossroad_together",
+      "speaker": "PEREMPUAN MUDA",
+      "subtitle": "Rumahnya lewat sini. Kita jalan bareng, ya?",
+      "simulation_seconds": 441.717,
+      "position": [
+        35005.34676385034,
+        435.090778060272
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS03-cue-05.png"
+    },
+    {
+      "scene": "CS03",
+      "cue": 5,
+      "shot": "crossroad_together",
+      "speaker": "PEREMPUAN",
+      "subtitle": "Dekat?",
+      "simulation_seconds": 448.717,
+      "position": [
+        35005.34676385034,
+        435.090778060272
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS03-cue-06.png"
+    },
+    {
+      "scene": "CS03",
+      "cue": 6,
+      "shot": "crossroad_together",
+      "speaker": "PEREMPUAN MUDA",
+      "subtitle": "Dekat.",
+      "simulation_seconds": 451.717,
+      "position": [
+        35005.34676385034,
+        435.090778060272
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS03-cue-07.png"
+    },
+    {
+      "scene": "CS03",
+      "cue": 7,
+      "shot": "crossroad_empty",
+      "speaker": "",
+      "subtitle": "",
+      "simulation_seconds": 454.717,
+      "position": [
+        35005.34676385034,
+        435.090778060272
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS03-cue-08.png"
+    },
+    {
+      "scene": "CS04",
+      "cue": 0,
+      "shot": "photo_pose",
+      "speaker": "",
+      "subtitle": "",
+      "simulation_seconds": 676.325,
+      "position": [
+        56104.68819383431,
+        435.1508273253939
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS04-cue-01.png"
+    },
+    {
+      "scene": "CS04",
+      "cue": 1,
+      "shot": "photo_pose",
+      "speaker": "DARI LUAR BINGKAI",
+      "subtitle": "Geser sedikit. Pohonnya ikut, ya.",
+      "simulation_seconds": 680.325,
+      "position": [
+        56104.68819383431,
+        435.1508273253939
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS04-cue-02.png"
+    },
+    {
+      "scene": "CS04",
+      "cue": 2,
+      "shot": "photo_pose",
+      "speaker": "ANAK",
+      "subtitle": "Bu, lihat sini.",
+      "simulation_seconds": 686.325,
+      "position": [
+        56104.68819383431,
+        435.1508273253939
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS04-cue-03.png"
+    },
+    {
+      "scene": "CS04",
+      "cue": 3,
+      "shot": "photo_print",
+      "speaker": "",
+      "subtitle": "",
+      "simulation_seconds": 690.325,
+      "position": [
+        56104.68819383431,
+        435.1508273253939
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS04-cue-04.png"
+    },
+    {
+      "scene": "CS04",
+      "cue": 4,
+      "shot": "photo_fold",
+      "speaker": "PEREMPUAN TUA",
+      "subtitle": "Ini anak siapa?",
+      "simulation_seconds": 693.325,
+      "position": [
+        56104.68819383431,
+        435.1508273253939
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS04-cue-05.png"
+    },
+    {
+      "scene": "CS04",
+      "cue": 5,
+      "shot": "photo_fold",
+      "speaker": "",
+      "subtitle": "",
+      "simulation_seconds": 700.325,
+      "position": [
+        56104.68819383431,
+        435.1508273253939
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS04-cue-06.png"
+    },
+    {
+      "scene": "CS04",
+      "cue": 6,
+      "shot": "photo_fading",
+      "speaker": "PEREMPUAN TUA",
+      "subtitle": "Sepertinya pernah ke sini.",
+      "simulation_seconds": 704.325,
+      "position": [
+        56104.68819383431,
+        435.1508273253939
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS04-cue-07.png"
+    },
+    {
+      "scene": "CS04",
+      "cue": 7,
+      "shot": "photo_fading",
+      "speaker": "",
+      "subtitle": "",
+      "simulation_seconds": 709.325,
+      "position": [
+        56104.68819383431,
+        435.1508273253939
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS04-cue-08.png"
+    },
+    {
+      "scene": "CS05",
+      "cue": 0,
+      "shot": "recipe_read",
+      "speaker": "",
+      "subtitle": "",
+      "simulation_seconds": 968.542,
+      "position": [
+        77204.88333115705,
+        435.1078512940614
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS05-cue-01.png"
+    },
+    {
+      "scene": "CS05",
+      "cue": 1,
+      "shot": "recipe_read",
+      "speaker": "PEREMPUAN TUA",
+      "subtitle": "Sudah dimasukkan?",
+      "simulation_seconds": 974.542,
+      "position": [
+        77204.88333115705,
+        435.1078512940614
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS05-cue-02.png"
+    },
+    {
+      "scene": "CS05",
+      "cue": 2,
+      "shot": "recipe_stir",
+      "speaker": "PEREMPUAN MUDA",
+      "subtitle": "Gulanya sudah. Tinggal diaduk.",
+      "simulation_seconds": 979.542,
+      "position": [
+        77204.88333115705,
+        435.1078512940614
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS05-cue-03.png"
+    },
+    {
+      "scene": "CS05",
+      "cue": 3,
+      "shot": "recipe_read",
+      "speaker": "PEREMPUAN TUA",
+      "subtitle": "Yang ini?",
+      "simulation_seconds": 984.542,
+      "position": [
+        77204.88333115705,
+        435.1078512940614
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS05-cue-04.png"
+    },
+    {
+      "scene": "CS05",
+      "cue": 4,
+      "shot": "recipe_stir",
+      "speaker": "PEREMPUAN MUDA",
+      "subtitle": "Sudah, Bu. Tehnya boleh dicoba dulu.",
+      "simulation_seconds": 988.542,
+      "position": [
+        77204.88333115705,
+        435.1078512940614
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS05-cue-05.png"
+    },
+    {
+      "scene": "CS05",
+      "cue": 5,
+      "shot": "recipe_tea",
+      "speaker": "PEREMPUAN TUA",
+      "subtitle": "Kamu bikin terlalu panas.",
+      "simulation_seconds": 994.542,
+      "position": [
+        77204.88333115705,
+        435.1078512940614
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS05-cue-06.png"
+    },
+    {
+      "scene": "CS05",
+      "cue": 6,
+      "shot": "recipe_tea",
+      "speaker": "PEREMPUAN MUDA",
+      "subtitle": "Kita tunggu sebentar.",
+      "simulation_seconds": 999.542,
+      "position": [
+        77204.88333115705,
+        435.1078512940614
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS05-cue-07.png"
+    },
+    {
+      "scene": "CS05",
+      "cue": 7,
+      "shot": "recipe_stir",
+      "speaker": "",
+      "subtitle": "",
+      "simulation_seconds": 1004.542,
+      "position": [
+        77204.88333115705,
+        435.1078512940614
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS05-cue-08.png"
+    },
+    {
+      "scene": "CS06",
+      "cue": 0,
+      "shot": "stitch_hands",
+      "speaker": "",
+      "subtitle": "",
+      "simulation_seconds": 1212.45,
+      "position": [
+        98304.83283259162,
+        435.1500789380437
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS06-cue-01.png"
+    },
+    {
+      "scene": "CS06",
+      "cue": 1,
+      "shot": "stitch_hands",
+      "speaker": "ANAK",
+      "subtitle": "Yang ini dibuka saja?",
+      "simulation_seconds": 1217.45,
+      "position": [
+        98304.83283259162,
+        435.1500789380437
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS06-cue-02.png"
+    },
+    {
+      "scene": "CS06",
+      "cue": 2,
+      "shot": "stitch_hands",
+      "speaker": "PEREMPUAN",
+      "subtitle": "Tidak usah. Nanti kamu tahu yang mana buatanmu.",
+      "simulation_seconds": 1222.45,
+      "position": [
+        98304.83283259162,
+        435.1500789380437
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS06-cue-03.png"
+    },
+    {
+      "scene": "CS06",
+      "cue": 3,
+      "shot": "cloth_wait",
+      "speaker": "PEREMPUAN TUA",
+      "subtitle": "Anak saya belum pulang sekolah.",
+      "simulation_seconds": 1229.45,
+      "position": [
+        98304.83283259162,
+        435.1500789380437
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS06-cue-04.png"
+    },
+    {
+      "scene": "CS06",
+      "cue": 4,
+      "shot": "cloth_door",
+      "speaker": "PEREMPUAN MUDA",
+      "subtitle": "Ibu sedang menunggu dia?",
+      "simulation_seconds": 1235.45,
+      "position": [
+        98304.83283259162,
+        435.1500789380437
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS06-cue-05.png"
+    },
+    {
+      "scene": "CS06",
+      "cue": 5,
+      "shot": "cloth_wait",
+      "speaker": "PEREMPUAN TUA",
+      "subtitle": "Biasanya sudah sampai.",
+      "simulation_seconds": 1240.45,
+      "position": [
+        98304.83283259162,
+        435.1500789380437
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS06-cue-06.png"
+    },
+    {
+      "scene": "CS06",
+      "cue": 6,
+      "shot": "cloth_seated",
+      "speaker": "PEREMPUAN MUDA",
+      "subtitle": "Aku duduk di sini dulu, ya.",
+      "simulation_seconds": 1245.45,
+      "position": [
+        98304.83283259162,
+        435.1500789380437
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS06-cue-07.png"
+    },
+    {
+      "scene": "CS06",
+      "cue": 7,
+      "shot": "cloth_seated",
+      "speaker": "",
+      "subtitle": "",
+      "simulation_seconds": 1250.45,
+      "position": [
+        98304.83283259162,
+        435.1500789380437
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS06-cue-08.png"
+    },
+    {
+      "scene": "CS07",
+      "cue": 0,
+      "shot": "void_path",
+      "speaker": "PENGEMBARA",
+      "subtitle": "Tadi ada rumah di sini.",
+      "simulation_seconds": 1419.908,
+      "position": [
+        112180.17677640928,
+        421.52564484497975
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS07-cue-01.png"
+    },
+    {
+      "scene": "CS07",
+      "cue": 1,
+      "shot": "void_fragments",
+      "speaker": "",
+      "subtitle": "",
+      "simulation_seconds": 1422.908,
+      "position": [
+        112180.17677640928,
+        421.52564484497975
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS07-cue-02.png"
+    },
+    {
+      "scene": "CS07",
+      "cue": 2,
+      "shot": "void_dimming",
+      "speaker": "",
+      "subtitle": "",
+      "simulation_seconds": 1425.908,
+      "position": [
+        112180.17677640928,
+        421.52564484497975
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS07-cue-03.png"
+    },
+    {
+      "scene": "CS07",
+      "cue": 3,
+      "shot": "void_black",
+      "speaker": "",
+      "subtitle": "",
+      "simulation_seconds": 1428.908,
+      "position": [
+        112180.17677640928,
+        421.52564484497975
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS07-cue-04.png"
+    },
+    {
+      "scene": "CS08",
+      "cue": 0,
+      "shot": "real_mug",
+      "speaker": "",
+      "subtitle": "",
+      "simulation_seconds": 1431.908,
+      "position": [
+        112180.17677640928,
+        421.52564484497975
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS08-cue-01.png"
+    },
+    {
+      "scene": "CS08",
+      "cue": 1,
+      "shot": "real_arrival",
+      "speaker": "DARA",
+      "subtitle": "Pagi, Bu.",
+      "simulation_seconds": 1436.908,
+      "position": [
+        112180.17677640928,
+        421.52564484497975
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS08-cue-02.png"
+    },
+    {
+      "scene": "CS08",
+      "cue": 2,
+      "shot": "real_faces",
+      "speaker": "NUR",
+      "subtitle": "Kamu siapa?",
+      "simulation_seconds": 1441.908,
+      "position": [
+        112180.17677640928,
+        421.52564484497975
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS08-cue-03.png"
+    },
+    {
+      "scene": "CS08",
+      "cue": 3,
+      "shot": "real_faces",
+      "speaker": "",
+      "subtitle": "",
+      "simulation_seconds": 1448.908,
+      "position": [
+        112180.17677640928,
+        421.52564484497975
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS08-cue-04.png"
+    },
+    {
+      "scene": "CS08",
+      "cue": 4,
+      "shot": "real_faces",
+      "speaker": "DARA",
+      "subtitle": "Aku Dara, Bu. Anak Ibu.",
+      "simulation_seconds": 1452.908,
+      "position": [
+        112180.17677640928,
+        421.52564484497975
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS08-cue-05.png"
+    },
+    {
+      "scene": "CS08",
+      "cue": 5,
+      "shot": "real_cloth",
+      "speaker": "NUR",
+      "subtitle": "Dara masih kecil.",
+      "simulation_seconds": 1459.908,
+      "position": [
+        112180.17677640928,
+        421.52564484497975
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS08-cue-06.png"
+    },
+    {
+      "scene": "CS08",
+      "cue": 6,
+      "shot": "real_faces",
+      "speaker": "DARA",
+      "subtitle": "Aku yang dulu Ibu antar sekolah.",
+      "simulation_seconds": 1465.908,
+      "position": [
+        112180.17677640928,
+        421.52564484497975
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS08-cue-07.png"
+    },
+    {
+      "scene": "CS08",
+      "cue": 7,
+      "shot": "real_seated",
+      "speaker": "DARA",
+      "subtitle": "Boleh aku duduk di sini?",
+      "simulation_seconds": 1471.908,
+      "position": [
+        112180.17677640928,
+        421.52564484497975
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS08-cue-08.png"
+    },
+    {
+      "scene": "CS08",
+      "cue": 8,
+      "shot": "real_seated",
+      "speaker": "NUR",
+      "subtitle": "Boleh.",
+      "simulation_seconds": 1476.908,
+      "position": [
+        112180.17677640928,
+        421.52564484497975
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS08-cue-09.png"
+    },
+    {
+      "scene": "CS08",
+      "cue": 9,
+      "shot": "real_tea",
+      "speaker": "NUR",
+      "subtitle": "Ini pakai gula?",
+      "simulation_seconds": 1479.908,
+      "position": [
+        112180.17677640928,
+        421.52564484497975
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS08-cue-10.png"
+    },
+    {
+      "scene": "CS08",
+      "cue": 10,
+      "shot": "real_tea",
+      "speaker": "DARA",
+      "subtitle": "Sedikit. Ibu mau coba?",
+      "simulation_seconds": 1484.908,
+      "position": [
+        112180.17677640928,
+        421.52564484497975
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS08-cue-11.png"
+    },
+    {
+      "scene": "CS08",
+      "cue": 11,
+      "shot": "real_tea",
+      "speaker": "NUR",
+      "subtitle": "Masih panas.",
+      "simulation_seconds": 1489.908,
+      "position": [
+        112180.17677640928,
+        421.52564484497975
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS08-cue-12.png"
+    },
+    {
+      "scene": "CS08",
+      "cue": 12,
+      "shot": "real_tea",
+      "speaker": "DARA",
+      "subtitle": "Kita tunggu.",
+      "simulation_seconds": 1493.908,
+      "position": [
+        112180.17677640928,
+        421.52564484497975
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS08-cue-13.png"
+    },
+    {
+      "scene": "CS08",
+      "cue": 13,
+      "shot": "real_cloth",
+      "speaker": "NUR",
+      "subtitle": "Kainnya mau dijahit?",
+      "simulation_seconds": 1497.908,
+      "position": [
+        112180.17677640928,
+        421.52564484497975
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS08-cue-14.png"
+    },
+    {
+      "scene": "CS08",
+      "cue": 14,
+      "shot": "real_cloth",
+      "speaker": "DARA",
+      "subtitle": "Tidak, Bu. Aku bawa saja.",
+      "simulation_seconds": 1503.908,
+      "position": [
+        112180.17677640928,
+        421.52564484497975
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS08-cue-15.png"
+    },
+    {
+      "scene": "CS08",
+      "cue": 15,
+      "shot": "real_hands",
+      "speaker": "",
+      "subtitle": "",
+      "simulation_seconds": 1509.908,
+      "position": [
+        112180.17677640928,
+        421.52564484497975
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS08-cue-16.png"
+    },
+    {
+      "scene": "CS08",
+      "cue": 16,
+      "shot": "real_wide",
+      "speaker": "",
+      "subtitle": "",
+      "simulation_seconds": 1514.908,
+      "position": [
+        112180.17677640928,
+        421.52564484497975
+      ],
+      "capture": "docs\\verification\\story-art\\after\\captures\\CS08-cue-17.png"
+    }
+  ],
+  "active_input_seconds": 1177.492,
+  "execution_seconds": 127.924,
+  "one_space_preserved": true,
+  "milestones": 144,
+  "perception_shifts": 88,
+  "observed_monster_forms": [
+    "PENYAPU",
+    "PELANGKAH",
+    "LONCENG KOSONG",
+    "SERIBU KAKI",
+    "SAYAP RETAK",
+    "PEMBURU",
+    "AKAR BERGERAK",
+    "RODA MATA"
+  ],
+  "maximum_onscreen_monsters": 8,
+  "unlock_progression": [
+    {
+      "seconds": 60.008,
+      "charge": 0.9936,
+      "kinds": [
+        "PENYAPU"
+      ]
+    },
+    {
+      "seconds": 130.0,
+      "charge": 0.9641,
+      "kinds": [
+        "PENYAPU",
+        "PELANGKAH"
+      ]
+    },
+    {
+      "seconds": 250.0,
+      "charge": 0.899,
+      "kinds": [
+        "PENYAPU",
+        "PELANGKAH",
+        "LONCENG KOSONG"
+      ]
+    },
+    {
+      "seconds": 370.008,
+      "charge": 0.8151,
+      "kinds": [
+        "PENYAPU",
+        "PELANGKAH",
+        "LONCENG KOSONG",
+        "SERIBU KAKI"
+      ]
+    },
+    {
+      "seconds": 525.008,
+      "charge": 0.7321,
+      "kinds": [
+        "PENYAPU",
+        "PELANGKAH",
+        "LONCENG KOSONG",
+        "SERIBU KAKI",
+        "SAYAP RETAK"
+      ]
+    },
+    {
+      "seconds": 675.008,
+      "charge": 0.6114,
+      "kinds": [
+        "PENYAPU",
+        "PELANGKAH",
+        "LONCENG KOSONG",
+        "SERIBU KAKI",
+        "SAYAP RETAK",
+        "PEMBURU"
+      ]
+    },
+    {
+      "seconds": 860.008,
+      "charge": 0.5081,
+      "kinds": [
+        "PENYAPU",
+        "PELANGKAH",
+        "LONCENG KOSONG",
+        "SERIBU KAKI",
+        "SAYAP RETAK",
+        "PEMBURU",
+        "AKAR BERGERAK"
+      ]
+    },
+    {
+      "seconds": 1080.008,
+      "charge": 0.3582,
+      "kinds": [
+        "PENYAPU",
+        "PELANGKAH",
+        "LONCENG KOSONG",
+        "SERIBU KAKI",
+        "SAYAP RETAK",
+        "PEMBURU",
+        "AKAR BERGERAK",
+        "RODA MATA"
+      ]
+    }
+  ],
+  "refuges_visited": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28
+  ],
+  "sprint": true,
+  "error": null,
+  "simulation": {
+    "version": 4,
+    "state": "ending",
+    "region": 29,
+    "region_name": "YANG MENYEBUT NAMA",
+    "world_width": 112360,
+    "transitions": 28,
+    "camera": 111400.0,
+    "lantern": {
+      "capacity": 0.16,
+      "charge": 0.1558,
+      "collections": 0,
+      "deaths": 0,
+      "carried": true,
+      "band": 3,
+      "focus": false,
+      "refuges_used": [
+        "refuge:0",
+        "refuge:1",
+        "refuge:10",
+        "refuge:12",
+        "refuge:13",
+        "refuge:15",
+        "refuge:16",
+        "refuge:17",
+        "refuge:18",
+        "refuge:2",
+        "refuge:20",
+        "refuge:21",
+        "refuge:23",
+        "refuge:25",
+        "refuge:28",
+        "refuge:3",
+        "refuge:4",
+        "refuge:5",
+        "refuge:6",
+        "refuge:7",
+        "refuge:8"
+      ],
+      "recoveries": 0,
+      "drain_multiplier": 1.0,
+      "radius": 127.3
+    },
+    "stamina": {
+      "amount": 0.186,
+      "recovery_delay": 0.0,
+      "exhausted": true
+    },
+    "sanity": {
+      "current": 99.6738,
+      "max": 100.0,
+      "hallucinating": false,
+      "count": 0,
+      "lantern_multiplier": 1.0,
+      "dead": false
+    },
+    "phantoms": {
+      "count": 0,
+      "kinds": [],
+      "collision": false
+    },
+    "physics": {
+      "chapter": 29,
+      "time": 1199.733,
+      "player": [
+        112180.18,
+        421.53
+      ],
+      "velocity": [
+        190.0,
+        498.75
+      ],
+      "grounded": false,
+      "gravity": 1,
+      "gravity_remaining": 0.0,
+      "water_surface": null,
+      "water_active": false,
+      "water_transferred_area": 0.0,
+      "cover_open": false,
+      "cover_fraction": 0.0,
+      "rope_distance": null,
+      "gate_open": false,
+      "gate_fraction": 0.0,
+      "grab_kind": "",
+      "dead": false,
+      "complete": false,
+      "crates": [
+        {
+          "position": [
+            470.99,
+            431.04
+          ],
+          "angle": 0.0002
+        },
+        {
+          "position": [
+            5707.82,
+            429.11
+          ],
+          "angle": 0.0013
+        }
+      ],
+      "sprinting": false,
+      "stamina": {
+        "amount": 0.186,
+        "recovery_delay": 0.0,
+        "exhausted": true
+      },
+      "width": 112360,
+      "persistent_space": true,
+      "phase": 0,
+      "gliding": false,
+      "solved": 144,
+      "open_paths": [
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "hazards": {
+        "count": 28,
+        "kinds": [
+          "PRESSER",
+          "SPIKES",
+          "STEAM",
+          "FALLING BEAM",
+          "PENDULUM"
+        ],
+        "deaths": 0,
+        "last_hit": null,
+        "trips": 5
+      }
+    },
+    "refuges": {
+      "visited": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        12,
+        13,
+        15,
+        16,
+        17,
+        18,
+        20,
+        21,
+        23,
+        25,
+        28
+      ],
+      "threads": [],
+      "delivered": []
+    },
+    "threats": {
+      "active": 8,
+      "kinds": [
+        "AKAR BERGERAK",
+        "LONCENG KOSONG",
+        "PELANGKAH",
+        "PEMBURU",
+        "PENYAPU",
+        "RODA MATA",
+        "SAYAP RETAK",
+        "SERIBU KAKI"
+      ],
+      "warnings": 0,
+      "attacks": 0,
+      "unlocked": [
+        "AKAR BERGERAK",
+        "LONCENG KOSONG",
+        "PELANGKAH",
+        "PEMBURU",
+        "PENYAPU",
+        "RODA MATA",
+        "SAYAP RETAK",
+        "SERIBU KAKI"
+      ],
+      "elapsed": 1199.908,
+      "population": 232,
+      "fleeing": 6,
+      "facing_left": 19
+    },
+    "quest": null,
+    "player_animation": {
+      "pose": "jump",
+      "frame": 7
+    },
+    "play_seconds": 1199.908,
+    "journal_entries": 171,
+    "audio_targets": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "boss": null
+  },
+  "sources": {
+    "__init__.py": "22dba40bfa1abecc",
+    "__main__.py": "153aae8b4f39509b",
+    "art\\__init__.py": "804262bca5280663",
+    "art\\core.py": "d6528035a0c5c44a",
+    "art\\legacy.py": "79500ca9b1c8ff38",
+    "audio\\__init__.py": "87d8bccf1d9c6fc1",
+    "audio\\player.py": "905a223821bc0b44",
+    "audio\\synthesis.py": "d791f68264e16bf2",
+    "baseline_game.py": "829959c47cba7c8f",
+    "boss.py": "3cd509f64ae5999b",
+    "cinematics\\__init__.py": "8249d3689f24ade4",
+    "cinematics\\catalog.py": "a67f8064b34774aa",
+    "cinematics\\fragments.py": "f44185e219cd06a9",
+    "cinematics\\portraits.py": "1e04b4d927a0f396",
+    "cinematics\\progress.py": "8da31f241fd89db4",
+    "cinematics\\renderer.py": "ee66e6b5d1e6df64",
+    "config.py": "aa352fff40e5abd3",
+    "continuum.py": "566c19cd6394b507",
+    "encounters.py": "0324d90ef0165054",
+    "engine\\__init__.py": "e7c8fdce71563d67",
+    "engine\\capabilities.py": "aa3f036d0dedb58b",
+    "engine\\constants.py": "e3ff7869c6e9976e",
+    "engine\\controls.py": "4e91bb082f71aec3",
+    "engine\\world.py": "f058ea67f350f246",
+    "environments.py": "bb76a8a8becb12ec",
+    "foley.py": "9b0defea9f788c21",
+    "game\\__init__.py": "b9ad006eaaa9bf68",
+    "game\\cli.py": "445b4942be3be641",
+    "game\\controller.py": "ff9300f3d79fbe56",
+    "game\\finale.py": "7568c56d73c4fa7a",
+    "game\\persistence.py": "44896b0bb24f575e",
+    "game\\presentation.py": "caa31e43dbaeaba0",
+    "generate_assets.py": "047a4cfda78dca77",
+    "generate_wisp.py": "deb5262cb8a92472",
+    "geometry.py": "d8a56ca613eef653",
+    "hallucinations\\__init__.py": "46ab44616c6a5d32",
+    "hallucinations\\projection.py": "0ce13dadf4ce3256",
+    "hallucinations\\state.py": "2511f77ca6258572",
+    "hazards.py": "d462284245f9a9b1",
+    "illustration.py": "0c7feee6f6705b92",
+    "journey.py": "24ae0e6d7391f83a",
+    "levels.py": "1a6919529e903872",
+    "light.py": "92aa22942699feda",
+    "materials.py": "ecfd41d9088e0c9b",
+    "monsters.py": "74d40f772db1c445",
+    "music.py": "b529452c4863b196",
+    "physics.py": "8de60ba8001f00e4",
+    "procedural.py": "153a31db78a32d29",
+    "puzzles\\__init__.py": "d3e17d478dba69ff",
+    "puzzles\\base.py": "2d0e91ae6ef55346",
+    "puzzles\\catalog.py": "8b858bac92b63e6b",
+    "puzzles\\components.py": "870dbc9548370f5d",
+    "puzzles\\manager.py": "ea0a0d4897df0c2f",
+    "puzzles\\registry.py": "659e9c1c863c83f4",
+    "quests.py": "db6a42023ba77e4b",
+    "refuges.py": "edb6f73b3723795d",
+    "sanity\\__init__.py": "17db9426cfd2e4a8",
+    "sanity\\core.py": "16bce75258204958",
+    "sanity\\effects.py": "396138b8baa77d13",
+    "sanity\\phantoms.py": "7381f3892a6759df",
+    "scenery.py": "d20845037633f3e2",
+    "soundscape.py": "9dc5725480a7b8b0",
+    "spawn_manager\\__init__.py": "354d57649f40c41a",
+    "spawn_manager\\manager.py": "4dc6a840e14c0e86",
+    "spawn_manager\\types.py": "a751c531261467bb",
+    "state.py": "07825d6038631d94",
+    "story.py": "fe327bc1ad017e0c",
+    "threats.py": "5e4c8d4388b6b15c",
+    "vistas.py": "86f7fcc829354fed",
+    "wisp.py": "20a6e5b472b82bfb"
+  }
+}

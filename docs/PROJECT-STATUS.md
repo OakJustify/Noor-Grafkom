@@ -4,6 +4,11 @@ Status terkini task F1–F4 dan hasil gabungannya dengan konten O1–O3.
 Rincian tiap task ada di [06-planning.md](06-planning.md); alasan keputusan ada
 di [09-decisions.md](09-decisions.md).
 
+Adaptasi naskah pada branch `cutscene`: pembuka, enam fragmen/cutscene memori,
+void hitam total, ending Nur–Dara, subtitle Indonesia tanpa dubbing, galeri
+replay, pemudaran terpisah dari lentera, dan checkpoint cerita. Rincian serta
+metode verifikasi ada di [10-story-cinematics.md](10-story-cinematics.md).
+
 ## Status task
 
 | ID | Task | Status | Mulai | Implementasi |
@@ -23,7 +28,8 @@ game Python/Pygame:
 - Tidak ada `Assets/`, file `.cs`, `.unity`, `.prefab`, atau `.controller`.
 - Tidak ada `LanternController`, `GameManager`, `PlayerController`, atau
   `InputManager` Unity.
-- Tidak ada repository git, sehingga branch/PR/commit tidak dibuat.
+- Checkout sekarang memakai Git pada branch `cutscene`; implementasi ini tidak
+  membuat commit, PR, atau push. Catatan pemetaan Unity tetap berlaku.
 - `assets/content/README.md` mencatat pemetaan yang sama untuk O1–O3: data Unity
   ditulis ulang sebagai JSON netral di `assets/content/`.
 

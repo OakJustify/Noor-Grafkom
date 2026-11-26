@@ -21,6 +21,20 @@ Pymunk space. Region crossing updates a narrative address, not physics identity.
 Opened gates and solved milestones remain open/solved on backtracking and retry.
 Q is edge-triggered and changes collision-backed perception platforms globally.
 
+## Subtitle-only story adaptation
+
+The active controller now uses `cinematics/`: a cue catalog, a separate story
+inventory/clock, ordered fragment reveals, original vector illustrations, and
+the symbolic void followed by a real-world Nur–Dara ending. Six story objects
+are distinct from optional fuel ribbons. Narrative grading is independent of
+lantern charge. Cutscenes/gallery freeze gameplay, while replay is read-only for
+story progression. The old local boss remains only behind `cinematics=False`
+for mechanic regression coverage, not the default launcher.
+
+Checkpoints keep collected/seen/active story states. Interrupted scenes restart
+from their beginning; invalid checkpoints are rejected before committing live
+state. See [story implementation and verification](10-story-cinematics.md).
+
 The lookout's underside leaves ground clearance. Its last shelf ends before
 the machine's run-up rather than forcing a descent onto spikes. Glide is
 unlocked at an unattended wick station and limited by stamina.

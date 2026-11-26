@@ -1,27 +1,76 @@
-# NUR v4 · The Long Way Home
+# NOOR v4 · Yang masih di sini
 
 Pengembangan terpisah dari `v3`: satu perjalanan panjang tentang ingatan,
 cahaya yang dirawat, dan mesin yang masih bergerak. **Revisi setelah evaluasi
 visual/gameplay; bukan klaim bahwa kualitas artistik sudah selesai.**
 
+Adaptasi naskah cerita kini aktif: pembuka, enam cutscene memori, kehampaan
+hitam, dan ending Nur–Dara di dunia nyata. Semua dialog berupa **subtitle
+Indonesia tanpa dubbing**. Detail alur, kontrol, dan batas verifikasi ada di
+[cerita/cutscene](docs/10-story-cinematics.md) (mengandung spoiler).
+
 ## Jalankan
 
-```bash
-cd ~/Projects/03-projects/02-games/noor-grafkom/v4
-.venv-nur/bin/python src/play_nur.py --menu
+Windows, dari root checkout:
+
+```powershell
+.venv-nur\Scripts\python.exe src\play_nur.py --menu
 ```
 
 Jika membuat lingkungan baru:
 
-```bash
-python3 -m venv .venv-nur
-.venv-nur/bin/python -m pip install -r requirements-nur.txt
-.venv-nur/bin/python src/play_nur.py --menu
+```powershell
+python -m venv .venv-nur
+.venv-nur\Scripts\python.exe -m pip install -r requirements-nur.txt
+.venv-nur\Scripts\python.exe src\play_nur.py --menu
 ```
+
+Linux/macOS memakai `.venv-nur/bin/python` sebagai pengganti path `Scripts`.
 
 **C** di menu melanjutkan checkpoint; `--continue` juga tersedia.
 Save v4 berada di `saves/nur-v4.json`, terpisah dari save v3.
 `--no-save` menonaktifkan seluruh penulisan save.
+
+### Developer mode: mencoba fragmen memori dan ending
+
+Pada launcher menu biasa, klik **MODE DEVELOPER** atau tekan **D**:
+
+```powershell
+.\.venv-nur\Scripts\python.exe .\src\play_nur.py --menu
+```
+
+Tidak perlu flag `--dev`. Tombol memulai sesi latihan baru dekat fragmen F01;
+save dinonaktifkan sebelum sesi dimulai. Setelah kembali ke menu dari kartu
+penutup (Esc), Enter memulai perjalanan normal dan C melanjutkan checkpoint
+normal; pilihan `--no-save` tetap dihormati.
+
+```powershell
+.venv-nur\Scripts\python.exe src\play_nur.py --dev
+# Langsung dekat fragmen foto:
+.venv-nur\Scripts\python.exe src\play_nur.py --dev --fragment F04
+# Langsung mulai urutan void, dunia nyata, dan kartu penutup:
+.venv-nur\Scripts\python.exe src\play_nur.py --dev --ending
+```
+
+Mode ini mulai dekat fragmen pertama. **F1–F6** memindahkan pemain ke depan
+pita, cangkir, kunci, foto, catatan dapur, atau kain. Jalan sedikit ke kanan
+untuk menyentuh benda dan memicu cutscene melalui mekanik koleksi biasa.
+Shortcut juga bekerja saat cutscene, pause, galeri, atau menu.
+
+**F7** langsung memulai void (CS07), lalu otomatis lanjut ke dunia nyata (CS08)
+dan kartu penutup. **F8** melewati void dan mulai di dunia nyata; **F9** langsung
+ke kartu penutup. Ketiganya menyiapkan enam memori dalam sesi latihan, tanpa
+menulis checkpoint. Untuk memilih tahap saat launch, pakai `--dev --ending
+realworld` atau `--dev --ending cards`. `--ending` dan `--fragment` tidak bisa
+digabung. Enter/Space melanjutkan subtitle; Esc melewati satu adegan;
+Enter/Space pada kartu penutup melanjutkan kartu berikutnya.
+
+Setiap teleport menyiapkan memori sebelum tujuan dan mengosongkan tujuan serta
+memori sesudahnya, sehingga benda yang sama bisa diuji berulang kali. Lentera
+dan stamina diisi ulang; fisika tetap memakai dunia yang sama. Mode ini bukan
+invincibility: rintangan tetap berbahaya. Save otomatis dinonaktifkan dan
+`--dev` tidak bisa digabung dengan `--continue`; jalankan tanpa `--dev` untuk
+kembali ke perjalanan/checkpoint normal.
 
 ## Kontrol
 
@@ -37,6 +86,8 @@ Save v4 berada di `saves/nur-v4.json`, terpisah dari save v3.
 | G | Letakkan lentera; tekan lagi di dekatnya untuk mengambil |
 | E saat padam | Bara cadangan dan kembali ke stasiun terakhir |
 | J | Atlas/jurnal; ←/→ mengganti halaman |
+| K | Galeri fragmen; ↑/↓ pilih, Enter replay, K/Esc kembali |
+| Enter / Space / Esc saat cutscene | Subtitle berikutnya / jeda / lewati satu adegan |
 | M | Mute/unmute semua suara |
 | Esc | Pause; R kembali ke tempat istirahat terakhir |
 
@@ -54,8 +105,9 @@ Save v4 berada di `saves/nur-v4.json`, terpisah dari save v3.
   desaturasi dan bayangan biru-ungu bertambah saat cahaya menipis.
   Saat charge nol, seluruh dunia hitam—hanya UI bantuan yang tetap terbaca.
 - **Gerak:** enam set animasi delapan frame: idle, walk, run, jump, glide, focus.
-- **Tanpa NPC:** stasiun sumbu tanpa penjaga memberi satu bara, napas baru,
-  dan akses glide. Suara batin tetap ditandai `NUR · DALAM HATI`.
+- **Tanpa NPC eksplorasi:** stasiun sumbu tanpa penjaga memberi satu bara,
+  napas baru, dan akses glide. Subtitle batin tidak membocorkan identitas awal.
+  Nur dan Dara tampil sebagai manusia dalam ilustrasi cutscene.
 - **Loop opsional:** naik ke lookout, ambil pita, bawa ke stasiun berikutnya
   untuk sedikit cahaya tambahan. Glide dibatasi stamina.
 - **Mesin mematikan:** 28 rintangan di rute utama, bergiliran presser bertombol,
@@ -70,7 +122,10 @@ Save v4 berada di `saves/nur-v4.json`, terpisah dari save v3.
 - **Puzzles dipertahankan:** apparition/absence, parallax, witness, fold; 144
   milestone. Gerbang yang telah dibuka tetap terbuka untuk perjalanan balik.
 - **Checkpoint v4:** posisi global, puzzle, persepsi, peti yang dipindah, perawatan,
-  pita, stamina, letak lentera, dan progres akhir disimpan.
+  pita, stamina, letak lentera, inventaris cerita, dan progres akhir disimpan.
+  Cutscene/galeri menghentikan simulasi dan drain; replay tidak menambah progres.
+- **Pemudaran cerita:** terpisah dari charge lentera dan semakin kuat setiap
+  memori selesai. Ending baru menggantikan pertarungan akhir pada launcher aktif.
 
 ### Aturan perlindungan lentera
 
@@ -109,6 +164,7 @@ ini; tidak ada proyek Unity tiruan di dalam repo.
 - [Preview input nyata](docs/verification/captures/preview.png)
 - [Arsitektur dan batas implementasi](docs/03-architecture.md)
 - [Hasil, metode, dan bukti verifikasi](docs/07-testing.md)
+- [Cerita dan bukti kampanye baru](docs/10-story-cinematics.md)
 - [Kredit aset/audio](assets/nur/CREDITS.md)
 
 ```bash
@@ -131,8 +187,8 @@ PYTHONPATH=src .venv-nur/bin/python src/scripts/capture_v4.py
 Spiritfarer digunakan sebagai **arah referensi** untuk kehangatan, gerak, warna,
 dan kedalaman—bukan sebagai sumber karakter, aset, atau musik. Art masih vector
 storybook prosedural, bukan hand-painted animation berkelas studio. Efek cahaya
-adalah compositing/array CPU dengan Pygame, **bukan shader GPU**. Tidak ada NPC,
-sistem hubungan, atau voice acting. Semua kode/aset game ECHO di v4 dihapus;
+adalah compositing/array CPU dengan Pygame, **bukan shader GPU**. Tidak ada NPC AI
+eksplorasi, sistem hubungan, atau voice acting. Semua kode/aset game ECHO di v4 dihapus;
 fisika yang dibutuhkan NUR sekarang berada di `src/nur_game/engine/`.
 
 Panjang kampanye diuji oleh pilot yang mengetahui solusi, menggunakan input
