@@ -59,6 +59,12 @@ def test_menu_draws_developer_button_with_hover_feedback(monkeypatch):
         monkeypatch.setattr(pygame.mouse, 'get_pos', lambda: (480, 402))
         hover = game.draw()
         assert idle.get_at((350, 390)) != hover.get_at((350, 390))
+        luminance = lambda c: .2126*c[0]+.7152*c[1]+.0722*c[2]
+        strip = game._developer_hint_rect()
+        support = [luminance(hover.get_at((x, y))[:3])
+                   for x in range(strip.left, strip.right, 2) for y in range(strip.top, strip.bottom, 2)]
+        panel = luminance(hover.get_at((strip.left+3, strip.centery))[:3])
+        assert (max(support)+5)/(panel+5) >= 4.5
         assert not game.developer_mode and game.state == 'menu'
     finally:
         game.audio.close()

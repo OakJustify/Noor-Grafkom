@@ -78,6 +78,54 @@ def _hand(b, x, y, direction=1, old=False):
     paint_hand(b, x + 16, y + 9, direction, old)
 
 
+def _forearm(b, wrist, exit_point, thickness=26, cuff=None, cuff_size=26):
+    """Draw the tapering forearm a close-up hand needs to stop looking detached.
+
+    A close-up hand is cropped by the frame, so the limb must leave toward an
+    edge rather than end in mid-air; without it the palm reads as a scrap of
+    skin floating on the table.  The limb is drawn as a tapered quad — narrow at
+    the wrist, wider toward the frame edge — because a constant-width stroke
+    reads as a table leg rather than an arm.  ``cuff`` adds a sleeve band near
+    the frame edge so the limb is clothed.
+    """
+    dx, dy = exit_point[0] - wrist[0], exit_point[1] - wrist[1]
+    length = max(1e-6, (dx * dx + dy * dy) ** .5)
+    ux, uy = dx / length, dy / length
+    nx, ny = -uy, ux
+    w1 = thickness / 2
+    w2 = w1 * 1.85
+    # Start a little behind the palm centre so the arm emerges from under the
+    # hand instead of covering the fingers.
+    start = (wrist[0] + ux * w1 * 2.0, wrist[1] + uy * w1 * 2.0)
+    if cuff is not None:
+        # Sleeve reaches almost to the wrist so the junction reads as a cuff
+        # opening, not a straight colour cut across the arm.
+        t = .30
+        band = (wrist[0] + dx * t, wrist[1] + dy * t)
+        b.poly(cuff, [(band[0] + nx * (w1 + cuff_size), band[1] + ny * (w1 + cuff_size)),
+                      (exit_point[0] + nx * (w2 + cuff_size), exit_point[1] + ny * (w2 + cuff_size)),
+                      (exit_point[0] - nx * (w2 + cuff_size), exit_point[1] - ny * (w2 + cuff_size)),
+                      (band[0] - nx * (w1 + cuff_size), band[1] - ny * (w1 + cuff_size))])
+        b.poly(tuple(min(255, c + 14) for c in cuff),
+               [(band[0] + nx * (w1 + cuff_size * .55), band[1] + ny * (w1 + cuff_size * .55)),
+                (exit_point[0] + nx * (w2 + cuff_size * .55), exit_point[1] + ny * (w2 + cuff_size * .55)),
+                (exit_point[0] + nx * (w2 - 2), exit_point[1] + ny * (w2 - 2)),
+                (band[0] + nx * (w1 - 2), band[1] + ny * (w1 - 2))])
+        # Darker inner edge of the cuff opening.
+        b.line(tuple(max(0, c - 26) for c in cuff), (band[0] + nx * w1, band[1] + ny * w1),
+               (band[0] - nx * w1, band[1] - ny * w1), 3)
+    body = [(start[0] + nx * w1, start[1] + ny * w1),
+            (exit_point[0] + nx * w2, exit_point[1] + ny * w2),
+            (exit_point[0] - nx * w2, exit_point[1] - ny * w2),
+            (start[0] - nx * w1, start[1] - ny * w1)]
+    b.poly(SKIN, body)
+    # Soft highlight toward the light, not a stripe down the arm.
+    b.poly(SKIN_LIGHT, [(start[0] + nx * w1 * .55, start[1] + ny * w1 * .55),
+                        (exit_point[0] + nx * w2 * .50, exit_point[1] + ny * w2 * .50),
+                        (exit_point[0] + nx * w2 * .10, exit_point[1] + ny * w2 * .10),
+                        (start[0] + nx * w1 * .10, start[1] + ny * w1 * .10)])
+
+
 def _ribbon(b):
     # Unequal loops and a lowered right loop: the crooked knot is consistent.
     b.poly(RED, [(37, 30), (4, 4), (2, 28), (12, 38), (36, 33)])
@@ -163,32 +211,37 @@ def _house(b, x, y, scale: float = 1):
     h.ellipse((209, 168, 90), (103, 113, 4, 4))
 
 
-def _human(b, age="adult", pose="seated", dress=TEAL, *, facing=None, identity=None):
+def _human(b, age="adult", pose="seated", dress=TEAL, *, facing=None, identity=None,
+           arms: bool | str = True):
     if facing is None:
         facing = -1 if b.x >= 480 else 1
     if identity is None:
         identity = "dara" if age == "child" or dress != TEAL else "nur"
-    layout = paint_figure(b, age, pose, dress, facing, identity)
-    lx, ly = layout.left_hand
-    rx, ry = layout.right_hand
-    if pose == "tea":
-        size = .50 * layout.hand_scale
-        mug_x, mug_y = b.point(((lx + rx) / 2 - 56 * size, min(ly, ry) - 36 * size))
-        _mug(_Brush(b.art, mug_x, mug_y, b.scale * size))
-    elif pose == "cloth":
-        cloth_x, cloth_y = b.point(((lx + rx) / 2 - 57, min(ly, ry) - 12))
-        _cloth(_Brush(b.art, cloth_x, cloth_y, b.scale * .78))
-    if pose in {"tea", "cloth"}:
-        # Fingers rest on the prop instead of being erased by its painted body.
-        for palm, direction in zip((layout.left_hand, layout.right_hand), layout.hand_directions):
-            hand_x, hand_y = b.point(palm)
-            hand = _Brush(b.art, hand_x, hand_y, b.scale * layout.hand_scale)
-            paint_hand(hand, 0, 0, direction, age == "old")
-    if age == "child":
-        x, y, w, _ = layout.head
-        ribbon_x = x + w - 10 if facing == 1 else x - 7
-        ribbon_x, ribbon_y = b.point((ribbon_x, y + 4))
-        _ribbon(_Brush(b.art, ribbon_x, ribbon_y, b.scale * .38))
+    layout = paint_figure(b, age, pose, dress, facing, identity, arms)
+    if arms is not False:
+        # Nearest layer: the props and any fingers resting on them.  With
+        # arms=False this block is skipped entirely; with arms='only' it is the
+        # re-paint that raises a seated figure's hands above a foreground table.
+        lx, ly = layout.left_hand
+        rx, ry = layout.right_hand
+        if pose == "tea":
+            size = .50 * layout.hand_scale
+            mug_x, mug_y = b.point(((lx + rx) / 2 - 56 * size, min(ly, ry) - 36 * size))
+            _mug(_Brush(b.art, mug_x, mug_y, b.scale * size))
+        elif pose == "cloth":
+            cloth_x, cloth_y = b.point(((lx + rx) / 2 - 57, min(ly, ry) - 12))
+            _cloth(_Brush(b.art, cloth_x, cloth_y, b.scale * .78))
+        if pose in {"tea", "cloth"}:
+            # Fingers rest on the prop instead of being erased by its painted body.
+            for palm, direction in zip((layout.left_hand, layout.right_hand), layout.hand_directions):
+                hand_x, hand_y = b.point(palm)
+                hand = _Brush(b.art, hand_x, hand_y, b.scale * layout.hand_scale)
+                paint_hand(hand, 0, 0, direction, age == "old")
+        if age == "child":
+            x, y, w, _ = layout.head
+            ribbon_x = x + w - 10 if facing == 1 else x - 7
+            ribbon_x, ribbon_y = b.point((ribbon_x, y + 4))
+            _ribbon(_Brush(b.art, ribbon_x, ribbon_y, b.scale * .38))
     return layout
 
 
@@ -292,6 +345,21 @@ def _table(art, close=False):
         b.line((215, 167, 107), (259, 318), (700, 318), 3)
 
 
+def _seated_arms(art, x, y, scale, age="adult", pose="seated", dress=None, *, facing=None, identity=None):
+    """Re-paint a seated figure's arms above a foreground table.
+
+    The tabletop is nearer to the viewer than a seated figure's forearms, so
+    the torso is drawn first, the table second, and the arms last.  The brush
+    position and scale must match the original figure call exactly, or the
+    re-painted limbs land away from their shoulders.  When facing is omitted it
+    is derived from x by the same rule _human uses.
+    """
+    if facing is None:
+        facing = -1 if x >= 480 else 1
+    return _human(_Brush(art, x, y, scale), age, pose, TEAL if dress is None else dress,
+                  facing=facing, identity=identity, arms='only')
+
+
 def _outdoors(art, crossroads=False):
     b = _Brush(art)
     b.rect((174, 205, 193) if not crossroads else (198, 195, 168), (0, 0, 960, 540))
@@ -366,8 +434,14 @@ def _illustration(shot: str) -> pygame.Surface:
         _room(art)
         _table(art, True)
         _photo(_Brush(art, 290, 90, 2.42), faded=shot == "photo_fading")
-        _hand(_Brush(art, 0, 0), 258, 313, old=True)
-        _hand(_Brush(art, 0, 0), 670, 307, direction=-1, old=True)
+        # Both hands hold the photo up; the forearms leave toward the bottom
+        # edge, otherwise the palms read as cut-out scraps on the table.
+        # Close-up hands are scaled up: at scale 1 the palm is only as wide as
+        # the forearm and the whole limb reads as a rounded stick.
+        _forearm(_Brush(art, 0, 0), (274, 322), (236, 560), 21, cuff=(96, 112, 116))
+        _hand(_Brush(art, 244, 305, 1.9), 0, 0, old=True)
+        _forearm(_Brush(art, 0, 0), (686, 316), (724, 560), 21, cuff=(96, 112, 116))
+        _hand(_Brush(art, 656, 299, 1.9), 0, 0, direction=-1, old=True)
     elif shot == "photo_fold":
         _room(art)
         _human(_Brush(art, 252, 85, 1.13), "old")
@@ -380,10 +454,13 @@ def _illustration(shot: str) -> pygame.Surface:
             b.ellipse((68, 52, 46), (324, 167, 261, 250))
             b.ellipse((94, 71, 53), (326, 174, 251, 151))
             _ribbon(_Brush(art, 464, 159, 1.5))
-            b.line(SKIN, (720, 67), (592, 188), 42)
-            _hand(_Brush(art, 511, 144, 1.8), 0, 0)
-            b.line(SKIN, (160, 160), (326, 209), 38)
-            _hand(_Brush(art, 316, 187, 1.7), 0, 0)
+            # Two hands closing on the knot of the ribbon.  The ribbon spans
+            # x=464..570, so each palm must land inside that box with the wrist
+            # on the outside — otherwise the hands hover beside the prop.
+            _forearm(_Brush(art, 0, 0), (487, 219), (300, -60), 38, cuff=(88, 104, 106))
+            _hand(_Brush(art, 476, 206, 1.85), 0, 0, direction=1, old=True)
+            _forearm(_Brush(art, 0, 0), (549, 207), (740, -60), 40, cuff=(126, 96, 84))
+            _hand(_Brush(art, 531, 196, 1.95), 0, 0, direction=-1, old=True)
         else:
             child_x = 302 if shot == "ribbon_school" else 704
             _human(_Brush(art, child_x, 183 if shot == "ribbon_school" else 178, .80), "child", "standing", (181, 111, 82))
@@ -402,10 +479,13 @@ def _illustration(shot: str) -> pygame.Surface:
             _drawing(_Brush(art, 177, 241, 1.64))
         elif shot == "mug_drawing":
             _human(_Brush(art, 267, 180, .84), "child", "standing", (181, 111, 82))
-            _human(_Brush(art, 529, 84, .96), "adult", "seated")
+            _human(_Brush(art, 529, 84, .96), "adult", "seated", arms=False)
             _table(art)
             _drawing(_Brush(art, 392, 303, .84))
             _mug(_Brush(art, 632, 294, .72))
+            # Arms last: a hand resting on the tabletop sits in front of the
+            # table surface and of the props standing on it.
+            _seated_arms(art, 529, 84, .96, "adult", "seated")
         else:
             _drawing(_Brush(art, 341, 49, 2.25))
             b.rect((199, 178, 135), (660, 100, 90, 118))
@@ -417,8 +497,9 @@ def _illustration(shot: str) -> pygame.Surface:
             _mug(_Brush(art, 626, 291, .76))
     elif shot.startswith("recipe_"):
         _room(art, True)
-        _human(_Brush(art, 294, 85, 1.09), "old", "tea" if shot == "recipe_tea" else "seated")
-        _human(_Brush(art, 535, 113, 1.01), dress=(166, 118, 94))
+        old_pose = "tea" if shot == "recipe_tea" else "seated"
+        _human(_Brush(art, 294, 85, 1.09), "old", old_pose, arms=False)
+        _human(_Brush(art, 535, 113, 1.01), dress=(166, 118, 94), arms=False)
         _table(art)
         _recipe(_Brush(art, 342, 308, 1.0))
         _mug(_Brush(art, 627, 294, .80))
@@ -427,24 +508,38 @@ def _illustration(shot: str) -> pygame.Surface:
         b.text("gula", (526, 314), 17, (106, 103, 80))
         b.line((194, 194, 160), (651, 307), (675, 260), 3)
         b.ellipse((192, 194, 163), (665, 250, 17, 12))
+        _seated_arms(art, 294, 85, 1.09, "old", old_pose)
+        _seated_arms(art, 535, 113, 1.01, "adult", "seated", (166, 118, 94))
         if shot == "recipe_stir":
+            # The stirring hand belongs to the younger woman on the right; the
+            # forearm has to reach her sleeve or the hand looks pasted on.
+            _forearm(_Brush(art, 0, 0), (611, 285), (975, 373), 24, cuff=(166, 118, 94))
             _hand(_Brush(art, 0, 0), 595, 276, old=True)
     elif shot == "stitch_hands":
         _room(art)
         _table(art, True)
         _cloth(_Brush(art, 235, 197, 3.08))
+        # Two pairs of hands stitching: each forearm must enter from a frame
+        # edge, otherwise the palms look like floating props over the cloth.
+        _forearm(_Brush(art, 0, 0), (177, 249), (-40, 300), 30, cuff=(88, 104, 106))
         _hand(_Brush(art, 161, 240, 2.0), 0, 0)
+        _forearm(_Brush(art, 0, 0), (642, 209), (1010, 150), 34, cuff=(126, 96, 84))
         _hand(_Brush(art, 626, 200, 2.25), 0, 0)
         b.line((80, 114, 134), (531, 342), (609, 232), 2)
         b.line((196, 192, 156), (607, 223), (631, 195), 2)
     elif shot.startswith("cloth_"):
         _room(art)
-        _human(_Brush(art, 279, 81, 1.15), "old", "cloth")
+        _human(_Brush(art, 279, 81, 1.15), "old", "cloth", arms=False)
         if shot != "cloth_wait":
             _human(_Brush(art, 732 if shot == "cloth_door" else 531, 88 if shot == "cloth_door" else 111, 1.04),
-                   "adult", "standing" if shot == "cloth_door" else "seated", (169, 116, 91))
+                   "adult", "standing" if shot == "cloth_door" else "seated", (169, 116, 91), arms=False)
         _table(art)
         _ribbon(_Brush(art, 639, 337, .50))
+        _seated_arms(art, 279, 81, 1.15, "old", "cloth")
+        if shot != "cloth_wait":
+            _seated_arms(art, 732 if shot == "cloth_door" else 531,
+                         88 if shot == "cloth_door" else 111, 1.04,
+                         "adult", "standing" if shot == "cloth_door" else "seated", (169, 116, 91))
     elif shot.startswith("void_"):
         b.rect((28, 36, 40), (0, 0, 960, 540))
         b.poly((76, 79, 70), [(0, 477), (418, 360), (536, 360), (850, 540), (0, 540)])
@@ -461,21 +556,31 @@ def _illustration(shot: str) -> pygame.Surface:
             _mug(_Brush(art, 572, 193, 2.1))
             _recipe(_Brush(art, 185, 273, 1.65))
         elif shot in {"real_faces", "real_arrival"}:
-            _human(_Brush(art, 224, 48, 1.37), "old", "cloth")
-            _human(_Brush(art, 509, 63, 1.32), "adult", "offer", (173, 116, 91))
+            _human(_Brush(art, 224, 48, 1.37), "old", "cloth", arms=False)
+            _human(_Brush(art, 509, 63, 1.32), "adult", "offer", (173, 116, 91), arms=False)
             _table(art)
             _mug(_Brush(art, 664, 296, .79))
-        else:
-            _human(_Brush(art, 284, 90, 1.10), "old", "tea" if shot == "real_tea" else "seated")
-            _human(_Brush(art, 513, 112, 1.05), "adult", "offer" if shot == "real_hands" else "cloth", (174, 117, 90))
+            _seated_arms(art, 224, 48, 1.37, "old", "cloth")
+            _seated_arms(art, 509, 63, 1.32, "adult", "offer", (173, 116, 91))
+        elif shot in {"real_wide", "real_seated", "real_tea", "real_hands", "real_cloth"}:
+            old_pose = "tea" if shot == "real_tea" else "seated"
+            adult_pose = "offer" if shot == "real_hands" else "cloth"
+            _human(_Brush(art, 284, 90, 1.10), "old", old_pose, arms=False)
+            _human(_Brush(art, 513, 112, 1.05), "adult", adult_pose, (174, 117, 90), arms=False)
             _table(art)
             _mug(_Brush(art, 640, 302, .73))
             _recipe(_Brush(art, 343, 320, .85))
             _ribbon(_Brush(art, 530, 331, .40))
             if shot == "real_cloth":
                 _cloth(_Brush(art, 445, 265, 1.24))
-            elif shot == "real_hands":
-                b.line(SKIN, (575, 315), (493, 302), 13)
+            _seated_arms(art, 284, 90, 1.10, "old", old_pose)
+            _seated_arms(art, 513, 112, 1.05, "adult", adult_pose, (174, 117, 90))
+            if shot == "real_hands":
+                # Close shot of the two hands meeting over the table: NUR's
+                # forearm comes from her sleeve on the left, DARA's from the
+                # right.  Bare palms here read as floating scraps.
+                _forearm(_Brush(art, 0, 0), (466, 305), (-20, 491), 24, cuff=(81, 116, 112))
+                _forearm(_Brush(art, 0, 0), (474, 298), (980, 442), 24, cuff=(174, 117, 90))
                 _hand(b, 474, 294, old=True)
                 _hand(b, 466, 301)
     else:
@@ -514,6 +619,10 @@ def _gesture(shot: str, frame: int) -> tuple[pygame.Surface, tuple[int, int]]:
         b.line((200, 196, 162), (80 + motion, 14), (98 + motion, 0), 2)
         pos = (525, 250)
     elif shot == "real_hands":
+        # The touching fingers are a small overlay; give each a wrist stub that
+        # runs off the overlay's edge so they read as parts of two arms.
+        b.line(SKIN, (34 + motion * .5, 30), (-14, 44), 13)
+        b.line(SKIN, (26, 39 + motion * .25), (74, 52), 13)
         _hand(b, 24 + motion * .5, 18, old=True)
         _hand(b, 16, 27 + motion * .25)
         pos = (450, 276)

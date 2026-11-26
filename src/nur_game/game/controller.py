@@ -219,6 +219,24 @@ class Game(PersistenceMixin, PresentationMixin, PrototypeGame):
         self._sync_story_state()
         return True
 
+    def return_to_menu(self):
+        """Leave the journey for the main menu without discarding the checkpoint.
+
+        Only a paused journey can return; the world, story and camera are left
+        untouched so that C (continue) or a new start behaves exactly as it
+        would after any other menu visit.
+        """
+        if self.state != 'paused':
+            return False
+        self._save()
+        self.state = 'menu'
+        self.session_started = False
+        self.developer_mode = False
+        self.persist = self._campaign_persist
+        self._menu_developer = False
+        self.audio.set_muted(self.muted)
+        return True
+
     def _control(self):
         control=super()._control()
         keys=pygame.key.get_pressed()
@@ -253,6 +271,9 @@ class Game(PersistenceMixin, PresentationMixin, PrototypeGame):
             self.audio.set_muted(self.muted or self.story.active == 'CS07')
             return
         if self.cinematics_enabled and event.type == pygame.KEYDOWN:
+            if self.state == 'paused' and event.key == pygame.K_b:
+                self.return_to_menu()
+                return
             if self.state == 'ending':
                 if event.key == pygame.K_RETURN:
                     self.ending_page = (self.ending_page+1) % 3

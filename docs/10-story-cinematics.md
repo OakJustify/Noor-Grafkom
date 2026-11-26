@@ -95,7 +95,9 @@ tombol/menu, serta capture launcher dan tiga ukuran jendela.
   manusia, tangan, rumah, furnitur, cangkir retak, pita miring, foto, resep, dan
   sulaman DARA. Ada pan/zoom kecil, uap teh, dan gerakan tangan yang dicache.
 - `game/controller.py`: pemicu koleksi, input cutscene, pembekuan gameplay,
-  dan penggantian finale lama pada launcher aktif.
+  dan penggantian finale lama pada launcher aktif. Pause menawarkan kembali
+  bermain (ESC), kembali ke stasiun terakhir (R), dan simpan lalu kembali ke
+  menu utama (B) tanpa menghapus checkpoint.
 - `game/presentation.py`: subtitle tanpa HUD bocor, galeri, peta fragmen,
   desaturasi/penggelapan berdasarkan cerita, dan kartu ending dunia nyata.
 - `game/persistence.py`: serialization cerita dan restore checkpoint.

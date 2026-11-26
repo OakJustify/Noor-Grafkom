@@ -268,13 +268,51 @@ def _head(b, layout, age, identity, facing=1):
            ((7, 15), (6, 13), (6, 11)))
 
 
+def paint_arms(b, layout, dress=(81, 116, 112), facing=1, old=False):
+    """Paint both forearms and palms for one figure, given its pose layout.
+
+    Split out of paint_figure so a renderer can re-paint arms after a
+    foreground table.  A seated arm line leaves the torso behind the table and
+    rests on the tabletop surface, which is nearer to the viewer; drawing the
+    table afterwards would cover the forearm and palm and leave a floating
+    torso.  Applies the facing transform exactly once, so re-painted arms land
+    on the same pixels as the original pass.
+    """
+    b = _View(b, 180 if facing == -1 else 0, 0, facing, 1)
+    dark = tuple(max(0, c-19) for c in dress)
+    for shoulder, elbow, palm, direction in zip(layout.shoulders, layout.elbows,
+                                               (layout.left_hand, layout.right_hand),
+                                               layout.hand_directions):
+        scale = layout.hand_scale
+        wrist = (palm[0]-12*direction*scale, palm[1])
+        cuff = (shoulder[0]*.30+elbow[0]*.70, shoulder[1]*.30+elbow[1]*.70)
+        bend = (elbow[0], elbow[1])
+        _limb(b, SKIN, cuff, bend, wrist, (17*scale, 16*scale, 11*scale),
+              outline=(159, 113, 88))
+        _limb(b, LIGHT, (cuff[0]-2*facing, cuff[1]-2),
+              (bend[0]-2*facing, bend[1]-2),
+              (wrist[0]-facing, wrist[1]-2), (7*scale, 7*scale, 4*scale))
+        _limb(b, dress, shoulder,
+              (shoulder[0]*.5+cuff[0]*.5, shoulder[1]*.5+cuff[1]*.5),
+              cuff, (25*scale, 24*scale, 20*scale), outline=dark)
+        _palm(b, *palm, direction, old, scale)
+
+
 def paint_figure(b, age="adult", pose="seated", dress=(81, 116, 112),
-                 facing=1, identity="nur") -> FigureLayout:
-    """Paint one clothed figure and its chair, without story props."""
+                 facing=1, identity="nur", arms: bool | str = True) -> FigureLayout:
+    """Paint one clothed figure and its chair, without story props.
+
+    arms=False omits the limbs, arms='only' paints them alone (used to raise
+    them above a foreground table), arms=True paints the whole figure.
+    """
     result = figure_layout(age, pose, facing)
     if identity not in {"nur", "dara"}:
         raise ValueError(f"Unsupported identity: {identity}")
     layout = figure_layout(age, pose, 1)
+    if arms == "only":
+        paint_arms(b, layout, dress, facing, age == "old")
+        return result
+    raw = b
     b = _View(b, 180 if facing == -1 else 0, 0, facing, 1)
     child = age == "child"
     seated = pose in {"seated", "tea", "cloth", "offer"}
@@ -326,20 +364,7 @@ def paint_figure(b, age="adult", pose="seated", dress=(81, 116, 112),
            ((76, top+7), (91, top+17), (105, top+2)),
            ((103, top+13), (96, top+19), (89, top+20)),
            ((80, top+17), (73, top+13), (70, top+3)))
-    for shoulder, elbow, palm, direction in zip(layout.shoulders, layout.elbows,
-                                               (layout.left_hand, layout.right_hand),
-                                               layout.hand_directions):
-        scale = layout.hand_scale
-        wrist = (palm[0]-12*direction*scale, palm[1])
-        cuff = (shoulder[0]*.30+elbow[0]*.70, shoulder[1]*.30+elbow[1]*.70)
-        bend = (elbow[0], elbow[1])
-        _limb(b, SKIN, cuff, bend, wrist, (17*scale, 16*scale, 11*scale),
-              outline=(159, 113, 88))
-        _limb(b, LIGHT, (cuff[0]-2*facing, cuff[1]-2),
-              (bend[0]-2*facing, bend[1]-2),
-              (wrist[0]-facing, wrist[1]-2), (7*scale, 7*scale, 4*scale))
-        _limb(b, dress, shoulder,
-              (shoulder[0]*.5+cuff[0]*.5, shoulder[1]*.5+cuff[1]*.5),
-              cuff, (25*scale, 24*scale, 20*scale), outline=dark)
-        _palm(b, *palm, direction, age == "old", scale)
+    if arms:
+        # raw already carries the caller's brush; paint_arms re-applies facing.
+        paint_arms(raw, layout, dress, facing, age == "old")
     return result

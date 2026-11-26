@@ -14,15 +14,36 @@ Indonesia tanpa dubbing**. Detail alur, kontrol, dan batas verifikasi ada di
 Windows, dari root checkout:
 
 ```powershell
-.venv-nur\Scripts\python.exe src\play_nur.py --menu
+python main.py
 ```
+
+`main.py` menambahkan `src/` ke `sys.path` sendiri, jadi bentuk ini bekerja
+tanpa `PYTHONPATH` dan dari direktori mana pun. Semua opsi launcher tetap
+tersedia:
+
+```powershell
+python main.py --menu              # menu utama
+python main.py --continue          # lanjutkan checkpoint
+python main.py --dev               # latihan developer, F1-F9
+python main.py --dev --fragment F04
+python main.py --dev --ending
+```
+
+Jika `python` belum menunjuk ke venv proyek, panggil interpreter-nya langsung:
+
+```powershell
+.venv-nur\Scripts\python.exe main.py --menu
+```
+
+Entry point alternatif yang setara: `src\play_nur.py` (butuh `src` di
+`PYTHONPATH`, atau jalankan `pytest` yang sudah mengaturnya).
 
 Jika membuat lingkungan baru:
 
 ```powershell
 python -m venv .venv-nur
 .venv-nur\Scripts\python.exe -m pip install -r requirements-nur.txt
-.venv-nur\Scripts\python.exe src\play_nur.py --menu
+.venv-nur\Scripts\python.exe main.py --menu
 ```
 
 Linux/macOS memakai `.venv-nur/bin/python` sebagai pengganti path `Scripts`.
@@ -73,6 +94,11 @@ invincibility: rintangan tetap berbahaya. Save otomatis dinonaktifkan dan
 kembali ke perjalanan/checkpoint normal.
 
 ## Kontrol
+
+Saat pause (ESC) tersedia **ESC** kembali bermain, **R** kembali ke stasiun
+terakhir, dan **B** simpan lalu kembali ke menu utama. Checkpoint tidak
+dihapus: pilih **C** di menu untuk melanjutkan perjalanan yang sama, atau
+**ENTER** untuk memulai perjalanan baru.
 
 | Tombol | Fungsi |
 |---|---|

@@ -201,6 +201,9 @@ class PresentationMixin:
     def _developer_button_rect(self):
         return pygame.Rect((self.canvas.get_width()-280)//2, 378, 280, 48)
 
+    def _developer_hint_rect(self):
+        return pygame.Rect((self.canvas.get_width()-340)//2, 434, 340, 24)
+
     def _draw_menu(self):
         if self.cinematics_enabled:
             self._caption('NOOR\nYang masih di sini',145,32,255)
@@ -210,13 +213,17 @@ class PresentationMixin:
             pygame.draw.rect(self.canvas, (53, 74, 87) if hover else (30, 49, 65), button, border_radius=6)
             pygame.draw.rect(self.canvas, config.WAX, button, 2 if hover else 1, border_radius=6)
             self._text('D · MODE DEVELOPER', button.centerx, button.y+13, 18, config.WAX, center=True)
-            self._text('Latihan fragmen & ending · tanpa save', button.centerx, button.bottom+10, 14, config.BONE, center=True)
+            strip = self._developer_hint_rect()
+            panel = pygame.Surface(strip.size, pygame.SRCALPHA)
+            panel.fill((18, 30, 41, 246))
+            self.canvas.blit(panel, strip.topleft)
+            self._text('Latihan fragmen & ending · tanpa save', strip.centerx, strip.y+3, 14, (242, 236, 222), center=True)
             return
         self._caption("NUR\nTHE LONG WAY HOME",145,32,255)
         self._caption("Ingatan, cahaya, dan mesin yang tidak pernah berhenti.\nENTER mulai · C lanjut · M suara",294,18,255)
 
     def _draw_pause(self):
-        self._caption("ISTIRAHAT\nESC kembali · R kembali ke stasiun terakhir\nCahaya dan napas berhenti berkurang saat istirahat.",203,21,255)
+        self._caption("ISTIRAHAT\nESC kembali bermain · R kembali ke stasiun terakhir\nB simpan & kembali ke menu utama\nCahaya dan napas berhenti berkurang saat istirahat.",203,21,255)
 
     def _draw_ending(self):
         # No NPC figures: the ending shows the player and its surviving flame.
