@@ -1,0 +1,1 @@
+"""NOOR: a light, slowly going out."""

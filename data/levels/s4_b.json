@@ -1,0 +1,47 @@
+{
+  "id": "s4_b",
+  "stage": 4,
+  "name_key": "level.s4_b",
+  "length_px": 6000,
+  "tile": 40,
+  "palette": "senja",
+  "ambient": {
+    "dark_base": 120
+  },
+  "spawn": [
+    160,
+    600
+  ],
+  "platforms": [
+    {
+      "x": 0,
+      "y": 640,
+      "w": 6000,
+      "h": 80,
+      "type": "solid"
+    }
+  ],
+  "props": [],
+  "fragments": [],
+  "checkpoints": [
+    {
+      "id": "CP-1",
+      "x": 220,
+      "y": 640
+    },
+    {
+      "id": "CP-2",
+      "x": 3220,
+      "y": 640
+    }
+  ],
+  "monsters": [],
+  "triggers": [],
+  "exits": [
+    {
+      "x": 5920,
+      "to_level": "s4_c",
+      "card_key": "card.s4_c"
+    }
+  ]
+}

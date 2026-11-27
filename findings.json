@@ -1,0 +1,37 @@
+[
+  {
+    "file": "noor/gfx/player_sprite.py",
+    "line": 1,
+    "summary": "The PlayerSprite class loads animations from a JSON manifest, but the document indicates that visual differences between campaign and endless modes are fundamental, suggesting potential inconsistency in asset usage.",
+    "failure_scenario": "If the same asset is used in both modes without proper adaptation, players may experience inconsistent visual feedback, breaking immersion.",
+    "severity": "important"
+  },
+  {
+    "file": "noor/config.py",
+    "line": 1,
+    "summary": "The config.py file defines color constants (INK, PAPER, ACCENT) for campaign mode, but the document states that endless mode uses a grayscale palette (INK, LIGHT), indicating a potential inconsistency in color usage.",
+    "failure_scenario": "Using colored constants in endless mode could lead to visual inconsistency and confusion, as the intended grayscale aesthetic may not be respected.",
+    "severity": "important"
+  },
+  {
+    "file": "noor/game.py",
+    "line": 64,
+    "summary": "The Game class stores a 'mode' setting that determines game mode (normal vs. endless), but there is no clear mechanism to enforce visual consistency between the two modes.",
+    "failure_scenario": "Without proper visual consistency enforcement, players may experience jarring transitions between colored and grayscale visuals, reducing overall game cohesion.",
+    "severity": "nit"
+  },
+  {
+    "file": "noor/core/scene.py",
+    "line": 1,
+    "summary": "The SceneManager class manages scene stacking but does not appear to coordinate visual consistency between different rendering pipelines (campaign vs. endless).",
+    "failure_scenario": "Lack of coordination could lead to scenes from different rendering pipelines being rendered simultaneously or inappropriately, causing visual inconsistencies.",
+    "severity": "important"
+  },
+  {
+    "file": "noor/core/clock.py",
+    "line": 1,
+    "summary": "The DiseaseClock class handles stage progression and timing, but the document indicates that visual differences between campaign and endless modes are fundamental, suggesting a possible lack of unified timing or state management.",
+    "failure_scenario": "Inconsistent timing or state management could exacerbate visual differences between modes, leading to desynchronization issues.",
+    "severity": "nit"
+  }
+]
