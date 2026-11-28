@@ -386,6 +386,21 @@ class AudioManager:
         ch.set_volume(max(0.0, min(1.0, gain)))
         return True
 
+    def play_array(self, samples, volume=1.0):
+        """Play a NumPy buffer without touching disk (procedural creature vocals)."""
+        if not self._ensure():
+            return False
+        try:
+            snd = self._to_sound(samples)
+        except Exception:  # noqa: BLE001
+            return False
+        ch = snd.play()
+        if ch is None:
+            return False
+        gain = self.volumes["master"] * self.volumes["sfx"] * max(0.0, min(1.0, float(volume)))
+        ch.set_volume(max(0.0, min(1.0, gain)))
+        return True
+
     def cue(self, name, volume=1.0):
         """Play a named cue; see noor.audio.cues.play_cue."""
         from noor.audio.cues import play_cue

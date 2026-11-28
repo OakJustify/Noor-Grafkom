@@ -2,6 +2,7 @@
 
 import json
 import os
+import random
 import sys
 
 import pygame
@@ -20,6 +21,21 @@ from noor.systems.director import SpawnDirector
 from noor.systems.fragments import FragmentSystem
 from noor.systems.glitch import GlitchSystem
 from noor.systems.sanity import SanitySystem
+
+try:
+    from noor.entities.creature import (
+        AVAILABLE as CREATURES_AVAILABLE,
+    )
+    from noor.entities.creature import (
+        ProceduralMonster,
+        choose_archetype,
+        choose_body_plan,
+        choose_size,
+        spawn_definition,
+    )
+except Exception:  # noqa: BLE001 - procedural module is optional
+    CREATURES_AVAILABLE = False
+    ProceduralMonster = None
 
 _SH = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "src", "shaders", "dynamic-lighting")
 if _SH not in sys.path:
@@ -129,6 +145,44 @@ class GameplayScene:
         self.ambient = []
         if level_id == "procedural":
             self._spawn_ambient()
+        self._spawn_creatures()
+
+    def _spawn_creatures(self):
+        """Place 3-6 deterministic generated creatures on platforms ahead."""
+        if not CREATURES_AVAILABLE or ProceduralMonster is None:
+            return
+        stage = int(self.level.get("stage", 1))
+        base = int(self.game.state.get("rng_seed", 0))
+        rng = random.Random(
+            base * 7919 + stage * 104729 + sum(ord(c) for c in self.level_id)
+        )
+        free = C.GLOBAL_ENTITY_CAP - len(self.monsters)
+        count = min(rng.randint(3, 6), max(0, free))
+        length = float(self.level.get("length_px", C.SCREEN_W))
+        candidates = []
+        for px, py, pw, _ph in self.platforms:
+            if pw < 120:
+                continue
+            for frac in (0.25, 0.5, 0.75):
+                x = px + pw * frac
+                if self.spawn[0] + 300 < x < length - 100:
+                    candidates.append((x, py))
+        candidates.sort()
+        if count <= 0 or not candidates:
+            return
+        picks = rng.sample(candidates, min(count, len(candidates)))
+        for i, (x, py) in enumerate(picks):
+            archetype = choose_archetype(stage, rng)
+            plan = choose_body_plan(archetype, rng)
+            size = choose_size(stage, rng)
+            definition = spawn_definition(
+                archetype, stage, 42 + base + i * 977, plan, size
+            )
+            monster = ProceduralMonster(
+                f"proc{stage}_{i}", definition, x, py, stage
+            )
+            monster.y = py - monster.height
+            self.monsters.append(monster)
 
     def _ground_at(self, x, anchor):
         tops = [py for px, py, pw, _ph in self.platforms if px <= x <= px + pw]
@@ -307,18 +361,31 @@ class GameplayScene:
         self.audio.update(dt)
         # director
         self.director.update(dt, player=self.player, camera=self.camera)
+        fallen = [m.id for m in self.monsters if m.y > C.SCREEN_H + 400]
+        if fallen:
+            # Drop monsters that fell out of the world and their animators.
+            for mid in fallen:
+                self.monster_anims.pop(mid, None)
+            self.monsters = [m for m in self.monsters if m.id not in fallen]
         for m in self.monsters:
-            m.update(dt, self.player, self.sanity, self.platforms)
+            m.update(dt, self.player, self.sanity, self.platforms, world=self)
             # contact check
             mx, my, mw, mh = m.rect()
             px, py, pw, ph = self.player.rect()
             if (px < mx + mw and px + pw > mx and py < my + mh and py + ph > my
                     and self.player.invuln <= 0
                     and not (self.dev is not None and self.dev.god)):
-                self.sanity.apply("contact")
-                self.player.invuln = C.INVULN
-                self.audio.cue("contact")
-                self.player.x -= 50
+                harmful = True
+                if hasattr(m, "contact_damage"):
+                    harmful = m.contact_damage(self.player)
+                if harmful:
+                    self.sanity.apply("contact")
+                    self.player.invuln = C.INVULN
+                    self.audio.cue("contact")
+                    self.player.x -= 50
+                elif getattr(m, "good", False):
+                    self.sanity.apply("heal", 6)
+                    self.player.invuln = C.INVULN
             entry = self.monster_anims.get(m.id)
             if entry is not None:
                 anim, kind = entry
@@ -339,6 +406,9 @@ class GameplayScene:
                     head_target=(self.player.x + self.player.width / 2, self.player.y + 20),
                     reduce_motion=self.reduce_motion,
                 )
+            vocal = getattr(m, "pending_vocal", None)
+            if vocal and hasattr(self.audio, "play_array"):
+                self.audio.play_array(m.vocal(vocal), volume=0.45)
         # camera
         self.camera.update(dt, (self.player.x + self.player.width / 2, self.player.y + self.player.height / 2))
         # reset frame inputs
@@ -404,6 +474,9 @@ class GameplayScene:
             pygame.draw.circle(surface, (200, 180, 120), (int(rx), int(ry)), 8)
         # monsters
         for m in self.monsters:
+            if hasattr(m, "renderer"):
+                m.draw(surface, self.camera)
+                continue
             entry = self.monster_anims.get(m.id)
             if entry is not None and draw_creature is not None:
                 draw_creature(surface, entry[0], (-self.camera.x, -self.camera.y))

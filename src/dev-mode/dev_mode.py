@@ -109,6 +109,9 @@ class DevMode:
             ground - 80.0,
             stage=scene.level.get("stage", 1),
         )
+        if len(scene.monsters) >= C.GLOBAL_ENTITY_CAP:
+            old = scene.monsters.pop(0)
+            scene.monster_anims.pop(old.id, None)
         scene.monsters.append(monster)
         anchor = monster.y + (40.0 if kind == "floating" else 80.0)
         anim = gp.CreatureAnimator(
@@ -353,7 +356,10 @@ class DevMode:
         for m in scene.monsters[:4]:
             lines.append(
                 (
-                    f"{m.id:<6} {m.type} {m.state:<7} d {abs(m.x - player.x):5.0f}",
+                    (
+                        f"{m.id:<6} {m.type} {m.state:<7} "
+                        f"dx {m.x - player.x:6.0f} dy {m.y - player.y:6.0f}"
+                    ),
                     COL_WARN,
                 )
             )

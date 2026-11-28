@@ -19,7 +19,7 @@ except ImportError:
 from .morphology_generator import VisualParams
 
 
-CREATURE_ASSET_DIR = Path("assets/nur/creatures")
+CREATURE_ASSET_DIR = Path(__file__).resolve().parents[3] / "assets" / "nur" / "creatures"
 
 
 @dataclass
@@ -40,9 +40,14 @@ class VisualRenderer:
         self.asset_dir = asset_dir
         self.asset_dir.mkdir(parents=True, exist_ok=True)
 
+    @staticmethod
+    def _stable_id(text: str) -> int:
+        """Stable across processes, unlike built-in hash()."""
+        return int.from_bytes(hashlib.sha1(text.encode("utf-8")).digest()[:4], "big")
+
     def render_creature(self, creature_id: str, visual: VisualParams, size: tuple[int, int] = (256, 256)) -> RenderedCreatureVisuals:
         """Generate all visual assets for a creature."""
-        rng = random.Random(self.seed + hash(creature_id))
+        rng = random.Random(self.seed + self._stable_id(creature_id))
 
         # Body texture
         body_path = self.asset_dir / f"{creature_id}_body.png"

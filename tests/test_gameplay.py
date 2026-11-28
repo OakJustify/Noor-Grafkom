@@ -137,3 +137,16 @@ def test_monster_uses_procedural_animator():
     surface = pygame.Surface((C.SCREEN_W, C.SCREEN_H))
     scene.draw(surface)
     assert monster.id in scene.monster_anims
+
+
+def test_fallen_monster_is_culled_with_animator():
+    from noor.entities.monster import Monster
+
+    pygame.init()
+    scene = GameplayScene(FakeGame(), "s1_a")
+    monster = Monster("fallen", "M1", 100, C.SCREEN_H + 500, stage=1)
+    scene.monsters.append(monster)
+    scene.monster_anims[monster.id] = (None, "biped")
+    scene.update(1 / 60)
+    assert monster.id not in [m.id for m in scene.monsters]
+    assert monster.id not in scene.monster_anims

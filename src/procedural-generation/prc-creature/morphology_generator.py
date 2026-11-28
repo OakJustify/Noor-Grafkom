@@ -131,11 +131,13 @@ class CreatureDefinition:
 class MorphologyGenerator:
     """Generate CreatureDefinition from archetype + body plan + size."""
 
+    DATA_DIR = Path(__file__).resolve().parents[3] / "data" / "creatures"
+
     def __init__(self, seed: int = 42):
         self.seed = seed
         self.rng = random.Random(seed)
-        self.archetypes = load_archetypes(Path("data/creatures/archetypes.json"))
-        self.body_plans = load_body_plans(Path("data/creatures/body_plans.json"))
+        self.archetypes = load_archetypes(self.DATA_DIR / "archetypes.json")
+        self.body_plans = load_body_plans(self.DATA_DIR / "body_plans.json")
 
     def generate(
         self,

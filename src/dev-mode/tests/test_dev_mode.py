@@ -117,13 +117,22 @@ def test_freeze_clock_stops_time():
 
 def test_spawn_monster_adds_animator():
     scene = make_scene()
+    before = len(scene.monsters)
     scene.handle_event(key(pygame.K_F6))
-    assert len(scene.monsters) == 1
-    monster = scene.monsters[0]
+    assert len(scene.monsters) == before + 1
+    monster = scene.monsters[-1]
     assert monster.type == "M1"
     assert monster.id in scene.monster_anims
     surface = pygame.Surface((C.SCREEN_W, C.SCREEN_H))
     scene.draw(surface)
+
+
+def test_spawn_monster_respects_entity_cap():
+    scene = make_scene()
+    for _ in range(C.GLOBAL_ENTITY_CAP + 1):
+        scene.dev.spawn_monster(scene)
+    assert len(scene.monsters) == C.GLOBAL_ENTITY_CAP
+    assert len(scene.monster_anims) == C.GLOBAL_ENTITY_CAP
 
 
 def test_respawn_teleports_to_checkpoint():

@@ -7,12 +7,13 @@ Public API:
     ProceduralCreatureInstance   -> Active in-game creature with behavior + animation + cached audio
     MorphologyGenerator          -> Low-level morphology generation
     BehaviorStateMachine         -> Drive-based utility AI
-    CreatureAudioGenerator       -> PyWav synthesis + on-disk caching
-    VisualRenderer               -> pycairo texture generation
+    CreatureAudioGenerator       -> In-memory vocal synthesis (WAV cache optional)
+    VisualRenderer               -> pycairo texture generation (offline)
+    CreatureVector               -> Runtime pygame vector renderer
 
 Data Files:
-    data/creatures/archetypes.json    -> 12 archetypes with drives, sanity mods, vocal profiles
-    data/creatures/body_plans.json    -> 9 body plans with limbs, gaits, size affinity
+    data/creatures/archetypes.json    -> 10 archetypes with drives, sanity mods, vocal profiles
+    data/creatures/body_plans.json    -> 8 body plans with limbs, gaits, size affinity
 
 Deterministic seed = 42 across all systems.
 """
@@ -64,6 +65,8 @@ from .visual_renderer import (
     generate_creature_visuals,
 )
 
+from .vector_renderer import CreatureVector
+
 __all__ = [
     # Types & Enums
     "ArchetypeType",
@@ -100,4 +103,5 @@ __all__ = [
     "VisualRenderer",
     "RenderedCreatureVisuals",
     "generate_creature_visuals",
+    "CreatureVector",
 ]

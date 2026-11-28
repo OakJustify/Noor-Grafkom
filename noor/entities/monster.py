@@ -17,6 +17,8 @@ class Monster:
         self.state = "patrol"
         self.vx = 0.0
         self.vy = 0.0
+        self.flying = mtype in self.FLYING_TYPES
+        self.dir = 1
         self.on_ground = False
         self.notice_timer = 0.0
         self.stun_timer = 0.0
@@ -25,13 +27,56 @@ class Monster:
     def rect(self):
         return (self.x, self.y, self.width, self.height)
 
-    def update(self, dt, player, sanity, platforms=()):
+    def _walkable_top(self, target_x, platforms):
+        """Ground the monster can step onto, or None when a wall/ledge blocks it."""
+        # shortcut: no jump/pathfinding; gaps and walls over one tile stop the monster.
+        feet = self.y + self.height
+        probe = target_x + self.width if target_x > self.x else target_x
+        best = None
+        for px, py, pw, ph in platforms:
+            if not (px <= probe <= px + pw):
+                continue
+            if py + ph <= self.y:
+                continue  # platform is above the body, walk under it
+            if py < feet - C.TILE:
+                return None  # wall taller than one tile
+            if py <= feet + C.TILE and (
+                best is None or abs(py - feet) < abs(best - feet)
+            ):
+                best = py
+        return best
+
+    def _move_horizontal(self, dt, platforms, was_grounded):
+        dx = self.vx * dt
+        if dx == 0.0:
+            return
+        if not was_grounded:
+            self.x += dx
+            return
+        target_x = self.x + dx
+        top = self._walkable_top(target_x, platforms)
+        if top is None:
+            self.vx = 0.0
+            if self.state == "patrol":
+                self.dir *= -1
+            return
+        self.x = target_x
+        if top < self.y + self.height:
+            self.y = top - self.height
+            self.vy = 0.0
+            self.on_ground = True
+
+    def update(self, dt, player, sanity, platforms=(), world=None):
         # simple patrol/chase
         if self.stun_timer > 0:
             self.stun_timer -= dt
             self.vx = 0.0
+            if self.flying:
+                self.vy = 0.0
         else:
             self.vx = 0.0
+            if self.flying:
+                self.vy = 0.0
             dx = player.x - self.x
             dist = abs(dx)
             # sight
@@ -51,19 +96,27 @@ class Monster:
                     self.state = "patrol"
             if self.state == "chase":
                 speed = C.MONSTER_SPEED.get(self.type, (90, 150))[1]
-                self.vx = (1 if dx > 0 else -1) * speed
+                self.vx = 0.0 if abs(dx) <= 2.0 else (1 if dx > 0 else -1) * speed
+                if self.flying:
+                    target_y = player.y + player.height / 2 - self.height / 2
+                    self.vy = max(-speed, min(speed, (target_y - self.y) * 8.0))
             elif self.state == "patrol":
                 speed = C.MONSTER_SPEED.get(self.type, (90, 150))[0]
-                self.vx = speed * 0.3
+                self.vx = speed * 0.3 * self.dir
             # reach condition (stationary near player)
             if dist < 90 and self.state != "chase":
                 self.reach = True
-        if self.type in self.FLYING_TYPES:
+        self._apply_physics(dt, platforms)
+
+    def _apply_physics(self, dt, platforms):
+        """Move with the same gravity/platform rules as the player."""
+        if self.flying:
             self.x += self.vx * dt
+            self.y += self.vy * dt
             return
-        # gravity + platform landing, same rules as the player
+        was_grounded = self.on_ground
+        self._move_horizontal(dt, platforms, was_grounded)
         self.vy += C.GRAVITY * dt
-        self.x += self.vx * dt
         self.y += self.vy * dt
         self.on_ground = False
         for px, py, pw, _ph in platforms:
@@ -74,3 +127,5 @@ class Monster:
                 self.y = py - self.height
                 self.vy = 0
                 self.on_ground = True
+
+
