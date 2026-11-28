@@ -1,7 +1,8 @@
 """Procedural creature entity for gameplay.
 
-Bridges prc-creature's generated morphology, utility AI, in-memory vocals and
-vector renderer into the existing Monster physics/contact contract.
+Bridges prc-creature's generated morphology, utility AI, in-memory vocals,
+vector renderer, lifecycle, social behaviour, and ecology into the existing
+Monster physics/contact contract.
 """
 
 from __future__ import annotations
@@ -40,12 +41,14 @@ except Exception:  # noqa: BLE001 - optional module during partial checkouts
 
 from noor.entities.monster import Monster
 
-# Hostility profiles.  "Passive" creatures never damage the player; "good" ones
-# actively approach and restore light instead.
+# ── Hostility profiles ─────────────────────────────────────────────
 ALWAYS_HOSTILE = frozenset({"predator", "void_walker", "parasitic"})
 TERRITORIAL_HOSTILE = frozenset({"territorial", "guardian", "ambush"})
 PASSIVE = frozenset({"prey", "scavenger", "curious"})
 GOOD = frozenset({"gentle_light"})
+
+PREDATOR_ARCHETYPES = frozenset({"predator", "void_walker", "ambush"})
+PREY_ARCHETYPES = frozenset({"prey", "scavenger", "curious"})
 
 CHASE_STATES = frozenset({
     "chase", "hunt", "stalk", "strike", "attack", "approach", "follow",
@@ -53,6 +56,8 @@ CHASE_STATES = frozenset({
 })
 FLEE_STATES = frozenset({"flee", "hide", "retreat", "camouflage"})
 STOP_STATES = frozenset({"idle", "rest", "feed", "wait", "camouflage"})
+SCAVENGE_STATES = frozenset({"scavenge", "hoard", "steal"})
+HERD_STATES = frozenset({"herd"})
 
 SPAWN_TABLE = {
     1: ("prey", "scavenger", "curious", "territorial"),
@@ -81,6 +86,8 @@ SIZE_TABLE = {
     4: ("large", "medium"),
 }
 
+# ── Helpers ─────────────────────────────────────────────────────────
+
 
 def _enum_value(value):
     return value.value if hasattr(value, "value") else str(value)
@@ -100,7 +107,6 @@ def choose_size(stage, rng):
 
 
 def _definition_height(definition):
-    """Collision height: body plus most of the leg length."""
     body = definition.body
     body_h = float(body.get("height", 40.0))
     leg_len = max(
@@ -118,8 +124,31 @@ def _definition_height(definition):
     return max(40.0, body_h + leg_len * 0.8)
 
 
+def _facing_toward(self_x, target_x):
+    return 1 if target_x >= self_x else -1
+
+
+def _nearby_same_archetype(creature, others):
+    same = []
+    cx = creature.x + creature.width / 2
+    cy = creature.y + creature.height / 2
+    for o in others:
+        if o is creature:
+            continue
+        if getattr(o, "archetype_name", "") != creature.archetype_name:
+            continue
+        ox = o.x + o.width / 2
+        oy = o.y + o.height / 2
+        if abs(ox - cx) < 600.0 and abs(oy - cy) < 400.0:
+            same.append(o)
+    return same
+
+
+# ── ProceduralMonster ───────────────────────────────────────────────
+
+
 class ProceduralMonster(Monster):
-    """A generated creature with physics, utility AI and vector visuals."""
+    """A generated creature with physics, utility AI, lifecycle and vector visuals."""
 
     def __init__(self, mid, definition, x, y, stage=1):
         super().__init__(mid, "PROC", x, y, stage)
@@ -141,6 +170,8 @@ class ProceduralMonster(Monster):
         self.good = self.archetype_name in GOOD
         self.always_hostile = self.archetype_name in ALWAYS_HOSTILE
         self.territorial = self.archetype_name in TERRITORIAL_HOSTILE
+        self.is_predator = self.archetype_name in PREDATOR_ARCHETYPES
+        self.is_prey = self.archetype_name in PREY_ARCHETYPES
 
         self.behavior = BehaviorStateMachine(
             creature_id=mid,
@@ -161,6 +192,23 @@ class ProceduralMonster(Monster):
 
         self._walk_speed, self._run_speed = self._speeds()
 
+        # -- lifecycle ---------------------------------------------------
+        self.age = 0.0
+        self.mortality = float(
+            definition.population_params.get("mortality_rate", 0.005)
+        )
+        self.reproduction_rate = float(
+            definition.population_params.get("reproduction_rate", 0.01)
+        )
+        self.alive = True
+        self._reproduce_timer = 0.0
+        self._footstep_timer = 0.0
+        self.pending_footstep = None
+        self._prev_on_ground = False
+        self.footprint = definition.footprint_sound_profile
+
+    # -- speeds ----------------------------------------------------------
+
     def _speeds(self):
         body_len = float(self.definition.body.get("length", 80.0))
         speeds = [
@@ -174,10 +222,14 @@ class ProceduralMonster(Monster):
         run = max(walk * 1.25, min(240.0, max(speeds) * body_len))
         return walk, run
 
+    # -- territory -------------------------------------------------------
+
     def _player_in_territory(self, player):
         dx = (player.x + player.width / 2) - self.spawn_x
         dy = (player.y + player.height / 2) - self.spawn_y
         return math.hypot(dx, dy) <= self.territory_radius
+
+    # -- context builder -------------------------------------------------
 
     def _context(self, dt, player, sanity, world):
         cx = self.x + self.width / 2
@@ -213,6 +265,7 @@ class ProceduralMonster(Monster):
                         "pos": (fx, fy),
                         "type": fragment.get("type", "fragment"),
                         "distance": math.hypot(fx - cx, fy - cy),
+                        "id": fragment.get("id", ""),
                     })
             clock = getattr(world, "clock", None)
             if clock is not None:
@@ -234,6 +287,29 @@ class ProceduralMonster(Monster):
             current_sanity_stage=self.stage,
             world_sanity=s_eff,
         )
+
+    # -- activity cycle modifier -----------------------------------------
+
+    def _activity_multiplier(self, time_of_day):
+        """Return 0.0-1.5 factor.  Nocturnal: high at night.  Diurnal: high at day."""
+        cycle = _enum_value(self.behavior.activity_cycle)
+        # time_of_day: 0.0=midnight, 0.25=sunrise, 0.5=noon, 0.75=sunset
+        if cycle == "diurnal":
+            # peak at noon (0.5), dip at midnight (0.0)
+            return 0.5 + 1.0 * (1.0 - abs(time_of_day - 0.5) * 2.0)
+        if cycle == "nocturnal":
+            # peak at midnight (0.0 or 1.0)
+            t = (time_of_day + 0.5) % 1.0
+            return 0.5 + 1.0 * (1.0 - abs(t - 0.5) * 2.0)
+        if cycle == "crepuscular":
+            # peak at dawn/dusk (0.25 and 0.75)
+            return 0.5 + 1.0 * (1.0 - min(abs(time_of_day - 0.25), abs(time_of_day - 0.75)) * 2.0)
+        if cycle == "random":
+            return 0.8
+        # scripted / unknown: always active
+        return 1.0
+
+    # -- movement mode ---------------------------------------------------
 
     def _mode(self, player, state, ctx):
         if state in FLEE_STATES:
@@ -258,16 +334,68 @@ class ProceduralMonster(Monster):
             return "stop"
         return "roam"
 
+    # -- main update -----------------------------------------------------
+
     def update(self, dt, player, sanity, platforms=(), world=None):
+        self.age += dt
         self.vocal_cooldown = max(0.0, self.vocal_cooldown - dt)
         self.pending_vocal = None
+        self._footstep_timer += dt
+
+        # -- natural mortality --------------------------------------------
+        if (
+            self.mortality > 0
+            and self.age > 120.0
+            and random.Random(self.definition.seed + int(self.age * 1000)).random() < self.mortality * dt
+        ):
+            self.alive = False
+            self.pending_vocal = "death"
+            return
+
         ctx = self._context(dt, player, sanity, world)
+
+        # Apply activity cycle to drive values so nocturnal creatures are
+        # more active at night, diurnal at day, etc.
+        activity = self._activity_multiplier(ctx.time_of_day)
+        for drive in self.behavior.drives.values():
+            if activity < 0.3 and drive.value < 0.3:
+                drive.value = min(1.0, drive.value + drive.decay_rate * dt * 0.3)
+
         self.state = self.behavior.update(ctx).value
         mode = self._mode(player, self.state, ctx)
-        if self.vocal_cooldown <= 0 and ctx.player_distance < 560 and mode != "stop":
-            self.pending_vocal = "aggressive" if mode == "toward" else "idle"
-            self.vocal_cooldown = 6.0
 
+        # -- social grouping: herd toward nearest same-archetype -----------
+        herd_influence = 0.0
+        herd_cx = 0.0
+        if self.state in HERD_STATES or self.behavior.social.value in ("herd", "pack", "swarm", "colony", "loose_group"):
+            same = _nearby_same_archetype(self, getattr(world, "monsters", ()))
+            if same:
+                herd_cx = sum(o.x + o.width / 2 for o in same) / len(same)
+                herd_influence = 0.3
+
+        # -- creature-vs-creature interaction ------------------------------
+        self._interact_with_creatures(dt, world)
+
+        # -- fragment scavenging -------------------------------------------
+        stolen = None
+        if self.state in SCAVENGE_STATES and world is not None:
+            stolen = self._try_steal_fragment(ctx, world)
+
+        # -- vocal ---------------------------------------------------------
+        if self.vocal_cooldown <= 0 and ctx.player_distance < 560 and mode != "stop":
+            if (
+                (mode == "toward" and self.archetype_name in ALWAYS_HOSTILE)
+                or self.state == "attack"
+                or self.state == "strike"
+            ):
+                self.pending_vocal = "aggressive"
+            elif self.state in FLEE_STATES:
+                self.pending_vocal = "pain"
+            else:
+                self.pending_vocal = "idle"
+            self.vocal_cooldown = 4.0 + random.Random(self.definition.seed + int(self.age * 10)).uniform(0, 3.0)
+
+        # -- movement ------------------------------------------------------
         px = player.x + player.width / 2
         cx = self.x + self.width / 2
         direction = 1 if px >= cx else -1
@@ -276,6 +404,9 @@ class ProceduralMonster(Monster):
             self.vx = 0.0
         elif mode == "roam":
             self.vx = self._walk_speed * self.dir
+            if herd_influence > 0:
+                herd_dir = 1 if herd_cx >= cx else -1
+                self.vx += (self._walk_speed * herd_dir - self.vx) * herd_influence
             if self.vx:
                 self.facing = 1 if self.vx > 0 else -1
         else:
@@ -292,6 +423,15 @@ class ProceduralMonster(Monster):
 
         self._apply_physics(dt, platforms)
 
+        # -- footstep audio ------------------------------------------------
+        if self.on_ground and abs(self.vx) > 2.0 and self._footstep_timer > 0.35:
+            if self.footprint != "silent":
+                self.pending_footstep = self.footprint
+            self._footstep_timer = 0.0
+        elif not self.on_ground or abs(self.vx) <= 2.0:
+            self._footstep_timer = min(self._footstep_timer, 0.30)
+
+        # -- renderer pose -------------------------------------------------
         anchor_x = self.x + self.width / 2
         anchor_y = self.y + self.height / 2 if self.flying else self.y + self.height
         self.renderer.update(
@@ -306,6 +446,88 @@ class ProceduralMonster(Monster):
             reduce_motion=bool(getattr(world, "reduce_motion", False)),
         )
 
+        return stolen
+
+    # -- creature-vs-creature ---------------------------------------------
+
+    def _interact_with_creatures(self, dt, world):
+        """Predators hunt prey. Territorial creatures fight each other."""
+        if world is None:
+            return
+        cx = self.x + self.width / 2
+        cy = self.y + self.height / 2
+        for other in list(getattr(world, "monsters", ())):
+            if other is self:
+                continue
+            if not isinstance(other, ProceduralMonster):
+                continue
+            if not getattr(other, "alive", True):
+                continue
+            ox = other.x + other.width / 2
+            oy = other.y + other.height / 2
+            dist = math.hypot(ox - cx, oy - cy)
+
+            # Predator attacks prey
+            if self.is_predator and other.is_prey and dist < 80.0:
+                other.alive = False
+                other.pending_vocal = "death"
+            # Territorial fights same archetype
+            elif (
+                self.territorial
+                and other.territorial
+                and self.archetype_name == other.archetype_name
+                and dist < 60.0
+            ):
+                loser = self if random.Random(int(self.age * 1000)).random() < 0.5 else other
+                loser.alive = False
+                loser.pending_vocal = "death"
+
+    # -- fragment scavenging ----------------------------------------------
+
+    def _try_steal_fragment(self, ctx, world):
+        """Scavengers can steal nearby uncollected fragments."""
+        if len(ctx.nearby_fragments) == 0:
+            return None
+        frag = ctx.nearby_fragments[0]
+        fid = frag.get("id", "")
+        if not fid:
+            return None
+        frag_x, frag_y = frag["pos"]
+        cx = self.x + self.width / 2
+        cy = self.y + self.height / 2
+        if math.hypot(frag_x - cx, frag_y - cy) < 60.0:
+            collected = getattr(world, "collected_fragments", set())
+            collected.add(fid)
+            self.vocal_cooldown = 0.0
+            self.pending_vocal = "alert"
+            return fid
+        return None
+
+    # -- reproduction -----------------------------------------------------
+
+    def should_reproduce(self, dt, world):
+        """Return True when conditions are right to spawn an offspring."""
+        if self.reproduction_rate <= 0:
+            return False
+        self._reproduce_timer += dt
+        if self._reproduce_timer < 60.0:
+            return False
+        # Only social/herd/pack creatures reproduce in-game
+        social = _enum_value(self.behavior.social)
+        if social in ("solitary", "scripted"):
+            return False
+        # Need at least one nearby same-archetype
+        same = _nearby_same_archetype(self, getattr(world, "monsters", ()))
+        if not same:
+            return False
+        rng = random.Random(self.definition.seed + int(self._reproduce_timer))
+        if rng.random() < self.reproduction_rate * 0.5:
+            self._reproduce_timer = 0.0
+            return True
+        return False
+
+    # -- contact ----------------------------------------------------------
+
     def contact_damage(self, player):
         if self.passive or self.good:
             return False
@@ -315,6 +537,18 @@ class ProceduralMonster(Monster):
             return self._player_in_territory(player)
         return True
 
+    def contact_heal(self, player):
+        """Good creatures heal the player on contact."""
+        if not self.good:
+            return 0.0
+        if self.state in ("heal", "sing", "guide"):
+            return 12.0
+        if abs(player.x - self.x) < 120.0:
+            return 5.0
+        return 0.0
+
+    # -- audio ------------------------------------------------------------
+
     def vocal(self, call_type):
         if call_type not in self._vocal_cache:
             self._vocal_cache[call_type] = self.audio_gen.synthesize_call(
@@ -322,12 +556,16 @@ class ProceduralMonster(Monster):
             )
         return self._vocal_cache[call_type]
 
+    # -- draw -------------------------------------------------------------
+
     def draw(self, surface, camera):
         self.renderer.draw(surface, (-camera.x, -camera.y))
 
 
+# ── Module helpers ────────────────────────────────────────────────────
+
+
 def spawn_definition(archetype, stage, seed, body_plan=None, size_class=None):
-    """Generate a deterministic definition for one spawned creature."""
     return generate_creature(
         archetype=archetype,
         body_plan=body_plan,

@@ -122,8 +122,8 @@ def test_audio_synthesizes_in_memory():
 def test_gameplay_spawns_deterministic_creatures():
     if not AVAILABLE:
         return
-    first = GameplayScene(FakeGame(), "s1_a")
-    second = GameplayScene(FakeGame(), "s1_a")
+    first = GameplayScene(FakeGame(), "procedural")
+    second = GameplayScene(FakeGame(), "procedural")
     assert 3 <= len(first.monsters) <= 6
 
     def signature(scene):

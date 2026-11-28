@@ -1,4 +1,4 @@
-"""Gameplay scene."""
+"""Gameplay scene — 100% procedural world."""
 
 import json
 import os
@@ -25,8 +25,6 @@ from noor.systems.sanity import SanitySystem
 try:
     from noor.entities.creature import (
         AVAILABLE as CREATURES_AVAILABLE,
-    )
-    from noor.entities.creature import (
         ProceduralMonster,
         choose_archetype,
         choose_body_plan,
@@ -72,6 +70,47 @@ try:
 except Exception:  # noqa: BLE001
     DevMode = None
 
+# ── procedural level generator (replaces JSON level files) ──────────
+
+def _generate_level(stage=1, seed=0, level_id="procedural"):
+    """Generate a full level dict — all procedural, no JSON files."""
+    if generate_level is None:
+        # Absolute fallback: flat ground + a few platforms.
+        return _fallback_level(stage)
+    return generate_level(
+        seed=seed,
+        length=12800,
+        difficulty="medium",
+        stage=stage,
+        level_id=level_id,
+    )
+
+
+def _fallback_level(stage):
+    pw = C.SCREEN_W * (3 + stage)
+    return {
+        "stage": stage,
+        "length_px": pw,
+        "spawn": [160, 600],
+        "platforms": [
+            {"x": 0, "y": 640, "w": pw, "h": 20, "type": "solid"},
+        ],
+        "fragments": [
+            {"id": f"f{i}", "x": 400 + i * 600, "y": 580, "type": "fragment"}
+            for i in range(8)
+        ],
+        "checkpoints": [
+            {"id": f"CP-{i+1}", "x": 300 + i * 1200, "y": 600}
+            for i in range(4)
+        ],
+        "exits": [{"x": pw - 200, "to_level": "procedural"}],
+        "monsters": [],
+        "props": [],
+    }
+
+
+# ── GameplayScene ────────────────────────────────────────────────────
+
 
 class GameplayScene:
     def __init__(self, game, level_id):
@@ -81,20 +120,10 @@ class GameplayScene:
         self.reduce_motion = bool(
             self.game.state.get("accessibility", {}).get("reduce_motion", False)
         )
-        # load or generate level
-        if level_id == "procedural" and generate_level is not None:
-            self.level = generate_level(
-                seed=self.game.state.get("rng_seed", 0),
-                length=12800,
-                difficulty="medium",
-                stage=1,
-                level_id="procedural",
-            )
-        else:
-            base = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "data", "levels")
-            path = os.path.join(base, f"{level_id}.json")
-            with open(path, encoding="utf-8") as f:
-                self.level = json.load(f)
+        # Always generate procedural level — no JSON files.
+        stage = max(1, int(self.game.state.get("stage", 1)))
+        seed = int(self.game.state.get("rng_seed", 0))
+        self.level = _generate_level(stage=stage, seed=seed, level_id=level_id)
         self.platforms = []
         for p in self.level.get("platforms", []):
             self.platforms.append((p["x"], p["y"], p["w"], p["h"]))
@@ -102,8 +131,6 @@ class GameplayScene:
         self.player = Player(self.spawn[0], self.spawn[1])
         self.player_sprite = PlayerSprite()
         self.camera = Camera(self.level.get("length_px", C.SCREEN_W))
-        # systems
-        stage = self.level.get("stage", 1)
         self.audio = self.game.audio
         self.audio.load_stage(stage)
         self.sanity = SanitySystem(stage=stage, S=self.game.state["S"], cap=self.game.state["cap"], fragments=None)
@@ -346,10 +373,10 @@ class GameplayScene:
         self.clock.update(dt)
         forced = self.clock.forced_stage()
         if not self.transitioning and forced > stage:
-            target = {2: "s2_a", 3: "s3_a", 4: "s4_a"}.get(forced)
-            if target:
-                self._go_to_level(target)
-                return
+            # Stage advance: regenerate level at next stage.
+            self.game.state["stage"] = forced
+            self._go_to_level("procedural")
+            return
         if not self.transitioning and self.clock.is_final():
             self._go_to_level(None)
             return
@@ -362,13 +389,36 @@ class GameplayScene:
         # director
         self.director.update(dt, player=self.player, camera=self.camera)
         fallen = [m.id for m in self.monsters if m.y > C.SCREEN_H + 400]
+        dead = [m for m in self.monsters if getattr(m, "alive", True) is False and m.id not in fallen]
+        fallen.extend([m.id for m in dead])
         if fallen:
-            # Drop monsters that fell out of the world and their animators.
             for mid in fallen:
                 self.monster_anims.pop(mid, None)
             self.monsters = [m for m in self.monsters if m.id not in fallen]
+        # Reproduction
+        newborns = []
         for m in self.monsters:
-            m.update(dt, self.player, self.sanity, self.platforms, world=self)
+            if hasattr(m, "should_reproduce") and m.should_reproduce(dt, self):
+                rng = random.Random(m.definition.seed + len(self.monsters) * 1009)
+                definition = spawn_definition(
+                    m.archetype, stage, m.definition.seed + len(self.monsters) * 47,
+                    m.body_plan, m.definition.size_class,
+                )
+                x = m.x + rng.uniform(-80, 80)
+                child = ProceduralMonster(
+                    f"proc{stage}_{len(self.monsters) + len(newborns)}",
+                    definition, x, m.y, stage,
+                )
+                child.y = m.y - child.height * 0.5
+                newborns.append(child)
+        if newborns:
+            cap = C.GLOBAL_ENTITY_CAP - len(self.monsters)
+            self.monsters.extend(newborns[:max(0, cap)])
+        for m in self.monsters:
+            stolen = m.update(dt, self.player, self.sanity, self.platforms, world=self)
+            if stolen and hasattr(m, "archetype_name") and m.archetype_name == "scavenger":
+                self.collected_fragments.add(stolen)
+                self.game.state["fragments_collected"] = sorted(self.collected_fragments)
             # contact check
             mx, my, mw, mh = m.rect()
             px, py, pw, ph = self.player.rect()
@@ -376,16 +426,20 @@ class GameplayScene:
                     and self.player.invuln <= 0
                     and not (self.dev is not None and self.dev.god)):
                 harmful = True
+                heal_amount = 0.0
                 if hasattr(m, "contact_damage"):
                     harmful = m.contact_damage(self.player)
+                if hasattr(m, "contact_heal"):
+                    heal_amount = m.contact_heal(self.player)
                 if harmful:
                     self.sanity.apply("contact")
                     self.player.invuln = C.INVULN
                     self.audio.cue("contact")
                     self.player.x -= 50
-                elif getattr(m, "good", False):
-                    self.sanity.apply("heal", 6)
-                    self.player.invuln = C.INVULN
+                elif heal_amount > 0:
+                    self.sanity.apply("heal", heal_amount)
+                    self.player.invuln = C.INVULN * 0.5
+                    self.audio.cue("checkpoint")
             entry = self.monster_anims.get(m.id)
             if entry is not None:
                 anim, kind = entry
@@ -409,6 +463,11 @@ class GameplayScene:
             vocal = getattr(m, "pending_vocal", None)
             if vocal and hasattr(self.audio, "play_array"):
                 self.audio.play_array(m.vocal(vocal), volume=0.45)
+            footstep = getattr(m, "pending_footstep", None)
+            if footstep and hasattr(self.audio, "cue"):
+                self.audio.cue("land")
+            if hasattr(m, "pending_footstep"):
+                m.pending_footstep = None
         # camera
         self.camera.update(dt, (self.player.x + self.player.width / 2, self.player.y + self.player.height / 2))
         # reset frame inputs
@@ -425,7 +484,7 @@ class GameplayScene:
         if not self.transitioning:
             for ex in self.level.get("exits", []):
                 if self.player.x >= ex["x"]:
-                    self._go_to_level(ex.get("to_level"))
+                    self._go_to_level(ex.get("to_level", "procedural"))
                     return
 
     def _respawn(self):
@@ -454,25 +513,20 @@ class GameplayScene:
         t = pygame.time.get_ticks() / 1000.0
         draw_layer4(surface, self.camera, t)
         draw_layer3(surface, self.camera, t)
-        # mid tint to keep readability
         overlay = pygame.Surface((C.SCREEN_W, C.SCREEN_H), pygame.SRCALPHA)
         overlay.fill((*pal[stage - 1], 40))
         surface.blit(overlay, (0, 0))
-        # platforms
         for (x, y, w, h) in self.platforms:
             rx, ry = self.camera.apply((x, y))
             pygame.draw.rect(surface, (90, 80, 70), (rx, ry, w, h))
-        # fragments
         for fr in self.level.get("fragments", []):
             if fr["id"] in self.collected_fragments:
                 continue
             rx, ry = self.camera.apply((fr["x"], fr["y"]))
             pygame.draw.circle(surface, (255, 230, 170), (int(rx), int(ry)), 9)
-        # props
         for pr in self.props:
             rx, ry = self.camera.apply((pr.x, pr.y))
             pygame.draw.circle(surface, (200, 180, 120), (int(rx), int(ry)), 8)
-        # monsters
         for m in self.monsters:
             if hasattr(m, "renderer"):
                 m.draw(surface, self.camera)
@@ -483,14 +537,11 @@ class GameplayScene:
             else:
                 rx, ry = self.camera.apply((m.x, m.y))
                 pygame.draw.rect(surface, (60, 40, 50), (rx, ry, 40, 80))
-        # ambient procedural creatures (visual placeholders)
         for c in self.ambient:
             draw_creature(surface, c["anim"], (-self.camera.x, -self.camera.y))
-        # player
         mx, my = self.player_motion.offset() if self.player_motion else (0.0, 0.0)
         if self.player_sprite.available():
             frame, pivot = self.player_sprite.get_frame()
-            # align sprite bottom to player's feet
             feet_x = self.player.x + self.player.width / 2 + mx
             feet_y = self.player.y + self.player.height + my
             bx = feet_x - pivot[0]
@@ -500,39 +551,29 @@ class GameplayScene:
         else:
             rx, ry = self.camera.apply((self.player.x + mx, self.player.y + my))
             pygame.draw.rect(surface, (237, 227, 208), (rx, ry, self.player.width, self.player.height))
-        # lantern glow
         r = self.sanity.radius()
         cx, cy = self.camera.apply((self.player.x + self.player.width / 2, self.player.y + 20))
-        # simple circle alpha
         s = pygame.Surface((r * 2, r * 2), pygame.SRCALPHA)
         pygame.draw.circle(s, (255, 210, 122, 30), (r, r), int(r))
         surface.blit(s, (cx - r, cy - r))
-        # HUD
         t = self.font.render(f"S:{self.sanity.s_eff:.0f} R:{r:.0f} stage:{stage}", True, (230, 220, 200))
         surface.blit(t, (10, 10))
-        # bars (top-left): light (sanity) and stamina
         bar_w, bar_h = 180, 10
         bx, by = 10, 50
-        # light bar
         pygame.draw.rect(surface, (40, 40, 50), (bx, by, bar_w, bar_h))
         pygame.draw.rect(surface, (255, 210, 122), (bx, by, int(bar_w * (self.sanity.s_eff / 100.0)), bar_h))
-        # stamina bar
         by2 = by + bar_h + 6
         pygame.draw.rect(surface, (40, 40, 50), (bx, by2, bar_w, bar_h))
         pygame.draw.rect(surface, (120, 200, 120), (bx, by2, int(bar_w * (self.player.stamina / Player.STAMINA_MAX)), bar_h))
-        # fragments slots
         x = 10
         for sl in self.fragments.slots:
             pygame.draw.rect(surface, (200, 180, 120), (x, 30, 12, 12))
             x += 16
-        # level title card
         if self.card_timer > 0:
             name = self.game.i18n.t(f"level.{self.level_id}")
             t = pygame.font.SysFont(None, 40).render(name, True, (235, 225, 205))
             surface.blit(t, (C.SCREEN_W // 2 - t.get_width() // 2, 120))
-        # foreground layer (covers player)
         draw_layer1(surface, self.camera, pygame.time.get_ticks() / 1000.0)
-        # dynamic sunlight shader (CPU fallback)
         if apply_lighting is not None:
             apply_lighting(surface, pygame.time.get_ticks() / 1000.0)
         if self.dev is not None:

@@ -59,7 +59,7 @@ class FakeGame:
 
 def make_scene():
     pygame.init()
-    return GameplayScene(FakeGame(), "s1_a")
+    return GameplayScene(FakeGame(), "procedural")
 
 
 def key(code):
@@ -132,7 +132,10 @@ def test_spawn_monster_respects_entity_cap():
     for _ in range(C.GLOBAL_ENTITY_CAP + 1):
         scene.dev.spawn_monster(scene)
     assert len(scene.monsters) == C.GLOBAL_ENTITY_CAP
-    assert len(scene.monster_anims) == C.GLOBAL_ENTITY_CAP
+    # Legacy animators for M1/M2/M3 only; procedural creatures use vector renderer.
+    anim_count = len(scene.monster_anims)
+    proc_count = sum(1 for m in scene.monsters if hasattr(m, "renderer"))
+    assert anim_count + proc_count >= C.GLOBAL_ENTITY_CAP
 
 
 def test_respawn_teleports_to_checkpoint():

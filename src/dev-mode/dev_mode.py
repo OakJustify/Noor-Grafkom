@@ -6,6 +6,8 @@ the systems it already owns.  See README.md for the blueprint.
 
 from __future__ import annotations
 
+import random
+
 import pygame
 
 import noor.config as C
@@ -86,41 +88,75 @@ class DevMode:
 
     def spawn_monster(self, scene):
         try:
+            from noor.entities.creature import (
+                AVAILABLE,
+                ProceduralMonster,
+                choose_archetype,
+                choose_body_plan,
+                choose_size,
+                spawn_definition,
+            )
             from noor.entities.monster import Monster
             from noor.scenes import gameplay as gp
         except Exception:  # noqa: BLE001
             return
-        if gp.CreatureAnimator is None:
-            return
-        types = ("M1", "M2", "M3")
-        kinds = {"M1": "biped", "M2": "quadruped", "M3": "floating"}
-        mtype = types[self._spawned % len(types)]
+
         self._spawned += 1
-        kind = kinds[mtype]
-        x = scene.player.x + scene.player.facing * 220.0
-        feet = scene.player.y + scene.player.height
-        ground = scene._ground_at(x, feet)
-        if ground is None:
-            ground = feet
-        monster = Monster(
-            f"dev{self._spawned}",
-            mtype,
-            x,
-            ground - 80.0,
-            stage=scene.level.get("stage", 1),
-        )
-        if len(scene.monsters) >= C.GLOBAL_ENTITY_CAP:
-            old = scene.monsters.pop(0)
-            scene.monster_anims.pop(old.id, None)
-        scene.monsters.append(monster)
-        anchor = monster.y + (40.0 if kind == "floating" else 80.0)
-        anim = gp.CreatureAnimator(
-            gp.make_spec(kind, scale=0.9),
-            monster.x + 20,
-            anchor,
-            seed=1000 + self._spawned,
-        )
-        scene.monster_anims[monster.id] = (anim, kind)
+        stage = scene.level.get("stage", 1)
+
+        # Alternate: legacy M1/M2/M3, then procedural creature.
+        if self._spawned <= 3 or not AVAILABLE or ProceduralMonster is None:
+            if gp.CreatureAnimator is None:
+                return
+            types = ("M1", "M2", "M3")
+            kinds = {"M1": "biped", "M2": "quadruped", "M3": "floating"}
+            mtype = types[(self._spawned - 1) % len(types)]
+            kind = kinds[mtype]
+            x = scene.player.x + scene.player.facing * 220.0
+            feet = scene.player.y + scene.player.height
+            ground = scene._ground_at(x, feet)
+            if ground is None:
+                ground = feet
+            monster = Monster(
+                f"dev{self._spawned}",
+                mtype,
+                x,
+                ground - 80.0,
+                stage=stage,
+            )
+            if len(scene.monsters) >= C.GLOBAL_ENTITY_CAP:
+                old = scene.monsters.pop(0)
+                scene.monster_anims.pop(old.id, None)
+            scene.monsters.append(monster)
+            anchor = monster.y + (40.0 if kind == "floating" else 80.0)
+            anim = gp.CreatureAnimator(
+                gp.make_spec(kind, scale=0.9),
+                monster.x + 20,
+                anchor,
+                seed=1000 + self._spawned,
+            )
+            scene.monster_anims[monster.id] = (anim, kind)
+        else:
+            rng = random.Random(self._spawned * 7919)
+            archetype = choose_archetype(stage, rng)
+            plan = choose_body_plan(archetype, rng)
+            size = choose_size(stage, rng)
+            definition = spawn_definition(
+                archetype, stage, 1000 + self._spawned * 47, plan, size
+            )
+            x = scene.player.x + scene.player.facing * 220.0
+            feet = scene.player.y + scene.player.height
+            ground = scene._ground_at(x, feet)
+            if ground is None:
+                ground = feet
+            monster = ProceduralMonster(
+                f"dev_proc{self._spawned}", definition, x, ground, stage
+            )
+            monster.y = ground - monster.height
+            if len(scene.monsters) >= C.GLOBAL_ENTITY_CAP:
+                old = scene.monsters.pop(0)
+                scene.monster_anims.pop(old.id, None)
+            scene.monsters.append(monster)
         self.visible = True
 
     # -- update --------------------------------------------------------

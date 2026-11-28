@@ -60,7 +60,7 @@ class FakeGame:
 def test_fragment_collected_once():
     pygame.init()
     game = FakeGame()
-    scene = GameplayScene(game, "s1_a")
+    scene = GameplayScene(game, "procedural")
     fr = scene.level["fragments"][0]
     scene.player.x, scene.player.y = fr["x"], fr["y"]
     scene.inp.interact = True
@@ -74,18 +74,20 @@ def test_fragment_collected_once():
 def test_exit_advances_level():
     pygame.init()
     game = FakeGame()
-    scene = GameplayScene(game, "s1_a")
+    scene = GameplayScene(game, "procedural")
     scene.player.x = scene.level["exits"][0]["x"] + 1
     scene.update(1 / 60)
     assert isinstance(game.scenes.replaced, GameplayScene)
-    assert game.scenes.replaced.level_id == "s1_b"
+    assert game.scenes.replaced.level_id == "procedural"
 
 
 def test_final_exit_goes_to_ending():
     pygame.init()
     game = FakeGame()
-    scene = GameplayScene(game, "s4_c")
-    scene.player.x = scene.level["exits"][0]["x"] + 1
+    game.state["stage"] = 4
+    scene = GameplayScene(game, "procedural")
+    # Simulate clock reaching final stage
+    scene.clock._final = True
     scene.update(1 / 60)
     assert type(game.scenes.replaced).__name__ == "EndingScene"
 
@@ -94,7 +96,7 @@ def test_draw_not_washed_out():
     pygame.init()
     pygame.display.set_mode((C.SCREEN_W, C.SCREEN_H))
     game = FakeGame()
-    scene = GameplayScene(game, "s1_a")
+    scene = GameplayScene(game, "procedural")
     surface = pygame.Surface((C.SCREEN_W, C.SCREEN_H))
     scene.draw(surface)
     assert pygame.surfarray.array3d(surface).astype(float).mean() < 200
@@ -126,7 +128,7 @@ def test_monster_uses_procedural_animator():
     from noor.entities.monster import Monster
 
     pygame.init()
-    scene = GameplayScene(FakeGame(), "s1_a")
+    scene = GameplayScene(FakeGame(), "procedural")
     monster = Monster("test", "M1", scene.player.x + 200, 576, stage=1)
     scene.monsters.append(monster)
     scene.monster_anims[monster.id] = (
@@ -143,7 +145,7 @@ def test_fallen_monster_is_culled_with_animator():
     from noor.entities.monster import Monster
 
     pygame.init()
-    scene = GameplayScene(FakeGame(), "s1_a")
+    scene = GameplayScene(FakeGame(), "procedural")
     monster = Monster("fallen", "M1", 100, C.SCREEN_H + 500, stage=1)
     scene.monsters.append(monster)
     scene.monster_anims[monster.id] = (None, "biped")

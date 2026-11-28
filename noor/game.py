@@ -51,7 +51,7 @@ class Game:
         self.i18n = I18n(lang=lang)
         self.state = {
             "stage": 1,
-            "level_id": "prolog",
+            "level_id": "procedural",
             "checkpoint_id": None,
             "S": 100.0,
             "cap": 100.0,
