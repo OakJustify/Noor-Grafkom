@@ -308,7 +308,7 @@ class GameplayScene:
         # director
         self.director.update(dt, player=self.player, camera=self.camera)
         for m in self.monsters:
-            m.update(dt, self.player, self.sanity)
+            m.update(dt, self.player, self.sanity, self.platforms)
             # contact check
             mx, my, mw, mh = m.rect()
             px, py, pw, ph = self.player.rect()
@@ -334,7 +334,7 @@ class GameplayScene:
                     vy=m.vy,
                     facing=1 if m.vx > 0 else (-1 if m.vx < 0 else None),
                     state=self._monster_state(m),
-                    on_ground=kind != "floating",
+                    on_ground=kind == "floating" or m.on_ground,
                     ground_height=ground,
                     head_target=(self.player.x + self.player.width / 2, self.player.y + 20),
                     reduce_motion=self.reduce_motion,

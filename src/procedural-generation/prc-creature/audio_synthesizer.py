@@ -20,12 +20,38 @@ from .morphology_generator import VocalParams
 CACHE_DIR = Path("assets/audio/cache/creatures")
 
 
+@dataclass
+class AudioCache:
+    """Container for cached audio file paths of a creature."""
+    idle: Path
+    alert: Path
+    aggressive: Path
+    pain: Path
+    death: Path
+
+
 class CreatureAudioGenerator:
     """Synthesizes creature vocal calls and manages on-disk cache."""
 
-    def __init__(self, sample_rate: int = 44100):
+    def __init__(self, seed: int = 42, sample_rate: int = 44100):
+        self.seed = seed
         self.sample_rate = sample_rate
         CACHE_DIR.mkdir(parents=True, exist_ok=True)
+
+    def generate_audio_cache(
+        self,
+        creature_id: str,
+        vocal: VocalParams,
+        seed: int | None = None
+    ) -> AudioCache:
+        """Pre-generate and cache all core vocal calls for a creature."""
+        actual_seed = seed if seed is not None else self.seed
+        cache_paths = {}
+        for call_type in ["idle", "alert", "aggressive", "pain", "death"]:
+            path = self.get_or_generate_audio(creature_id, call_type, vocal, seed=actual_seed)
+            cache_paths[call_type] = path
+            
+        return AudioCache(**cache_paths)
 
     def get_or_generate_audio(
         self,

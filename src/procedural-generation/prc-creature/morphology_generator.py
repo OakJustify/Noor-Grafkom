@@ -209,22 +209,31 @@ class MorphologyGenerator:
         if bp.locomotion_type == LocomotionType.SERPENTINE:
             width = length * rng.uniform(0.08, 0.15)
             height = width
+            # Use body_segments range from JSON if available
+            seg_config = bp.limbs.get("body_segments", [8, 20])
+            if isinstance(seg_config, list) and len(seg_config) == 2:
+                segment_count = rng.randint(seg_config[0], seg_config[1])
+            else:
+                segment_count = seg_config if isinstance(seg_config, int) else rng.randint(8, 20)
         elif bp.locomotion_type == LocomotionType.FLOATING:
             width = length * rng.uniform(0.6, 1.0)
             height = width * rng.uniform(0.5, 0.8)
+            segment_count = 1
         elif bp.locomotion_type == LocomotionType.AMORPHOUS:
             width = length * rng.uniform(0.4, 0.8)
             height = width * rng.uniform(0.3, 0.6)
+            segment_count = 1
         else:
             width = length * rng.uniform(0.3, 0.5)
             height = width * rng.uniform(0.6, 1.0)
+            segment_count = 1
 
         return {
             "mass": mass,
             "length": length,
             "width": width,
             "height": height,
-            "segment_count": rng.randint(8, 20) if bp.locomotion_type == LocomotionType.SERPENTINE else 1
+            "segment_count": segment_count
         }
 
     def _generate_limbs(
@@ -267,9 +276,11 @@ class MorphologyGenerator:
             leg_total_len = body_len * 0.4 * leg_len_mult
             base_thick = body["width"] * 0.15
 
-            spacing = limb_config.get("leg_pair_spacing", [0.25] * (leg_count // 2))
-            if len(spacing) < leg_count // 2:
+            spacing_config = limb_config.get("leg_pair_spacing", [0.25] * (leg_count // 2))
+            if len(spacing_config) < leg_count // 2:
                 spacing = [0.2 + 0.6 * i / max(1, leg_count // 2 - 1) for i in range(leg_count // 2)]
+            else:
+                spacing = spacing_config
 
             for i in range(leg_count):
                 pair_idx = i // 2

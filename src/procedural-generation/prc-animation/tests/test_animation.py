@@ -109,6 +109,44 @@ def test_stance_foot_is_locked():
     assert slides == 0
 
 
+def test_stance_ik_and_swing_landing():
+    # A planted foot must sit on its IK target, and a swing must land ahead of
+    # the hip; otherwise the creature slides or drags its feet.
+    for kind in ("biped", "quadruped"):
+        for facing in (1, -1):
+            for speed in (90, 200):
+                anim = CreatureAnimator(make_spec(kind), 100, 600, seed=3)
+                was_stepping = [False] * len(anim.legs)
+                max_error = 0.0
+                min_ahead = math.inf
+                landings = 0
+                for i in range(240):
+                    anim.update(
+                        1 / 60,
+                        x=100 + facing * i * speed / 60,
+                        y=600,
+                        vx=facing * speed,
+                        facing=facing,
+                        state="run" if speed > 120 else "walk",
+                        on_ground=True,
+                        ground_height=lambda x: 600,
+                    )
+                    for index, leg in enumerate(anim.legs):
+                        if i >= 60 and not leg.stepping:
+                            error = math.hypot(
+                                leg.foot[0] - leg.ik_x, leg.foot[1] - leg.ik_y
+                            )
+                            max_error = max(max_error, error)
+                        if i >= 60 and was_stepping[index] and not leg.stepping:
+                            ahead = (leg.foot_x - leg.hip[0]) * anim.facing
+                            min_ahead = min(min_ahead, ahead)
+                            landings += 1
+                        was_stepping[index] = leg.stepping
+                assert landings > 0
+                assert min_ahead > 0
+                assert max_error < 1.0
+
+
 def test_idle_feet_stay_planted():
     anim = CreatureAnimator(make_spec("biped"), 100, 600)
     for _ in range(120):

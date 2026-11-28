@@ -40,6 +40,28 @@ class CreatureState(str, Enum):
     CORRUPT = "corrupt"
     VOID_WALK = "void_walk"
     SCRIPTED_SEQUENCE = "scripted_sequence"
+    # Additional states referenced in archetype JSON
+    THREATEN = "threaten"
+    RETURN = "return"
+    MARK = "mark"
+    LAY_EGGS = "lay_eggs"
+    APPROACH = "approach"
+    SING = "sing"
+    ASCEND = "ascend"
+    INTERCEPT = "intercept"
+    SHIELD = "shield"
+    CALL = "call"
+    RALLY = "rally"
+    MERGE = "merge"
+    WAIT = "wait"
+    LURE = "lure"
+    HUNT = "hunt"
+    SPREAD = "spread"
+    STEAL = "steal"
+    DETACH = "detach"
+    RETREAT = "retreat"
+    HEAL = "heal"
+    GUIDE = "guide"
 
 
 @dataclass
@@ -152,36 +174,207 @@ class BehaviorStateMachine:
         """Calculate utility score for a given state (0.0 to 1.0+)."""
         dist = ctx.player_distance * (1.0 / self.awareness)
 
+        # Chase / Hunt
         if state == CreatureState.CHASE:
             if dist < 400.0 and self.aggression > 0.8:
                 return (1.0 - dist / 400.0) * self.aggression
             return 0.0
 
+        # Flee
         elif state == CreatureState.FLEE:
             if dist < 300.0 * skittish:
                 return (1.0 - dist / (300.0 * skittish)) * skittish
             return 0.0
 
+        # Stalk
         elif state == CreatureState.STALK:
             if 300.0 < dist < 600.0:
                 return 0.6 * self.aggression
             return 0.0
 
+        # Investigate
         elif state == CreatureState.INVESTIGATE:
             if ctx.player_moving and dist < 500.0:
                 return 0.5 * self.drives.get("investigate", BehaviorDrive("def")).value
             return 0.0
 
+        # Patrol
         elif state == CreatureState.PATROL:
             return 0.3
 
+        # Rest
         elif state == CreatureState.REST:
             return self.drives.get("rest", BehaviorDrive("def")).value * 0.4
 
+        # Herd
         elif state == CreatureState.HERD:
             return 0.5 if len(ctx.nearby_creatures) > 2 else 0.1
 
+        # Scavenge
         elif state == CreatureState.SCAVENGE:
             return 0.7 if len(ctx.nearby_fragments) > 0 else 0.1
+
+        # Hoard
+        elif state == CreatureState.HOARD:
+            return 0.6 if len(ctx.nearby_fragments) > 2 else 0.2
+
+        # Attack / Strike
+        elif state in (CreatureState.ATTACK, CreatureState.STRIKE):
+            if dist < 80.0 and self.aggression > 0.5:
+                return 0.9 * self.aggression
+            return 0.0
+
+        # Feed
+        elif state == CreatureState.FEED:
+            return 0.6 if dist < 100.0 else 0.1
+
+        # Hide
+        elif state == CreatureState.HIDE:
+            if dist < 200.0 * skittish:
+                return 0.7 * skittish
+            return 0.0
+
+        # Follow
+        elif state == CreatureState.FOLLOW:
+            if dist < 600.0 and self.drives.get("follow", BehaviorDrive("def")).value > 0.3:
+                return 0.5
+            return 0.0
+
+        # Play
+        elif state == CreatureState.PLAY:
+            if dist < 400.0 and len(ctx.nearby_creatures) > 1:
+                return 0.4 * self.drives.get("play", BehaviorDrive("def")).value
+            return 0.0
+
+        # Mimic
+        elif state == CreatureState.MIMIC:
+            if ctx.player_moving and dist < 500.0:
+                return 0.5 * self.drives.get("mimic", BehaviorDrive("def")).value
+            return 0.0
+
+        # Attach (parasitic)
+        elif state == CreatureState.ATTACH:
+            if dist < 100.0:
+                return 0.8 * self.drives.get("attach", BehaviorDrive("def")).value
+            return 0.0
+
+        # Drain (parasitic)
+        elif state == CreatureState.DRAIN:
+            return 0.7 if dist < 50.0 else 0.0
+
+        # Protect / Shield / Intercept (guardian)
+        elif state in (CreatureState.PROTECT, CreatureState.SHIELD, CreatureState.INTERCEPT):
+            return 0.6 if len(ctx.nearby_creatures) > 0 else 0.2
+
+        # Judge (territorial)
+        elif state == CreatureState.JUDGE:
+            if dist < 500.0:
+                return 0.5 * self.aggression
+            return 0.0
+
+        # Camouflage (ambush)
+        elif state == CreatureState.CAMOUFLAGE:
+            if dist < 400.0:
+                return 0.7
+            return 0.0
+
+        # Relocate
+        elif state == CreatureState.RELOCATE:
+            return 0.3 if self.state_timer > 10.0 else 0.0
+
+        # Corrupt (void_walker)
+        elif state == CreatureState.CORRUPT:
+            return 0.8 * (1.0 - ctx.player_sanity / 100.0)
+
+        # Void Walk
+        elif state == CreatureState.VOID_WALK:
+            return 0.5 if ctx.world_sanity < 50.0 else 0.1
+
+        # Scripted Sequence
+        elif state == CreatureState.SCRIPTED_SEQUENCE:
+            return 0.9 if self.archetype.value == "gentle_light" else 0.0
+
+        # Additional states from archetype JSON
+        elif state == CreatureState.THREATEN:
+            if dist < 400.0:
+                return 0.6 * self.aggression
+            return 0.0
+        elif state == CreatureState.RETURN:
+            if dist > 600.0:
+                return 0.7
+            return 0.0
+        elif state == CreatureState.MARK:
+            if dist < 800.0:
+                return 0.4
+            return 0.0
+        elif state == CreatureState.LAY_EGGS:
+            if self.drives.get("reproduce", BehaviorDrive("def")).value > 0.5:
+                return 0.8
+            return 0.0
+        elif state == CreatureState.APPROACH:
+            if dist > 200.0:
+                return 0.5
+            return 0.0
+        elif state == CreatureState.SING:
+            return 0.4 if ctx.time_of_day > 0.4 and ctx.time_of_day < 0.8 else 0.1
+        elif state == CreatureState.ASCEND:
+            if ctx.world_sanity > 75.0:
+                return 0.9
+            return 0.0
+        elif state == CreatureState.INTERCEPT:
+            if dist < 300.0:
+                return 0.7
+            return 0.0
+        elif state == CreatureState.SHIELD:
+            if len(ctx.nearby_creatures) > 0:
+                return 0.8
+            return 0.0
+        elif state == CreatureState.CALL:
+            if len(ctx.nearby_creatures) > 1:
+                return 0.6
+            return 0.0
+        elif state == CreatureState.RALLY:
+            if len(ctx.nearby_creatures) > 2:
+                return 0.7
+            return 0.0
+        elif state == CreatureState.MERGE:
+            if len(ctx.nearby_creatures) > 3:
+                return 0.8 * (1.0 - ctx.player_sanity / 100.0)
+            return 0.0
+        elif state == CreatureState.WAIT:
+            return 0.5 if self.state_timer < 5.0 else 0.3
+        elif state == CreatureState.LURE:
+            if dist < 500.0 and not ctx.player_moving:
+                return 0.6
+            return 0.0
+        elif state == CreatureState.HUNT:
+            if dist < 600.0 and self.aggression > 0.6:
+                return 0.7 * self.aggression
+            return 0.0
+        elif state == CreatureState.SPREAD:
+            if ctx.world_sanity < 50.0:
+                return 0.9
+            return 0.0
+
+        elif state == CreatureState.STEAL:
+            if len(ctx.nearby_creatures) > 0 and len(ctx.nearby_fragments) > 0:
+                return 0.7
+            return 0.1
+        elif state == CreatureState.DETACH:
+            if self.drives.get("detach", BehaviorDrive("def")).value > 0.5:
+                return 0.8
+            return 0.1
+        elif state == CreatureState.RETREAT:
+            if dist < 200.0 or self.fear_level > 0.7:
+                return 0.9
+            return 0.0
+        elif state == CreatureState.HEAL:
+            if self.drives.get("heal", BehaviorDrive("def")).value > 0.4:
+                return 0.8
+            return 0.1
+        elif state == CreatureState.GUIDE:
+            if ctx.player_sanity < 75.0 and dist < 800.0:
+                return 0.9
+            return 0.0
 
         return 0.1  # Default baseline utility

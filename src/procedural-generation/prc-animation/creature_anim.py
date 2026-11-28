@@ -235,12 +235,14 @@ class GaitDef:
 
 # Leg order for the quadruped is [rear-far, rear-near, front-far, front-near].
 # Offsets below are reordered from the blueprint's FL, FR, RL, RR order.
+# Frequency ranges must span speed / stride, otherwise a fast walk overstrides
+# and the planted foot ends up outside the leg's reach.
 GAITS = {
-    "biped_walk": GaitDef("walk", (0.0, 0.5), 0.62, (1.0, 1.8), 9.0),
-    "biped_run": GaitDef("run", (0.0, 0.5), 0.40, (2.0, 3.2), 14.0),
-    "quad_walk": GaitDef("walk", (0.75, 0.25, 0.0, 0.5), 0.70, (0.9, 1.6), 8.0),
-    "quad_trot": GaitDef("trot", (0.5, 0.0, 0.0, 0.5), 0.55, (1.8, 3.0), 12.0),
-    "quad_gallop": GaitDef("gallop", (0.5, 0.75, 0.0, 0.25), 0.40, (2.8, 4.2), 16.0),
+    "biped_walk": GaitDef("walk", (0.0, 0.5), 0.62, (1.5, 3.2), 9.0),
+    "biped_run": GaitDef("run", (0.0, 0.5), 0.40, (2.5, 5.2), 14.0),
+    "quad_walk": GaitDef("walk", (0.75, 0.25, 0.0, 0.5), 0.70, (1.2, 2.8), 8.0),
+    "quad_trot": GaitDef("trot", (0.5, 0.0, 0.0, 0.5), 0.55, (2.0, 4.6), 12.0),
+    "quad_gallop": GaitDef("gallop", (0.5, 0.75, 0.0, 0.25), 0.40, (2.8, 5.2), 16.0),
 }
 
 
@@ -366,6 +368,7 @@ class CreatureAnimator:
         self.on_ground = True
         self.head_target = None
         self.speed = 0.0
+        self._started = False
         self._rng = random.Random(seed)
         self.gait = self._rng.random()
         self.breath = self._rng.random() * 10.0
@@ -410,7 +413,8 @@ class CreatureAnimator:
     def _stand_body_y(self):
         if self.spec.kind == "floating":
             return self.y
-        hip_h = (self.spec.upper + self.spec.lower) * 0.82
+        factor = 0.72 if self.spec.kind == "quadruped" else 0.82
+        hip_h = (self.spec.upper + self.spec.lower) * factor
         return self.y - hip_h - self.spec.body_h / 2.0
 
     def _make_legs(self):
@@ -568,6 +572,9 @@ class CreatureAnimator:
         self._reduce_motion = bool(reduce_motion)
 
         speed = abs(self.vx)
+        if not self._started:
+            self.speed = speed
+            self._started = True
         self.speed += (speed - self.speed) * min(1.0, 12.0 * dt)
         accel = (self.vx - self._prev_vx) / dt
         self._prev_vx = self.vx
@@ -776,7 +783,7 @@ class CreatureAnimator:
         swing_travel = self.speed * ((1.0 - duty) / freq)
         # The body keeps moving during the swing, so the foot must aim past the
         # current hip by that distance or it lands behind the body.
-        ahead = swing_travel + stance_travel * 0.5 + s.stride * 0.12
+        ahead = swing_travel + stance_travel * 0.5
         nominal_x = hip[0] + self.facing * ahead
         nominal_y = ground_height(nominal_x) if ground_height else self.y
         if nominal_y is None:
